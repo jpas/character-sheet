@@ -1,0 +1,54 @@
+blockquote p {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.roll p {
+	margin: 0;
+}
+
+.roll h3 {
+	margin: 0 0 15px;
+}
+
+.panel {
+	margin-bottom: 0;
+}
+
+.wip {
+	color: red;
+}
+
+.list-unstyled.spells {
+	padding: 15px 15px 5px;
+	border-left: 5px solid #eee;
+	font-style: italic !important;
+}
+
+.hr {
+	text-decoration: underline;
+}
+
+.specialty {
+	color: #4c8;
+}
+
+.unprepared.specialty {
+	color: #8c8
+}
+
+.opposition {
+	color: #c88;
+}
+
+.unprepared {
+	color: #888;
+}
+
+.cast {
+	text-decoration: line-through;
+}
+
+.cast:hover {
+	text-decoration: line-through underline;
+}

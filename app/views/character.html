@@ -1,0 +1,133 @@
+<div ng-repeat="c in character">
+		<h2 id="title">{{c.name}} <small>{{c.info}}</small></h2><hr>
+		<div id="defense">
+			<p id="ac">
+				<b>AC</b> {{c.ac.normal}},
+				<b>touch</b> {{c.ac.touch}},
+				<b>flat-footed</b> {{c.ac.flat}}<span ng-if="c.ac.bonuses">, </span>
+				<span ng-if="c.ac.bonuses">({{c.ac.bonuses}})</span>
+			</p>
+			<p id="cmd">
+				<b>CMD</b> {{c.cmd.normal}},
+				<b>flat-footed</b> {{c.cmd.flat}}<span ng-if="c.cmd.bonuses">, </span>
+				<span ng-if="c.cmd.bonuses">({{c.cmd.bonuses}})</span>
+			</p>
+			<p><b>HP</b> {{c.hp}}</p>
+			<p id="saves">
+				<b>Fortitude</b> <roll name="Fortitude" die="{{c.save.fort}}"></roll>,
+				<b>Reflex</b>    <roll name="Reflex" die="{{c.save.refl}}"></roll>,
+				<b>Will</b>      <roll name="Will" die="{{c.save.will}}"></roll>
+			</p>
+			<p ng-if="c.dr"><b>DR</b> {{c.dr}}</p>
+			<p ng-if="c.immune"><b>Immune</b> {{c.immune}}</p>
+			<p ng-if="c.resist"><b>Resist</b> {{c.resist}}</p>
+		</div><hr>
+		<div id="offense">
+			<p ng-if="c.melee">
+				<b>Melee</b>
+				<span ng-repeat="atk in c.melee">
+					{{atk.name}}
+					<span ng-repeat="die in atk.die track by $index"><roll ng-if="isDie(die)" name="{{atk.name}}" die="{{die}}"></roll><span ng-if="!isDie(die)">{{die}}</span></span><span ng-if="!$last">, </span>
+				</span>
+			</p>
+			<p ng-if="c.ranged">
+				<b>Ranged</b>
+				<span ng-repeat="atk in c.ranged">
+					{{atk.name}}
+					<span ng-repeat="die in atk.die track by $index"><roll ng-if="isDie(die)" name="{{atk.name}}" die="{{die}}"></roll><span ng-if="!isDie(die)">{{die}}</span></span><span ng-if="!$last">, </span>
+				</span>
+			</p>
+			<p ng-if="c.specialAttacks">
+				<b>Special</b>
+				<span ng-repeat="atk in c.specialAttacks">
+					{{atk.name}}
+					<span ng-repeat="die in atk.die track by $index"><roll ng-if="isDie(die)" name="{{atk.name}}" die="{{die}}"></roll><span ng-if="!isDie(die)">{{die}}</span></span><span ng-if="!$last">, </span>
+				</span>
+			</p>
+			<!-- NEEDS MORE STILL -->
+			<div ng-if="c.slas">
+				<div ng-repeat="Class in c.slas">
+					<p><b>{{Class.name}} Spell-Like Abilities</b></p>
+					<ul class="list-unstyled spells">
+						<li ng-repeat="sla in Class.list">
+							<p>
+								{{sla.uses}} -
+								<srd text="{{sla.name}}" link="{{sla.link}}"></srd>
+								({{sla.text}})
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div ng-if="c.spells">
+				<div ng-repeat="Class in c.spells">
+					<span ng-if="Class.prepared">
+						<p><b>{{Class.name}} Spells Prepared</b>
+							(CL {{Class.cl}},
+							concentration <roll name="{{Class.name + ' Concentration'}}" die="{{Class.con}}"></roll>,
+							spell resistance <roll name="{{Class.name + ' Spell Resistance'}}" die="{{Class.sr}}"></roll>)
+						</p>
+						<ul class="list-unstyled spells">
+							<li ng-repeat="level in Class.prepared.level">
+								<p>
+									{{level.info}} -
+									<span ng-repeat="spell in level.spells track by $index">
+										<spell name="spell" data="findSpell(Class.known, spell)"></spell><span ng-if="!$last">, </span>
+									</span>
+								</p>
+							</li>
+							<li ng-if="Class.opposition">
+								<p><b>Opposition Schools</b> {{Class.opposition}}</p>
+							</li>
+						</ul>
+						<p><b>{{Class.name}} Spellbook</b></p>
+						<ul class="list-unstyled spells">
+							<li ng-repeat="level in Class.spellLevels">
+								<p>
+									{{level.toOrdinal()}} -
+									<span ng-repeat="spell in Class.known | filter:{level: level}">
+										<spell name="spell.name" data="spell"></spell><span ng-if="!$last">, </span>
+									</span>
+								</p>
+							</li>
+						</ul>
+					</span>
+				</div>
+			</div>
+		</div><hr>
+		<div id="statistics">
+			<p id="ability-scores">
+				<b>Str</b> {{c.ability.str}} <roll name="Strength" die="{{getCheck(c.ability.str)}}"></roll>,
+				<b>Dex</b> {{c.ability.dex}} <roll name="Dexterity" die="{{getCheck(c.ability.dex)}}"></roll>,
+				<b>Con</b> {{c.ability.con}} <roll name="Constitution" die="{{getCheck(c.ability.con)}}"></roll>,
+				<b>Int</b> {{c.ability.int}} <roll name="Intelligence" die="{{getCheck(c.ability.int)}}"></roll>,
+				<b>Wis</b> {{c.ability.wis}} <roll name="Wisdom" die="{{getCheck(c.ability.wis)}}"></roll>,
+				<b>Cha</b> {{c.ability.cha}} <roll name="Charisma" die="{{getCheck(c.ability.cha)}}"></roll>
+			</p>
+			<p id="speed-initiative">
+				<b>Speed</b> {{c.speed}};
+				<b>Initiative</b> <roll	name="Initiative" die="{{c.initiative}}"></roll>
+			</p>
+			<p ng-if="c.senses">
+				<b>Senses</b> {{c.senses}}
+			</p>
+			<p ng-if="c.feats">
+				<b>Feats</b>
+				<span ng-repeat="feat in c.feats | orderBy:'name'">
+					<srd text="{{feat.name}}" link="{{feat.link}}"></srd><span ng-if="!$last">, </span>
+				</span>
+			</p>
+			<p ng-if="c.skills">
+				<b>Skills</b>
+				<span ng-repeat="skill in c.skills">
+					{{skill.name}} <roll name="{{skill.name}}" die="{{skill.die}}"></roll><span ng-if="!$last">, </span>
+				</span>
+			</p>
+			<p ng-if="c.languages">
+				<b>Languages</b>
+				<span ng-repeat="language in c.languages">
+					{{language}}<span ng-if="!$last">, </span>
+				</span>
+			</p>
+		</div>
+		<hr ng-if="!$last">
