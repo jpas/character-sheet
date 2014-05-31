@@ -1,4 +1,9 @@
 [
+	{
+		"id": "has-it-all",
+		"name": "The One with Everything",
+		"snippet": "this character has all the types of things that could be displayed."
+	},
     {
         "id": "wizard-amroth",
         "name": "Amroth",

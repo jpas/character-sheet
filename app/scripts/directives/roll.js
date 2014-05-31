@@ -28,8 +28,8 @@ angular.module('charactersApp').directive('roll', [
 		return {
 			restrict: 'E',
 			scope: {
-				name: '@',
-				die: '@'
+				name: '=',
+				die: '='
 			},
 			templateUrl: 'views/partial/rollDirective.html',
 			link: function(scope , element) {
@@ -97,7 +97,7 @@ angular.module('charactersApp').directive('roll', [
 								return scope.name;
 							},
 							dieSpec: function() {
-								return scope.die;
+								return scope.die.replace('+0', '', 'g');
 							},
 							result: function () {
 								return result;

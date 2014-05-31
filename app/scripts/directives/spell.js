@@ -5,40 +5,36 @@ angular.module('charactersApp').directive('spell',
 		return {
 			restrict: 'E',
 			scope: {
-				name: '=',
-				data: '='
+				name: '='
 			},
 			templateUrl: 'views/partial/spellDirective.html',
 			link: function (scope) {
-				var split = scope.name.split('|');
-				scope.name = split[0];
-
-				if (split[1] && split[1] !== 'cast') {
-					scope.meta = split[1];
+				var temp = scope.name.split('||');
+				scope.spellName = temp[0].toLowerCase();
+				if (scope.spellName === 'unprepared') {
+					scope.unprepared = true;
 				}
-
-				if (split.indexOf('cast') > 0) {
-					scope.cast = 'cast';
-				} else {
-					scope.cast = '';
+				scope.url = temp[0];
+				for (var i = temp.length - 1; i >= 0; i--) {
+					var split = temp[i].split(':');
+					switch (split[0]) {
+						case 'type':
+							scope.sup = split[1];
+							break;
+						case 'meta':
+							scope.meta = split[1];
+							break;
+						case 'cast':
+							scope.cast = 'cast';
+							break;
+						case 'count':
+							scope.count = parseInt(split[1], 10);
+							break;
+						case 'url':
+							scope.url = split[1];
+							break;
+					}
 				}
-
-				scope.clean = function() {
-					if (scope.name === 'unprepared-sp') {
-						return 'unprepared';
-					}
-					if (scope.meta) {
-						return scope.meta  + ' ' + scope.name;
-					}
-					return scope.name;
-				};
-
-				scope.link = function() {
-					if (scope.data.link) {
-						return true;
-					}
-					return false;
-				};
 			}
 		};
 	}

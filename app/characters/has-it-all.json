@@ -1,13 +1,13 @@
 [
     {
-        "cr": 4,
-        "name": "Amorth",
-        "alignment": "N",
-        "senses": "",
-        "size": "Medium",
-        "race": "Human",
-        "type": "Humanoid (human)",
-        "initiative": 8,
+        "cr": "[CR]",
+        "name": "[NAME]",
+        "alignment": "[N]",
+        "senses": "[]",
+        "size": "[SIZE]",
+        "race": "[RACE]",
+        "type": "[TYPE]",
+        "initiative": 10,
         "classes": [
             "Wizard (Abjurer)",
             "Wizard (Abjurer)",
@@ -33,77 +33,116 @@
             "slas": [],
             "spells": [
                 {
-                    "class": "Abjurer",
+                    "class": "Cleric",
                     "type": "Prepared",
-                    "casterLevel": 5,
-                    "concentration": 11,
-                    "spellResistance": 5,
+                    "casterLevel": 12,
+                    "concentrationBonus": 0,
+                    "stat": "wis",
+                    "spellResistance": 12,
+                    "otherText": {
+                        "heading": "Domains",
+                        "text": "Charm, Trickery"
+                    },
                     "list": [
-                        [
-                            "Dispel Magic||type:+",
-                            "Haste",
-                            "Summon Monster III||url:summon monster 3"
-                        ],
-                        [
-                            "Fog Cloud",
-                            "Invisibility",
-                            "Protection from Alignment||url:Protection from Evil",
-                            "Mage Armor||meta:extended||cast",
-                            "unprepared||type:+",
-                            "unprepared"
-                        ],
-                        [
-                            "Blood Money",
-                            "Feather Fall",
-                            "Grease",
-                            "See Alignment",
-                            "Shield||type:+",
-                            "unprepared"
-                        ],
-                        [
-                            "Dancing Lights",
-                            "Detect Magic",
-                            "Mage Hand",
-                            "Read Magic"
-                        ]
+                    [
+                        "Geas/Quest||type:D",
+                        "Greater Dispel Magic",
+                        "Word Of Recall"
+                    ],
+                    [
+                        "Breath of Life",
+                        "Charm Monster||type:D",
+                        "Greater Command",
+                        "Slay Living",
+                        "Spell Resistance"
+                    ],
+                    [
+                        "Chaos Hammer",
+                        "Cure Serious Wounds",
+                        "Discern Lies",
+                        "Heroism||type:D",
+                        "Poison"
+                    ],
+                    [
+                        "Invisibility Purge",
+                        "Magic Vestment",
+                        "Prayer",
+                        "Protection from Energy",
+                        "Searing Light",
+                        "Suggestion||type:D"
+                    ],
+                    [
+                        "Calm Emotions",
+                        "Delay Poison",
+                        "Enthrall",
+                        "Hold Person||count:2",
+                        "Invisibility||type:D"
+                    ],
+                    [
+                        "Charm Person||type:D",
+                        "Cure Light Wounds||count:2",
+                        "Entropic Shield",
+                        "Hide from Undead",
+                        "Obscuring Mist",
+                        "Remove Fear"
+                    ],
+                    [
+                        "Detect Magic",
+                        "Light",
+                        "Mending",
+                        "Purify Food and Drink"
+                    ]
                     ]
                 },
                 {
                     "class": "Sorcerer",
                     "type": "Known",
-                    "casterLevel": 5,
-                    "concentration": 11,
-                    "spellResistance": 5,
+                    "casterLevel": 8,
+                    "concentrationBonus": 0,
+                    "stat": "cha",
+                    "spellResistance": 8,
+                    "otherText": {
+                        "heading": "Bloodline",
+                        "text": "Fey"
+                    },
                     "perDay": [
-                        8, 5, 3, 6
+                        4,
+                        6,
+                        7,
+                        7
                     ],
                     "list": [
                         [
-                            "Dispel Magic||type:+",
-                            "Haste",
-                            "Summon Monster III||url:summon monster 3"
+                            "Phantasmal Killer"
                         ],
                         [
-                            "Fog Cloud",
-                            "Invisibility",
-                            "Protection from Alignment||url:Protection from Evil",
-                            "Mage Armor||meta:extended||cast",
-                            "unprepared||type:+",
-                            "unprepared"
+                            "Deep Slumber",
+                            "Major Image",
+                            "Suggestion"
                         ],
                         [
-                            "Blood Money",
-                            "Feather Fall",
-                            "Grease",
-                            "See Alignment",
-                            "Shield||type:+",
-                            "unprepared"
+                            "Hideous Laughter",
+                            "Hypnotic Pattern",
+                            "Mirror Image",
+                            "Scorching Ray"
                         ],
                         [
-                            "Dancing Lights",
+                            "Charm Person",
+                            "Color Spray",
+                            "Entangle",
+                            "Magic Missile",
+                            "Shield",
+                            "Ventriloquism"
+                        ],
+                        [
+                            "Daze",
                             "Detect Magic",
+                            "Flare",
                             "Mage Hand",
-                            "Read Magic"
+                            "Message",
+                            "Ray of Frost",
+                            "Read Magic",
+                            "Touch Of Fatigue"
                         ]
                     ]
                 }
@@ -115,8 +154,8 @@
                 "dex": 14,
                 "con": 12,
                 "int": 22,
-                "wis": 12,
-                "cha": 8
+                "wis": 20,
+                "cha": 18
             },
             "bab": 2,
             "languages": [
