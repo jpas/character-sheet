@@ -50,3 +50,12 @@ blockquote p {
 .cast {
 	text-decoration: line-through;
 }
+
+.stat-block-section td:first-child {
+	font-weight: bold;
+	padding-right: 0.5em;
+}
+.stat-block-section td {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}

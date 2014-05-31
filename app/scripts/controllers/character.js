@@ -106,14 +106,32 @@ function Skill(_name, _skill, statList) {
 	return this;
 }
 
+
 function Caster(_caster, statList) {
 	angular.extend(this, _caster);
 
-	var stat               = statList[_caster.stat];
+	var stat = statList[_caster.stat];
 	var concentrationBonus = _caster.concentrationBonus;
 
 	this.concentration = function () {
 		return stat.modifier() + concentrationBonus + this.casterLevel;
+	};
+
+	return this;
+}
+
+function SLA(_sla, statList) {
+	angular.extend(this, _sla);
+
+	var stat = statList[_sla.stat];
+	var concentrationBonus = _sla.concentrationBonus;
+
+	this.concentration = function () {
+		return stat.modifier() + concentrationBonus + this.casterLevel;
+	};
+
+	this.textFix = function (index) {
+		return this.list[index].text.split('||');
 	};
 
 	return this;
@@ -167,7 +185,13 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				});
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
-						caster, 
+						caster,
+						character.statistics.abilities
+					);
+				});
+				angular.forEach(character.offense.slas, function (sla, key) {
+					character.offense.slas[key] = new SLA(
+						sla,
 						character.statistics.abilities
 					);
 				});

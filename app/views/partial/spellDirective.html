@@ -1,3 +1,3 @@
 <span ng-if="unprepared"><em>unprepared</em></span>
 <nethys ng-if="!unprepared" type="'Spell'" item="url" ng-class="classes">
-	<em ng-class="cast"><span ng-if="meta">{{meta}}</span> {{spellName}}</em></nethys><sup ng-if="sup"> {{sup}}</sup><span ng-if="count"> ({{count}})</span>
+	<em ng-class="cast"><span ng-if="meta">{{meta}}</span> {{spellName}}</em></nethys><sup ng-if="sup"> {{sup}}</sup><span ng-if="countDC()"> ({{countDC()}})</span>

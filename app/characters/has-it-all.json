@@ -30,7 +30,48 @@
                 "ranged": [],
                 "special": []
             },
-            "slas": [],
+            "slas": [
+                {
+                    "name": "Domain",
+                    "casterLevel": 12,
+                    "concentrationBonus": 0,
+                    "stat": "wis",
+                    "list": [
+                        {
+                            "times": "At will",
+                            "text": "charming smile (12 rounds/day, DC 21), master's illusion (12 rounds/day, DC 21)"
+                        },
+                        {
+                            "times": "8/day",
+                            "text": "copycat (12 rounds), dazing touch"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bloodline",
+                    "casterLevel": 8,
+                    "concentrationBonus": 0,
+                    "stat": "cha",
+                    "list": [
+                        {
+                            "times": "7/day",
+                            "text": "laughing touch"
+                        }
+                    ]
+                },
+                {
+                    "name": "Gnome",
+                    "casterLevel": 8,
+                    "concentrationBonus": 0,
+                    "stat": "cha",
+                    "list": [
+                        {
+                            "times": "1/day",
+                            "text": "spell:Dancing Lights||, ||spell:Ghost Sound|| (DC 15)||, ||spell:Prestidigitation||, ||spell:Speak with Animals"
+                        }
+                    ]
+                }
+            ],
             "spells": [
                 {
                     "class": "Cleric",
@@ -51,31 +92,31 @@
                     ],
                     [
                         "Breath of Life",
-                        "Charm Monster||type:D",
-                        "Greater Command",
-                        "Slay Living",
+                        "Charm Monster||type:D||dc:22",
+                        "Greater Command||dc:22",
+                        "Slay Living||dc:20",
                         "Spell Resistance"
                     ],
                     [
-                        "Chaos Hammer",
+                        "Chaos Hammer||dc:19",
                         "Cure Serious Wounds",
-                        "Discern Lies",
+                        "Discern Lies||dc:19",
                         "Heroism||type:D",
-                        "Poison"
+                        "Poison||dc:19"
                     ],
                     [
                         "Invisibility Purge",
                         "Magic Vestment",
                         "Prayer",
-                        "Protection from Energy",
+                        "Protection from Energy||dc:18",
                         "Searing Light",
-                        "Suggestion||type:D"
+                        "Suggestion||type:D||dc:20"
                     ],
                     [
-                        "Calm Emotions",
-                        "Delay Poison",
-                        "Enthrall",
-                        "Hold Person||count:2",
+                        "Calm Emotions||dc:19",
+                        "Delay Poison||dc:17",
+                        "Enthrall||dc:19",
+                        "Hold Person||count:2||dc:19",
                         "Invisibility||type:D"
                     ],
                     [
@@ -167,8 +208,19 @@
                 "Halfling",
                 "Orc"
             ],
-            "feats": [],
-            "traits": []
+            "feats": [
+                "Extra Channel",
+                "Greater Spell Focus||Enchantment",
+                "Improved Channel",
+                "Improved Initiative",
+                "Lightning Reflexes",
+                "Selective Channeling",
+                "Spell Focus||Enchantment"
+            ],
+            "traits": [
+                "Reactionary",
+                "Eyes and Ears of the City"
+            ]
         },
         "skills": {
             "Acrobatics": {},

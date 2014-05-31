@@ -18,6 +18,9 @@ angular.module('charactersApp').directive('spell',
 				for (var i = temp.length - 1; i >= 0; i--) {
 					var split = temp[i].split(':');
 					switch (split[0]) {
+						case 'dc':
+							scope.dc = split[1];
+							break;
 						case 'type':
 							scope.sup = split[1];
 							break;
@@ -35,6 +38,15 @@ angular.module('charactersApp').directive('spell',
 							break;
 					}
 				}
+				scope.countDC = function () {
+					if (scope.count && scope.dc) {
+						return scope.count + ', DC ' + scope.dc;
+					} else if (scope.count) {
+						return scope.count;
+					} else if (scope.dc) {
+						return 'DC ' + scope.dc;
+					}
+				};
 			}
 		};
 	}

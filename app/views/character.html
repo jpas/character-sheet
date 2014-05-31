@@ -57,7 +57,25 @@
 	<section id="offense">
 		<p><b>Speed</b> {{character.offense.speed}}</p>
 		<p><b>Space</b> {{character.offense.space}}; <b>Reach</b> {{character.offense.reach}}</p>
-		<div ng-if="character.offense.spells" ng-repeat="caster in character.offense.spells">
+		<div id="slas" ng-if="character.offense.slas" ng-repeat="caster in character.offense.slas | orderBy:'name'">
+			<p>
+				<b>{{caster.name}} Spell-Like Abilities</b>
+				CL {{caster.casterLevel.toOrdinal()}};
+				concentration <roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>
+			</p>
+			<div class="spellList">
+				<table>
+					<tr ng-repeat="sla in caster.list">
+						<td>{{sla.times}}</td>
+						<td class="separator">-</td>
+						<td>
+							<span ng-repeat="t in caster.textFix($index) track by $index"><spell ng-if="t.indexOf('spell:') >= 0" name="t.replace('spell:', '')"></spell><span ng-if="t.indexOf('spell:') == -1">{{t}}</span></span>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="spells" ng-if="character.offense.spells" ng-repeat="caster in character.offense.spells | orderBy:'class'">
 			<p>
 				<b>{{caster.class}} Spells {{caster.type}}</b>
 				CL {{caster.casterLevel.toOrdinal()}};
@@ -66,23 +84,23 @@
 			</p>
 			<div class="spellList">
 				<table>
-				<tr ng-repeat="(level, spells) in caster.list">
-					<td>{{(caster.list.length - 1 - level).toOrdinal()}}</td>
-					<td class="per-day" ng-if="caster.perDay && !$last">({{caster.perDay[$index]}}/day)</td>
-					<td class="per-day" ng-if="caster.perDay && $last">(at will)</td>
-					<td class="separator">-</td>
-					<td>
-						<span ng-repeat="spell in spells">
-							<spell name="spell"></spell><span ng-if="!$last">, </span>
-						</span>
-					</td>
-				</tr>
+					<tr ng-repeat="(level, spells) in caster.list">
+						<td>{{(caster.list.length - 1 - level).toOrdinal()}}</td>
+						<td class="per-day" ng-if="caster.perDay && !$last">({{caster.perDay[$index]}}/day)</td>
+						<td class="per-day" ng-if="caster.perDay && $last">(at will)</td>
+						<td class="separator">-</td>
+						<td>
+							<span ng-repeat="spell in spells">
+								<spell name="spell"></spell><span ng-if="!$last">, </span>
+							</span>
+						</td>
+					</tr>
 				</table>
 				<p><b>{{caster.otherText.heading}}</b> {{caster.otherText.text}}</p>
 			</div>
 		</div>
+		<hr>
 	</section>
-	<hr>
 	<section id="statistics">
 		<p id="ability-scores">
 			<span ng-repeat="ability in character.statistics.abilities | orderAbilityScores">
@@ -104,5 +122,18 @@
 				<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,</span>
 			</span>
 		</p>
+		<p id="feats" ng-if="character.statistics.feats">
+			<b>Feats</b>
+			<span ng-repeat="feat in character.statistics.feats">
+				<nethys type="'Feat'" item="feat.split('||')[0]" ng-class="classes">{{feat.split('||')[0]}}<span ng-if="feat.split('||')[1]"> ({{feat.split('||')[1]}})</span></nethys><span ng-if="!$last">,</span>
+			</span>
+		</p>
+		<p id="traits" ng-if="character.statistics.traits">
+			<b>Traits</b>
+			<span ng-repeat="trait in character.statistics.traits">
+				<nethys type="'Trait'" item="trait.split('||')[0]" ng-class="classes">{{trait.split('||')[0]}}<span ng-if="trait.split('||')[1]"> ({{trait.split('||')[1]}})</span></nethys><span ng-if="!$last">,</span>
+			</span>
+		</p>
+		<hr>
 	</section>
 </div>
