@@ -4,7 +4,7 @@
 		<hr>
 		<p>
 			<b>{{character.race}}</b>
-			<b><!--{{character.classes}}--> Abjurer</b> 5;
+			{{character.classes}};
 			{{character.alignment}}
 			{{character.size}}
 			{{character.type}}
@@ -23,16 +23,21 @@
 	</section>
 	<section id="defense">
 		<p>
-			<b>AC</b> ,
-			<b>touch</b> ,
-			<b>flat-footed</b>
+			<b>AC</b> {{character.defense.ac.total()}},
+			<b>touch</b> {{character.defense.ac.touch()}},
+			<b>flat-footed</b> {{character.defense.ac.flatfooted()}}
 		</p>
 		<p>
-			<b>CMD</b> ,
-			<b>flat-footed</b>
+			<b>CMD</b> {{character.defense.cmd.total()}},
+			<b>flat-footed</b> {{character.defense.cmd.flatfooted()}}
 		</p>
 		<p>
-			<b>HP</b>
+			<b>HP</b> {{character.hp}} ({{character.hd}})
+		</p>
+		<p>
+			<b>Fortitude</b> {{character.defense.fort.total()}};
+			<b>Reflex</b> {{character.defense.refl.total()}};
+			<b>Will</b> {{character.defense.will.total()}}
 		</p>
 		<p>
 			<span ng-if="character.defense.dr">
@@ -57,6 +62,9 @@
 	<section id="offense">
 		<p><b>Speed</b> {{character.offense.speed}}</p>
 		<p><b>Space</b> {{character.offense.space}}; <b>Reach</b> {{character.offense.reach}}</p>
+		<div ng-if="character.offense.attack">
+			<div ng-repeat=""></div>
+		</div>
 		<div id="slas" ng-if="character.offense.slas" ng-repeat="caster in character.offense.slas | orderBy:'name'">
 			<p>
 				<b>{{caster.name}} Spell-Like Abilities</b>
@@ -125,13 +133,13 @@
 		<p id="feats" ng-if="character.statistics.feats">
 			<b>Feats</b>
 			<span ng-repeat="feat in character.statistics.feats">
-				<nethys type="'Feat'" item="feat.split('||')[0]" ng-class="classes">{{feat.split('||')[0]}}<span ng-if="feat.split('||')[1]"> ({{feat.split('||')[1]}})</span></nethys><span ng-if="!$last">,</span>
+				<nethys type="'Feat'" item="feat.split(' (')[0]" ng-class="classes">{{feat.split(' (')[0].split('||')[0]}}<span ng-if="feat.split(' (')[1].slice(0, 1)"> ({{feat.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,</span>
 			</span>
 		</p>
 		<p id="traits" ng-if="character.statistics.traits">
 			<b>Traits</b>
 			<span ng-repeat="trait in character.statistics.traits">
-				<nethys type="'Trait'" item="trait.split('||')[0]" ng-class="classes">{{trait.split('||')[0]}}<span ng-if="trait.split('||')[1]"> ({{trait.split('||')[1]}})</span></nethys><span ng-if="!$last">,</span>
+				<nethys type="'Trait'" item="trait.split(' (')[0]" ng-class="classes">{{trait.split(' (')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)"> ({{trait.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,</span>
 			</span>
 		</p>
 		<hr>

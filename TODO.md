@@ -23,8 +23,8 @@
   - [ ] items
     - encumberance
 - [ ] calculation validation
-- [ ] non-wizard class support **WIP**
+- [x] non-wizard class support **WIP**
 - [ ] add unit tests
 - [ ] character descriptions
-- [ ] hp as hit dice
+- [x] hp as hit dice
 - [x] increase touchable area sizes for mobile -- increased a little bit, will probably make bigger

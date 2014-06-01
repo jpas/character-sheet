@@ -11,7 +11,16 @@ angular.module('charactersApp').directive('nethys',
 			},
 			templateUrl: 'views/partial/nethysDirective.html',
 			link: function (scope) {
-				scope.item = encodeURIComponent(scope.item);
+				if (scope.item.indexOf('custom:') > -1) {
+					var split = scope.item.split('||')[1].split(':');
+					if (split[1].indexOf('http') > -1) {
+						scope.uri = split[1] + ':' + split[2];
+					} else {
+						scope.uri = split[1];
+					}
+				} else {
+					scope.uri = 'http://www.archivesofnethys.com/' + scope.type + 'Display.aspx?ItemName=' + encodeURIComponent(scope.item);
+				}
 			}
 		};
 	}

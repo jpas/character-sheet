@@ -25,7 +25,7 @@ function AbilityScore(name, score) {
 		return prependToString(
 			this.name + ' ' + this.score + ': ',
 			this.total()
-		);
+			);
 	};
 
 	this.roll = function () {
@@ -71,12 +71,12 @@ function Skill(_name, _skill, statList) {
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
 	var classSkill = (_skill.classSkill ? 3 : 0);
 	var stat = (_skill.override ? statList[_skill.override] : statList[skills[this.baseName]]);
-	var other = _skill.other || [0];
+	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
 		var t = 0;
-		for (var i = other.length - 1; i >= 0; i--) {
-			t += (typeof other[i] === 'number') ? other[i] : parseInt(other[i].split('||')[1], 10);
+		for (var i = bonuses.length - 1; i >= 0; i--) {
+			t += (typeof bonuses[i] === 'number') ? bonuses[i] : parseInt(bonuses[i].split('||')[1], 10);
 		}
 		return ranks + stat.modifier() + classSkill + t;
 	};
@@ -137,6 +137,155 @@ function SLA(_sla, statList) {
 	return this;
 }
 
+function AC(_ac, statList) {
+	var base = 10;
+	var dex = _ac.dexReplace || 'dex';
+	var otherStats = _ac.otherStats;
+
+	dex = statList[dex];
+	if (otherStats) {
+		for (var i = otherStats.length - 1; i >= 0; i--) {
+			otherStats[i] = statList[otherStats[i]];
+		}
+	}
+
+	this.total = function () {
+		var t = base, i;
+		if (otherStats) {
+			for (i = otherStats.length - 1; i >= 0; i--) {
+				t += otherStats[i].modifier();
+			}
+		}
+		if (_ac.bonuses.length) {
+			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
+				t += parseInt(_ac.bonuses[i].split('||')[1], 10) || 0;
+			}
+		}
+		return t + dex.modifier();
+	};
+
+	this.touch = function () {
+		var t = base, i;
+		if (otherStats) {
+			for (i = otherStats.length - 1; i >= 0; i--) {
+				t += otherStats[i].modifier();
+			}
+		}
+		if (_ac.bonuses.length) {
+			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
+				var u = _ac.bonuses[i].split('||');
+				switch (u[0]) {
+					case 'Armor':
+						break;
+					case 'Mage Armor':
+						break;
+					case 'Armour':
+						break;
+					case 'Mage Armour':
+						break;
+					case 'Natural Armor':
+						break;
+					case 'Natural Armour':
+						break;
+					case 'Shield':
+						break;
+					default:
+						t += parseInt(u[1], 10) || 0;
+						break;
+				}
+			}
+		}
+		return t + dex.modifier();
+	};
+
+	this.flatfooted = function () {
+		var t = base, i;
+		if (otherStats) {
+			for (i = otherStats.length - 1; i >= 0; i--) {
+				t += otherStats[i].modifier();
+			}
+		}
+		if (_ac.bonuses.length) {
+			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
+				var u = _ac.bonuses[i].split('||');
+				if (u[0] !== 'Dodge') {
+					t += parseInt(u[1], 10) || 0;
+				}
+			}
+		}
+		return t;
+	};
+
+	return this;
+}
+
+function CMD(_cmd, _bab, statList) {
+	var base = 10;
+	var dex = _cmd.dexReplace || 'dex';
+	var str = _cmd.strReplace || 'str';
+	var otherStats = _cmd.otherStats;
+
+	dex = statList[dex];
+	str = statList[str];
+
+	if (otherStats) {
+		for (var i = otherStats.length - 1; i >= 0; i--) {
+			otherStats[i] = statList[otherStats[i]];
+		}
+	}
+
+	this.total = function () {
+		var t = base, i;
+		if (otherStats) {
+			for (i = otherStats.length - 1; i >= 0; i--) {
+				t += otherStats[i].modifier();
+			}
+		}
+		if (_cmd.bonuses) {
+			for (i = _cmd.bonuses.length - 1; i >= 0; i--) {
+				t += parseInt(_cmd.bonuses[i].split('||')[1], 10) || 0;
+			}
+		}
+		return t + dex.modifier() + _bab;
+	};
+
+	this.flatfooted = function () {
+		var t = base, i;
+		if (otherStats) {
+			for (i = otherStats.length - 1; i >= 0; i--) {
+				t += otherStats[i].modifier();
+			}
+		}
+		if (_cmd.bonuses) {
+			for (i = _cmd.bonuses.length - 1; i >= 0; i--) {
+				var u = _cmd.bonuses[i].split('||');
+				if (u[0] !== 'Dodge') {
+					t += parseInt(u[1], 10) || 0;
+				}
+			}
+		}
+		return t + str.modifier() + _bab;
+	};
+
+	return this;
+}
+
+function Save(_save, statList) {
+	var stat = statList[_save.stat];
+
+	this.total = function() {
+		var t = _save.base + stat.modifier();
+		if (angular.isArray(_save.bonuses)) {
+			for (var i = _save.bonuses.length - 1; i >= 0; i--) {
+				t += parseInt(_save.bonuses[i].split('||')[1]);
+			}
+		}
+		return t;
+	};
+
+	return this;
+}
+
 angular.module('charactersApp').controller('CharacterCtrl', [
 	'$scope',
 	'$http',
@@ -151,34 +300,60 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 					str: new AbilityScore(
 						'Strength',
 						character.statistics.abilities.str
-					),
+						),
 					dex: new AbilityScore(
 						'Dexterity',
 						character.statistics.abilities.dex
-					),
+						),
 					con: new AbilityScore(
 						'Constitution',
 						character.statistics.abilities.con
-					),
+						),
 					int: new AbilityScore(
 						'Intelligence',
 						character.statistics.abilities.int
-					),
+						),
 					wis: new AbilityScore(
 						'Wisdom',
 						character.statistics.abilities.wis
-					),
+						),
 					cha: new AbilityScore(
 						'Charisma',
 						character.statistics.abilities.cha
-					)
+						)
 				};
+				var statArray = character.statistics.abilities;
+				// Armour Class
+				character.defense.ac = new AC(
+					character.defense.ac,
+					statArray
+					);
+				// Combad Maneuver Defence
+				character.defense.cmd = new CMD(
+					character.defense.cmd,
+					character.statistics.bab,
+					statArray
+					);
+				// Saves
+				character.defense.fort = new Save(
+					character.defense.fort,
+					statArray
+					);
+				character.defense.refl = new Save(
+					character.defense.refl,
+					statArray
+					);
+				character.defense.will = new Save(
+					character.defense.will,
+					statArray
+					);
+				// Skills
 				angular.forEach(character.skills, function (skill, name) {
 					character.skills[name] = new Skill(
 						name,
 						skill,
-						character.statistics.abilities
-					);
+						statArray
+						);
 					if (character.skills[name].name === 'Perception') {
 						character.perception = character.skills[name];
 					}
@@ -186,14 +361,14 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
 						caster,
-						character.statistics.abilities
-					);
+						statArray
+						);
 				});
 				angular.forEach(character.offense.slas, function (sla, key) {
 					character.offense.slas[key] = new SLA(
 						sla,
-						character.statistics.abilities
-					);
+						statArray
+						);
 				});
 			});
 			$scope.characters = characters;
