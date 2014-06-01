@@ -287,10 +287,8 @@ function Save(_save, statList) {
 }
 
 function Attack(_attack, _bab, statList) {
-	this.name = _attack.name;
-	this.crit = _attack.crit;
-	this.damage = _attack.damage;
-	
+	angular.extend(this, _attack);
+
 	var stat = statList[_attack.stat];
 
 	this.rolls = function() {

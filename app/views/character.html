@@ -81,7 +81,7 @@
 	<section id="offense">
 		<p ng-repeat="(type, attacks) in character.offense.attacks">
 			<b>{{type.toProperCase()}}</b>
-			<span ng-repeat="attack in attacks">
+			<span ng-repeat="attack in attacks | orderBy:'name'">
 				<attack data="attack"></attack>
 				<span ng-if="!$last">,&#32;</span>
 			</span>

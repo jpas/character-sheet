@@ -49,36 +49,41 @@
             "space": "5 ft.",
             "reach": "5 ft.",
             "attacks": {
-            "melee": [
-                {
-                    "name": "touch",
-                    "bonuses": [],
-                    "stat": "str"
-                },
-                {
-                    "name": "combat maneuver",
-                    "bonuses": [],
-                    "stat": "str"
-                }
-            ],
-            "ranged": [
-                {
-                    "name": "touch",
-                    "bonuses": [],
-                    "stat": "dex"
-                }
-            ],
-            "special attacks": [
-                {
-                    "name": "hand of the acolyte",
-                    "bonuses": [],
-                    "stat": "wis"
-                }
-            ]
+                "melee": [
+                    {
+                        "name": "touch",
+                        "stat": "str"
+                    },
+                    {
+                        "name": "combat maneuver",
+                        "stat": "str"
+                    }
+                ],
+                "ranged": [
+                    {
+                        "name": "touch",
+                        "stat": "dex"
+                    }
+                ],
+                "special attacks": [
+                    {
+                        "name": "hand of the acolyte",
+                        "quantity": "7/day",
+                        "stat": "wis"
+                    },
+                    {
+                        "name": "channel positive energy",
+                        "quantity": "5/day",
+                        "dc": 13,
+                        "autoHit": true,
+                        "stat": "cha",
+                        "damage": "2d8"
+                    }
+                ]
             },
             "slas": [
                 {
-                    "name": "Domain",
+                    "name": "Priest",
                     "casterLevel": 5,
                     "concentrationBonus": 0,
                     "stat": "wis",
@@ -89,12 +94,12 @@
                         },
                         {
                             "times": "7/day",
-                            "text": "hand of the acolyte, resistant touch"
+                            "text": "resistant touch"
                         }
                     ]
                 },
                 {
-                    "name": "Arcane School",
+                    "name": "Abjurer",
                     "casterLevel": 5,
                     "concentrationBonus": 0,
                     "stat": "int",
