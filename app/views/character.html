@@ -76,6 +76,13 @@
 				{{character.defense.sr}}
 			</span>
 		</p>
+		<p id="special" ng-if="character.defense.special">
+			<b>Special</b>
+			<span ng-repeat="def in character.defense.special">
+				{{def.name}} {{def.times}}
+				<span ng-if="!$last">, </span>
+			</span>
+		</p>
 		<hr>
 	</section>
 	<section id="offense">
@@ -125,8 +132,7 @@
 				<table>
 					<tr ng-repeat="(level, spells) in caster.list">
 						<td>{{(caster.list.length - 1 - level).toOrdinal()}}</td>
-						<td class="per-day" ng-if="caster.perDay && !$last">({{caster.perDay[$index]}}/day)</td>
-						<td class="per-day" ng-if="caster.perDay && $last">(at will)</td>
+						<td class="per-day" ng-if="caster.perDay">({{caster.perDay[$index]}})</td>
 						<td class="separator">-</td>
 						<td>
 							<span ng-repeat="spell in spells">

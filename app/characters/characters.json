@@ -1,17 +1,17 @@
 [
-	{
-		"id": "has-it-all",
-		"name": "The One with Everything",
-		"snippet": "this character has all the types of things that could be displayed."
-	},
-    {
-        "id": "wizard-amroth",
-        "name": "Amroth the Wizard",
-        "snippet": "5th level Abjurer with a raven familiar named Nurm."
-    },
     {
         "id": "mystic-amroth",
         "name": "Amroth the Mystic Theurge",
         "snippet": "Priest 3, Abjurer 2 with a raven familiar named Nurm."
+    },
+    {
+        "id": "has-it-all",
+        "name": "The One with Everything",
+        "snippet": "this character has all the types of things that could be displayed."
+    },
+    {
+        "id": "wizard-amroth",
+        "name": "Amroth the Wizard",
+        "snippet": "5th level Abjurer with a raven familiar named Nurm."
     }
 ]

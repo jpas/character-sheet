@@ -9,7 +9,7 @@ angular.module('charactersApp').directive('nethys',
 				type: '=',
 				item: '='
 			},
-			templateUrl: 'views/partial/nethysDirective.html',
+			templateUrl: 'views/character-partial/nethysDirective.html',
 			link: function (scope) {
 				if (scope.item.indexOf('custom:') > -1) {
 					var split = scope.item.split('||')[1].split(':');

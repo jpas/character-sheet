@@ -42,7 +42,13 @@
                 "bonuses": [
                     "Cloak of Resistance +1||+1"
                 ]
-            }
+            },
+            "special": [
+                {
+                    "name": "taboo",
+                    "times": "7/day"
+                }
+            ]
         },
         "offense": {
             "speed": "30 ft.",
@@ -65,7 +71,7 @@
                         "stat": "dex"
                     }
                 ],
-                "special attacks": [
+                "special": [
                     {
                         "name": "hand of the acolyte",
                         "quantity": "7/day",
@@ -91,10 +97,6 @@
                         {
                             "times": "at will",
                             "text": "lore keeper"
-                        },
-                        {
-                            "times": "7/day",
-                            "text": "resistant touch"
                         }
                     ]
                 },
@@ -120,12 +122,29 @@
                     "stat": "wis",
                     "otherText": {
                         "heading": "Domains",
-                        "text": "Knowledge, Magic, Protection"
+                        "text": "Knowledge, Magic, Solitude"
                     },
+                    "perDay": [
+                        "2+2",
+                        "3+2",
+                        "4"
+                    ],
                     "list": [
-                        [],
-                        [],
-                        []
+                        [
+                            "Detect Thoughts||type:D||dc:18",
+                            "Silence||type:D"
+                        ],
+                        [
+                            "Comprehend Languages||type:D||",
+                            "Obscuring Mist",
+                            "Sanctuary||type:D||dc:17"
+                        ],
+                        [
+                            "Detect Magic",
+                            "Detect Poison",
+                            "Light",
+                            "Read Magic"
+                        ]
                     ]
                 },
                 {
@@ -138,9 +157,18 @@
                         "heading": "Opposition",
                         "text": "Enchantment, Necromancy"
                     },
+                    "perDay": [
+                        "4+1",
+                        "4"
+                    ],
                     "list": [
                         [],
-                        []
+                        [
+                            "Arcane Mark",
+                            "Mage Hand",
+                            "Message",
+                            "Prestidigitation"
+                        ]
                     ]
                 }
             ]

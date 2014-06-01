@@ -9,7 +9,7 @@ angular.module('charactersApp')
 			scope: {
 				data: '='
 			},
-			templateUrl: 'views/partial/attackDirective.html',
+			templateUrl: 'views/character-partial/attackDirective.html',
 			link: function(scope) {
 				scope.name = scope.data.name;
 				scope.dice = scope.data.rolls();
