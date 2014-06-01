@@ -132,12 +132,16 @@
                     "list": [
                         [
                             "Detect Thoughts||type:D||dc:18",
+                            "Grace",
+                            "Resist Energy",
                             "Silence||type:D"
                         ],
                         [
                             "Comprehend Languages||type:D||",
                             "Obscuring Mist",
-                            "Sanctuary||type:D||dc:17"
+                            "Sanctuary||type:D||dc:17",
+                            "Protection from Alignment||url:Protection from Evil",
+                            "Shield of Faith"
                         ],
                         [
                             "Detect Magic",
@@ -162,7 +166,13 @@
                         "4"
                     ],
                     "list": [
-                        [],
+                        [
+                            "Grease||dc:16",
+                            "Mage Armor||cast",
+                            "Protection from Alignment||url:Protection from Evil||type:+",
+                            "See Alignment",
+                            "Shield||type:+"
+                        ],
                         [
                             "Arcane Mark",
                             "Mage Hand",
