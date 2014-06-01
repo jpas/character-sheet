@@ -74,7 +74,7 @@
                 "special": [
                     {
                         "name": "hand of the acolyte",
-                        "quantity": "7/day",
+                        "quantity": "8/day",
                         "stat": "wis"
                     },
                     {
@@ -84,35 +84,18 @@
                         "autoHit": true,
                         "stat": "cha",
                         "damage": "2d8"
+                    },
+                    {
+                        "name": "disruption",
+                        "quantity": "8/day",
+                        "stat": "str"
+                    },
+                    {
+                        "name": "lore keeper",
+                        "stat": "str"
                     }
                 ]
             },
-            "slas": [
-                {
-                    "name": "Priest",
-                    "casterLevel": 5,
-                    "concentrationBonus": 0,
-                    "stat": "wis",
-                    "list": [
-                        {
-                            "times": "at will",
-                            "text": "lore keeper"
-                        }
-                    ]
-                },
-                {
-                    "name": "Abjurer",
-                    "casterLevel": 5,
-                    "concentrationBonus": 0,
-                    "stat": "int",
-                    "list": [
-                        {
-                            "times": "8/day",
-                            "text": "protective ward"
-                        }
-                    ]
-                }
-            ],
             "spells": [
                 {
                     "class": "Priest",
@@ -122,7 +105,7 @@
                     "stat": "wis",
                     "otherText": {
                         "heading": "Domains",
-                        "text": "Knowledge, Magic, Solitude"
+                        "text": "Knowledge, Magic, Solitude (sp)"
                     },
                     "perDay": [
                         "2+2",
@@ -131,7 +114,7 @@
                     ],
                     "list": [
                         [
-                            "Detect Thoughts||type:D||dc:18",
+                            "Detect Thoughts||type:D||dc:19",
                             "Grace",
                             "Resist Energy",
                             "Silence||type:D"
@@ -139,8 +122,7 @@
                         [
                             "Comprehend Languages||type:D||",
                             "Obscuring Mist",
-                            "Sanctuary||type:D||dc:17",
-                            "Protection from Alignment||url:Protection from Evil",
+                            "Sanctuary||type:D||dc:18||count:2",
                             "Shield of Faith"
                         ],
                         [
@@ -189,7 +171,7 @@
                 "dex": 12,
                 "con": 10,
                 "int": 20,
-                "wis": 18,
+                "wis": 20,
                 "cha": 14
             },
             "bab": 2,
