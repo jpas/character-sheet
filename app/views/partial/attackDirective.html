@@ -1,0 +1,9 @@
+{{name}}
+<span ng-repeat="die in dice">
+	<roll name="name.toProperCase() + ' ' + ($index + 1)" die="die"></roll>
+	<code ng-if="!$last">/</code>
+</span>
+<span ng-if="data.damage">
+	&#32;<roll name="name.toProperCase() + ' Damage'" die="data.damage"></roll>
+</span>
+<code ng-if="data.crit">&#32;{{data.crit}}</code>

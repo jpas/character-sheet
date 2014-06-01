@@ -1,0 +1,308 @@
+[
+    {
+        "cr": 4,
+        "name": "Amroth",
+        "alignment": "N",
+        "senses": "",
+        "size": "Medium",
+        "race": "Human",
+        "type": "Humanoid (human)",
+        "initiative": 5,
+        "hp": "38",
+        "hd": "5d6+10",
+        "classes": "Priest 3, Wizard 2",
+        "defense": {
+            "ac": {
+                "bonuses": [
+                    "Mage Armour||+4"
+                ]
+            },
+            "cmd": {},
+            "dr": "",
+            "immune": "",
+            "resist": "acid, cold, electricity, fire, or sonic 5",
+            "sr": "",
+            "fort": {
+                "base": 3,
+                "stat": "con",
+                "bonuses": [
+                    "Cloak of Resistance +1||+1"
+                ]
+            },
+            "refl": {
+                "base": 1,
+                "stat": "dex",
+                "bonuses": [
+                    "Cloak of Resistance +1||+1"
+                ]
+            },
+            "will": {
+                "base": 6,
+                "stat": "wis",
+                "bonuses": [
+                    "Cloak of Resistance +1||+1"
+                ]
+            }
+        },
+        "offense": {
+            "speed": "30 ft.",
+            "space": "5 ft.",
+            "reach": "5 ft.",
+            "attacks": {
+            "melee": [
+                {
+                    "name": "touch",
+                    "bonuses": [],
+                    "stat": "str"
+                },
+                {
+                    "name": "combat maneuver",
+                    "bonuses": [],
+                    "stat": "str"
+                }
+            ],
+            "ranged": [
+                {
+                    "name": "touch",
+                    "bonuses": [],
+                    "stat": "dex"
+                }
+            ],
+            "special attacks": [
+                {
+                    "name": "hand of the acolyte",
+                    "bonuses": [],
+                    "stat": "wis"
+                }
+            ]
+            },
+            "slas": [
+                {
+                    "name": "Domain",
+                    "casterLevel": 5,
+                    "concentrationBonus": 0,
+                    "stat": "wis",
+                    "list": [
+                        {
+                            "times": "at will",
+                            "text": "lore keeper"
+                        },
+                        {
+                            "times": "7/day",
+                            "text": "hand of the acolyte, resistant touch"
+                        }
+                    ]
+                },
+                {
+                    "name": "Arcane School",
+                    "casterLevel": 5,
+                    "concentrationBonus": 0,
+                    "stat": "int",
+                    "list": [
+                        {
+                            "times": "8/day",
+                            "text": "protective ward"
+                        }
+                    ]
+                }
+            ],
+            "spells": [
+                {
+                    "class": "Priest",
+                    "type": "Prepared",
+                    "casterLevel": 5,
+                    "concentrationBonus": 0,
+                    "stat": "wis",
+                    "otherText": {
+                        "heading": "Domains",
+                        "text": "Knowledge, Magic, Protection"
+                    },
+                    "list": [
+                        [],
+                        [],
+                        []
+                    ]
+                },
+                {
+                    "class": "Abjurer",
+                    "type": "Prepared",
+                    "casterLevel": 5,
+                    "concentrationBonus": 0,
+                    "stat": "int",
+                    "otherText": {
+                        "heading": "Opposition",
+                        "text": "Enchantment, Necromancy"
+                    },
+                    "list": [
+                        [],
+                        []
+                    ]
+                }
+            ]
+        },
+        "statistics": {
+            "abilities": {
+                "str": 6,
+                "dex": 12,
+                "con": 10,
+                "int": 20,
+                "wis": 18,
+                "cha": 14
+            },
+            "bab": 2,
+            "languages": [
+                "Common",
+                "Dwarven",
+                "Elven",
+                "Gnome",
+                "Goblin",
+                "Halfling"
+            ],
+            "feats": [
+                "Craft Wondrous Item",
+                "Improved Caster Level||custom:http://www.d20pfsrd.com/feats/3rd-party-feats/kobold-press/general-feats---3rd-party---kobold-press/improved-caster-level",
+                "Improved Initiative",
+                "Toughness"
+            ],
+            "traits": [
+                "Eyes and Ears of the City",
+                "Underlying Principles"
+            ]
+        },
+        "skills": {
+            "Acrobatics": {},
+            "Appraise": {
+                "ranks": 4,
+                "classSkill": true,
+                "bonuses": [
+                    "RavenFamiliar||+3"
+                ]
+            },
+            "Bluff": {},
+            "Climb": {},
+            "Craft (Clockwork)": {
+                "ranks": 5,
+                "classSkill": true
+            },
+            "Craft": {
+                "skill": true
+            },
+            "Diplomacy": {
+                "skill": true
+            },
+            "Disguise": {},
+            "Escape Artist": {},
+            "Fly": {
+                "ranks": 5,
+                "classSkill": true
+            },
+            "Heal": {
+                "classSkill": true
+            },
+            "Intimidate": {},
+            "Knowledge (Arcana)": {
+                "classSkill": true,
+                "ranks": 5,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Dungeoneering)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Engineering)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Geography)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (History)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Local)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Nature)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Nobility)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Planes)": {
+                "classSkill": true,
+                "ranks": 1,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Knowledge (Religion)": {
+                "classSkill": true,
+                "ranks": 5,
+                "bonuses": [
+                    "Lore||+1"
+                ]
+            },
+            "Perception": {
+                "ranks": 5,
+                "classSkill": true,
+                "bonuses": [
+                    "Eyes and Ears of the City||+1"
+                ]
+            },
+            "Linguistics": {
+                "classSkill": true
+            },
+            "Perform": {},
+            "Ride": {},
+            "Sense Motive": {
+                "classSkill": true
+            },
+            "Spellcraft": {
+                "ranks": 5,
+                "classSkill": true
+            },
+            "Stealth": {},
+            "Survival": {},
+            "Swim": {},
+            "Use Magic Device": {
+                "classSkill": true,
+                "bonuses": [
+                    "Underlying Principles||+1"
+                ]
+            }
+        },
+        "equipment": {
+            "combat": [],
+            "bonuses": []
+        },
+        "special": []
+    }
+]
