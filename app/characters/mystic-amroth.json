@@ -48,11 +48,35 @@
             "speed": "30 ft.",
             "space": "5 ft.",
             "reach": "5 ft.",
-            "attacks": {
-                "melee": [],
-                "ranged": [],
-                "special": []
-            },
+            "melee": [
+                    {
+                        "name": "touch",
+                        "toHit": [
+                            0
+                        ]
+                    },
+                    {
+                        "name": "combat maneuver",
+                        "toHit": [
+                            0
+                        ]
+                    }
+                ],
+                "ranged": [
+                    {
+                        "name": "touch",
+                        "toHit": [
+                            3
+                        ]
+                    },
+                    {
+                        "name": "hand of the acolyte",
+                        "toHit": [
+                            0
+                        ]
+                    }
+                ],
+            "special": [],
             "slas": [
                 {
                     "name": "Domain",
@@ -90,7 +114,6 @@
                     "casterLevel": 5,
                     "concentrationBonus": 0,
                     "stat": "wis",
-                    "spellResistance": 3,
                     "otherText": {
                         "heading": "Domains",
                         "text": "Knowledge, Magic, Protection"
@@ -107,7 +130,6 @@
                     "casterLevel": 5,
                     "concentrationBonus": 0,
                     "stat": "int",
-                    "spellResistance": 2,
                     "otherText": {
                         "heading": "Opposition",
                         "text": "Enchantment, Necromancy"
@@ -138,6 +160,7 @@
                 "Halfling"
             ],
             "feats": [
+                "Craft Wondrous Item",
                 "Improved Caster Level||custom:http://www.d20pfsrd.com/feats/3rd-party-feats/kobold-press/general-feats---3rd-party---kobold-press/improved-caster-level",
                 "Improved Initiative",
                 "Toughness"

@@ -6,7 +6,12 @@
 	},
     {
         "id": "wizard-amroth",
-        "name": "Amroth",
+        "name": "Amroth the Wizard",
         "snippet": "5th level Abjurer with a raven familiar named Nurm."
+    },
+    {
+        "id": "mystic-amroth",
+        "name": "Amroth the Mystic Theurge",
+        "snippet": "Priest 3, Abjurer 2 with a raven familiar named Nurm."
     }
 ]
