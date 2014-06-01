@@ -273,17 +273,41 @@ function CMD(_cmd, _bab, statList) {
 function Save(_save, statList) {
 	var stat = statList[_save.stat];
 
-	this.total = function() {
+	this.roll = function() {
 		var t = _save.base + stat.modifier();
 		if (angular.isArray(_save.bonuses)) {
 			for (var i = _save.bonuses.length - 1; i >= 0; i--) {
 				t += parseInt(_save.bonuses[i].split('||')[1]);
 			}
 		}
-		return t;
+		return prependToString('1d20', t);
 	};
 
 	return this;
+}
+
+function Attack(_attack, _bab, statList) {
+	this.name = _attack.name;
+	this.crit = _attack.crit;
+	this.damage = _attack.damage;
+	
+	var stat = statList[_attack.stat];
+
+	this.rolls = function() {
+		var bab = _bab;
+		var arr = [];
+		do {
+			var t = bab + stat.modifier();
+			if (angular.isArray(_attack.bonuses)) {
+				for (var i = _attack.bonuses.length - 1; i >= 0; i--) {
+					t += parseInt(_attack.bonuses[i].split('||')[1]);
+				}
+			}
+			arr.push(prependToString('1d20', t));
+			bab -= 5;
+		} while (bab > 0 && _attack.itterative);
+		return arr;
+	};
 }
 
 angular.module('charactersApp').controller('CharacterCtrl', [
@@ -322,38 +346,62 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 						character.statistics.abilities.cha
 						)
 				};
-				var statArray = character.statistics.abilities;
+				var statList = character.statistics.abilities;
+				// Offese
+				//console.log(character.offense.attacks);
+				angular.forEach(character.offense.attacks, function (type, name) {
+					angular.forEach(type, function (attack, index) {
+						character.offense.attacks[name][index] = new Attack(
+							attack,
+							character.statistics.bab,
+							statList
+						);
+					});
+				});
+				/*
+				angular.forEach(character.offense.attacks, function (type) {
+					angular.forEach(type, function (attack) {
+						attack = new Attack(
+							attack,
+							character.statistics.bab,
+							statList
+						);
+						console.log(character.offense.attacks[type][attack]);
+					});
+				});
+				*/
+				// Defense
 				// Armour Class
 				character.defense.ac = new AC(
 					character.defense.ac,
-					statArray
-					);
+					statList
+				);
 				// Combad Maneuver Defence
 				character.defense.cmd = new CMD(
 					character.defense.cmd,
 					character.statistics.bab,
-					statArray
-					);
+					statList
+				);
 				// Saves
 				character.defense.fort = new Save(
 					character.defense.fort,
-					statArray
-					);
+					statList
+				);
 				character.defense.refl = new Save(
 					character.defense.refl,
-					statArray
-					);
+					statList
+				);
 				character.defense.will = new Save(
 					character.defense.will,
-					statArray
-					);
+					statList
+				);
 				// Skills
 				angular.forEach(character.skills, function (skill, name) {
 					character.skills[name] = new Skill(
 						name,
 						skill,
-						statArray
-						);
+						statList
+					);
 					if (character.skills[name].name === 'Perception') {
 						character.perception = character.skills[name];
 					}
@@ -361,14 +409,14 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
 						caster,
-						statArray
-						);
+						statList
+					);
 				});
 				angular.forEach(character.offense.slas, function (sla, key) {
 					character.offense.slas[key] = new SLA(
 						sla,
-						statArray
-						);
+						statList
+					);
 				});
 			});
 			$scope.characters = characters;

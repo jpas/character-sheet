@@ -48,35 +48,34 @@
             "speed": "30 ft.",
             "space": "5 ft.",
             "reach": "5 ft.",
+            "attacks": {
             "melee": [
-                    {
-                        "name": "touch",
-                        "toHit": [
-                            0
-                        ]
-                    },
-                    {
-                        "name": "combat maneuver",
-                        "toHit": [
-                            0
-                        ]
-                    }
-                ],
-                "ranged": [
-                    {
-                        "name": "touch",
-                        "toHit": [
-                            3
-                        ]
-                    },
-                    {
-                        "name": "hand of the acolyte",
-                        "toHit": [
-                            0
-                        ]
-                    }
-                ],
-            "special": [],
+                {
+                    "name": "touch",
+                    "bonuses": [],
+                    "stat": "str"
+                },
+                {
+                    "name": "combat maneuver",
+                    "bonuses": [],
+                    "stat": "str"
+                }
+            ],
+            "ranged": [
+                {
+                    "name": "touch",
+                    "bonuses": [],
+                    "stat": "dex"
+                }
+            ],
+            "special attacks": [
+                {
+                    "name": "hand of the acolyte",
+                    "bonuses": [],
+                    "stat": "wis"
+                }
+            ]
+            },
             "slas": [
                 {
                     "name": "Domain",
@@ -150,7 +149,7 @@
                 "wis": 18,
                 "cha": 14
             },
-            "bab": 3,
+            "bab": 2,
             "languages": [
                 "Common",
                 "Dwarven",

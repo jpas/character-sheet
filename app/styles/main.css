@@ -12,6 +12,6 @@ span.block::after {
 	content: "\00a0";
 }
 
-roll code{
+code {
 	font-size: 100%;
 }

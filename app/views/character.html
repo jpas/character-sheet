@@ -1,6 +1,12 @@
 <div ng-repeat="character in characters">
 	<section id="info">
-		<h2>{{character.name}} <small>CR {{character.cr}}</small></h2>
+		<h2>
+			{{character.name}}
+			<small>
+				CR
+				{{character.cr}}
+			</small>
+		</h2>
 		<hr>
 		<p>
 			<b>{{character.race}}</b>
@@ -11,46 +17,59 @@
 		</p>
 		<p>
 			<b>Initiative</b>
-			<roll name="'Initiative'" die="prependToString('1d20', character.initiative)"></roll>;
+			&#32;<roll name="'Initiative'" die="prependToString('1d20', character.initiative)"></roll>;
 			<span ng-if="character.senses">
 				<b>Senses</b>
 				{{character.senses}};
 			</span>
 			<b>Perception</b>
-			<roll name="character.perception.name" die="character.perception.roll()"></roll>
+			&#32;<roll name="character.perception.name" die="character.perception.roll()"></roll>
 		</p>
 		<hr>
 	</section>
 	<section id="defense">
 		<p>
-			<b>AC</b> {{character.defense.ac.total()}},
-			<b>touch</b> {{character.defense.ac.touch()}},
-			<b>flat-footed</b> {{character.defense.ac.flatfooted()}}
+			<b>AC</b>
+			{{character.defense.ac.total()}},
+			<b>touch</b>
+			{{character.defense.ac.touch()}},
+			<b>flat-footed</b>
+			{{character.defense.ac.flatfooted()}}
 		</p>
 		<p>
-			<b>CMD</b> {{character.defense.cmd.total()}},
-			<b>flat-footed</b> {{character.defense.cmd.flatfooted()}}
+			<b>CMD</b>
+			{{character.defense.cmd.total()}},
+			<b>flat-footed</b>
+			{{character.defense.cmd.flatfooted()}}
 		</p>
 		<p>
-			<b>HP</b> {{character.hp}} ({{character.hd}})
+			<b>HP</b>
+			{{character.hp}}
+			({{character.hd}})
 		</p>
 		<p>
-			<b>Fortitude</b> {{character.defense.fort.total()}};
-			<b>Reflex</b> {{character.defense.refl.total()}};
-			<b>Will</b> {{character.defense.will.total()}}
+			<b>Fortitude</b>
+			&#32;<roll name="'Fortitude Save'" die="character.defense.fort.roll()"></roll>;
+			<b>Reflex</b>
+			&#32;<roll name="'Reflex Save'" die="character.defense.refl.roll()"></roll>;
+			<b>Will</b>
+			&#32;<roll name="'Will Save'" die="character.defense.will.roll()"></roll>
 		</p>
 		<p>
 			<span ng-if="character.defense.dr">
 				<b>DR</b>
-				{{character.defense.dr}}<span ng-if="character.defense.immune || character.defense.resist || character.defense.sr">; </span>
+				{{character.defense.dr}}
+				<span ng-if="character.defense.immune || character.defense.resist || character.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="character.defense.immune">
 				<b>Immune</b>
-				{{character.defense.immune}}<span ng-if="character.defense.resist || character.defense.sr">; </span>
+				{{character.defense.immune}}
+				<span ng-if="character.defense.resist || character.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="character.defense.resist">
 				<b>Resist</b>
-				{{character.defense.resist}}<span ng-if="character.defense.sr">; </span>
+				{{character.defense.resist}}
+				<span ng-if="character.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="character.defense.sr">
 				<b>SR</b>
@@ -60,71 +79,23 @@
 		<hr>
 	</section>
 	<section id="offense">
-		<p ng-if="character.offense.melee">
-			<b>Melee</b>
-			<span ng-repeat="attack in character.offense.melee">
-				{{attack.name}} 
-				<span ng-if="attack.toHit" ng-repeat="die in attack.toHit">
-					<roll name="attack.name + 'To Hit'" die="prependToString('1d20', die)"></roll>
-					<code ng-if="!$last">/</code>
-				</span>
-				<span ng-if="attack.damage" ng-repeat="die in attack.damage">
-					<roll name="attack.name + 'Damage'" die="die"></roll>&nbsp;
-				</span>
-				<span ng-if="attack.crit">
-					&nbsp;
-					({{attack.crit}})
-				</span>
-				<span ng-if="!$last">
-					,&nbsp;
-				</span>
-			</span>
-		</p>
-		<p ng-if="character.offense.ranged">
-			<b>Ranged</b>
-			<span ng-repeat="attack in character.offense.ranged">
-				{{attack.name}} 
-				<span ng-if="attack.toHit" ng-repeat="die in attack.toHit">
-					<roll name="attack.name + 'To Hit'" die="prependToString('1d20', die)"></roll>
-					<code ng-if="!$last">/</code>
-				</span>
-				<span ng-if="attack.damage" ng-repeat="die in attack.damage">
-					<roll name="attack.name + 'Damage'" die="die"></roll>&nbsp;
-				</span>
-				<span ng-if="attack.crit">
-					&nbsp;
-					({{attack.crit}})
-				</span>
-				<span ng-if="!$last">
-					,&nbsp;
-				</span>
-			</span>
-		</p>
-		<p ng-if="character.offense.special">
-			<b>Special Attacks</b>
-			<span ng-repeat="attack in character.offense.special">
-				{{attack.name}} 
-				<span ng-if="attack.toHit" ng-repeat="die in attack.toHit">
-					<roll name="attack.name + 'To Hit'" die="prependToString('1d20', die)"></roll>
-					<code ng-if="!$last">/</code>
-				</span>
-				<span ng-if="attack.damage" ng-repeat="die in attack.damage">
-					<roll name="attack.name + 'Damage'" die="die"></roll>&nbsp;
-				</span>
-				<span ng-if="attack.crit">
-					&nbsp;
-					({{attack.crit}})
-				</span>
-				<span ng-if="!$last">
-					,&nbsp;
-				</span>
+		<p ng-repeat="(type, attacks) in character.offense.attacks">
+			<b>{{type.toProperCase()}}</b>
+			<span ng-repeat="attack in attacks">
+				<attack data="attack"></attack>
+				<span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<div id="slas" ng-if="character.offense.slas" ng-repeat="caster in character.offense.slas | orderBy:'name'">
 			<p>
-				<b>{{caster.name}} Spell-Like Abilities</b>
-				(CL {{caster.casterLevel.toOrdinal()}};
-				concentration <roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>)
+				<b>
+					{{caster.name}}
+					Spell-Like Abilities
+				</b>
+				(CL
+				{{caster.casterLevel.toOrdinal()}}; 
+				concentration
+				&#32;<roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>)
 			</p>
 			<div class="spellList">
 				<table>
@@ -140,9 +111,15 @@
 		</div>
 		<div id="spells" ng-if="character.offense.spells" ng-repeat="caster in character.offense.spells | orderBy:'class'">
 			<p>
-				<b>{{caster.class}} Spells {{caster.type}}</b>
-				(CL {{caster.casterLevel.toOrdinal()}};
-				concentration <roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>)
+				<b>
+					{{caster.class}}
+					Spells
+					{{caster.type}}
+				</b>
+				(CL
+				{{caster.casterLevel.toOrdinal()}};
+				concentration
+				&#32;<roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>)
 			</p>
 			<div class="spellList">
 				<table>
@@ -153,49 +130,68 @@
 						<td class="separator">-</td>
 						<td>
 							<span ng-repeat="spell in spells">
-								<spell name="spell"></spell><span ng-if="!$last">,&nbsp;</span>
+								<spell name="spell"></spell><span ng-if="!$last">,</span>
 							</span>
 						</td>
 					</tr>
 				</table>
-				<p><b>{{caster.otherText.heading}}</b> {{caster.otherText.text}}</p>
+				<p>
+					<b>{{caster.otherText.heading}}</b>
+					{{caster.otherText.text}}
+				</p>
 			</div>
 		</div>
-		<p><b>Speed</b> {{character.offense.speed}}</p>
-		<p><b>Space</b> {{character.offense.space}}; <b>Reach</b> {{character.offense.reach}}</p>
+		<p>
+			<b>Speed</b>
+			{{character.offense.speed}}
+		</p>
+		<p>
+			<b>Space</b>
+			{{character.offense.space}};
+			<b>Reach</b>
+			{{character.offense.reach}}
+		</p>
 		<hr>
 	</section>
 	<section id="statistics">
 		<p id="ability-scores">
 			<span ng-repeat="ability in character.statistics.abilities | orderAbilityScores">
-				<b>{{ability.sname}}</b> {{ability.score()}}
-				<roll name="ability.name" die="ability.roll()"></roll><span ng-if="!$last">,&nbsp;</span>
+				<b>{{ability.sname}}</b>
+				{{ability.score()}}
+				&#32;<roll name="ability.name" die="ability.roll()"></roll><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p id="skills">
 			<b>Skills</b>
 			<span class="block" ng-repeat="skill in character.skills | filterSkills:'trained' | orderObjectBy:'name'">
-				<i ng-class="skill.icon()"></i> {{skill.name}}
-				<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,</span>
+				<i ng-class="skill.icon()"></i>
+				{{skill.name}}
+				&#32;<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,</span>
 			</span>
 		</p>
 		<p id="untrained-skills">
 			<b>Untrained</b>
 			<span class="block" ng-repeat="skill in character.skills | filterSkills | orderObjectBy:'name'">
-				{{skill.name}}&nbsp;
-				<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,</span>
+				<i ng-class="skill.icon()"></i>
+				{{skill.name}}
+				&#32;<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,</span>
 			</span>
 		</p>
 		<p id="feats" ng-if="character.statistics.feats">
 			<b>Feats</b>
 			<span ng-repeat="feat in character.statistics.feats">
-				<nethys type="'Feat'" item="feat.split(' (')[0]" ng-class="classes">{{feat.split(' (')[0].split('||')[0]}}<span ng-if="feat.split(' (')[1].slice(0, 1)"> ({{feat.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,</span>
+				<nethys type="'Feat'" item="feat.split(' (')[0]" ng-class="classes">
+					{{feat.split(' (')[0].split('||')[0]}}<span ng-if="feat.split(' (')[1].slice(0, 1)">({{feat.split(' (')[1].slice(0, 1)}})</span>
+				</nethys>
+				<span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p id="traits" ng-if="character.statistics.traits">
 			<b>Traits</b>
 			<span ng-repeat="trait in character.statistics.traits">
-				<nethys type="'Trait'" item="trait.split(' (')[0]" ng-class="classes">{{trait.split(' (')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)"> ({{trait.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,</span>
+				<nethys type="'Trait'" item="trait.split(' (')[0]" ng-class="classes">
+					{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span>
+				</nethys><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<hr>
