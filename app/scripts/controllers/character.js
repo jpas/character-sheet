@@ -70,8 +70,6 @@ function Skill(_name, _skill, statList) {
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
 	var classSkill = ((_skill.classSkill && ranks > 0) ? 3 : 0);
-	console.log(_skill.classSkill);
-	console.log(classSkill);
 	var stat = (_skill.override ? statList[_skill.override] : statList[skills[this.baseName]]);
 	var bonuses = _skill.bonuses || [0];
 
@@ -140,133 +138,79 @@ function SLA(_sla, statList) {
 }
 
 function AC(_ac, statList) {
-	var base = 10;
-	var dex = _ac.dexReplace || 'dex';
-	var otherStats = _ac.otherStats;
+	var _stats = _ac.stats || ['dex'];
+	var _bonuses = _ac.bonuses || [];
 
-	dex = statList[dex];
-	if (otherStats) {
-		for (var i = otherStats.length - 1; i >= 0; i--) {
-			otherStats[i] = statList[otherStats[i]];
-		}
-	}
+	var _ignore = {
+		total: [],
+		touch: [],
+		flatfooted: []
+	};
 
-	this.total = function () {
-		var t = base, i;
-		if (otherStats) {
-			for (i = otherStats.length - 1; i >= 0; i--) {
-				t += otherStats[i].modifier();
+	angular.extend(_ignore, _ac.ignore);
+
+	_ignore.touch = _ignore.touch.concat([
+		'Armor',
+		'Mage Armor',
+		'Armour',
+		'Mage Armour',
+		'Natural Armor',
+		'Natural Armour',
+		'Shield'
+	]);
+
+	_ignore.flatfooted = _ignore.flatfooted.concat([
+		'Dodge',
+		'Dex'
+	]);
+
+	angular.forEach(_ignore, function (type, key) {
+		type.forEach(function (e, i, a) {
+			if (e.slice(0, 1) === '-') {
+				a.splice(i, 1);
+				var t = e.slice(1);
+				_ignore[key] = a.filter(function (e) {
+					return e !== t;
+				});
 			}
-		}
-		if (_ac.bonuses.length) {
-			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
-				t += parseInt(_ac.bonuses[i].split('||')[1], 10) || 0;
+		});
+	});
+
+	_stats.forEach(function (stat) {
+		stat = statList[stat];
+		_bonuses.push(prependToString(stat.sname + '||', stat.modifier()));
+	});
+
+	this.total = function (ignore) {
+		var total = 10;
+		ignore = ignore || [];
+
+		ignore = ignore.concat(_ignore.total || []);
+
+		_bonuses.forEach(function (e) {
+			var temp = e.split('||');
+			if (ignore.indexOf(temp[0]) === -1) {
+				total += parseInt(temp[1], 10);
 			}
-		}
-		return t + dex.modifier();
+		});
+
+		return total;
 	};
 
 	this.touch = function () {
-		var t = base, i;
-		if (otherStats) {
-			for (i = otherStats.length - 1; i >= 0; i--) {
-				t += otherStats[i].modifier();
-			}
-		}
-		if (_ac.bonuses.length) {
-			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
-				var u = _ac.bonuses[i].split('||');
-				switch (u[0]) {
-					case 'Armor':
-						break;
-					case 'Mage Armor':
-						break;
-					case 'Armour':
-						break;
-					case 'Mage Armour':
-						break;
-					case 'Natural Armor':
-						break;
-					case 'Natural Armour':
-						break;
-					case 'Shield':
-						break;
-					default:
-						t += parseInt(u[1], 10) || 0;
-						break;
-				}
-			}
-		}
-		return t + dex.modifier();
+		return this.total(_ignore.touch);
 	};
 
 	this.flatfooted = function () {
-		var t = base, i;
-		if (otherStats) {
-			for (i = otherStats.length - 1; i >= 0; i--) {
-				t += otherStats[i].modifier();
-			}
-		}
-		if (_ac.bonuses.length) {
-			for (i = _ac.bonuses.length - 1; i >= 0; i--) {
-				var u = _ac.bonuses[i].split('||');
-				if (u[0] !== 'Dodge') {
-					t += parseInt(u[1], 10) || 0;
-				}
-			}
-		}
-		return t;
+		return this.total(_ignore.flatfooted);
 	};
 
-	return this;
-}
-
-function CMD(_cmd, _bab, statList) {
-	var base = 10;
-	var dex = _cmd.dexReplace || 'dex';
-	var str = _cmd.strReplace || 'str';
-	var otherStats = _cmd.otherStats;
-
-	dex = statList[dex];
-	str = statList[str];
-
-	if (otherStats) {
-		for (var i = otherStats.length - 1; i >= 0; i--) {
-			otherStats[i] = statList[otherStats[i]];
-		}
-	}
-
-	this.total = function () {
-		var t = base, i;
-		if (otherStats) {
-			for (i = otherStats.length - 1; i >= 0; i--) {
-				t += otherStats[i].modifier();
-			}
-		}
-		if (_cmd.bonuses) {
-			for (i = _cmd.bonuses.length - 1; i >= 0; i--) {
-				t += parseInt(_cmd.bonuses[i].split('||')[1], 10) || 0;
-			}
-		}
-		return t + dex.modifier() + _bab;
-	};
-
-	this.flatfooted = function () {
-		var t = base, i;
-		if (otherStats) {
-			for (i = otherStats.length - 1; i >= 0; i--) {
-				t += otherStats[i].modifier();
-			}
-		}
-		if (_cmd.bonuses) {
-			for (i = _cmd.bonuses.length - 1; i >= 0; i--) {
-				var u = _cmd.bonuses[i].split('||');
-				if (u[0] !== 'Dodge') {
-					t += parseInt(u[1], 10) || 0;
-				}
-			}
-		}
-		return t + str.modifier() + _bab;
+	this.toString = function () {
+		return _bonuses.sort().map(function (e) {
+			var t = e.split('||');
+			return (t[1] + ' ' + t[0]).toLowerCase();
+		}).join(', ');
+		
 	};
 
 	return this;
@@ -348,7 +292,7 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				};
 				var statList = character.statistics.abilities;
 				// Offese
-				//console.log(character.offense.attacks);
+				// Attacks
 				angular.forEach(character.offense.attacks, function (type, name) {
 					angular.forEach(type, function (attack, index) {
 						character.offense.attacks[name][index] = new Attack(
@@ -358,29 +302,29 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 						);
 					});
 				});
-				/*
-				angular.forEach(character.offense.attacks, function (type) {
-					angular.forEach(type, function (attack) {
-						attack = new Attack(
-							attack,
-							character.statistics.bab,
-							statList
-						);
-						console.log(character.offense.attacks[type][attack]);
-					});
-				});
-				*/
 				// Defense
 				// Armour Class
+				character.defense.ac = character.defense.ac || {};
 				character.defense.ac = new AC(
 					character.defense.ac,
 					statList
 				);
 				// Combad Maneuver Defence
-				character.defense.cmd = new CMD(
+				character.defense.cmd = character.defense.cmd || {};
+				var cmd = character.defense.cmd;
+				
+				cmd.bonuses = cmd.bonuses || [];
+				cmd.bab = cmd.bab || character.statistics.bab;
+				cmd.bonuses.push(prependToString('bab||', cmd.bab));
+
+				cmd.stats = cmd.stats || [];
+				cmd.stats.push('str');
+				cmd.stats.push('dex');
+
+				character.defense.cmd = new AC(
 					character.defense.cmd,
-					character.statistics.bab,
-					statList
+					statList,
+					true
 				);
 				// Saves
 				character.defense.fort = new Save(

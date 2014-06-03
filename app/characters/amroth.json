@@ -3,24 +3,20 @@
         "name": "Amroth",
         "alignment": "N",
         "senses": "",
-        "size": "Tiny",
+        "size": "Medium",
         "race": "Human",
         "type": "Humanoid (human)",
         "initiative": 5,
         "hp": "33",
         "hd": "5d6+5",
-        "classes": "Priest 3, Wizard 2",
+        "classes": "Priest Abjurer 5",
         "defense": {
             "ac": {
                 "bonuses": [
                     "Mage Armour||+4"
                 ]
             },
-            "cmd": {},
-            "dr": "",
-            "immune": "",
             "resist": "acid, cold, electricity, fire, or sonic 5",
-            "sr": "",
             "fort": {
                 "base": 4,
                 "stat": "con",
@@ -43,6 +39,10 @@
                 ]
             },
             "special": [
+                {
+                    "name": "protective ward (5 rounds)",
+                    "times": "8/day"
+                },
                 {
                     "name": "taboo",
                     "times": "8/day"
@@ -83,11 +83,6 @@
                         "autoHit": true,
                         "stat": "cha",
                         "damage": "3d8"
-                    },
-                    {
-                        "name": "disruption",
-                        "quantity": "8/day",
-                        "stat": "dex"
                     },
                     {
                         "name": "lore keeper",
@@ -221,12 +216,12 @@
             ],
             "feats": [
                 "Alertness||bonus:Familiar",
-                "Craft Wondrous Item||bonus:Wizard 5",
+                "Craft Wondrous Item||bonus:Abjurer 5",
                 "Extend Spell",
                 "Improved Initiative||bonus:Human",
                 "Scribe Scroll||bonus:Rune Domain",
                 "Selective Channeling",
-                "Spell Focus (Abjuration)||bonus:Wizard Scribe Scroll Replacement",
+                "Spell Focus (Abjuration)||bonus:Abjurer Scribe Scroll Replacement",
                 "Weapon Finesse"
             ],
             "traits": [
@@ -380,10 +375,14 @@
             "ac": {
                 "bonuses": [
                     "Size||+2",
-                    "Natural Armor Adjustment||+2"
+                    "Natural Armor||+2"
                 ]
             },
-            "cmd": {},
+            "cmd": {
+                "bonuses": [
+                    "Size||-2"
+                ]
+            },
             "fort": {
                 "base": 4,
                 "stat": "con",
