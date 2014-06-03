@@ -4,7 +4,7 @@
 	<roll name="name + ' ' + ($index + 1)" die="die"></roll>
 	<code ng-if="!$last">/</code>
 </span>
-<code ng-if="data.dc">&#32;DC {{data.dc}}</code>
+<small ng-if="data.dc">&#32;(DC {{data.dc}})</small>
 <span ng-if="data.damage">
 	&#32;<roll name="name + ' Damage'" die="data.damage"></roll>
 </span>

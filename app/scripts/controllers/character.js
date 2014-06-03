@@ -69,7 +69,9 @@ function Skill(_name, _skill, statList) {
 	this.name = (_name.split(re).length > 1 ? _name.split(re)[1] : _name);
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
-	var classSkill = (_skill.classSkill ? 3 : 0);
+	var classSkill = ((_skill.classSkill && ranks > 0) ? 3 : 0);
+	console.log(_skill.classSkill);
+	console.log(classSkill);
 	var stat = (_skill.override ? statList[_skill.override] : statList[skills[this.baseName]]);
 	var bonuses = _skill.bonuses || [0];
 
