@@ -122,8 +122,8 @@
                         [
                             "Blood Money",
                             "Grease||dc:16||count:2",
+                            "Expeditious Retreat",
                             "Feather Fall",
-                            "See Alignment",
                             "Shield||type:+"
                         ],
                         [
@@ -215,13 +215,13 @@
                 "Halfling"
             ],
             "feats": [
-                "Alertness||bonus:Familiar",
-                "Craft Wondrous Item||bonus:Abjurer 5",
+                "Alertness",
+                "Craft Wondrous Item",
                 "Extend Spell",
-                "Improved Initiative||bonus:Human",
-                "Scribe Scroll||bonus:Rune Domain",
+                "Improved Initiative",
+                "Scribe Scroll",
                 "Selective Channeling",
-                "Spell Focus (Abjuration)||bonus:Abjurer Scribe Scroll Replacement",
+                "Spell Focus (Abjuration)",
                 "Weapon Finesse"
             ],
             "traits": [
