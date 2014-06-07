@@ -2,3 +2,16 @@ body {
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
+
+span.block {
+	display: inline-table;
+	margin-bottom: 2px;
+}
+
+span.block::after {
+	content: "\00a0";
+}
+
+code {
+	font-size: 100%;
+}

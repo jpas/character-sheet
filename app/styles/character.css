@@ -15,40 +15,47 @@ blockquote p {
 	margin-bottom: 0;
 }
 
-.wip {
-	color: red;
-}
-
-.list-unstyled.spells {
-	padding: 15px 15px 5px;
+.spellList {
 	border-left: 5px solid #eee;
-	font-style: italic !important;
+	margin-bottom: 10px;
 }
 
-.hr {
-	text-decoration: underline;
+.spellList tr td:first-child {
+	text-align: center;
+	padding-left: 20px;
 }
 
-.specialty {
-	color: #4c8;
+.spellList tr td.separator {
+	text-align: center;
+	padding: 10px 0 0;
 }
 
-.unprepared.specialty {
-	color: #8c8
+.spellList tr td.per-day {
+	text-align: center;
+	padding-left: 0;
 }
 
-.opposition {
-	color: #c88;
+.spellList tr td {
+	padding: 10px 10px 0;
 }
 
-.unprepared {
-	color: #888;
+.spellList p {
+	padding: 0 0 10px 20px;
+}
+
+.spellList tr:last-child td {
+	padding-bottom: 10px;
 }
 
 .cast {
 	text-decoration: line-through;
 }
 
-.cast:hover {
-	text-decoration: line-through underline;
+.stat-block-section td:first-child {
+	font-weight: bold;
+	padding-right: 0.5em;
+}
+.stat-block-section td {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 }

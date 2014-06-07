@@ -226,7 +226,6 @@ module.exports = function (grunt) {
 		htmlmin: {
 			dist: {
 				options: {
-					conservativeCollapse: true,
 					collapseBooleanAttributes: true,
 					removeComments: true,
 					removeCommentsFromCDATA: true,
@@ -238,7 +237,18 @@ module.exports = function (grunt) {
 					src: ['*.html', 'views/{,*/}*.html'],
 					dest: '<%= yeoman.dist %>'
 				}]
-			}
+			},
+			deploy: {
+				options: {
+					collapseWhitespace: true
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= yeoman.dist %>',
+				src: ['{,*/}*.html', 'views/{,*/}*.html'],
+				dest: '<%= yeoman.dist %>'
+			}]
+		}
 		},
 
 		// ngmin tries to make the code safe for minification automatically by
@@ -278,7 +288,8 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'characters/*.json'
+						'characters/*.json',
+						'bower_components/{,*/}fonts/*'
 					]
 				}, {
 					expand: true,
@@ -400,7 +411,8 @@ module.exports = function (grunt) {
 		'rev',
 		'usemin',
 		'json-minify',
-		'htmlmin'
+		'htmlmin',
+		'htmlmin:deploy'
 	]);
 
 	grunt.registerTask('default', [
