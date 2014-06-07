@@ -81,8 +81,7 @@
 		<p id="special" ng-if="character.defense.special">
 			<b>Special</b>
 			<span ng-repeat="def in character.defense.special">
-				{{def.name}} {{def.times}}
-				<span ng-if="!$last">, </span>
+				{{def.name}} {{def.times}}<span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<hr>
@@ -91,8 +90,7 @@
 		<p ng-repeat="(type, attacks) in character.offense.attacks">
 			<b>{{type.toProperCase()}}</b>
 			<span ng-repeat="attack in attacks | orderBy:'name'">
-				<attack data="attack"></attack>
-				<span ng-if="!$last">,&#32;</span>
+				<attack data="attack"></attack><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<div id="slas" ng-if="character.offense.slas" ng-repeat="caster in character.offense.slas | orderBy:'name'">

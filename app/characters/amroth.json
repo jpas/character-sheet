@@ -13,7 +13,7 @@
         "defense": {
             "ac": {
                 "bonuses": [
-                    "Mage Armour||+4"
+                    "Mage Armor||+4"
                 ]
             },
             "resist": "acid, cold, electricity, fire, or sonic 5",
@@ -116,14 +116,14 @@
                         [
                             "Darkvision",
                             "Knock",
-                            "Mage Armor||cast||meta:extended",
-                            "Protection from Alignment, Communal||url:Protection from Evil||type:+"
+                            "Protection from Alignment, Communal||url:Protection from Evil||type:+",
+                            "Mage Armor||cast||meta:extended"
                         ],
                         [
                             "Blood Money",
-                            "Grease||dc:16||count:2",
                             "Expeditious Retreat",
                             "Feather Fall",
+                            "Grease||dc:16||count:2",
                             "Shield||type:+"
                         ],
                         [
