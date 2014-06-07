@@ -3,8 +3,6 @@
 var FastClick = FastClick;
 
 angular.module('charactersApp', [
-	'ngCookies',
-	'ngResource',
 	'ngSanitize',
 	'ngRoute',
 	'ui.bootstrap'

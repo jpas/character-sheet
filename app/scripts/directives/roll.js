@@ -77,7 +77,7 @@ angular.module('charactersApp')
 				name: '=',
 				die: '='
 			},
-			templateUrl: 'views/partial/rollDirective.html',
+			templateUrl: 'views/character-partial/rollDirective.html',
 			link: function(scope, element) {
 				scope.clean = function() {
 					var temp = scope.die.replace('1d20','');
@@ -89,7 +89,7 @@ angular.module('charactersApp')
 				element.bind('click', function() {
 					var result = roll(scope.die);
 					$modal.open({
-						templateUrl: 'views/partial/rollModal.html',
+						templateUrl: 'views/character-partial/rollModal.html',
 						controller: RollModalCtrl,
 						resolve: {
 							name: function() {

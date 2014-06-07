@@ -2,7 +2,7 @@
 	<section id="info">
 		<h2>
 			{{character.name}}
-			<small>
+			<small ng-if="character.cr">
 				CR
 				{{character.cr}}
 			</small>
@@ -35,12 +35,14 @@
 			{{character.defense.ac.touch()}},
 			<b>flat-footed</b>
 			{{character.defense.ac.flatfooted()}}
+			({{character.defense.ac.toString()}})
 		</p>
 		<p>
 			<b>CMD</b>
 			{{character.defense.cmd.total()}},
 			<b>flat-footed</b>
 			{{character.defense.cmd.flatfooted()}}
+			({{character.defense.cmd.toString()}})
 		</p>
 		<p>
 			<b>HP</b>
@@ -76,14 +78,19 @@
 				{{character.defense.sr}}
 			</span>
 		</p>
+		<p id="special" ng-if="character.defense.special">
+			<b>Special</b>
+			<span ng-repeat="def in character.defense.special">
+				{{def.name}} {{def.times}}<span ng-if="!$last">,&#32;</span>
+			</span>
+		</p>
 		<hr>
 	</section>
 	<section id="offense">
 		<p ng-repeat="(type, attacks) in character.offense.attacks">
 			<b>{{type.toProperCase()}}</b>
-			<span ng-repeat="attack in attacks">
-				<attack data="attack"></attack>
-				<span ng-if="!$last">,&#32;</span>
+			<span ng-repeat="attack in attacks | orderBy:'name'">
+				<attack data="attack"></attack><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<div id="slas" ng-if="character.offense.slas" ng-repeat="caster in character.offense.slas | orderBy:'name'">
@@ -125,8 +132,7 @@
 				<table>
 					<tr ng-repeat="(level, spells) in caster.list">
 						<td>{{(caster.list.length - 1 - level).toOrdinal()}}</td>
-						<td class="per-day" ng-if="caster.perDay && !$last">({{caster.perDay[$index]}}/day)</td>
-						<td class="per-day" ng-if="caster.perDay && $last">(at will)</td>
+						<td class="per-day" ng-if="caster.perDay">({{caster.perDay[$index]}})</td>
 						<td class="separator">-</td>
 						<td>
 							<span ng-repeat="spell in spells">
@@ -162,7 +168,7 @@
 			</span>
 		</p>
 		<p id="skills">
-			<b>Skills</b>
+			<b>Trained Skills</b>
 			<span class="block" ng-repeat="skill in character.skills | filterSkills:'trained' | orderObjectBy:'name'">
 				<i ng-class="skill.icon()"></i>
 				{{skill.name}}
@@ -170,7 +176,7 @@
 			</span>
 		</p>
 		<p id="untrained-skills">
-			<b>Untrained</b>
+			<b>Untrained Skills</b>
 			<span class="block" ng-repeat="skill in character.skills | filterSkills | orderObjectBy:'name'">
 				<i ng-class="skill.icon()"></i>
 				{{skill.name}}
@@ -180,16 +186,14 @@
 		<p id="feats" ng-if="character.statistics.feats">
 			<b>Feats</b>
 			<span ng-repeat="feat in character.statistics.feats">
-				<nethys type="'Feat'" item="feat.split(' (')[0]" ng-class="classes">
-					{{feat.split(' (')[0].split('||')[0]}}<span ng-if="feat.split(' (')[1].slice(0, 1)">({{feat.split(' (')[1].slice(0, 1)}})</span>
-				</nethys>
+				<feat name="feat"></feat>
 				<span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p id="traits" ng-if="character.statistics.traits">
 			<b>Traits</b>
 			<span ng-repeat="trait in character.statistics.traits">
-				<nethys type="'Trait'" item="trait.split(' (')[0]" ng-class="classes">
+				<nethys type="Trait" item="trait" ng-class="classes">
 					{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span>
 				</nethys><span ng-if="!$last">,&#32;</span>
 			</span>
