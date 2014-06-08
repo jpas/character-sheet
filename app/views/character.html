@@ -100,7 +100,7 @@
 					Spell-Like Abilities
 				</b>
 				(CL
-				{{caster.casterLevel.toOrdinal()}}; 
+				{{caster.casterLevel.toOrdinal()}};
 				concentration
 				&#32;<roll name="'Concentration'" die="prependToString('1d20', caster.concentration())"></roll>)
 			</p>
@@ -186,8 +186,7 @@
 		<p id="feats" ng-if="character.statistics.feats">
 			<b>Feats</b>
 			<span ng-repeat="feat in character.statistics.feats">
-				<feat name="feat"></feat>
-				<span ng-if="!$last">,&#32;</span>
+				<feat name="feat"></feat><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p id="traits" ng-if="character.statistics.traits">
@@ -198,6 +197,19 @@
 				</nethys><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
+		<p ng-if="character.equipment.combat">
+			<b>Combat Gear</b> &#32;
+			<span ng-repeat="item in character.equipment.combat">
+				{{item}}<span ng-if="!$last">,&#32;</span>
+			</span>
+		</p>
+		<p ng-if="character.equipment.other">
+			<b>Other Gear</b> &#32;
+			<span ng-repeat="item in character.equipment.other">
+				{{item}}<span ng-if="!$last">,&#32;</span>
+			</span>
+		</p>
+		<p ng-if="character.equipment.cash"><b>Cash</b> {{character.equipment.cash}} gp.</p>
 		<hr>
 	</section>
 </div>
