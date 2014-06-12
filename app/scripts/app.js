@@ -13,7 +13,7 @@ angular.module('charactersApp', [
 		templateUrl: 'views/main.html',
 		controller: 'MainCtrl'
 	})
-	.when('/characters/:characterId', {
+	.when('/:characterId', {
 		templateUrl: 'views/character.html',
 		controller: 'CharacterCtrl'
 	})
