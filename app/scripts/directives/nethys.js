@@ -10,7 +10,7 @@ angular.module('charactersApp').directive('nethys',
 				item: '=',
 				uri: '@'
 			},
-			templateUrl: 'views/character-partial/nethysDirective.html',
+			templateUrl: 'views/directives/nethys.html',
 			link: function (scope) {
 				var temp = scope.item.split('||url:') || [];
 				scope.uri = temp[1] || 'http://www.archivesofnethys.com/' + scope.type + 'Display.aspx?ItemName=' + encodeURIComponent(scope.item);
