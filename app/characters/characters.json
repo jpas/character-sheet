@@ -1,7 +1,12 @@
 [
     {
-        "id": "wizard-amroth",
+        "id": "amroth",
         "name": "Amroth",
-        "snippet": "5th level Abjurer with a raven familiar named Nurm."
+        "snippet": "Priest Abjurer 5, with a raven familiar named Nurm."
+    },
+    {
+        "id": "has-it-all",
+        "name": "The One with Everything",
+        "snippet": "this character has all the types of things that could be displayed."
     }
 ]

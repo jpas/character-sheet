@@ -1,0 +1,547 @@
+[
+	{
+		"info": {
+			"name": "Amroth",
+			"cr": 5,
+			"alignment": "TN",
+			"senses": "",
+			"size": "Medium",
+			"race": "Human",
+			"type": "humanoid",
+			"subtypes": [
+				"human"
+			],
+			"initiative": 5,
+			"hp": "33",
+			"hd": "5d6+5",
+			"classes": "Priest Abjurer 5"
+		},
+		"defense": {
+			"ac": {
+				"bonuses": [
+					"Mage Armor||+4"
+				]
+			},
+			"resist": "acid, cold, electricity, fire, or sonic 5",
+			"fort": {
+				"base": 4,
+				"stat": "con",
+				"bonuses": [
+					"Protection Domain||+2"
+				]
+			},
+			"refl": {
+				"base": 1,
+				"stat": "dex",
+				"bonuses": [
+					"Protection Domain||+2"
+				]
+			},
+			"will": {
+				"base": 4,
+				"stat": "wis",
+				"bonuses": [
+					"Protection Domain||+2"
+				]
+			},
+			"special": [
+				{
+					"name": "protective ward (5 rounds)",
+					"times": "8/day"
+				},
+				{
+					"name": "taboo",
+					"times": "8/day"
+				}
+			]
+		},
+		"offense": {
+			"speed": "30 ft.",
+			"space": "5 ft.",
+			"reach": "5 ft.",
+			"attacks": {
+				"melee": [
+					{
+						"name": "touch",
+						"stat": "dex"
+					},
+					{
+						"name": "combat maneuver",
+						"stat": "dex"
+					}
+				],
+				"ranged": [
+					{
+						"name": "touch",
+						"stat": "dex"
+					}
+				],
+				"special": [
+					{
+						"name": "hand of the acolyte",
+						"quantity": "8/day",
+						"stat": "wis"
+					},
+					{
+						"name": "channel positive energy",
+						"quantity": "5/day",
+						"dc": 14,
+						"autoHit": true,
+						"stat": "cha",
+						"damage": "3d8"
+					},
+					{
+						"name": "lore keeper",
+						"stat": "dex"
+					}
+				]
+			},
+			"spells": [
+				{
+					"class": "Abjurer",
+					"type": "Prepared",
+					"casterLevel": 5,
+					"concentrationBonus": 0,
+					"stat": "int",
+					"otherText": {
+						"heading": "Opposition",
+						"text": "Enchantment, Necromancy"
+					},
+					"perDay": [
+						"2+1",
+						"3+1",
+						"5+1",
+						"4"
+					],
+					"list": [
+						[
+							"Ablative Sphere||url:Ablative Sphere (Garundi)||type:+",
+							"Explosive Runes",
+							"Haste"
+						],
+						[
+							"Darkvision",
+							"Knock",
+							"Protection from Alignment, Communal||url:Protection from Evil||type:+",
+							"Mage Armor||cast||meta:extended"
+						],
+						[
+							"Blood Money",
+							"Expeditious Retreat",
+							"Feather Fall",
+							"Grease||dc:16||count:2",
+							"Shield||type:+"
+						],
+						[
+							"Arcane Mark",
+							"Mage Hand",
+							"Message",
+							"Prestidigitation"
+						]
+					]
+				},
+				{
+					"class": "Priest",
+					"type": "Prepared",
+					"casterLevel": 5,
+					"concentrationBonus": 0,
+					"stat": "wis",
+					"otherText": {
+						"heading": "Domains",
+						"text": "Knowledge, Rune, Solitude (m)"
+					},
+					"perDay": [
+						"2+2",
+						"3+2",
+						"5+2",
+						"5"
+					],
+					"list": [
+						[
+							"Channel the Gift",
+							"Dispel Magic",
+							"Protection from Energy||type:D",
+							"Speak with Dead||type:D"
+						],
+						[
+							"Detect Thoughts||type:D||dc:19",
+							"Grace",
+							"Resist Energy",
+							"Restoration, Lesser||url:Restoration",
+							"Silence||type:D"
+						],
+						[
+							"Comprehend Languages||type:D",
+							"Detect Alignment||url:Detect Chaos",
+							"Obscuring Mist",
+							"Sanctuary||type:D||dc:19||count:2",
+							"Shield of Faith"
+						],
+						[
+							"Detect Magic",
+							"Detect Poison",
+							"Light",
+							"Purify Food and Drink",
+							"Read Magic"
+						]
+					]
+				}
+			],
+			"slas": [
+				{
+					"name": "Preist",
+					"casterLevel": 5,
+					"concentrationBonus": 0,
+					"stat": "wis",
+					"list": [
+						{
+							"times": "8/day",
+							"text": "blast rune"
+						}
+					]
+				}
+			]
+		},
+		"statistics": {
+			"abilities": {
+				"str": 6,
+				"dex": 12,
+				"con": 10,
+				"int": 20,
+				"wis": 20,
+				"cha": 14
+			},
+			"bab": 2,
+			"languages": [
+				"Common",
+				"Dwarven",
+				"Elven",
+				"Gnome",
+				"Goblin",
+				"Halfling"
+			],
+			"feats": [
+				"Alertness",
+				"Craft Magic Arms and Armor",
+				"Craft Wondrous Item",
+				"Extend Spell",
+				"Improved Initiative",
+				"Scribe Scroll",
+				"Selective Channeling",
+				"Spell Focus (Abjuration)"
+			],
+			"traits": [
+				"Eyes and Ears of the City",
+				"Underlying Principles"
+			]
+		},
+		"skills": {
+			"Acrobatics": {},
+			"Appraise": {
+				"ranks": 3,
+				"classSkill": true,
+				"bonuses": [
+					"Raven Familiar||+3"
+				]
+			},
+			"Bluff": {},
+			"Climb": {},
+			"Craft": {},
+			"Craft (Clockwork)": {
+				"ranks": 3,
+				"classSkill": true
+			},
+			"Diplomacy": {
+				"classSkill": true
+			},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {
+				"ranks": 5,
+				"classSkill": true
+			},
+			"Heal": {
+				"classSkill": true
+			},
+			"Intimidate": {},
+			"Knowledge (Arcana)": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Dungeoneering)": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Engineering)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Geography)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (History)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Nature)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Planes)": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge (Religion)": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Knowledge": {
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
+			"Linguistics": {
+				"ranks": 5,
+				"classSkill": true
+			},
+			"Perception": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Alertness||+2",
+					"Eyes and Ears of the City||+1"
+				]
+			},
+			"Perform": {},
+			"Ride": {},
+			"Sense Motive": {
+				"classSkill": true,
+				"bonuses": [
+					"Alertness||+2"
+				]
+			},
+			"Spellcraft": {
+				"ranks": 5,
+				"classSkill": true
+			},
+			"Stealth": {},
+			"Survival": {},
+			"Swim": {},
+			"Use Magic Device": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Underlying Principles||+1"
+				]
+			}
+		},
+		"equipment": {
+			"combat": [
+				"Headband of Int +2 (fly), Wis +2"
+			],
+			"other": [
+				"Handy Haversack (bedroll, mwk. craft clockwork tools, locked spellbook (DC 50, 123/200 pages), 50 ft. spidersilk rope)",
+				"Spell Component Pouch (5 crystaline spheres (10 gp.), small silver mirror (100 gp.)"
+			],
+			"cash": 1750.39
+		},
+		"special": []
+	},
+	{
+		"name": "Nerm",
+		"alignment": "N",
+		"senses": "",
+		"size": "Tiny",
+		"race": "Raven",
+		"initiative": 2,
+		"hp": "16",
+		"hd": "5 HD",
+		"classes": "Familiar",
+		"defense": {
+			"ac": {
+				"bonuses": [
+					"Size||+2",
+					"Natural Armor||+2"
+				]
+			},
+			"cmd": {
+				"bonuses": [
+					"Size||-2"
+				]
+			},
+			"fort": {
+				"base": 4,
+				"stat": "con",
+				"bonuses": [
+					"Cloak of Resistance||+1"
+				]
+			},
+			"refl": {
+				"base": 2,
+				"stat": "dex",
+				"bonuses": [
+					"Cloak of Resistance||+1"
+				]
+			},
+			"will": {
+				"base": 4,
+				"stat": "wis",
+				"bonuses": [
+					"Cloak of Resistance||+1"
+				]
+			}
+		},
+		"offense": {
+			"speed": "10 ft., fly 40 ft. (average)",
+			"space": "2.5 ft.",
+			"reach": "0 ft.",
+			"attacks": {
+				"melee": [
+					{
+						"name": "bite",
+						"stat": "dex",
+						"damage": "1d3-4"
+					},
+					{
+						"name": "combat maneuver",
+						"stat": "dex"
+					},
+					{
+						"name": "touch",
+						"stat": "dex"
+					}
+				],
+				"ranged": [
+					{
+						"name": "touch",
+						"stat": "dex"
+					}
+				]
+			}
+		},
+		"statistics": {
+			"abilities": {
+				"str": 2,
+				"dex": 15,
+				"con": 8,
+				"int": 8,
+				"wis": 15,
+				"cha": 7
+			},
+			"bab": 2,
+			"languages": [
+				"Common"
+			],
+			"feats": [
+				"Extra Item Slot (Shoulders)",
+				"Weapon Finesse"
+			]
+		},
+		"skills": {
+			"Acrobatics": {
+				"classSkill": true
+			},
+			"Appraise": {
+				"ranks": 3
+			},
+			"Bluff": {},
+			"Climb": {},
+			"Craft": {},
+			"Craft (Clockwork)": {
+				"ranks": 3
+			},
+			"Diplomacy": {},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {
+				"ranks": 5,
+				"classSkill": true,
+				"bonuses": [
+					"Size||+4"
+				]
+			},
+			"Heal": {},
+			"Intimidate": {},
+			"Knowledge (Arcana)": {
+				"ranks": 5
+			},
+			"Knowledge (Dungeoneering)": {
+				"ranks": 5
+			},
+			"Knowledge (Engineering)": {
+				"ranks": 1
+			},
+			"Knowledge (Geography)": {
+				"ranks": 1
+			},
+			"Knowledge (History)": {
+				"ranks": 1
+			},
+			"Knowledge (Nature)": {
+				"ranks": 1
+			},
+			"Knowledge (Planes)": {
+				"ranks": 5
+			},
+			"Knowledge (Religion)": {
+				"ranks": 5
+			},
+			"Linguistics": {
+				"ranks": 5
+			},
+			"Perception": {
+				"ranks": 5,
+				"classSkill": true
+			},
+			"Perform": {},
+			"Ride": {},
+			"Sense Motive": {},
+			"Spellcraft": {
+				"ranks": 5,
+				"classSkill": true
+			},
+			"Stealth": {
+				"classSkill": true
+			},
+			"Survival": {},
+			"Swim": {
+				"classSkill": true
+			},
+			"Use Magic Device": {
+				"ranks": 5
+			}
+		},
+		"equipment": {
+			"combat": [
+				"Aegis of Recovery",
+				"Cloak of Resistance +1"
+			]
+		}
+	}
+]

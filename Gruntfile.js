@@ -56,7 +56,8 @@ module.exports = function (grunt) {
 				files: [
 					'<%= yeoman.app %>/{,*/}*.html',
 					'.tmp/styles/{,*/}*.css',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+					'<%= yeoman.app %>/characters/{,*/}*.json'
 				]
 			}
 		},
@@ -226,11 +227,22 @@ module.exports = function (grunt) {
 		htmlmin: {
 			dist: {
 				options: {
-					conservativeCollapse: true,
 					collapseBooleanAttributes: true,
 					removeComments: true,
 					removeCommentsFromCDATA: true,
+					collapseWhitespace: true,
 					removeOptionalTags: true
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= yeoman.dist %>',
+					src: ['*.html', 'views/{,*/}*.html'],
+					dest: '<%= yeoman.dist %>'
+				}]
+			},
+			deploy: {
+				options: {
+					collapseWhitespace: true
 				},
 				files: [{
 					expand: true,
@@ -278,7 +290,8 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'characters/*.json'
+						'characters/{,*/}*',
+						'bower_components/{,*/}fonts/*'
 					]
 				}, {
 					expand: true,
@@ -392,15 +405,16 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',
+		'cdnify',
 		'ngmin',
 		'copy:dist',
-		'cdnify',
 		'cssmin',
 		'uglify',
 		'rev',
 		'usemin',
 		'json-minify',
-		'htmlmin'
+		'htmlmin',
+		'htmlmin:deploy'
 	]);
 
 	grunt.registerTask('default', [
