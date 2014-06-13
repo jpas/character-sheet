@@ -14,10 +14,16 @@ function AbilityScore(name, score) {
 	this.sname = name.slice(0, 3);
 
 	this.score = function () {
+		if (score === null) {
+			return "\u2013"
+		}
 		return parseInt(score, 10) || 10;
 	};
 
 	this.modifier = function () {
+		if (score === null) {
+			return 0;
+		}
 		return Math.floor((this.score() - 10) / 2);
 	};
 
@@ -150,18 +156,19 @@ function AC(_ac, statList) {
 	angular.extend(_ignore, _ac.ignore);
 
 	_ignore.touch = _ignore.touch.concat([
-		'Armor',
-		'Mage Armor',
-		'Armour',
-		'Mage Armour',
-		'Natural Armor',
-		'Natural Armour',
-		'Shield'
+		'armor',
+		'mage armor',
+		'armour',
+		'mage armour',
+		'natural armor',
+		'natural armour',
+		'natural',
+		'shield'
 	]);
 
 	_ignore.flatfooted = _ignore.flatfooted.concat([
-		'Dodge',
-		'Dex'
+		'dodge',
+		'dex'
 	]);
 
 	angular.forEach(_ignore, function (type, key) {
@@ -189,7 +196,7 @@ function AC(_ac, statList) {
 
 		_bonuses.forEach(function (e) {
 			var temp = e.split('||');
-			if (ignore.indexOf(temp[0]) === -1) {
+			if (ignore.indexOf(temp[0].toLowerCase()) === -1 || parseInt(temp[1], 10) < 0) {
 				total += parseInt(temp[1], 10);
 			}
 		});
@@ -210,7 +217,7 @@ function AC(_ac, statList) {
 			var t = e.split('||');
 			return (t[1] + ' ' + t[0]).toLowerCase();
 		}).join(', ');
-		
+
 	};
 
 	return this;
@@ -312,7 +319,7 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				// Combad Maneuver Defence
 				character.defense.cmd = character.defense.cmd || {};
 				var cmd = character.defense.cmd;
-				
+
 				cmd.bonuses = cmd.bonuses || [];
 				cmd.bab = cmd.bab || character.statistics.bab;
 				cmd.bonuses.push(prependToString('bab||', cmd.bab));
@@ -350,6 +357,21 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 						character.perception = character.skills[name];
 					}
 				});
+				character.hasTrainedSkills = function () {
+					for (var skill in character.skills) {
+						if (character.skills[skill].hasRanks()) {
+							return true;
+						}
+					}
+				}
+				character.hasUntrainedSkills = function () {
+					for (var skill in character.skills) {
+						if (!character.skills[skill].hasRanks()) {
+							return true;
+						}
+					}
+				}
+				// Spells/SLAs
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
 						caster,
