@@ -7,7 +7,7 @@ angular.module('charactersApp').directive('feat',
 			scope: {
 				name: '='
 			},
-			templateUrl: 'views/character-partial/featDirective.html',
+			templateUrl: 'views/directives/feat.html',
 			link: function (scope) {
 				var temp = scope.name.split('||');
 				scope.name = temp[0];

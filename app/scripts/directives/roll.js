@@ -55,9 +55,6 @@ function roll(dice) {
 	if (res.length === 0) {
 		return null;
 	}
-	res.sort(function(a, b) {
-		return b - a;
-	});
 	for (i = res.indexOf(0); i > -1; i = res.indexOf(0)) {
 		res.splice(i, 1);
 	}
@@ -77,7 +74,7 @@ angular.module('charactersApp')
 				name: '=',
 				die: '='
 			},
-			templateUrl: 'views/character-partial/rollDirective.html',
+			templateUrl: 'views/directives/roll.html',
 			link: function(scope, element) {
 				scope.clean = function() {
 					var temp = scope.die.replace('1d20','');
@@ -89,7 +86,7 @@ angular.module('charactersApp')
 				element.bind('click', function() {
 					var result = roll(scope.die);
 					$modal.open({
-						templateUrl: 'views/character-partial/rollModal.html',
+						templateUrl: 'views/directives/roll-modal.html',
 						controller: RollModalCtrl,
 						resolve: {
 							name: function() {

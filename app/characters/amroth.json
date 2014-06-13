@@ -1,15 +1,21 @@
 [
 	{
-		"name": "Amroth",
-		"alignment": "N",
-		"senses": "",
-		"size": "Medium",
-		"race": "Human",
-		"type": "Humanoid (human)",
-		"initiative": 5,
-		"hp": "33",
-		"hd": "5d6+5",
-		"classes": "Priest Abjurer 5",
+		"info": {
+			"name": "Amroth",
+			"cr": 5,
+			"alignment": "TN",
+			"senses": "",
+			"size": "Medium",
+			"race": "Human",
+			"type": "humanoid",
+			"subtypes": [
+				"human"
+			],
+			"initiative": 5,
+			"hp": "33",
+			"hd": "5d6+5",
+			"classes": "Priest Abjurer 5"
+		},
 		"defense": {
 			"ac": {
 				"bonuses": [
