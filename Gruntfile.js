@@ -57,7 +57,7 @@ module.exports = function (grunt) {
 					'<%= yeoman.app %>/{,*/}*.html',
 					'.tmp/styles/{,*/}*.css',
 					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-				'<%= yeoman.app %>/characters/{,*/}*.json'
+					'<%= yeoman.app %>/characters/{,*/}*.json'
 				]
 			}
 		},
@@ -230,6 +230,7 @@ module.exports = function (grunt) {
 					collapseBooleanAttributes: true,
 					removeComments: true,
 					removeCommentsFromCDATA: true,
+					collapseWhitespace: true,
 					removeOptionalTags: true
 				},
 				files: [{
@@ -246,10 +247,10 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: '<%= yeoman.dist %>',
-				src: ['{,*/}*.html', 'views/{,*/}*.html'],
-				dest: '<%= yeoman.dist %>'
-			}]
-		}
+					src: ['*.html', 'views/{,*/}*.html'],
+					dest: '<%= yeoman.dist %>'
+				}]
+			}
 		},
 
 		// ngmin tries to make the code safe for minification automatically by

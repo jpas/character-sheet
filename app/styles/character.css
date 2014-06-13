@@ -59,3 +59,7 @@ blockquote p {
 	margin-bottom: 10px;
 	padding-bottom: 10px;
 }
+
+.yellow {
+	color: yellow;
+}

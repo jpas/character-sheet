@@ -7,7 +7,7 @@ angular.module('charactersApp').directive('spell',
 			scope: {
 				name: '='
 			},
-			templateUrl: 'views/character-partial/spellDirective.html',
+			templateUrl: 'views/directives/spell.html',
 			link: function (scope) {
 				var temp = scope.name.split('||');
 				scope.spellName = temp[0].toLowerCase();

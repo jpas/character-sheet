@@ -1,0 +1,131 @@
+[
+	{
+		"info": {
+			"name": "Stone Golem",
+			"cr": 7,
+			"alignment": "TN",
+			"size": "Huge",
+			"type": {
+				"type": "link",
+				"text": "construct",
+				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct"
+			},
+			"initiative": -1,
+			"senses": [
+				{
+					"type": "link",
+					"text": "darkvision",
+					"post": "60 ft.",
+					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision"
+				},
+				{
+					"type": "link",
+					"text": "low-light vision",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-"
+				}
+			],
+			"hp": "89",
+			"hd": "9d10+40"
+		},
+		"defense": {
+			"ac": {
+				"bonuses": [
+					"size||-2",
+					"natural||+14"
+				]
+			},
+			"cmd": {
+				"bonuses": [
+					"size||+2"
+				]
+			},
+			"dr": "10/adamantine",
+			"immune": [
+				{
+					"type": "link",
+					"text": "construct traits",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-"
+				},
+				"magic"
+			],
+			"fort": {
+				"base": 3,
+				"stat": "con"
+			},
+			"refl": {
+				"base": 3,
+				"stat": "dex"
+			},
+			"will": {
+				"base": 3,
+				"stat": "wis"
+			},
+			"special": []
+		},
+		"offense": {
+			"speed": "30 ft.",
+			"space": "15 ft.",
+			"reach": "15 ft.",
+			"attacks": {
+				"melee": [
+					{
+
+						"name": "slams",
+						"quantity": 2,
+						"stat": "str",
+						"damage": "2d10+8",
+						"bonuses": [
+							"size||-2"
+						]
+					}
+				],
+				"special": [
+					{
+						"": "trample"
+					}
+				]
+			}
+		},
+		"statistics": {
+			"abilities": {
+				"str": 26,
+				"dex": 9,
+				"con": null,
+				"int": null,
+				"wis": 11,
+				"cha": 1
+			},
+			"bab": 9,
+			"feats": []
+		},
+		"skills": {
+			"Acrobatics": {},
+			"Appraise": {},
+			"Bluff": {},
+			"Climb": {},
+			"Craft": {},
+			"Diplomacy": {},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {
+				"bonuses": [
+					"size||-4"
+				]
+			},
+			"Heal": {},
+			"Intimidate": {},
+			"Perception": {},
+			"Perform": {},
+			"Ride": {},
+			"Sense Motive": {},
+			"Stealth": {
+				"bonuses": [
+					"size||-8"
+				]
+			},
+			"Survival": {},
+			"Swim": {}
+		},
+		"special": []
+	}
+]
