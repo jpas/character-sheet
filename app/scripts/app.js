@@ -5,6 +5,7 @@ var FastClick = FastClick;
 angular.module('charactersApp', [
 	'ngSanitize',
 	'ngRoute',
+	'ngResource',
 	'ui.bootstrap'
 ])
 .config(function ($routeProvider) {

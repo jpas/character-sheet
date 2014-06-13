@@ -1,7 +1,7 @@
 [
 	{
 		"info": {
-			"name": "Stone Golem",
+			"name": "Nothras",
 			"cr": 7,
 			"alignment": "TN",
 			"size": "Huge",
@@ -10,7 +10,7 @@
 				"text": "construct",
 				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct"
 			},
-			"initiative": -1,
+			"initiative": 3,
 			"senses": [
 				{
 					"type": "link",
@@ -24,14 +24,22 @@
 					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-"
 				}
 			],
-			"hp": "89",
-			"hd": "9d10+40"
+			"hp": "73",
+			"hd": "6d10+40",
+			"hpSpecials": [
+				{
+					"type": "link",
+					"text": "fast healing",
+					"post": "5",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-"
+				}
+			]
 		},
 		"defense": {
 			"ac": {
 				"bonuses": [
 					"size||-2",
-					"natural||+14"
+					"natural||+13"
 				]
 			},
 			"cmd": {
@@ -40,6 +48,7 @@
 				]
 			},
 			"dr": "10/adamantine",
+			"abilities": [],
 			"immune": [
 				{
 					"type": "link",
@@ -49,15 +58,15 @@
 				"magic"
 			],
 			"fort": {
-				"base": 3,
+				"base": 1,
 				"stat": "con"
 			},
 			"refl": {
-				"base": 3,
+				"base": 1,
 				"stat": "dex"
 			},
 			"will": {
-				"base": 3,
+				"base": 1,
 				"stat": "wis"
 			},
 			"special": []
@@ -73,7 +82,7 @@
 						"name": "slams",
 						"quantity": 2,
 						"stat": "str",
-						"damage": "2d10+8",
+						"damage": "1d8+8",
 						"bonuses": [
 							"size||-2"
 						]
@@ -81,7 +90,11 @@
 				],
 				"special": [
 					{
-						"": "trample"
+						"name": "trample",
+						"stat": "str",
+						"damage": "1d8+12",
+						"autoHit": true,
+						"dc": 21
 					}
 				]
 			}
@@ -91,12 +104,11 @@
 				"str": 26,
 				"dex": 9,
 				"con": null,
-				"int": null,
+				"int": 12,
 				"wis": 11,
 				"cha": 1
 			},
-			"bab": 9,
-			"feats": []
+			"bab": 6
 		},
 		"skills": {
 			"Acrobatics": {},
@@ -126,6 +138,16 @@
 			"Survival": {},
 			"Swim": {}
 		},
-		"special": []
+		"specials": [
+			"find-master",
+			"guard",
+			"immunity-to-magic",
+			"shield-other",
+			"slow",
+			"spell-storing"
+		],
+		"gear": [
+			"keyed-amulet"
+		]
 	}
 ]

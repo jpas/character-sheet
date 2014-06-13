@@ -290,7 +290,7 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'characters/*.json',
+						'characters/{,*/}*',
 						'bower_components/{,*/}fonts/*'
 					]
 				}, {
@@ -405,9 +405,9 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',
+		'cdnify',
 		'ngmin',
 		'copy:dist',
-		'cdnify',
 		'cssmin',
 		'uglify',
 		'rev',
