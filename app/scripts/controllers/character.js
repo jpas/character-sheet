@@ -190,7 +190,7 @@ function AC(_ac, scores) {
 
 	_bonuses.forEach(function (stat, index) {
 		_bonuses[index] = _bonuses[index].toLowerCase();
-	})
+	});
 
 	this.total = function (ignore) {
 		var total = 10;
@@ -245,21 +245,33 @@ function Save(_save, scores) {
 function Attack(_attack, _bab, scores) {
 	angular.extend(this, _attack);
 
-	var stat = scores[_attack.stat];
+	var stat = scores[_attack.stat || 'str'];
 
 	this.rolls = function() {
 		var bab = _bab;
 		var arr = [];
-		do {
-			var t = bab + stat.modifier();
-			if (angular.isArray(_attack.bonuses)) {
-				for (var i = _attack.bonuses.length - 1; i >= 0; i--) {
-					t += parseInt(_attack.bonuses[i].split('||')[1]);
-				}
+		var i;
+		var toHit = bab + stat.modifier();
+		if (angular.isArray(_attack.bonuses)) {
+			for (i = _attack.bonuses.length - 1; i >= 0; i--) {
+				toHit += parseInt(_attack.bonuses[i].split('||')[1]);
 			}
-			arr.push(prependToString('1d20', t));
-			bab -= 5;
-		} while (bab > 0 && _attack.itterative);
+		}
+
+		if (angular.isArray(_attack.iterative)) {
+			for (i = 0; i < _attack.iterative.length; i++) {
+				arr.push(prependToString(
+					'1d20',
+					toHit + _attack.iterative[i]
+				));
+			}
+		} else {
+			arr.push(prependToString(
+				'1d20',
+				toHit
+			));
+		}
+
 		return arr;
 	};
 }
