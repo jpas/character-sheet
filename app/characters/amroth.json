@@ -375,21 +375,33 @@
 					{
 						"name": "bite",
 						"stat": "dex",
-						"damage": "1d3-4"
+						"damage": "1d3-4",
+						"bonuses": [
+							"size||+2"
+						]
 					},
 					{
 						"name": "combat maneuver",
-						"stat": "dex"
+						"stat": "dex",
+						"bonuses": [
+							"size||-2"
+						]
 					},
 					{
 						"name": "touch",
-						"stat": "dex"
+						"stat": "dex",
+						"bonuses": [
+							"size||+2"
+						]
 					}
 				],
 				"ranged": [
 					{
 						"name": "touch",
-						"stat": "dex"
+						"stat": "dex",
+						"bonuses": [
+							"size||+2"
+						]
 					}
 				]
 			}
@@ -590,9 +602,16 @@
 						"name": "slams",
 						"quantity": 2,
 						"stat": "str",
-						"damage": "1d8+8",
+						"damage": "2d6+8",
 						"bonuses": [
 							"size||-2"
+						]
+					},
+					{
+						"name": "combat maneuver",
+						"stat": "str",
+						"bonuses": [
+							"size||+2"
 						]
 					}
 				],
@@ -600,7 +619,7 @@
 					{
 						"name": "trample",
 						"stat": "str",
-						"damage": "1d8+12",
+						"damage": "2d6+12",
 						"autoHit": true,
 						"dc": 21
 					}

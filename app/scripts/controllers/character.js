@@ -188,6 +188,10 @@ function AC(_ac, scores) {
 		_bonuses.push(prependToString(stat.sname + '||', stat.modifier()));
 	});
 
+	_bonuses.forEach(function (stat, index) {
+		_bonuses[index] = _bonuses[index].toLowerCase();
+	})
+
 	this.total = function (ignore) {
 		var total = 10;
 		ignore = ignore || [];
@@ -217,7 +221,6 @@ function AC(_ac, scores) {
 			var t = e.split('||');
 			return (t[1] + ' ' + t[0]).toLowerCase();
 		}).join(', ');
-
 	};
 
 	return this;

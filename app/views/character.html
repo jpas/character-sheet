@@ -19,11 +19,7 @@
 				<e d="c.info.size">&#32;</e>
 				<e d="c.info.type">&#32;</e>
 				<span ng-if="c.info.subtypes">
-					(
-					<e ng-repeat="subtype in c.info.subtypes" d="subtype">
-						<span ng-if="!$last">,&#32;</span>
-					</e>
-					)
+					(<e ng-repeat="subtype in c.info.subtypes" d="subtype"><span ng-if="!$last">,&#32;</span></e>)
 				</span>
 			</p>
 			<p>
@@ -31,9 +27,7 @@
 				&#32;<roll name="'Initiative'" die="prependToString('1d20', c.info.initiative)"></roll>;
 				<span ng-if="c.info.senses">
 					<b>Senses</b>&#32;
-					<e ng-repeat="sense in c.info.senses" d="sense">
-						<span ng-if="!$last">,&#32;</span>
-					</e>;
+					<e ng-repeat="sense in c.info.senses" d="sense"><span ng-if="!$last">,&#32;</span></e>;
 				</span>
 				<b>Perception</b>&#32;
 				<roll name="c.perception.name" die="c.perception.roll()"></roll>
