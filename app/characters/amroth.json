@@ -321,6 +321,11 @@
 			],
 			"size": "Tiny",
 			"race": "Raven",
+			"type": {
+				"type": "link",
+				"text": "magical beast",
+				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast"
+			},
 			"initiative": 2,
 			"hp": 20,
 			"hd": 6,
@@ -504,6 +509,7 @@
 			"name": "Nothras",
 			"portrait": "http://i.imgur.com/is67cBb.jpg",
 			"cr": 7,
+			"race": "Unique Shield Guardian Stone Golem",
 			"alignment": "TN",
 			"size": "Huge",
 			"type": {
