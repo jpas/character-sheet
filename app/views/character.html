@@ -1,5 +1,4 @@
 <div id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
-	<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
 	<h2>
 		{{c.info.name}}&#32;
 		<small>
@@ -9,6 +8,7 @@
 	<div>
 		<hr>
 		<section id="{{c.info.name.toLowerCase()}}-info">
+			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
 			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail">
 			<p ng-if="c.info.race || c.info.classes || c.info.alignment">
 				<e d="c.info.race">&#32;</e>
