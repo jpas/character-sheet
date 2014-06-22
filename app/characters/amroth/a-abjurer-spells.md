@@ -1,8 +1,8 @@
 -|-|-|-
 -|-|-|-
-3rd | 3+1 |-| *[ablative sphere]* <sup>+</sup>, *[explosive runes]*, *[haste]*, *[spell turning, lesser]* <small>(1d4+3)</small>
-2nd | 4+1 |-| *[darkvision]*, *[glitterdust]*, *[knock]*, *[protection from alignment, communal]* <sup>+</sup>, *~~[extended mage armor][mage armor]~~*
-1st | 5+1 |-| *[blood money]*, *[detect secret doors]*, *[feather fall]*, *[grease]* <small>(DC 16)</small>, *[magic missile]* <small>(2)</small>, *[shield]* <sup>+</sup>
+3rd | 3+1 |-| *[ablative sphere]* ^+^, *[explosive runes]*, *[haste]*, *[spell turning, lesser]* $(1d4+3)$
+2nd | 4+1 |-| *[darkvision]*, *[glitterdust]*, *[knock]*, *[protection from alignment, communal]* ^+^, *~~[extended mage armor][mage armor]~~*
+1st | 5+1 |-| *[blood money]*, *[detect secret doors]*, *[feather fall]*, *[grease]* $(DC 16)$, *[magic missile]* $(2)$, *[shield]* ^+^
 0th |  4  |-| *[arcane mark]*, *[mage hand]*, *[message]*, *[prestidigitation]*
 
 **Opposition** Enchantment, Necromancy

@@ -55,9 +55,15 @@ blockquote p {
 	font-weight: bold;
 }
 
-.portrait {
-	margin-top: -21px;
+.portrait-sm {
+	margin: -21px 0 0 10px;
 	float: right;
+	padding: 10px;
+	border-radius: 0;
+}
+
+.portrait-xs {
+	margin: -21px 0 20px;
 	padding: 10px;
 	border-radius: 0;
 }
