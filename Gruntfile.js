@@ -239,17 +239,6 @@ module.exports = function (grunt) {
 					src: ['*.html', 'views/{,*/}*.html'],
 					dest: '<%= yeoman.dist %>'
 				}]
-			},
-			deploy: {
-				options: {
-					collapseWhitespace: true
-				},
-				files: [{
-					expand: true,
-					cwd: '<%= yeoman.dist %>',
-					src: ['*.html', 'views/{,*/}*.html'],
-					dest: '<%= yeoman.dist %>'
-				}]
 			}
 		},
 
@@ -275,6 +264,13 @@ module.exports = function (grunt) {
 			}
 		},
 
+		htmlrefs: {
+			dist: {
+				src: '<%= yeoman.dist %>/index.html',
+				dest: '<%= yeoman.dist %>/index.html'
+			}
+		},
+
 		// Copies remaining files to places other tasks can use
 		copy: {
 			dist: {
@@ -290,8 +286,7 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'characters/{,*/}*',
-						'bower_components/{,*/}fonts/*'
+						'characters/{,*/}*'
 					]
 				}, {
 					expand: true,
@@ -400,21 +395,20 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', [
 		'clean:dist',
-		'bowerInstall',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',
-		'cdnify',
 		'ngmin',
 		'copy:dist',
+		'cdnify',
+		'htmlrefs',
 		'cssmin',
 		'uglify',
 		'rev',
 		'usemin',
 		'json-minify',
-		'htmlmin',
-		'htmlmin:deploy'
+		'htmlmin'
 	]);
 
 	grunt.registerTask('default', [

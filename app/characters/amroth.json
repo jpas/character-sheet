@@ -2,7 +2,8 @@
 	{
 		"info": {
 			"name": "Amroth",
-			"cr": 5,
+			"portrait": "http://fc00.deviantart.net/fs70/f/2013/281/1/9/guildscorn_ward_by_ryanbarger-d6ps4gg.jpg",
+			"cr": 6,
 			"alignment": "TN",
 			"senses": "",
 			"size": "Medium",
@@ -12,33 +13,39 @@
 				"human"
 			],
 			"initiative": 5,
-			"hp": "33",
-			"hd": "5d6+5",
-			"classes": "Priest Abjurer 5"
+			"hp": "40",
+			"hdText": "6d6+6",
+			"classes": "Priest Abjurer 6",
+			"levels": {
+				"hd": 6,
+				"priest": 6,
+				"wizard": 6
+			}
 		},
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"Mage Armor||+4"
+					"Mage Armor||+4",
+					"Natural||+1"
 				]
 			},
 			"resist": "acid, cold, electricity, fire, or sonic 5",
 			"fort": {
-				"base": 4,
+				"base": 5,
 				"stat": "con",
 				"bonuses": [
 					"Protection Domain||+2"
 				]
 			},
 			"refl": {
-				"base": 1,
+				"base": 2,
 				"stat": "dex",
 				"bonuses": [
 					"Protection Domain||+2"
 				]
 			},
 			"will": {
-				"base": 4,
+				"base": 5,
 				"stat": "wis",
 				"bonuses": [
 					"Protection Domain||+2"
@@ -46,7 +53,10 @@
 			},
 			"special": [
 				{
-					"name": "protective ward (5 rounds)",
+					"name": "energy absorption"
+				},
+				{
+					"name": "protective ward",
 					"times": "8/day"
 				},
 				{
@@ -78,14 +88,9 @@
 				],
 				"special": [
 					{
-						"name": "hand of the acolyte",
-						"quantity": "8/day",
-						"stat": "wis"
-					},
-					{
 						"name": "channel positive energy",
 						"quantity": "5/day",
-						"dc": 14,
+						"dc": 15,
 						"autoHit": true,
 						"stat": "cha",
 						"damage": "3d8"
@@ -98,112 +103,30 @@
 			},
 			"spells": [
 				{
-					"class": "Abjurer",
-					"type": "Prepared",
-					"casterLevel": 5,
+					"name": "Abjurer Prepared Spells",
+					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "int",
-					"otherText": {
-						"heading": "Opposition",
-						"text": "Enchantment, Necromancy"
-					},
-					"perDay": [
-						"2+1",
-						"3+1",
-						"5+1",
-						"4"
-					],
-					"list": [
-						[
-							"Ablative Sphere||url:Ablative Sphere (Garundi)||type:+",
-							"Explosive Runes",
-							"Haste"
-						],
-						[
-							"Darkvision",
-							"Knock",
-							"Protection from Alignment, Communal||url:Protection from Evil||type:+",
-							"Mage Armor||cast||meta:extended"
-						],
-						[
-							"Blood Money",
-							"Expeditious Retreat",
-							"Feather Fall",
-							"Grease||dc:16||count:2",
-							"Shield||type:+"
-						],
-						[
-							"Arcane Mark",
-							"Mage Hand",
-							"Message",
-							"Prestidigitation"
-						]
-					]
+					"markdown": "a-abjurer-spells"
 				},
 				{
-					"class": "Priest",
-					"type": "Prepared",
-					"casterLevel": 5,
+					"name": "Priest Prepared Spells",
+					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "wis",
-					"otherText": {
-						"heading": "Domains",
-						"text": "Knowledge, Rune, Solitude (m)"
-					},
-					"perDay": [
-						"2+2",
-						"3+2",
-						"5+2",
-						"5"
-					],
-					"list": [
-						[
-							"Channel the Gift",
-							"Dispel Magic",
-							"Protection from Energy||type:D",
-							"Speak with Dead||type:D"
-						],
-						[
-							"Detect Thoughts||type:D||dc:19",
-							"Grace",
-							"Resist Energy",
-							"Restoration, Lesser||url:Restoration",
-							"Silence||type:D"
-						],
-						[
-							"Comprehend Languages||type:D",
-							"Detect Alignment||url:Detect Chaos",
-							"Obscuring Mist",
-							"Sanctuary||type:D||dc:19||count:2",
-							"Shield of Faith"
-						],
-						[
-							"Detect Magic",
-							"Detect Poison",
-							"Light",
-							"Purify Food and Drink",
-							"Read Magic"
-						]
-					]
-				}
-			],
-			"slas": [
+					"markdown": "a-priest-spells"
+				},
 				{
-					"name": "Preist",
-					"casterLevel": 5,
+					"name": "Preist Spell-Like Abilities",
+					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "wis",
-					"list": [
-						{
-							"times": "8/day",
-							"text": "blast rune"
-						}
-					]
+					"markdown": "a-priest-slas"
 				}
 			]
 		},
-		"statistics": {
-			"abilities": {
+		"stats": {
+			"scores": {
 				"str": 6,
 				"dex": 12,
 				"con": 10,
@@ -211,30 +134,31 @@
 				"wis": 20,
 				"cha": 14
 			},
-			"bab": 2,
-			"languages": [
-				"Common",
-				"Dwarven",
-				"Elven",
-				"Gnome",
-				"Goblin",
-				"Halfling"
-			],
-			"feats": [
-				"Alertness",
-				"Craft Magic Arms and Armor",
-				"Craft Wondrous Item",
-				"Extend Spell",
-				"Improved Initiative",
-				"Scribe Scroll",
-				"Selective Channeling",
-				"Spell Focus (Abjuration)"
-			],
-			"traits": [
-				"Eyes and Ears of the City",
-				"Underlying Principles"
-			]
+			"bab": 3
 		},
+		"languages": [
+			"Common",
+			"Dwarven",
+			"Elven",
+			"Gnome",
+			"Goblin",
+			"Halfling",
+			"Unassigned (6)"
+		],
+		"feats": [
+			"Alertness",
+			"Craft Magic Arms and Armor",
+			"Craft Wondrous Item",
+			"Extend Spell",
+			"Improved Initiative",
+			"Scribe Scroll",
+			"Selective Channeling",
+			"Spell Focus (Abjuration)"
+		],
+		"traits": [
+			"Eyes and Ears of the City",
+			"Underlying Principles"
+		],
 		"skills": {
 			"Acrobatics": {},
 			"Appraise": {
@@ -257,7 +181,7 @@
 			"Disguise": {},
 			"Escape Artist": {},
 			"Fly": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true
 			},
 			"Heal": {
@@ -265,14 +189,14 @@
 			},
 			"Intimidate": {},
 			"Knowledge (Arcana)": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Lore||+2"
 				]
 			},
 			"Knowledge (Dungeoneering)": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Lore||+2"
@@ -299,6 +223,13 @@
 					"Lore||+2"
 				]
 			},
+			"Knowledge (Local)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
 			"Knowledge (Nature)": {
 				"ranks": 1,
 				"classSkill": true,
@@ -306,32 +237,33 @@
 					"Lore||+2"
 				]
 			},
+			"Knowledge (Nobility)": {
+				"ranks": 1,
+				"classSkill": true,
+				"bonuses": [
+					"Lore||+2"
+				]
+			},
 			"Knowledge (Planes)": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Lore||+2"
 				]
 			},
 			"Knowledge (Religion)": {
-				"ranks": 5,
-				"classSkill": true,
-				"bonuses": [
-					"Lore||+2"
-				]
-			},
-			"Knowledge": {
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Lore||+2"
 				]
 			},
 			"Linguistics": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true
 			},
 			"Perception": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Alertness||+2",
@@ -347,47 +279,64 @@
 				]
 			},
 			"Spellcraft": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true
 			},
 			"Stealth": {},
 			"Survival": {},
 			"Swim": {},
 			"Use Magic Device": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Underlying Principles||+1"
 				]
 			}
 		},
-		"equipment": {
-			"combat": [
-				"Headband of Int +2 (fly), Wis +2"
-			],
-			"other": [
-				"Handy Haversack (bedroll, mwk. craft clockwork tools, locked spellbook (DC 50, 123/200 pages), 50 ft. spidersilk rope)",
-				"Spell Component Pouch (5 crystaline spheres (10 gp.), small silver mirror (100 gp.)"
-			],
-			"cash": 1750.39
-		},
-		"special": []
+		"specials": [
+			"a-aura-of-protection-@8",
+			"a-blast-rune",
+			"a-channel-energy",
+			"a-lore-keeper",
+			"a-remote-viewing",
+			"a-spell-rune-@8",
+			"a-taboo",
+			"a-energy-absorption",
+			"a-protective-ward",
+			"a-resistance"
+		]
 	},
 	{
-		"name": "Nerm",
-		"alignment": "N",
-		"senses": "",
-		"size": "Tiny",
-		"race": "Raven",
-		"initiative": 2,
-		"hp": "16",
-		"hd": "5 HD",
-		"classes": "Familiar",
+		"info": {
+			"name": "Nerm",
+			"portrait": "http://media.wizards.com/images/magic/daily/li/li195_mis.jpg",
+			"cr": 6,
+			"alignment": "TN",
+			"senses": [
+				{
+					"type": "link",
+					"text": "low-light vision",
+					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision"
+				}
+			],
+			"size": "Tiny",
+			"race": "Raven",
+			"type": {
+				"type": "link",
+				"text": "magical beast",
+				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast"
+			},
+			"initiative": 2,
+			"hp": 20,
+			"hd": 6,
+			"hdText": "6 HD",
+			"classes": "Familiar"
+		},
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"Size||+2",
-					"Natural Armor||+2"
+					"size||+2",
+					"natural||+3"
 				]
 			},
 			"cmd": {
@@ -396,7 +345,7 @@
 				]
 			},
 			"fort": {
-				"base": 4,
+				"base": 5,
 				"stat": "con",
 				"bonuses": [
 					"Cloak of Resistance||+1"
@@ -410,7 +359,7 @@
 				]
 			},
 			"will": {
-				"base": 4,
+				"base": 5,
 				"stat": "wis",
 				"bonuses": [
 					"Cloak of Resistance||+1"
@@ -445,8 +394,8 @@
 				]
 			}
 		},
-		"statistics": {
-			"abilities": {
+		"stats": {
+			"scores": {
 				"str": 2,
 				"dex": 15,
 				"con": 8,
@@ -454,15 +403,15 @@
 				"wis": 15,
 				"cha": 7
 			},
-			"bab": 2,
-			"languages": [
-				"Common"
-			],
-			"feats": [
-				"Extra Item Slot (Shoulders)",
-				"Weapon Finesse"
-			]
+			"bab": 2
 		},
+		"languages": [
+			"Common"
+		],
+		"feats": [
+			"Extra Item Slot (Shoulders)",
+			"Weapon Finesse"
+		],
 		"skills": {
 			"Acrobatics": {
 				"classSkill": true
@@ -480,7 +429,7 @@
 			"Disguise": {},
 			"Escape Artist": {},
 			"Fly": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
 					"Size||+4"
@@ -489,10 +438,10 @@
 			"Heal": {},
 			"Intimidate": {},
 			"Knowledge (Arcana)": {
-				"ranks": 5
+				"ranks": 6
 			},
 			"Knowledge (Dungeoneering)": {
-				"ranks": 5
+				"ranks": 6
 			},
 			"Knowledge (Engineering)": {
 				"ranks": 1
@@ -503,27 +452,33 @@
 			"Knowledge (History)": {
 				"ranks": 1
 			},
+			"Knowledge (Local)": {
+				"ranks": 1
+			},
 			"Knowledge (Nature)": {
 				"ranks": 1
 			},
+			"Knowledge (Nobility)": {
+				"ranks": 1
+			},
 			"Knowledge (Planes)": {
-				"ranks": 5
+				"ranks": 6
 			},
 			"Knowledge (Religion)": {
-				"ranks": 5
+				"ranks": 6
 			},
 			"Linguistics": {
-				"ranks": 5
+				"ranks": 6
 			},
 			"Perception": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true
 			},
 			"Perform": {},
 			"Ride": {},
 			"Sense Motive": {},
 			"Spellcraft": {
-				"ranks": 5,
+				"ranks": 6,
 				"classSkill": true
 			},
 			"Stealth": {
@@ -534,14 +489,173 @@
 				"classSkill": true
 			},
 			"Use Magic Device": {
-				"ranks": 5
+				"ranks": 6
 			}
 		},
-		"equipment": {
-			"combat": [
-				"Aegis of Recovery",
-				"Cloak of Resistance +1"
+		"specials": [
+			"f-alertness",
+			"f-deliver-touch-spells",
+			"f-empathic-link",
+			"f-improved-evasion",
+			"f-scry-on-familiar-@13",
+			"f-share-spells",
+			"f-speak-with-animals-of-its-kind-@7",
+			"f-speak-with-master",
+			"f-spell-resistance-@11"
+		]
+	},
+		{
+		"info": {
+			"name": "Nothras",
+			"portrait": "http://i.imgur.com/is67cBb.jpg",
+			"cr": 7,
+			"race": "Unique Shield Guardian Stone Golem",
+			"alignment": "TN",
+			"size": "Huge",
+			"type": {
+				"type": "link",
+				"text": "construct",
+				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct"
+			},
+			"initiative": 3,
+			"senses": [
+				{
+					"type": "link",
+					"text": "darkvision",
+					"post": "60 ft.",
+					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision"
+				},
+				{
+					"type": "link",
+					"text": "low-light vision",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-"
+				}
+			],
+			"hp": 86,
+			"hd": 7,
+			"hdText": "6d10+40",
+			"hpSpecials": [
+				{
+					"type": "link",
+					"text": "fast healing",
+					"post": "5",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-"
+				}
 			]
-		}
+		},
+		"defense": {
+			"ac": {
+				"bonuses": [
+					"size||-2",
+					"natural||+13"
+				]
+			},
+			"cmd": {
+				"bonuses": [
+					"size||+2"
+				]
+			},
+			"dr": "10/adamantine",
+			"abilities": [],
+			"immune": [
+				{
+					"type": "link",
+					"text": "construct traits",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-"
+				},
+				"magic"
+			],
+			"fort": {
+				"base": 1,
+				"stat": "con"
+			},
+			"refl": {
+				"base": 1,
+				"stat": "dex"
+			},
+			"will": {
+				"base": 1,
+				"stat": "wis"
+			},
+			"special": []
+		},
+		"offense": {
+			"speed": "30 ft.",
+			"space": "15 ft.",
+			"reach": "15 ft.",
+			"attacks": {
+				"melee": [
+					{
+
+						"name": "slams",
+						"quantity": 2,
+						"stat": "str",
+						"damage": "1d8+8",
+						"bonuses": [
+							"size||-2"
+						]
+					}
+				],
+				"special": [
+					{
+						"name": "trample",
+						"stat": "str",
+						"damage": "1d8+12",
+						"autoHit": true,
+						"dc": 21
+					}
+				]
+			}
+		},
+		"stats": {
+			"scores": {
+				"str": 26,
+				"dex": 9,
+				"con": null,
+				"int": 12,
+				"wis": 11,
+				"cha": 1
+			},
+			"bab": 6
+		},
+		"skills": {
+			"Acrobatics": {},
+			"Appraise": {},
+			"Bluff": {},
+			"Climb": {},
+			"Craft": {},
+			"Diplomacy": {},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {
+				"bonuses": [
+					"size||-4"
+				]
+			},
+			"Heal": {},
+			"Intimidate": {},
+			"Perception": {},
+			"Perform": {},
+			"Ride": {},
+			"Sense Motive": {},
+			"Stealth": {
+				"bonuses": [
+					"size||-8"
+				]
+			},
+			"Survival": {},
+			"Swim": {}
+		},
+		"specials": [
+			"n-find-master",
+			"n-guard",
+			"n-immunity-to-magic",
+			"n-shield-other",
+			"n-slow",
+			"n-spell-storing"
+		],
+		"gear": [
+			"n-keyed-amulet"
+		]
 	}
 ]

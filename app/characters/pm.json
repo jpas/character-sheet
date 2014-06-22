@@ -1,0 +1,232 @@
+[
+	{
+		"info": {
+			"name": "Prime Minister Arthur",
+			"cr": 23,
+			"alignment": "CE",
+			"size": "Medium",
+			"race": "Half-Fiend Human",
+			"type": "Outsider",
+			"subtypes": [
+				"native"
+			],
+			"initiative": 7,
+			"senses": [
+				{
+					"type": "link",
+					"url": "https://sites.google.com/site/pathfinderogc/gamemastering/special-abilities#TOC-Darkvision",
+					"text": "darkvision",
+					"post": "60 ft."
+				}
+			],
+			"hp": "191",
+			"hd": "20d6+121",
+			"classes": "Conjurer 20"
+		},
+		"defense": {
+			"ac": {
+				"bonuses": [
+					"Natural||+1"
+				]
+			},
+			"resist": "acid 10, cold 10, electricity 10, fire 10",
+			"immune": "poison",
+			"dr": "10/magic",
+			"sr": 31,
+			"fort": {
+				"base": 6,
+				"stat": "con",
+				"bonuses": []
+			},
+			"refl": {
+				"base": 6,
+				"stat": "dex",
+				"bonuses": []
+			},
+			"will": {
+				"base": 12,
+				"stat": "wis",
+				"bonuses": []
+			},
+			"special": []
+		},
+		"offense": {
+			"speed": "30 ft., fly 60 ft. (good)",
+			"space": "5 ft.",
+			"reach": "5 ft.",
+			"attacks": {
+				"melee": [
+					{
+						"name": "touch",
+						"stat": "dex"
+					},
+					{
+						"name": "combat maneuver",
+						"stat": "dex"
+					}
+				],
+				"ranged": [
+					{
+						"name": "touch",
+						"stat": "dex"
+					}
+				],
+				"special": []
+			},
+			"spells": [
+				{
+					"class": "Arcane",
+					"type": "Prepared",
+					"casterLevel": 20,
+					"concentrationBonus": 0,
+					"stat": "int",
+					"perDay": [
+						7,
+						7,
+						7,
+						7,
+						8,
+						8,
+						8,
+						8,
+						9,
+						4
+					],
+					"list": [
+						[
+							"9th"
+						],
+						[
+							"8th"
+						],
+						[
+							"7th"
+						],
+						[
+							"6th"
+						],
+						[
+							"5th"
+						],
+						[
+							"4th"
+						],
+						[
+							"3rd"
+						],
+						[
+							"2nd"
+						],
+						[
+							"1st"
+						],
+						[
+							"0th"
+						]
+					]
+				}
+			],
+			"slas": [
+				{
+					"class": "Half-Fiend",
+					"casterLevel": 20,
+					"concentrationBonus": 0,
+					"stat": "int",
+					"perDay": [
+						"3/day",
+						"1/day"
+					],
+					"list": [
+						[
+							"Darkness",
+							"Poison",
+							"Unholy Aura"
+						],
+						[
+							"Desecrate",
+							"Unholy blight",
+							"Contagion",
+							"Blasphemy",
+							"Unhallow",
+							"Horrid Wilting",
+							"Summon Monster IX",
+							"Destruction"
+						]
+					]
+				}
+			]
+		},
+		"statistics": {
+			"abilities": {
+				"str": 20,
+				"dex": 24,
+				"con": 18,
+				"int": 40,
+				"wis": 26,
+				"cha": 26
+			},
+			"bab": 10,
+			"languages": [
+				"truespeech"
+			],
+			"feats": [
+				"Great Fortitude",
+				"Improved Initative",
+				"Spell Focus (Conjuration)",
+				"Augmented Summoning",
+				"Toughness",
+				"7th",
+				"9th",
+				"10th Wizard Bonus",
+				"11th",
+				"13th",
+				"15th",
+				"15th Wizard Bonus",
+				"17th",
+				"19th",
+				"20th Wizard Bonus"
+			]
+		},
+		"skills": {
+			"Acrobatics": {},
+			"Appraise": {},
+			"Bluff": {},
+			"Climb": {},
+			"Craft": {},
+			"Diplomacy": {},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {},
+			"Heal": {},
+			"Intimidate": {},
+			"Perception": {},
+			"Perform": {},
+			"Ride": {},
+			"Sense Motive": {},
+			"Stealth": {},
+			"Survival": {},
+			"Swim": {},
+
+			"Disable Device": {},
+			"Handle Animal": {},
+			"Knowledge (Arcana)": {},
+			"Knowledge (Dungeoneering)": {},
+			"Knowledge (Engineering)": {},
+			"Knowledge (Geography)": {},
+			"Knowledge (History)": {},
+			"Knowledge (Local)": {},
+			"Knowledge (Nature)": {},
+			"Knowledge (Nobility)": {},
+			"Knowledge (Planes)": {},
+			"Knowledge (Religion)": {},
+			"Linguistics": {},
+			"Profession": {},
+			"Sleight of Hand": {},
+			"Spellcraft": {},
+			"Use Magic Device": {}
+		},
+		"specials": [
+			"spell-synthesis"
+		]
+	}
+]

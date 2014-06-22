@@ -2,14 +2,14 @@
 
 angular.module('charactersApp')
 .filter('orderAbilityScores', function () {
-	return function (abilities) {
+	return function (scores) {
 		return [
-			abilities.str,
-			abilities.dex,
-			abilities.con,
-			abilities.int,
-			abilities.wis,
-			abilities.cha
+			scores.str,
+			scores.dex,
+			scores.con,
+			scores.int,
+			scores.wis,
+			scores.cha
 		];
 	};
 })
