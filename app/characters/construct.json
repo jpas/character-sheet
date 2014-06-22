@@ -25,7 +25,8 @@
 				}
 			],
 			"hp": "73",
-			"hd": "6d10+40",
+			"hd": 7,
+			"hdText": "6d10+40",
 			"hpSpecials": [
 				{
 					"type": "link",

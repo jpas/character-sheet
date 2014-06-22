@@ -15,7 +15,7 @@ function AbilityScore(name, score) {
 
 	this.score = function () {
 		if (score === null) {
-			return "\u2013"
+			return '\u2013';
 		}
 		return parseInt(score, 10) || 10;
 	};
@@ -41,7 +41,7 @@ function AbilityScore(name, score) {
 	return this;
 }
 
-function Skill(_name, _skill, statList) {
+function Skill(_name, _skill, scores) {
 	var skills = {
 		'Acrobatics': 'dex',
 		'Appraise': 'int',
@@ -76,7 +76,7 @@ function Skill(_name, _skill, statList) {
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
 	var classSkill = ((_skill.classSkill && ranks > 0) ? 3 : 0);
-	var stat = (_skill.override ? statList[_skill.override] : statList[skills[this.baseName]]);
+	var stat = (_skill.override ? scores[_skill.override] : scores[skills[this.baseName]]);
 	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
@@ -113,10 +113,10 @@ function Skill(_name, _skill, statList) {
 }
 
 
-function Caster(_caster, statList) {
+function Caster(_caster, scores) {
 	angular.extend(this, _caster);
 
-	var stat = statList[_caster.stat];
+	var stat = scores[_caster.stat];
 	var concentrationBonus = _caster.concentrationBonus;
 
 	this.concentration = function () {
@@ -126,10 +126,10 @@ function Caster(_caster, statList) {
 	return this;
 }
 
-function SLA(_sla, statList) {
+function SLA(_sla, scores) {
 	angular.extend(this, _sla);
 
-	var stat = statList[_sla.stat];
+	var stat = scores[_sla.stat];
 	var concentrationBonus = _sla.concentrationBonus;
 
 	this.concentration = function () {
@@ -143,7 +143,7 @@ function SLA(_sla, statList) {
 	return this;
 }
 
-function AC(_ac, statList) {
+function AC(_ac, scores) {
 	var _stats = _ac.stats || ['dex'];
 	var _bonuses = _ac.bonuses || [];
 
@@ -184,7 +184,7 @@ function AC(_ac, statList) {
 	});
 
 	_stats.forEach(function (stat) {
-		stat = statList[stat];
+		stat = scores[stat];
 		_bonuses.push(prependToString(stat.sname + '||', stat.modifier()));
 	});
 
@@ -223,8 +223,8 @@ function AC(_ac, statList) {
 	return this;
 }
 
-function Save(_save, statList) {
-	var stat = statList[_save.stat];
+function Save(_save, scores) {
+	var stat = scores[_save.stat];
 
 	this.roll = function() {
 		var t = _save.base + stat.modifier();
@@ -239,10 +239,10 @@ function Save(_save, statList) {
 	return this;
 }
 
-function Attack(_attack, _bab, statList) {
+function Attack(_attack, _bab, scores) {
 	angular.extend(this, _attack);
 
-	var stat = statList[_attack.stat];
+	var stat = scores[_attack.stat];
 
 	this.rolls = function() {
 		var bab = _bab;
@@ -266,46 +266,50 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 	'$http',
 	'$routeParams',
 	function ($scope, $http, $routeParams) {
-		var characterUrl = 'characters/' + $routeParams.characterId + '.json';
+		var characterUrl = 'characters/' + $routeParams.characterId;
+		$scope.characterUrl = characterUrl;
+		$scope.makeIdHref = function (idbase, c) {
+			return '#/' + $routeParams.characterId + '#' + c.info.name.toLowerCase() + idbase;
+		};
 		$scope.prependToString = prependToString;
-		$http.get(characterUrl).success(function (data) {
+		$http.get(characterUrl + '.json').success(function (data) {
 			characters = data;
 			angular.forEach(characters, function (character) {
-				character.statistics.abilities = {
+				character.stats.scores = {
 					str: new AbilityScore(
 						'Strength',
-						character.statistics.abilities.str
+						character.stats.scores.str
 						),
 					dex: new AbilityScore(
 						'Dexterity',
-						character.statistics.abilities.dex
+						character.stats.scores.dex
 						),
 					con: new AbilityScore(
 						'Constitution',
-						character.statistics.abilities.con
+						character.stats.scores.con
 						),
 					int: new AbilityScore(
 						'Intelligence',
-						character.statistics.abilities.int
+						character.stats.scores.int
 						),
 					wis: new AbilityScore(
 						'Wisdom',
-						character.statistics.abilities.wis
+						character.stats.scores.wis
 						),
 					cha: new AbilityScore(
 						'Charisma',
-						character.statistics.abilities.cha
+						character.stats.scores.cha
 						)
 				};
-				var statList = character.statistics.abilities;
+				var scores = character.stats.scores;
 				// Offese
 				// Attacks
 				angular.forEach(character.offense.attacks, function (type, name) {
 					angular.forEach(type, function (attack, index) {
 						character.offense.attacks[name][index] = new Attack(
 							attack,
-							character.statistics.bab,
-							statList
+							character.stats.bab,
+							scores
 						);
 					});
 				});
@@ -314,14 +318,14 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				character.defense.ac = character.defense.ac || {};
 				character.defense.ac = new AC(
 					character.defense.ac,
-					statList
+					scores
 				);
 				// Combad Maneuver Defence
 				character.defense.cmd = character.defense.cmd || {};
 				var cmd = character.defense.cmd;
 
 				cmd.bonuses = cmd.bonuses || [];
-				cmd.bab = cmd.bab || character.statistics.bab;
+				cmd.bab = cmd.bab || character.stats.bab;
 				cmd.bonuses.push(prependToString('bab||', cmd.bab));
 
 				cmd.stats = cmd.stats || [];
@@ -330,28 +334,28 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 
 				character.defense.cmd = new AC(
 					character.defense.cmd,
-					statList,
+					scores,
 					true
 				);
 				// Saves
 				character.defense.fort = new Save(
 					character.defense.fort,
-					statList
+					scores
 				);
 				character.defense.refl = new Save(
 					character.defense.refl,
-					statList
+					scores
 				);
 				character.defense.will = new Save(
 					character.defense.will,
-					statList
+					scores
 				);
 				// Skills
 				angular.forEach(character.skills, function (skill, name) {
 					character.skills[name] = new Skill(
 						name,
 						skill,
-						statList
+						scores
 					);
 					if (character.skills[name].name === 'Perception') {
 						character.perception = character.skills[name];
@@ -363,25 +367,25 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 							return true;
 						}
 					}
-				}
+				};
 				character.hasUntrainedSkills = function () {
 					for (var skill in character.skills) {
 						if (!character.skills[skill].hasRanks()) {
 							return true;
 						}
 					}
-				}
+				};
 				// Spells/SLAs
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
 						caster,
-						statList
+						scores
 					);
 				});
 				angular.forEach(character.offense.slas, function (sla, key) {
 					character.offense.slas[key] = new SLA(
 						sla,
-						statList
+						scores
 					);
 				});
 			});

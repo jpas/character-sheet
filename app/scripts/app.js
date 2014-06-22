@@ -1,6 +1,7 @@
 'use strict';
 
 var FastClick = FastClick;
+var $ = $;
 
 angular.module('charactersApp', [
 	'ngSanitize',
@@ -16,13 +17,27 @@ angular.module('charactersApp', [
 	})
 	.when('/:characterId', {
 		templateUrl: 'views/character.html',
-		controller: 'CharacterCtrl'
+		controller: 'CharacterCtrl',
+		reloadOnSearch: false
 	})
 	.otherwise({
 		redirectTo: '/'
 	});
-});
-
-angular.module('charactersApp').run(function() {
-	FastClick.attach(document.body);
-});
+})
+.run([
+	'$rootScope',
+	'$location',
+	'$anchorScroll',
+	'$routeParams',
+	function($rootScope, $location, $anchorScroll, $routeParams) {
+		$rootScope.$on('$routeChangeSuccess', function() {
+			$location.hash($routeParams.scrollTo);
+			$anchorScroll();
+		});
+		FastClick.attach(document.body);
+		$('body').scrollspy({
+			target: '.bs-docs-sidebar',
+			offset: 40
+		});
+	}
+]);
