@@ -1,4 +1,4 @@
 -|-|-
 -|-|-
-8/day   |-| blast rune
-6rd/day |-| remote viewing
+8     |-| blast rune
+6 rd. |-| remote viewing

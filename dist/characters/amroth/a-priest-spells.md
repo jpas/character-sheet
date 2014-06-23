@@ -1,11 +1,11 @@
--|-|-|-|-|-|-|-
-----|-----------|-|:-----------------------------------------------------------------|-|:-------------------------|-|:-
-3rd | 2+{{2+1}} |-| *[antimagic field]*, *[glyph of warding]*, *[speak with dead]*   |-| *[cure serious wounds]*  |-| *[bestow curse]*, *[dispel magic]*, *[summon monster iii]*
-2nd | 2+{{3+1}} |-| *[detect thoughts]*, *[protection from energy]*, *[secret page]* |-| *[cure moderate wounds]* |-| *[restoration, lesser]*, *[silence]*, unprepared, unprepared
-1st | 2+{{3+2}} |-| *[comprehend languages]*, *[erase]*, *[sanctuary]*               |-| *[cure light wounds]*    |-| *[deathwatch]*, *[detect alignment]*, *[shield of faith]*, unprepared, unprepared
-0th |    5      |-|                                                                  |-|                          |-| *[detect magic]*, *[detect poison]*, *[purify food and drink]*, *[read magic]*, *[stabilize]*
+-|-|-|-
+-|-|-|-
+3rd | {{2+1}}+2 |-| *[antimagic field]* ^D^, *[bestow curse]*, *[dispel magic]*, *[glyph of warding]* ^D^, *[summon monster iii]*
+2nd | {{3+1}}+2 |-| *[detect thoughts]* ^D^, *[protection from energy]* ^D^, *[restoration, lesser]*, *[silence]*, unprepared, unprepared
+1st | {{3+2}}+2 |-| *[comprehend languages]* ^D^, *[deathwatch]*, *[detect alignment]*, *[sanctuary]* ^D^, *[shield of faith]*, unprepared, unprepared
+0th |    5      |-| *[detect magic]*, *[detect poison]*, *[purify food and drink]*, *[read magic]*, *[stabilize]*
 
-**Domains** Knowledge, Rune, Solitude $M$
+**Domains** Knowledge, Rune, Solitude
 
 [3rd]: #
   [daylight]: :d20spell:daylight
