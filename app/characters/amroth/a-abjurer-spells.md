@@ -1,5 +1,5 @@
--|-|-|-|-
-:--:|:---------:|-|:-
+-|-|-|-
+-|-|-|-
 3rd | {{2+1}}+1 |-| *[ablative sphere]* ^+^, *[battering blast]*, *[haste]*, *[spiked pit]*
 2nd | {{3+1}}+1 |-| *[create pit]*, *[knock]*, *[levitate]*, *[protection from alignment, communal]* ^+^, *~~[extended mage armor][mage armor]~~*
 1st | {{3+2}}+1 |-| *[animate rope]*, *[blood money]*, *[feather fall]*, *[floating disk]*, *[magic missile]*, *[shield]* ^+^
