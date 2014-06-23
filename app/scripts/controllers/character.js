@@ -102,9 +102,9 @@ function Skill(_name, _skill, scores) {
 	this.icon = function () {
 		var icons = {
 			'Craft': 'fa fa-gavel',
-			'Knowledge': 'fa fa-graduation-cap',
+			'Knowledge': 'fa fa-book',
 			'Perform': 'fa fa-music',
-			'Profession': 'fa fa-flask'
+			'Profession': 'fa fa-university'
 		};
 		return icons[this.baseName];
 	};

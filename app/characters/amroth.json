@@ -13,7 +13,7 @@
 				"human"
 			],
 			"initiative": 5,
-			"hp": "40",
+			"hp": 40,
 			"hdText": "6d6+6",
 			"classes": "Priest Abjurer 6",
 			"levels": {
