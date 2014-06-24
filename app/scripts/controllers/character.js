@@ -245,12 +245,14 @@ function Save(_save, scores) {
 function Attack(_attack, _bab, scores) {
 	angular.extend(this, _attack);
 
-	var stat = scores[_attack.stat || 'str'];
+	var stat = _attack.stat || 'str';
+	var stat = scores[stat];
 
 	this.rolls = function() {
 		var bab = _bab;
 		var arr = [];
 		var i;
+
 		var toHit = bab + stat.modifier();
 		if (angular.isArray(_attack.bonuses)) {
 			for (i = _attack.bonuses.length - 1; i >= 0; i--) {
@@ -333,6 +335,12 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 				character.defense.ac = character.defense.ac || {};
 				character.defense.ac = new AC(
 					character.defense.ac,
+					scores
+				);
+				// Combat Maneuver Bonus
+				character.offense.cmb = new Attack(
+					character.offense.cmb,
+					character.stats.bab,
 					scores
 				);
 				// Combad Maneuver Defence

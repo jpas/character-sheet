@@ -71,9 +71,7 @@
 				</span>
 				<span ng-if="c.defense.immune">
 					<b>Immune</b>&#32;
-					<e ng-repeat="im in c.defense.immune" d="im">
-						<span ng-if="!$last">,&#32;</span>
-					</e>
+					<e ng-repeat="im in c.defense.immune" d="im"><span ng-if="!$last">,&#32;</span></e>
 					<span ng-if="c.defense.resist || c.defense.sr">;&#32;</span>
 				</span>
 				<span ng-if="c.defense.resist">
@@ -88,9 +86,7 @@
 			</p>
 			<p ng-if="c.defense.special">
 				<b>Special</b>
-				<span ng-repeat="def in c.defense.special">
-					{{def.times}} {{def.name}}<span ng-if="!$last">,&#32;</span>
-				</span>
+				<span ng-repeat="def in c.defense.special">{{def.times}} {{def.name}}<span ng-if="!$last">,&#32;</span></span>
 			</p>
 			<hr>
 		</section>
@@ -140,6 +136,13 @@
 				{{c.offense.space}};
 				<b>Reach</b>
 				{{c.offense.reach}}
+			</p>
+			<p>
+				<b>Base Attack Bonus</b>
+				<roll name="'Base Attack'" die="prependToString('1d20', c.stats.bab)"></roll>;
+				<b>Combat Maneuver Bonus</b>
+				<attack name="'Combat Maneuver'" data="c.offense.cmb"></attack>
+				{{c.offense.cmbSpecial}}
 			</p>
 			<hr>
 		</section>

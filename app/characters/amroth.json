@@ -91,10 +91,6 @@
 					{
 						"name": "touch",
 						"stat": "dex"
-					},
-					{
-						"name": "combat maneuver",
-						"stat": "dex"
 					}
 				],
 				"ranged": [
@@ -117,6 +113,9 @@
 						"stat": "dex"
 					}
 				]
+			},
+			"cmb": {
+				"stat": "dex"
 			},
 			"spells": [
 				{
@@ -393,13 +392,6 @@
 						]
 					},
 					{
-						"name": "combat maneuver",
-						"stat": "dex",
-						"bonuses": [
-							"size||-2"
-						]
-					},
-					{
 						"name": "touch",
 						"stat": "dex",
 						"bonuses": [
@@ -415,6 +407,12 @@
 							"size||+2"
 						]
 					}
+				]
+			},
+			"cmb": {
+				"stat": "dex",
+				"bonuses": [
+					"size||-2"
 				]
 			},
 			"speed": "10 ft., fly 40 ft. (average)",
@@ -615,13 +613,6 @@
 						"bonuses": [
 							"size||-2"
 						]
-					},
-					{
-						"name": "combat maneuver",
-						"stat": "str",
-						"bonuses": [
-							"size||+2"
-						]
 					}
 				],
 				"special": [
@@ -632,6 +623,12 @@
 						"autoHit": true,
 						"dc": 21
 					}
+				]
+			},
+			"cmb": {
+				"stat": "str",
+				"bonuses": [
+					"size||+2"
 				]
 			},
 			"speed": "30 ft.",
