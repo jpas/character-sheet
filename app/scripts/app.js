@@ -1,7 +1,6 @@
 'use strict';
 
 var FastClick = FastClick;
-var $ = $;
 
 angular.module('charactersApp', [
 	'ngSanitize',
@@ -25,19 +24,7 @@ angular.module('charactersApp', [
 	});
 })
 .run([
-	'$rootScope',
-	'$location',
-	'$anchorScroll',
-	'$routeParams',
-	function($rootScope, $location, $anchorScroll, $routeParams) {
-		$rootScope.$on('$routeChangeSuccess', function() {
-			$location.hash($routeParams.scrollTo);
-			$anchorScroll();
-		});
+	function() {
 		FastClick.attach(document.body);
-		$('body').scrollspy({
-			target: '.bs-docs-sidebar',
-			offset: 40
-		});
 	}
 ]);
