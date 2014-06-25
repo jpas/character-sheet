@@ -36,6 +36,9 @@ angular.module('charactersApp')
 							{ re: /\^([^\^]*)\^/g, text: '<sup>$1</sup>' },
 							{ re: /\$([^\$]*)\$/g, text: '<small>$1</small>' },
 							{ re: /:d20spell:([a-z])/g, text: 'http://www.d20pfsrd.com/magic/all-spells/$1/$1' },
+							{ re: /:d20wop-effect:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/effect-words/'},
+							{ re: /:d20wop-meta:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/meta-words/'},
+							{ re: /:d20wop-target:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/target-words/'},
 							{ re: /<a/g, text: '<a target="_blank"' }
 						];
 

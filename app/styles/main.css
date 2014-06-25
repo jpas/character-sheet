@@ -3,84 +3,102 @@ body {
 	padding-bottom: 10px;
 }
 
-span.block {
-	display: inline-table;
-	margin-bottom: 2px;
-}
-
-span.block::after {
-	content: "\00a0";
-}
-
 code {
 	font-size: 100%;
 }
 
-.group {
-    background: yellow;
-    width: 200px;
-    height: 500px;
-}
-.group .subgroup {
-    background: orange;
-    width: 150px;
-    height: 200px;
-}
-.fixed {
-    position: fixed;
+.roll p {
+    margin: 0;
 }
 
-/* sidebar */
-.bs-docs-sidebar {
-    padding-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.roll h3 {
+    margin: 0 0 15px;
 }
 
-/* all links */
-.bs-docs-sidebar .nav>li>a {
-    color: #999;
-    border-left: 2px solid transparent;
-    padding: 4px 20px;
-    font-size: 13px;
-    font-weight: 400;
+.panel {
+    margin-bottom: 0;
 }
 
-/* nested links */
-.bs-docs-sidebar .nav .nav>li>a {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 30px;
-    font-size: 12px;
+.spellList {
+    border-left: 5px solid #eee;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
-/* active & hover links */
-.bs-docs-sidebar .nav>.active>a,
-.bs-docs-sidebar .nav>li>a:hover,
-.bs-docs-sidebar .nav>li>a:focus {
-    color: #563d7c;
-    text-decoration: none;
-    background-color: transparent;
-    border-left-color: #563d7c;
-}
-/* all active links */
-.bs-docs-sidebar .nav>.active>a,
-.bs-docs-sidebar .nav>.active:hover>a,
-.bs-docs-sidebar .nav>.active:focus>a {
-    font-weight: 700;
-}
-/* nested active links */
-.bs-docs-sidebar .nav .nav>.active>a,
-.bs-docs-sidebar .nav .nav>.active:hover>a,
-.bs-docs-sidebar .nav .nav>.active:focus>a {
-    font-weight: 500;
-}
-
-/* hide inactive nested list */
-.bs-docs-sidebar .nav ul.nav {
+.spellList thead {
     display: none;
 }
-/* show active nested list */
-.bs-docs-sidebar .nav>.active>ul.nav {
-    display: block;
+
+.spellList table {
+    max-width: 100%;
+}
+
+.spellList tr td {
+    text-align: center;
+    padding: 10px 5px 0;
+}
+
+.spellList del, .spellList del > a {
+    color: #A8C3DA;
+}
+
+.spellList tr td:first-child {
+    padding-left: 15px;
+}
+
+.spellList tr td:last-child {
+    text-align: left;
+}
+
+.spellList p {
+    padding: 10px 0 0 15px;
+    margin: 0;
+}
+
+.portrait-sm {
+    margin: -21px 0 0 20px;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.portrait-xs {
+    margin: -21px 0 20px;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.portrait-list-sm {
+    margin: -21px 20px -21px 0;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.portrait-list-xs {
+    margin: -21px 0 20px;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.character-list-text {
+    margin: 0 20px;
+}
+
+.img-thumbnail {
+    border-color: #eee;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-bold {
+    font-weight: bold;
 }

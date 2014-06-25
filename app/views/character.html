@@ -1,7 +1,7 @@
 <div id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
 	<h2>
 		{{c.info.name}}&#32;
-		<small>
+		<small ng-if="c.info.cr">
 			CR&#32;<e d="c.info.cr"></e>
 		</small>
 	</h2>
@@ -9,18 +9,17 @@
 		<hr>
 		<section id="{{c.info.name.toLowerCase()}}-info">
 			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
-			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail">
-			<p ng-if="c.info.race || c.info.classes || c.info.alignment">
-				<e d="c.info.race">&#32;</e>
-				<e d="c.info.classes">&#32;</e>
+			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail pull-right">
+			<p>
+				<e ng-if="c.info.templates" d="c.info.templates">&#32;</e>
+				<e ng-if="c.info.race" d="c.info.race">&#32;</e>
+				<e ng-if="c.info.classes" d="c.info.classes">&#32;</e>
 			</p>
 			<p>
-				<e d="c.info.alignment">&#32;</e>
-				<e d="c.info.size">&#32;</e>
-				<e d="c.info.type">&#32;</e>
-				<span ng-if="c.info.subtypes">
-					(<e ng-repeat="subtype in c.info.subtypes" d="subtype"><span ng-if="!$last">,&#32;</span></e>)
-				</span>
+				<e ng-if="c.info.alignment" d="c.info.alignment">&#32;</e>
+				<e ng-if="c.info.size" d="c.info.size">&#32;</e>
+				<e ng-if="c.info.type" d="c.info.type">&#32;</e>
+				<span ng-if="c.info.subtypes">(<e ng-repeat="subtype in c.info.subtypes" d="subtype"><span ng-if="!$last">,&#32;</span></e>)</span>
 			</p>
 			<p>
 				<b>Initiative</b>
@@ -54,7 +53,7 @@
 			<p>
 				<b>HP</b>
 				{{c.info.hp}}
-				({{c.info.hdText}})<span ng-if="c.info.hpSpecials">;&#32;</span>
+				({{c.info.hd}})<span ng-if="c.info.hpSpecials">;&#32;</span>
 				<e ng-repeat="sp in c.info.hpSpecials" d="sp"><span ng-if="!$last">,&#32;</span></e>
 			</p>
 			<p>
@@ -72,9 +71,7 @@
 				</span>
 				<span ng-if="c.defense.immune">
 					<b>Immune</b>&#32;
-					<e ng-repeat="im in c.defense.immune" d="im">
-						<span ng-if="!$last">,&#32;</span>
-					</e>
+					<e ng-repeat="im in c.defense.immune" d="im"><span ng-if="!$last">,&#32;</span></e>
 					<span ng-if="c.defense.resist || c.defense.sr">;&#32;</span>
 				</span>
 				<span ng-if="c.defense.resist">
@@ -89,9 +86,7 @@
 			</p>
 			<p ng-if="c.defense.special">
 				<b>Special</b>
-				<span ng-repeat="def in c.defense.special">
-					{{def.times}} {{def.name}}<span ng-if="!$last">,&#32;</span>
-				</span>
+				<span ng-repeat="def in c.defense.special">{{def.times}} {{def.name}}<span ng-if="!$last">,&#32;</span></span>
 			</p>
 			<hr>
 		</section>
@@ -142,6 +137,13 @@
 				<b>Reach</b>
 				{{c.offense.reach}}
 			</p>
+			<p>
+				<b>Base Attack Bonus</b>
+				<roll name="'Base Attack'" die="prependToString('1d20', c.stats.bab)"></roll>;
+				<b>Combat Maneuver Bonus</b>
+				<attack name="'Combat Maneuver'" data="c.offense.cmb"></attack>
+				{{c.offense.cmbSpecial}}
+			</p>
 			<hr>
 		</section>
 		<section id="{{c.info.name.toLowerCase()}}-stats">
@@ -177,14 +179,12 @@
 			<p ng-if="c.traits">
 				<b>Traits</b>
 				<span ng-repeat="trait in c.traits">
-					<nethys type="Trait" item="trait" ng-class="classes">
-						{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span>
-					</nethys><span ng-if="!$last">,&#32;</span>
+					<nethys type="Trait" item="trait" ng-class="classes">{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,&#32;</span>
 				</span>
 			</p>
-			<p ng-if="c.languages">
+			<p ng-if="c.info.languages">
 				<b>Languages</b>
-				<span ng-repeat="lang in c.languages | orderBy:'toLowerCase()'">
+				<span ng-repeat="lang in c.info.languages | orderBy:'toLowerCase()'">
 					{{lang}}<span ng-if="!$last">,&#32;</span>
 				</span>
 			</p>

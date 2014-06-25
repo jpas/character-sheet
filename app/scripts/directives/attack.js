@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('charactersApp')
 .directive('attack', [
 	function () {

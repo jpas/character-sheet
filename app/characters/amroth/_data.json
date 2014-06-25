@@ -2,25 +2,44 @@
 	{
 		"info": {
 			"name": "Amroth",
-			"portrait": "http://fc00.deviantart.net/fs70/f/2013/281/1/9/guildscorn_ward_by_ryanbarger-d6ps4gg.jpg",
 			"cr": 6,
-			"alignment": "TN",
-			"senses": "",
-			"size": "Medium",
+			"portrait": "http://fc00.deviantart.net/fs70/f/2013/281/1/9/guildscorn_ward_by_ryanbarger-d6ps4gg.jpg",
 			"race": "Human",
-			"type": "humanoid",
-			"subtypes": [
-				"human"
-			],
-			"initiative": 5,
-			"hp": "40",
-			"hdText": "6d6+6",
 			"classes": "Priest Abjurer 6",
 			"levels": {
 				"hd": 6,
 				"priest": 6,
 				"wizard": 6
-			}
+			},
+			"alignment": "TN",
+			"size": "Medium",
+			"type": "humanoid",
+			"subtypes": [
+				"human"
+			],
+			"initiative": 5,
+			"hp": 40,
+			"hd": "6d6+6",
+			"languages": [
+				"Common",
+				"Dwarven",
+				"Elven",
+				"Gnome",
+				"Goblin",
+				"Halfling",
+				"Unassigned (6)"
+			]
+		},
+		"stats": {
+			"scores": {
+				"str": 6,
+				"dex": 12,
+				"con": 10,
+				"int": 20,
+				"wis": 20,
+				"cha": 14
+			},
+			"bab": 3
 		},
 		"defense": {
 			"ac": {
@@ -29,7 +48,7 @@
 					"Natural||+1"
 				]
 			},
-			"resist": "acid, cold, electricity, fire, or sonic 5",
+			"cmd": {},
 			"fort": {
 				"base": 5,
 				"stat": "con",
@@ -51,6 +70,7 @@
 					"Protection Domain||+2"
 				]
 			},
+			"resist": "acid, cold, electricity, fire, or sonic 5",
 			"special": [
 				{
 					"name": "energy absorption"
@@ -66,17 +86,10 @@
 			]
 		},
 		"offense": {
-			"speed": "30 ft.",
-			"space": "5 ft.",
-			"reach": "5 ft.",
 			"attacks": {
 				"melee": [
 					{
 						"name": "touch",
-						"stat": "dex"
-					},
-					{
-						"name": "combat maneuver",
 						"stat": "dex"
 					}
 				],
@@ -101,6 +114,9 @@
 					}
 				]
 			},
+			"cmb": {
+				"stat": "dex"
+			},
 			"spells": [
 				{
 					"name": "Abjurer Prepared Spells",
@@ -123,42 +139,11 @@
 					"stat": "wis",
 					"markdown": "a-priest-slas"
 				}
-			]
+			],
+			"speed": "30 ft.",
+			"space": "5 ft.",
+			"reach": "5 ft."
 		},
-		"stats": {
-			"scores": {
-				"str": 6,
-				"dex": 12,
-				"con": 10,
-				"int": 20,
-				"wis": 20,
-				"cha": 14
-			},
-			"bab": 3
-		},
-		"languages": [
-			"Common",
-			"Dwarven",
-			"Elven",
-			"Gnome",
-			"Goblin",
-			"Halfling",
-			"Unassigned (6)"
-		],
-		"feats": [
-			"Alertness",
-			"Craft Magic Arms and Armor",
-			"Craft Wondrous Item",
-			"Extend Spell",
-			"Improved Initiative",
-			"Scribe Scroll",
-			"Selective Channeling",
-			"Spell Focus (Abjuration)"
-		],
-		"traits": [
-			"Eyes and Ears of the City",
-			"Underlying Principles"
-		],
 		"skills": {
 			"Acrobatics": {},
 			"Appraise": {
@@ -293,6 +278,20 @@
 				]
 			}
 		},
+		"feats": [
+			"Alertness",
+			"Craft Magic Arms and Armor",
+			"Craft Wondrous Item",
+			"Extend Spell",
+			"Improved Initiative",
+			"Scribe Scroll",
+			"Selective Channeling",
+			"Spell Focus (Abjuration)"
+		],
+		"traits": [
+			"Eyes and Ears of the City",
+			"Underlying Principles"
+		],
 		"specials": [
 			"a-aura-of-protection-@8",
 			"a-blast-rune",
@@ -310,8 +309,19 @@
 		"info": {
 			"name": "Nerm",
 			"portrait": "http://media.wizards.com/images/magic/daily/li/li195_mis.jpg",
-			"cr": 6,
+			"race": "Raven",
+			"classes": "Familiar",
+			"levels':": {
+				"hd": 6
+			},
 			"alignment": "TN",
+			"size": "Tiny",
+			"type": {
+				"type": "link",
+				"text": "magical beast",
+				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast"
+			},
+			"initiative": 2,
 			"senses": [
 				{
 					"type": "link",
@@ -319,18 +329,22 @@
 					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision"
 				}
 			],
-			"size": "Tiny",
-			"race": "Raven",
-			"type": {
-				"type": "link",
-				"text": "magical beast",
-				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast"
-			},
-			"initiative": 2,
 			"hp": 20,
-			"hd": 6,
-			"hdText": "6 HD",
-			"classes": "Familiar"
+			"hd": "6 HD",
+			"languages": [
+				"Common"
+			]
+		},
+		"stats": {
+			"scores": {
+				"str": 2,
+				"dex": 15,
+				"con": 8,
+				"int": 8,
+				"wis": 15,
+				"cha": 7
+			},
+			"bab": 2
 		},
 		"defense": {
 			"ac": {
@@ -367,9 +381,6 @@
 			}
 		},
 		"offense": {
-			"speed": "10 ft., fly 40 ft. (average)",
-			"space": "2.5 ft.",
-			"reach": "0 ft.",
 			"attacks": {
 				"melee": [
 					{
@@ -378,13 +389,6 @@
 						"damage": "1d3-4",
 						"bonuses": [
 							"size||+2"
-						]
-					},
-					{
-						"name": "combat maneuver",
-						"stat": "dex",
-						"bonuses": [
-							"size||-2"
 						]
 					},
 					{
@@ -404,26 +408,17 @@
 						]
 					}
 				]
-			}
-		},
-		"stats": {
-			"scores": {
-				"str": 2,
-				"dex": 15,
-				"con": 8,
-				"int": 8,
-				"wis": 15,
-				"cha": 7
 			},
-			"bab": 2
+			"cmb": {
+				"stat": "dex",
+				"bonuses": [
+					"size||-2"
+				]
+			},
+			"speed": "10 ft., fly 40 ft. (average)",
+			"space": "2.5 ft.",
+			"reach": "0 ft."
 		},
-		"languages": [
-			"Common"
-		],
-		"feats": [
-			"Extra Item Slot (Shoulders)",
-			"Weapon Finesse"
-		],
 		"skills": {
 			"Acrobatics": {
 				"classSkill": true
@@ -504,6 +499,10 @@
 				"ranks": 6
 			}
 		},
+		"feats": [
+			"Extra Item Slot (Shoulders)",
+			"Weapon Finesse"
+		],
 		"specials": [
 			"f-alertness",
 			"f-deliver-touch-spells",
@@ -516,12 +515,16 @@
 			"f-spell-resistance-@11"
 		]
 	},
-		{
+	{
 		"info": {
 			"name": "Nothras",
-			"portrait": "http://i.imgur.com/is67cBb.jpg",
 			"cr": 7,
-			"race": "Unique Shield Guardian Stone Golem",
+			"portrait": "http://i.imgur.com/is67cBb.jpg",
+			"templates": "Unique Shield Guardian",
+			"race": "Stone Golem",
+			"levels": {
+				"hd": 7
+			},
 			"alignment": "TN",
 			"size": "Huge",
 			"type": {
@@ -544,8 +547,7 @@
 				}
 			],
 			"hp": 86,
-			"hd": 7,
-			"hdText": "6d10+40",
+			"hd": "6d10+40",
 			"hpSpecials": [
 				{
 					"type": "link",
@@ -554,6 +556,17 @@
 					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-"
 				}
 			]
+		},
+		"stats": {
+			"scores": {
+				"str": 26,
+				"dex": 9,
+				"con": null,
+				"int": 12,
+				"wis": 11,
+				"cha": 1
+			},
+			"bab": 6
 		},
 		"defense": {
 			"ac": {
@@ -567,16 +580,6 @@
 					"size||+2"
 				]
 			},
-			"dr": "10/adamantine",
-			"abilities": [],
-			"immune": [
-				{
-					"type": "link",
-					"text": "construct traits",
-					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-"
-				},
-				"magic"
-			],
 			"fort": {
 				"base": 1,
 				"stat": "con"
@@ -589,29 +592,26 @@
 				"base": 1,
 				"stat": "wis"
 			},
-			"special": []
+			"dr": "10/adamantine",
+			"immune": [
+				{
+					"type": "link",
+					"text": "construct traits",
+					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-"
+				},
+				"magic"
+			]
 		},
 		"offense": {
-			"speed": "30 ft.",
-			"space": "15 ft.",
-			"reach": "15 ft.",
 			"attacks": {
 				"melee": [
 					{
-
 						"name": "slams",
 						"quantity": 2,
 						"stat": "str",
 						"damage": "2d6+8",
 						"bonuses": [
 							"size||-2"
-						]
-					},
-					{
-						"name": "combat maneuver",
-						"stat": "str",
-						"bonuses": [
-							"size||+2"
 						]
 					}
 				],
@@ -624,18 +624,16 @@
 						"dc": 21
 					}
 				]
-			}
-		},
-		"stats": {
-			"scores": {
-				"str": 26,
-				"dex": 9,
-				"con": null,
-				"int": 12,
-				"wis": 11,
-				"cha": 1
 			},
-			"bab": 6
+			"cmb": {
+				"stat": "str",
+				"bonuses": [
+					"size||+2"
+				]
+			},
+			"speed": "30 ft.",
+			"space": "15 ft.",
+			"reach": "15 ft."
 		},
 		"skills": {
 			"Acrobatics": {},
