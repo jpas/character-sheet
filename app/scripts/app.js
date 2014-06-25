@@ -7,7 +7,7 @@ angular.module('charactersApp', [
 	'ngRoute',
 	'ngResource',
 	'ui.bootstrap'
-])
+	])
 .config(function ($routeProvider) {
 	$routeProvider
 	.when('/', {

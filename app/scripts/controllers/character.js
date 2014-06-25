@@ -278,10 +278,11 @@ function Attack(_attack, _bab, scores) {
 }
 
 angular.module('charactersApp').controller('CharacterCtrl', [
-	'$scope',
 	'$http',
 	'$routeParams',
-	function ($scope, $http, $routeParams) {
+	'$scope',
+	'$window',
+	function ($http, $routeParams, $scope, $window) {
 		var characterUrl = 'characters/' + $routeParams.characterId;
 		$scope.characterUrl = characterUrl;
 		$scope.makeIdHref = function (idbase, c) {
@@ -290,6 +291,7 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 		$scope.prependToString = prependToString;
 		$http.get(characterUrl + '/data.json').success(function (data) {
 			characters = data;
+			$window.document.title = characters[0].info.name + ' - Character Sheet';
 			angular.forEach(characters, function (character) {
 				character.stats.scores = {
 					none: new AbilityScore('null', 10),
