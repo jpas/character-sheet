@@ -288,7 +288,7 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 			return '#/' + $routeParams.characterId + '#' + c.info.name.toLowerCase() + idbase;
 		};
 		$scope.prependToString = prependToString;
-		$http.get(characterUrl + '/_data.json').success(function (data) {
+		$http.get(characterUrl + '/data.json').success(function (data) {
 			characters = data;
 			angular.forEach(characters, function (character) {
 				character.stats.scores = {
