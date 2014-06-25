@@ -76,7 +76,7 @@ function Skill(_name, _skill, scores) {
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
 	var classSkill = ((_skill.classSkill && ranks > 0) ? 3 : 0);
-	var stat = (_skill.override ? scores[_skill.override] : scores[skills[this.baseName]]);
+	var stat = (_skill.override ? scores[_skill.override] : scores[skills[this.baseName] || 'none']);
 	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
@@ -116,7 +116,7 @@ function Skill(_name, _skill, scores) {
 function Caster(_caster, scores) {
 	angular.extend(this, _caster);
 
-	var stat = scores[_caster.stat];
+	var stat = scores[_caster.stat || 'none'];
 	var concentrationBonus = _caster.concentrationBonus;
 
 	this.concentration = function () {
@@ -129,7 +129,7 @@ function Caster(_caster, scores) {
 function SLA(_sla, scores) {
 	angular.extend(this, _sla);
 
-	var stat = scores[_sla.stat];
+	var stat = scores[_sla.stat || 'none'];
 	var concentrationBonus = _sla.concentrationBonus;
 
 	this.concentration = function () {
@@ -184,7 +184,7 @@ function AC(_ac, scores) {
 	});
 
 	_stats.forEach(function (stat) {
-		stat = scores[stat];
+		stat = scores[stat || 'none'];
 		_bonuses.push(prependToString(stat.sname + '||', stat.modifier()));
 	});
 
@@ -227,7 +227,7 @@ function AC(_ac, scores) {
 }
 
 function Save(_save, scores) {
-	var stat = scores[_save.stat];
+	var stat = scores[_save.stat || 'none'];
 
 	this.roll = function() {
 		var t = _save.base + stat.modifier();
@@ -245,8 +245,7 @@ function Save(_save, scores) {
 function Attack(_attack, _bab, scores) {
 	angular.extend(this, _attack);
 
-	var stat = _attack.stat || 'str';
-	var stat = scores[stat];
+	var stat = scores[_attack.stat || 'none'];
 
 	this.rolls = function() {
 		var bab = _bab;
@@ -289,10 +288,11 @@ angular.module('charactersApp').controller('CharacterCtrl', [
 			return '#/' + $routeParams.characterId + '#' + c.info.name.toLowerCase() + idbase;
 		};
 		$scope.prependToString = prependToString;
-		$http.get(characterUrl + '.json').success(function (data) {
+		$http.get(characterUrl + '/_data.json').success(function (data) {
 			characters = data;
 			angular.forEach(characters, function (character) {
 				character.stats.scores = {
+					none: new AbilityScore('null', 10),
 					str: new AbilityScore(
 						'Strength',
 						character.stats.scores.str

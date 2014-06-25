@@ -1,0 +1,14 @@
+[
+    {
+        "id": "amroth",
+        "name": "Amroth",
+        "snippet": "Priest Abjurer 6, with a raven familiar named Nerm and a stone golem \"god\" named Nothras.",
+        "portrait": "http://fc00.deviantart.net/fs70/f/2013/281/1/9/guildscorn_ward_by_ryanbarger-d6ps4gg.jpg"
+    },
+    {
+    	"id": "meldrosia",
+    	"name": "Meldrosia",
+    	"snippet": "Life Oracle 2",
+    	"portrait": "http://i.imgur.com/omi4X1N.jpg"
+    }
+]

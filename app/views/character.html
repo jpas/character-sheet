@@ -9,7 +9,7 @@
 		<hr>
 		<section id="{{c.info.name.toLowerCase()}}-info">
 			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
-			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail">
+			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail pull-right">
 			<p>
 				<e ng-if="c.info.templates" d="c.info.templates">&#32;</e>
 				<e ng-if="c.info.race" d="c.info.race">&#32;</e>
@@ -179,9 +179,7 @@
 			<p ng-if="c.traits">
 				<b>Traits</b>
 				<span ng-repeat="trait in c.traits">
-					<nethys type="Trait" item="trait" ng-class="classes">
-						{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span>
-					</nethys><span ng-if="!$last">,&#32;</span>
+					<nethys type="Trait" item="trait" ng-class="classes">{{trait.split(' (')[0].split('||')[0]}}<span ng-if="trait.split(' (')[1].slice(0, 1)">({{trait.split(' (')[1].slice(0, 1)}})</span></nethys><span ng-if="!$last">,&#32;</span>
 				</span>
 			</p>
 			<p ng-if="c.info.languages">
