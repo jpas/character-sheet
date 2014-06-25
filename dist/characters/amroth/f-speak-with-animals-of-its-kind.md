@@ -1,0 +1,3 @@
+#### **Speak with Animals of Its Kind** (Ex)
+
+A familiar can communicate with animals of approximately the same kind as itself (including dire varieties): bats with bats, cats with felines, hawks and owls and ravens with birds, lizards and snakes with reptiles, monkeys with other simians, rats with rodents, toads with amphibians, and weasels with ermines and minks. Such communication is limited by the Intelligence of the conversing creatures.
