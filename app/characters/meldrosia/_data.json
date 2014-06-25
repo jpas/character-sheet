@@ -96,7 +96,7 @@
 			"reach": "5 ft."
 		},
 		"skills": {
-			"(~I AM A COMMENT, NOT ACTUALLY A SKILL~)": "You have _10_ ranks you can spend, with a maximum of 2 ranks in a given skill",
+			"(~I AM A COMMENT, NOT ACTUALLY A SKILL 1~)": "You have _10_ ranks you can spend, with a maximum of 2 ranks in a given skill",
 			"Acrobatics": {
 				"ranks": 0
 			},
@@ -162,7 +162,7 @@
 			"Swim": {
 				"ranks": 0
 			},
-			"(~I AM A COMMENT, NOT ACTUALLY A SKILL~)": "The skills below need to be trained to be used. once you have your ranks assigned, delete all objects that have no ranks",
+			"(~I AM A COMMENT, NOT ACTUALLY A SKILL 2~)": "The skills below need to be trained to be used. once you have your ranks assigned, delete all objects that have no ranks",
 			"Handle Animal": {
 				"ranks": 0,
 				"classSkill": true
