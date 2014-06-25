@@ -5,8 +5,6 @@ angular.module('charactersApp')
 	function ($scope, $http) {
 		$http.get('characters/list.json')
 		.success(function (data) {
-			// testing
-			console.log(data);
 			$scope.characters = data;
 		});
 	}]);
