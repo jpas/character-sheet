@@ -129,7 +129,6 @@
 			"Diplomacy": {
 				"classSkill": true
 			},
-			"Disable Device": {},
 			"Disguise": {},
 			"Escape Artist": {},
 			"Fly": {},
@@ -138,6 +137,10 @@
 				"classSkill": true
 			},
 			"Intimidate": {},
+			"Knowledge (Religion)": {
+				"ranks": 2,
+				"classSkill": true
+			},
 			"Perception": {
 				"ranks": 2
 			},
@@ -147,20 +150,15 @@
 				"ranks": 2,
 				"classSkill": true
 			},
-			"Sleight of Hand": {},
+			"Spellcraft": {
+				"ranks": 2,
+				"classSkill": true
+			},
 			"Stealth": {},
 			"Survival": {
 				"classSkill": true
 			},
-			"Swim": {},
-			"Knowledge (Religion)": {
-				"ranks": 2,
-				"classSkill": true
-			},
-			"Spellcraft": {
-				"ranks": 2,
-				"classSkill": true
-			}
+			"Swim": {}
 		},
 		"feats": [
 			"Fearless Curiosity",
