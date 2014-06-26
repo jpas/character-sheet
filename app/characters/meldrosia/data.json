@@ -10,7 +10,7 @@
 				"hd": 2,
 				"oracle": 2
 			},
-			"alignment": "NG",
+			"alignment": "LG",
 			"size": "Medium",
 			"type": "humanoid",
 			"subtypes": [
@@ -35,8 +35,15 @@
 			"bab": 1
 		},
 		"defense": {
-			"ac": {},
-			"cmd": {},
+			"ac": {
+				"bonuses": [
+					"Armor||+4",
+					"Shield||+1"
+				]
+			},
+			"cmd": {
+				"bonuses": []
+			},
 			"fort": {
 				"base": 0,
 				"stat": "con",
@@ -52,13 +59,29 @@
 				"stat": "wis",
 				"bonuses": []
 			},
-			"special": [
-
-			]
+			"special": []
 		},
 		"offense": {
 			"attacks": {
 				"melee": [
+					{
+						"name": "longsword",
+						"stat": "str",
+						"damage": "1d8+3",
+						"bonuses": [
+							"masterwork||+1"
+						],
+						"crit": "19-20"
+					},
+					{
+						"name": "warhammer",
+						"stat": "str",
+						"damage": "1d8+3",
+						"bonuses": [
+							"masterwork||+1"
+						],
+						"crit": "x3"
+					},
 					{
 						"name": "touch",
 						"stat": "str"
@@ -96,133 +119,56 @@
 			"reach": "5 ft."
 		},
 		"skills": {
-			"(~I AM A COMMENT, NOT ACTUALLY A SKILL 1~)": "You have _10_ ranks you can spend, with a maximum of 2 ranks in a given skill",
-			"Acrobatics": {
-				"ranks": 0
-			},
-			"Appraise": {
-				"ranks": 0
-			},
-			"Bluff": {
-				"ranks": 0
-			},
-			"Climb": {
-				"ranks": 0
-			},
+			"Acrobatics": {},
+			"Appraise": {},
+			"Bluff": {},
+			"Climb": {},
 			"Craft": {
-				"ranks": 0,
 				"classSkill": true
 			},
 			"Diplomacy": {
-				"ranks": 0,
 				"classSkill": true
 			},
-			"Disable Device": {
-				"ranks": 0
-			},
-			"Disguise": {
-				"ranks": 0
-			},
-			"Escape Artist": {
-				"ranks": 0
-			},
-			"Fly": {
-				"ranks": 0
-			},
+			"Disable Device": {},
+			"Disguise": {},
+			"Escape Artist": {},
+			"Fly": {},
 			"Heal": {
-				"ranks": 0,
+				"ranks": 2,
 				"classSkill": true
 			},
-			"Intimidate": {
-				"ranks": 0
-			},
+			"Intimidate": {},
 			"Perception": {
-				"ranks": 0
+				"ranks": 2
 			},
-			"Perform": {
-				"ranks": 0
-			},
-			"Ride": {
-				"ranks": 0
-			},
+			"Perform": {},
+			"Ride": {},
 			"Sense Motive": {
-				"ranks": 0,
+				"ranks": 2,
 				"classSkill": true
 			},
-			"Sleight of Hand": {
-				"ranks": 0
-			},
-			"Stealth": {
-				"ranks": 0
-			},
+			"Sleight of Hand": {},
+			"Stealth": {},
 			"Survival": {
-				"ranks": 0,
 				"classSkill": true
 			},
-			"Swim": {
-				"ranks": 0
-			},
-			"(~I AM A COMMENT, NOT ACTUALLY A SKILL 2~)": "The skills below need to be trained to be used. once you have your ranks assigned, delete all objects that have no ranks",
-			"Handle Animal": {
-				"ranks": 0,
-				"classSkill": true
-			},
-			"Knowledge (Arcana)": {
-				"ranks": 0
-			},
-			"Knowledge (Nobility)": {
-				"ranks": 0
-			},
-			"Knowledge (Dungeoneering)": {
-				"ranks": 0
-			},
-			"Knowledge (Engineering)": {
-				"ranks": 0
-			},
-			"Knowledge (Geography)": {
-				"ranks": 0
-			},
-			"Knowledge (History)": {
-				"ranks": 0,
-				"classSkill": true
-			},
-			"Knowledge (Local)": {
-				"ranks": 0
-			},
-			"Knowledge (Nature)": {
-				"ranks": 0,
-				"classSkill": true
-			},
-			"Knowledge (Planes)": {
-				"ranks": 0,
-				"classSkill": true
-			},
+			"Swim": {},
 			"Knowledge (Religion)": {
-				"ranks": 0,
-				"classSkill": true
-			},
-			"Linguistics": {
-				"ranks": 0
-			},
-			"Profession": {
-				"ranks": 0,
+				"ranks": 2,
 				"classSkill": true
 			},
 			"Spellcraft": {
-				"ranks": 0,
+				"ranks": 2,
 				"classSkill": true
-			},
-			"Use Magic Device": {
-				"ranks": 0
 			}
 		},
 		"feats": [
-			"[HUMAN FEAT]",
-			"[1ST LEVEL FEAT]"
+			"Fearless Curiosity",
+			"Selective Channeling"
 		],
 		"traits": [
-			"[FILL ME IN]",
-			"[FILL ME IN1]"
+			"Ghost Sight",
+			"Necrotic Aura"
 		],
 		"specials": [
 			"curse",

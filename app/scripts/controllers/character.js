@@ -245,7 +245,7 @@ function Save(_save, scores) {
 function Attack(_attack, _bab, scores) {
 	angular.extend(this, _attack);
 
-	var stat = scores[_attack.stat || 'none'];
+	var stat = scores[_attack.stat || 'str'];
 
 	this.rolls = function() {
 		var bab = _bab;

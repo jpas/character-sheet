@@ -1,7 +1,21 @@
 -|-|-|-
 -|-|-|-
-1st | {{4+1}}/day |-| *[detect undead]* ^M^, [CHOSE ME], [CHOSE ME]
-0th |   at will   |-| [CHOSE ME], [CHOSE ME], [CHOSE ME], [CHOSE ME], [CHOSE ME]
+1st | 2 |-| *[cure light wounds]*, *[detect undead]* ^M^, *[divine favor]*, *[sun metal]*
+0th | 1 |-| *[detect magic]*, *[light]*, *[mending]*, *[detect poison]*, *[stabilize]*
+
+**Mana Pool** {{c.info.levels.oracle + c.info.levels.oracle + c.stats.scores.cha.modifier()}}; **Regeneration** 1
+
+[1st]: #
+  [cure light wounds]: :d20spell:cure-light-wounds
+  [divine favor]: :d20spell:divine-favor
+  [sun metal]: :d20spell:sun-metal
+
+[0th]: #
+  [detect magic]: :d20spell:detect-magic
+  [light]: :d20spell:light
+  [mending]: :d20spell:mending
+  [detect poison]: :d20spell:detect-poison
+  [stabilize]: :d20spell:stabilize
 
 [Mystery Spells]: #
   [true resurrection]: :d20spell:true-resurrection
