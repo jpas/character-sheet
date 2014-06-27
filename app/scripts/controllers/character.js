@@ -97,9 +97,7 @@ function Defense(_ac, scores) {
 
 	_ignore.touch = _ignore.touch.concat([
 		'armor',
-		'mage armor',
 		'armour',
-		'mage armour',
 		'natural armor',
 		'natural armour',
 		'natural',
@@ -186,7 +184,7 @@ function Save(_save, scores) {
 	return this;
 }
 
-function Skill(_name, _skill, scores) {
+function Skill(_name, _skill, scores, acp) {
 	var skills = {
 		'Acrobatics': 'dex',
 		'Appraise': 'int',
@@ -225,7 +223,7 @@ function Skill(_name, _skill, scores) {
 	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
-		var t = 0;
+		var t = _skill.acp ? acp : 0;
 		for (var i = bonuses.length - 1; i >= 0; i--) {
 			t += (typeof bonuses[i] === 'number') ? bonuses[i] : parseInt(bonuses[i].split(':')[1], 10);
 		}
@@ -359,7 +357,8 @@ app.controller('CharacterCtrl', [
 					character.skills[name] = new Skill(
 						name,
 						skill,
-						scores
+						scores,
+						character.info.acp || 0
 					);
 					if (character.skills[name].name === 'Perception') {
 						character.perception = character.skills[name];

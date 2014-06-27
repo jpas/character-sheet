@@ -2,7 +2,10 @@
 	<h2>
 		{{c.info.name}}&#32;
 		<small ng-if="c.info.cr">
-			CR&#32;<md md="c.info.cr"></md>
+			CR&#32;{{c.info.cr}}&#32;
+		</small>
+		<small ng-if="c.info.mr">
+			MR&#32;{{c.info.mr}}
 		</small>
 	</h2>
 	<div>
@@ -11,25 +14,29 @@
 			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
 			<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail pull-right">
 			<p>
-				<md ng-if="c.info.templates" md="c.info.templates">&#32;</md>
-				<md ng-if="c.info.race" md="c.info.race">&#32;</md>
-				<md ng-if="c.info.classes" md="c.info.classes">&#32;</md>
+				<md c="c" ng-if="c.info.templates" md="c.info.templates">&#32;</md>
+				<md c="c" ng-if="c.info.race" md="c.info.race">&#32;</md>
+				<md c="c" ng-if="c.info.classes" md="c.info.classes">&#32;</md>
 			</p>
 			<p>
-				<md ng-if="c.info.alignment" md="c.info.alignment">&#32;</md>
-				<md ng-if="c.info.size" md="c.info.size">&#32;</md>
-				<md ng-if="c.info.type" md="c.info.type">&#32;</md>
-				<span ng-if="c.info.subtypes">(<md ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
+				<md c="c" ng-if="c.info.alignment" md="c.info.alignment">&#32;</md>
+				<md c="c" ng-if="c.info.size" md="c.info.size">&#32;</md>
+				<md c="c" ng-if="c.info.type" md="c.info.type">&#32;</md>
+				<span ng-if="c.info.subtypes">(<md c="c" ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
 			</p>
 			<p>
 				<b>Initiative</b>
 				&#32;<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
 				<span ng-if="c.info.senses">
 					<b>Senses</b>&#32;
-					<md ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
+					<md c="c" ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
 				</span>
 				<b>Perception</b>&#32;
 				<roll name="c.perception.name" die="c.perception.roll()"></roll>
+			</p>
+			<p ng-if="c.info.auras">
+				<b>Auras</b>
+				<md c="c" ng-repeat="aura in c.info.auras" md="aura"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<hr>
 		</section>
@@ -54,7 +61,7 @@
 				<b>HP</b>
 				{{c.info.hp}}
 				({{c.info.hd}})<span ng-if="c.info.hpSpecials">;&#32;</span>
-				<md ng-repeat="sp in c.info.hpSpecials" md="sp"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" ng-repeat="sp in c.info.hpSpecials" md="sp"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<p>
 				<b>Fortitude</b>
@@ -71,7 +78,7 @@
 				</span>
 				<span ng-if="c.defense.immune">
 					<b>Immune</b>&#32;
-					<md ng-repeat="im in c.defense.immune" md="im"><span ng-if="!$last">,&#32;</span></md>
+					<md c="c" ng-repeat="im in c.defense.immune" md="im"><span ng-if="!$last">,&#32;</span></md>
 					<span ng-if="c.defense.resist || c.defense.sr">;&#32;</span>
 				</span>
 				<span ng-if="c.defense.resist">
@@ -86,7 +93,7 @@
 			</p>
 			<p ng-if="c.defense.special">
 				<b>Special</b>
-				<md ng-repeat="def in c.defense.special" md="def"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" ng-repeat="def in c.defense.special" md="def"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<hr>
 		</section>
@@ -105,26 +112,8 @@
 					concentration
 					&#32;<roll name="'Concentration'" die="pf.concat('1d20', caster.concentration())"></roll>)
 				</p>
-				<div ng-if="caster.markdown" class="spellList">
-					<md md="caster.markdown"></md>
-				</div>
-				<div ng-if="!caster.markdown" class="spellList">
-					<table>
-						<tr ng-repeat="(level, spells) in caster.list">
-							<td ng-if="!caster.noSpellLevels">{{(caster.list.length - 1 - level).toOrdinal()}}</td>
-							<td class="per-day" ng-if="caster.perDay">{{caster.perDay[$index]}}</td>
-							<td class="separator">-</td>
-							<td>
-								<span ng-repeat="spell in spells">
-									<spell name="spell"></spell><span ng-if="!$last">,</span>
-								</span>
-							</td>
-						</tr>
-					</table>
-					<p>
-						<b>{{caster.otherText.heading}}</b>
-						{{caster.otherText.text}}
-					</p>
+				<div class="spellList">
+					<md c="c" md="caster.markdown"></md>
 				</div>
 			</div>
 			<p>
@@ -172,26 +161,26 @@
 			</p>
 			<p ng-if="c.feats">
 				<b>Feats</b>
-				<md ng-repeat="feat in c.feats" md="feat"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" ng-repeat="feat in c.feats" md="feat"><span ng-if="!$last">,&#32;</span></md>
 				<span >
 				</span>
 			</p>
 			<p ng-if="c.traits">
 				<b>Traits</b>
-				<md ng-repeat="trait in c.traits" md="trait"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" ng-repeat="trait in c.traits" md="trait"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<p ng-if="c.info.languages">
 				<b>Languages</b>
-				<md ng-repeat="lang in c.info.languages" md="lang"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" ng-repeat="lang in c.info.languages" md="lang"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 		</section>
 		<section id="{{c.info.name.toLowerCase()}}-specials" ng-if="c.specials">
 			<hr>
-			<md	ng-repeat="special in c.specials | orderBy:'toString()'" md="special"></md>
+			<md c="c"	ng-repeat="special in c.specials | orderBy:'toString()'" md="special"></md>
 		</section>
 		<section id="{{c.info.name.toLowerCase()}}-gear" ng-if="c.gear">
 			<hr>
-			<md	ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
+			<md c="c"	ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
 		</section>
 	</div>
 	<hr ng-if="!$last">
