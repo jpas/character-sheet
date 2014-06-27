@@ -160,27 +160,27 @@
 				</span>
 			</p>
 			<p ng-if="c.feats">
-				<b>Feats</b>
+				<b>Feats</b>&#32;
 				<md c="c" ng-repeat="feat in c.feats" md="feat"><span ng-if="!$last">,&#32;</span></md>
 				<span >
 				</span>
 			</p>
 			<p ng-if="c.traits">
-				<b>Traits</b>
+				<b>Traits</b>&#32;
 				<md c="c" ng-repeat="trait in c.traits" md="trait"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<p ng-if="c.info.languages">
-				<b>Languages</b>
+				<b>Languages</b>&#32;
 				<md c="c" ng-repeat="lang in c.info.languages" md="lang"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 		</section>
 		<section id="{{c.info.name.toLowerCase()}}-specials" ng-if="c.specials">
 			<hr>
-			<md c="c"	ng-repeat="special in c.specials | orderBy:'toString()'" md="special"></md>
+			<md c="c" ng-repeat="special in c.specials | orderBy:'toString()'" md="special"></md>
 		</section>
 		<section id="{{c.info.name.toLowerCase()}}-gear" ng-if="c.gear">
 			<hr>
-			<md c="c"	ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
+			<md c="c" ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
 		</section>
 	</div>
 	<hr ng-if="!$last">

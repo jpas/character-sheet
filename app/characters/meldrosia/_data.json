@@ -89,7 +89,7 @@
 				],
 				"special": [
 					{
-						"name": "channel positive energy",
+						"name": "[channel positive energy](#-channel-energy-su-)",
 						"quantity": "4/day",
 						"dc": 14,
 						"autoHit": true,
@@ -155,12 +155,12 @@
 			"Swim": {}
 		},
 		"feats": [
-			"Fearless Curiosity",
-			"Selective Channeling"
+			"[Fearless Curiosity](:d20-feat-racial:fearless-curiosity-human)",
+			"[Selective Channeling](:d20-feat-general:selective-channeling---final)"
 		],
 		"traits": [
-			"Ghost Sight",
-			"Necrotic Aura"
+			"[Ghost Sight](:d20-trait-magic:ghost-sight)",
+			"[Necrotic Aura](:d20-trait-faith:necrotic-aura-whispering-way)"
 		],
 		"specials": [
 			"curse.md",
