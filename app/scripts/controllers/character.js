@@ -266,7 +266,7 @@ app.controller('CharacterCtrl', [
 		$scope.pf = pf;
 		$scope.Math = Math;
 
-		$http.get('characters/' + $routeParams.characterId + '/data.json').success(function (data) {
+		$http.get('characters/' + $routeParams.characterId + '/_data.json').success(function (data) {
 			$scope.characters = data;
 
 			$window.document.title = $scope.characters[0].info.name + ' - Character Sheet';
