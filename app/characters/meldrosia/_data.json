@@ -105,7 +105,7 @@
 					"casterLevel": 2,
 					"concentrationBonus": 0,
 					"stat": "cha",
-					"markdown": "spells"
+					"markdown": "spells.md"
 				}
 			],
 			"speed": "30 ft.",
@@ -163,8 +163,8 @@
 			"Necrotic Aura"
 		],
 		"specials": [
-			"curse",
-			"channel-energy"
+			"curse.md",
+			"channel-energy.md"
 		]
 	}
 ]
