@@ -30,9 +30,20 @@ angular.module('charactersApp')
 				var url = 'characters/' + $routeParams.characterId + '/' + scope.md + '.md';
 				if (scope.md.indexOf('@') === -1) {
 					$http.get(url).success(function (data) {
-						var html = marked(data);
+						var markdown = data;
+						var pre = [
+							{ re: /\{\{/g, text: '`<ng-bind>'},
+							{ re: /\}\}/g, text: '</ng-bind>`'}
+						]
 
-						var replaceList = [
+						angular.forEach(pre, function(r) {
+							markdown = markdown.replace(r.re, r.text);
+						});
+
+						var html = marked(markdown);
+						var post = [
+							{ re: /<code>&lt;ng-bind&gt;/g, text: '{{'},
+							{ re: /&lt;\/ng-bind&gt;<\/code>/g, text: '}}'},
 							{ re: /\^([^\^]*)\^/g, text: '<sup>$1</sup>' },
 							{ re: /\$([^\$]*)\$/g, text: '<small>$1</small>' },
 							{ re: /:d20spell:([a-z])/g, text: 'http://www.d20pfsrd.com/magic/all-spells/$1/$1' },
@@ -42,8 +53,8 @@ angular.module('charactersApp')
 							{ re: /<a/g, text: '<a target="_blank"' }
 						];
 
-						angular.forEach(replaceList, function(re) {
-							html = html.replace(re.re, re.text);
+						angular.forEach(post, function(r) {
+							html = html.replace(r.re, r.text);
 						});
 
 						var el = angular.element(html);
