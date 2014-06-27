@@ -2,4 +2,4 @@
 
 A familiar's master may scry on his familiar (as if casting the *[scrying]* spell) once per day.
 
-[scrying]: :d20spell:scry
+[scrying]: :d20-spell:scry
