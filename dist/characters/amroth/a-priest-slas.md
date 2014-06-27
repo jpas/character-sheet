@@ -1,4 +1,4 @@
 -|-|-
 -|-|-
-8     |-| blast rune
-6 rd. |-| remote viewing
+8     |-| [blast rune](#-blast-rune-sp-)
+6 rd. |-| [remote viewing](#-remote-viewing-sp-)

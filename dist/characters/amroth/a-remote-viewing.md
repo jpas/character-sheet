@@ -4,4 +4,4 @@ You can use [clairaudience/clairvoyance] at will as a spell-like ability with a 
 You can use this ability for {{c.info.levels.priest}} rounds per day.
 These rounds do not need to be consecutive.
 
-[clairaudience/clairvoyance]: :d20spell:clairaudience-clairvoyance
+[clairaudience/clairvoyance]: :d20-spell:clairaudience-clairvoyance
