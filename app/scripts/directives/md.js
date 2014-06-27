@@ -14,7 +14,7 @@ app.directive('md', [
 	'$compile',
 	'$http',
 	'$routeParams',
-	function ($http, $routeParams, $compile) {
+	function ($compile, $http, $routeParams) {
 		return {
 			restrict: 'E',
 			transclude: true,
