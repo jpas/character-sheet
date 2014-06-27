@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "angular": "1.2.16",
-    "angular-route": "1.2.16",
-    "bootstrap": "~3.1.1",
     "angular-bootstrap": "~0.11.0",
-    "fastclick": "~1.0.2",
-    "jquery": "~2.1.1",
-    "font-awesome": "~4.1.0",
+    "angular-resource": "1.2.16",
+    "angular-route": "1.2.16",
     "angular-sanitize": "1.2.16",
-    "marked": "~0.3.2",
-    "angular-resource": "1.2.16"
+    "bootstrap": "~3.1.1",
+    "fastclick": "~1.0.2",
+    "font-awesome": "~4.1.0",
+    "jquery": "~2.1.1",
+    "marked": "~0.3.2"
   }
 }

@@ -10,4 +10,4 @@
 
 *Nothras' Amulet* has all of the magical abilities of a regular *amulet of natural armor +1*. The wearer has the ability to control a stone golem named Nothras.
 
-[read magic]: http://www.archivesofnethys.com/SpellDisplay.aspx?ItemName=Read%20Magic
+[read magic]: :d20-spell:read-magic

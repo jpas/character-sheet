@@ -44,8 +44,8 @@
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"Mage Armor||+4",
-					"Natural||+1"
+					"armor:+4",
+					"natural:+1"
 				]
 			},
 			"cmd": {},
@@ -53,55 +53,47 @@
 				"base": 5,
 				"stat": "con",
 				"bonuses": [
-					"Protection Domain||+2"
+					"resistance:+2"
 				]
 			},
 			"refl": {
 				"base": 2,
 				"stat": "dex",
 				"bonuses": [
-					"Protection Domain||+2"
+					"resistance:+2"
 				]
 			},
 			"will": {
 				"base": 5,
 				"stat": "wis",
 				"bonuses": [
-					"Protection Domain||+2"
+					"resistance:+2"
 				]
 			},
 			"resist": "acid, cold, electricity, fire, or sonic 5",
 			"special": [
-				{
-					"name": "energy absorption"
-				},
-				{
-					"name": "protective ward",
-					"times": "8/day"
-				},
-				{
-					"name": "taboo",
-					"times": "8/day"
-				}
+				"[energy absorption](#-energy-absorption-su-)",
+				"8/day [protective ward](#-protective-ward-su-)",
+				"8/day [taboo](#-taboo-su-)"
 			]
 		},
 		"offense": {
 			"attacks": {
 				"melee": [
 					{
-						"name": "touch",
+						"name": "touch attack",
 						"stat": "dex"
 					}
 				],
 				"ranged": [
 					{
-						"name": "touch",
+						"name": "touch attack",
 						"stat": "dex"
 					}
 				],
 				"special": [
 					{
-						"name": "channel positive energy",
+						"name": "[channel positive energy](#-channel-energy-su-)",
 						"quantity": "5/day",
 						"dc": 15,
 						"autoHit": true,
@@ -109,7 +101,7 @@
 						"damage": "3d8"
 					},
 					{
-						"name": "lore keeper",
+						"name": "[lore keeper](#-lore-keeper-sp-)",
 						"stat": "dex"
 					}
 				]
@@ -123,21 +115,21 @@
 					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "int",
-					"markdown": "a-abjurer-spells"
+					"markdown": "a-abjurer-spells.md"
 				},
 				{
 					"name": "Priest Prepared Spells",
 					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "wis",
-					"markdown": "a-priest-spells"
+					"markdown": "a-priest-spells.md"
 				},
 				{
 					"name": "Preist Spell-Like Abilities",
 					"casterLevel": 6,
 					"concentrationBonus": 0,
 					"stat": "wis",
-					"markdown": "a-priest-slas"
+					"markdown": "a-priest-slas.md"
 				}
 			],
 			"speed": "30 ft.",
@@ -150,7 +142,7 @@
 				"ranks": 3,
 				"classSkill": true,
 				"bonuses": [
-					"Raven Familiar||+3"
+					"raven familiar:+3"
 				]
 			},
 			"Bluff": {},
@@ -177,70 +169,70 @@
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Dungeoneering)": {
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Engineering)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Geography)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (History)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Local)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Nature)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Nobility)": {
 				"ranks": 1,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Planes)": {
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Knowledge (Religion)": {
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Lore||+2"
+					"lore:+2"
 				]
 			},
 			"Linguistics": {
@@ -251,8 +243,8 @@
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Alertness||+2",
-					"Eyes and Ears of the City||+1"
+					"alertness:+2",
+					"eyes and ears of the city:+1"
 				]
 			},
 			"Perform": {},
@@ -260,7 +252,7 @@
 			"Sense Motive": {
 				"classSkill": true,
 				"bonuses": [
-					"Alertness||+2"
+					"alertness:+2"
 				]
 			},
 			"Spellcraft": {
@@ -274,35 +266,35 @@
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Underlying Principles||+1"
+					"underlying principles:+1"
 				]
 			}
 		},
 		"feats": [
-			"Alertness",
-			"Craft Magic Arms and Armor",
-			"Craft Wondrous Item",
-			"Extend Spell",
-			"Improved Initiative",
-			"Scribe Scroll",
-			"Selective Channeling",
-			"Spell Focus (Abjuration)"
+			"[Alertness](:d20-feat-general:alertness---final)",
+			"[Craft Magic Arms and Armor](:d20-feat-item-creation:craft-magic-arms-and-armor-item-creation---final)",
+			"[Craft Wondrous Item](:d20-feat-item-creation:craft-wondrous-item-item-creation---final)",
+			"[Extend Spell](:d20-feat-metamagic:extend-spell-metamagic---final)",
+			"[Improved Initiative](:d20-feat-combat:improved-initiative-combat---final)",
+			"[Scribe Scroll](:d20-feat-item-creation:scribe-scroll-item-creation---final)",
+			"[Selective Channeling](:d20-feat-general:selective-channeling---final)",
+			"[Spell Focus (Abjuration)](:d20-feat-general:spell-focus---final)"
 		],
 		"traits": [
-			"Eyes and Ears of the City",
-			"Underlying Principles"
+			"[Eyes and Ears of the City](:d20-trait-religion:eyes-and-ears-of-the-city-god-of-commerce)",
+			"[Dangerously Curious](:d20-trait-magic:dangerously-curious)"
 		],
 		"specials": [
-			"a-aura-of-protection-@8",
-			"a-blast-rune",
-			"a-channel-energy",
-			"a-lore-keeper",
-			"a-remote-viewing",
-			"a-spell-rune-@8",
-			"a-taboo",
-			"a-energy-absorption",
-			"a-protective-ward",
-			"a-resistance"
+			"a-aura-of-protection-@8.md",
+			"a-blast-rune.md",
+			"a-channel-energy.md",
+			"a-lore-keeper.md",
+			"a-remote-viewing.md",
+			"a-spell-rune-@8.md",
+			"a-taboo.md",
+			"a-energy-absorption.md",
+			"a-protective-ward.md",
+			"a-resistance.md"
 		]
 	},
 	{
@@ -316,18 +308,10 @@
 			},
 			"alignment": "TN",
 			"size": "Tiny",
-			"type": {
-				"type": "link",
-				"text": "magical beast",
-				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast"
-			},
+			"type": "[magical beast](http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast)",
 			"initiative": 2,
 			"senses": [
-				{
-					"type": "link",
-					"text": "low-light vision",
-					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision"
-				}
+				"[low-light vision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision)"
 			],
 			"hp": 20,
 			"hd": "6 HD",
@@ -349,34 +333,34 @@
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"size||+2",
-					"natural||+3"
+					"size:+2",
+					"natural:+3"
 				]
 			},
 			"cmd": {
 				"bonuses": [
-					"Size||-2"
+					"size:-2"
 				]
 			},
 			"fort": {
 				"base": 5,
 				"stat": "con",
 				"bonuses": [
-					"Cloak of Resistance||+1"
+					"cloak of resistance:+1"
 				]
 			},
 			"refl": {
 				"base": 2,
 				"stat": "dex",
 				"bonuses": [
-					"Cloak of Resistance||+1"
+					"cloak of resistance:+1"
 				]
 			},
 			"will": {
 				"base": 5,
 				"stat": "wis",
 				"bonuses": [
-					"Cloak of Resistance||+1"
+					"cloak of resistance:+1"
 				]
 			}
 		},
@@ -388,23 +372,23 @@
 						"stat": "dex",
 						"damage": "1d3-4",
 						"bonuses": [
-							"size||+2"
+							"size:+2"
 						]
 					},
 					{
-						"name": "touch",
+						"name": "touch attack",
 						"stat": "dex",
 						"bonuses": [
-							"size||+2"
+							"size:+2"
 						]
 					}
 				],
 				"ranged": [
 					{
-						"name": "touch",
+						"name": "touch attack",
 						"stat": "dex",
 						"bonuses": [
-							"size||+2"
+							"size:+2"
 						]
 					}
 				]
@@ -412,7 +396,7 @@
 			"cmb": {
 				"stat": "dex",
 				"bonuses": [
-					"size||-2"
+					"size:-2"
 				]
 			},
 			"speed": "10 ft., fly 40 ft. (average)",
@@ -439,7 +423,7 @@
 				"ranks": 6,
 				"classSkill": true,
 				"bonuses": [
-					"Size||+4"
+					"size:+4"
 				]
 			},
 			"Heal": {},
@@ -500,19 +484,19 @@
 			}
 		},
 		"feats": [
-			"Extra Item Slot (Shoulders)",
-			"Weapon Finesse"
+			"[Extra Item Slot (Shoulders)](:d20-feat-general:extra-item-slot)",
+			"[Weapon Finesse](:d20-feat-combat:weapon-finesse-combat---final)"
 		],
 		"specials": [
-			"f-alertness",
-			"f-deliver-touch-spells",
-			"f-empathic-link",
-			"f-improved-evasion",
-			"f-scry-on-familiar-@13",
-			"f-share-spells",
-			"f-speak-with-animals-of-its-kind-@7",
-			"f-speak-with-master",
-			"f-spell-resistance-@11"
+			"f-alertness.md",
+			"f-deliver-touch-spells.md",
+			"f-empathic-link.md",
+			"f-improved-evasion.md",
+			"f-scry-on-familiar-@13.md",
+			"f-share-spells.md",
+			"f-speak-with-animals-of-its-kind-@7.md",
+			"f-speak-with-master.md",
+			"f-spell-resistance-@11.md"
 		]
 	},
 	{
@@ -527,34 +511,16 @@
 			},
 			"alignment": "TN",
 			"size": "Huge",
-			"type": {
-				"type": "link",
-				"text": "construct",
-				"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct"
-			},
+			"type": "[construct](http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct)",
 			"initiative": 3,
 			"senses": [
-				{
-					"type": "link",
-					"text": "darkvision",
-					"post": "60 ft.",
-					"url": "http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision"
-				},
-				{
-					"type": "link",
-					"text": "low-light vision",
-					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-"
-				}
+				"[darkvision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision) 60 ft.",
+				"[low-light vision](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-)"
 			],
 			"hp": 86,
 			"hd": "6d10+40",
 			"hpSpecials": [
-				{
-					"type": "link",
-					"text": "fast healing",
-					"post": "5",
-					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-"
-				}
+				"[fast healing](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-) 5"
 			]
 		},
 		"stats": {
@@ -571,13 +537,13 @@
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"size||-2",
-					"natural||+13"
+					"size:-2",
+					"natural:+13"
 				]
 			},
 			"cmd": {
 				"bonuses": [
-					"size||+2"
+					"size:+2"
 				]
 			},
 			"fort": {
@@ -594,11 +560,7 @@
 			},
 			"dr": "10/adamantine",
 			"immune": [
-				{
-					"type": "link",
-					"text": "construct traits",
-					"url": "http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-"
-				},
+				"[construct traits](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-)",
 				"magic"
 			]
 		},
@@ -611,7 +573,7 @@
 						"stat": "str",
 						"damage": "2d6+8",
 						"bonuses": [
-							"size||-2"
+							"size:-2"
 						]
 					}
 				],
@@ -628,7 +590,7 @@
 			"cmb": {
 				"stat": "str",
 				"bonuses": [
-					"size||+2"
+					"size:+2"
 				]
 			},
 			"speed": "30 ft.",
@@ -646,7 +608,7 @@
 			"Escape Artist": {},
 			"Fly": {
 				"bonuses": [
-					"size||-4"
+					"size:-4"
 				]
 			},
 			"Heal": {},
@@ -657,22 +619,22 @@
 			"Sense Motive": {},
 			"Stealth": {
 				"bonuses": [
-					"size||-8"
+					"size:-8"
 				]
 			},
 			"Survival": {},
 			"Swim": {}
 		},
 		"specials": [
-			"n-find-master",
-			"n-guard",
-			"n-immunity-to-magic",
-			"n-shield-other",
-			"n-slow",
-			"n-spell-storing"
+			"n-find-master.md",
+			"n-guard.md",
+			"n-immunity-to-magic.md",
+			"n-shield-other.md",
+			"n-slow.md",
+			"n-spell-storing.md"
 		],
 		"gear": [
-			"n-keyed-amulet"
+			"n-keyed-amulet.md"
 		]
 	}
 ]

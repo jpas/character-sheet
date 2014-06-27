@@ -37,29 +37,23 @@
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"Armor||+4",
-					"Shield||+1"
+					"armor:+4",
+					"shield:+1"
 				]
 			},
-			"cmd": {
-				"bonuses": []
-			},
+			"cmd": {},
 			"fort": {
 				"base": 0,
-				"stat": "con",
-				"bonuses": []
+				"stat": "con"
 			},
 			"refl": {
 				"base": 0,
-				"stat": "dex",
-				"bonuses": []
+				"stat": "dex"
 			},
 			"will": {
 				"base": 3,
-				"stat": "wis",
-				"bonuses": []
-			},
-			"special": []
+				"stat": "wis"
+			}
 		},
 		"offense": {
 			"attacks": {
@@ -69,7 +63,7 @@
 						"stat": "str",
 						"damage": "1d8+3",
 						"bonuses": [
-							"masterwork||+1"
+							"masterwork:+1"
 						],
 						"crit": "19-20"
 					},
@@ -78,7 +72,7 @@
 						"stat": "str",
 						"damage": "1d8+3",
 						"bonuses": [
-							"masterwork||+1"
+							"masterwork:+1"
 						],
 						"crit": "x3"
 					},

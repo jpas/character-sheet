@@ -64,25 +64,21 @@ function roll(dice) {
 	};
 }
 
-angular.module('charactersApp')
-.directive('roll', [
+app.directive('roll', [
 	'$modal',
 	function ($modal) {
 		return {
 			restrict: 'E',
 			scope: {
 				name: '=',
-				die: '='
+				dieSpec: '=die'
 			},
 			templateUrl: 'views/directives/roll.html',
 			link: function(scope, element) {
-				scope.clean = function() {
-					var temp = scope.die.replace('1d20','');
-					if (parseInt(temp) === 0) {
-						return 0;
-					}
-					return temp;
-				};
+				scope.die = scope.dieSpec.replace(/1d20/g, '');
+				scope.die = scope.die.replace(/\+0/g, '');
+				scope.die = scope.die === '' ? 0 : scope.die;
+
 				element.bind('click', function() {
 					var result = roll(scope.die);
 					$modal.open({
@@ -93,7 +89,7 @@ angular.module('charactersApp')
 								return scope.name;
 							},
 							dieSpec: function() {
-								return scope.die.replace('+0', '', 'g');
+								return scope.dieSpec.replace(/\+0/g, '');
 							},
 							result: function () {
 								return result;

@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('charactersApp')
-.controller('MainCtrl', [
+app.controller('MainCtrl', [
 	'$http',
 	'$scope',
 	'$window',

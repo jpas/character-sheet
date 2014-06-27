@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('charactersApp')
-.filter('orderAbilityScores', function () {
+app.filter('orderAbilityScores', function () {
 	return function (scores) {
 		return [
 			scores.str,
@@ -12,8 +11,9 @@ angular.module('charactersApp')
 			scores.cha
 		];
 	};
-})
-.filter('filterSkills', function () {
+});
+
+app.filter('filterSkills', function () {
 	return function (skills, ranks) {
 		var output = {};
 		angular.forEach(skills, function(skill, name) {
@@ -23,13 +23,15 @@ angular.module('charactersApp')
 		});
 		return output;
 	};
-})
-.filter('reverse', function () {
+});
+
+app.filter('reverse', function () {
 	return function (items) {
 		return items.slice().reverse();
 	};
-})
-.filter('orderObjectBy', function(){
+});
+
+app.filter('orderObjectBy', function(){
 	return function(input, attribute) {
 		if (!angular.isObject(input)) {
 			return input;

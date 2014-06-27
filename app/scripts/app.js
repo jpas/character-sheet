@@ -1,18 +1,19 @@
 'use strict';
+/*exported app*/
 
-var FastClick = FastClick;
-
-angular.module('charactersApp', [
-	'ngSanitize',
-	'ngRoute',
+var app = angular.module('charactersApp', [
 	'ngResource',
+	'ngRoute',
+	'ngSanitize',
 	'ui.bootstrap'
-	])
-.config(function ($routeProvider) {
+]);
+
+app.config(function ($routeProvider) {
 	$routeProvider
 	.when('/', {
 		templateUrl: 'views/main.html',
-		controller: 'MainCtrl'
+		controller: 'MainCtrl',
+		reloadOnSearch: false
 	})
 	.when('/:characterId', {
 		templateUrl: 'views/character.html',
@@ -20,10 +21,12 @@ angular.module('charactersApp', [
 		reloadOnSearch: false
 	})
 	.otherwise({
-		redirectTo: '/'
+		redirectTo: '/',
+		reloadOnSearch: false
 	});
-})
-.run([
+});
+
+app.run([
 	function() {
 		FastClick.attach(document.body);
 	}

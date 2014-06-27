@@ -1,4 +1,17 @@
 'use strict';
+/*exported pf*/
+
+var pf = {
+	concat: function () {
+		var args = Array.prototype.slice.call(arguments);
+		for (var i = args.length - 1; i >= 0; i--) {
+			if (typeof args[i] === 'number') {
+				args[i] = args[i] < 0 ? args[i].toString() : '+' + args[i].toString();
+			}
+		}
+		return args.join('');
+	}
+};
 
 String.prototype.capitalize = function () {
 	return this.charAt(0).toUpperCase() + this.slice(1);

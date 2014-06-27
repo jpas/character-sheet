@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('charactersApp')
-.directive('attack', [
+app.directive('attack', [
 	function () {
 		return {
 			restrict: 'E',
@@ -10,7 +9,6 @@ angular.module('charactersApp')
 			},
 			templateUrl: 'views/directives/attack.html',
 			link: function(scope) {
-				scope.name = scope.data.name;
 				scope.dice = scope.data.rolls();
 			}
 		};
