@@ -74,13 +74,14 @@ app.directive('roll', [
 				dieSpec: '=die'
 			},
 			templateUrl: 'views/directives/roll.html',
+			transclude: true,
 			link: function(scope, element) {
 				scope.die = scope.dieSpec.replace(/1d20/g, '');
 				scope.die = scope.die.replace(/\+0/g, '');
 				scope.die = scope.die === '' ? 0 : scope.die;
 
 				element.bind('click', function() {
-					var result = roll(scope.die);
+					var result = roll(scope.dieSpec);
 					$modal.open({
 						templateUrl: 'views/directives/roll-modal.html',
 						controller: RollModalCtrl,

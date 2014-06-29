@@ -223,22 +223,39 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-
+		/*
 		htmlmin: {
 			dist: {
 				options: {
-					collapseBooleanAttributes: true,
-					removeComments: true,
-					removeCommentsFromCDATA: true,
-					collapseWhitespace: true,
-					removeOptionalTags: true
+					collapseWhitespace: true//,
+					//collapseBooleanAttributes: true,
+					//removeComments: true,
+					//removeCommentsFromCDATA: true,
+					//removeOptionalTags: true
 				},
 				files: [{
 					expand: true,
 					cwd: '<%= yeoman.dist %>',
-					src: ['*.html', 'views/{,*/}*.html'],
+					src: [
+						'*.html',
+						*///'views/{,*/}*.html',
+						/*'views/directives/*.html'
+					],
 					dest: '<%= yeoman.dist %>'
 				}]
+			}
+		},
+		*/
+
+		htmlclean: {
+			deploy: {
+				expand: true,
+				cwd: '<%= yeoman.dist %>',
+				src: [
+					'*.html',
+					'views/{,*/}*.html'
+				],
+				dest: '<%= yeoman.dist %>'
 			}
 		},
 
@@ -401,14 +418,14 @@ module.exports = function (grunt) {
 		'concat',
 		'ngmin',
 		'copy:dist',
-		'cdnify',
+		//'cdnify', disabled because it currently doesn't work
 		'htmlrefs',
 		'cssmin',
 		'uglify',
 		'rev',
 		'usemin',
 		'json-minify',
-		'htmlmin'
+		'htmlclean'
 	]);
 
 	grunt.registerTask('default', [

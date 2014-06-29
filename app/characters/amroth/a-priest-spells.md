@@ -1,7 +1,7 @@
 -|-|-|-
 -|-|-|-
-3rd | {{2+1}}+2 |-| *[antimagic field]* ^D^, *[bestow curse]*, *[dispel magic]*, *[glyph of warding]* ^D^, *[summon monster iii]*
-2nd | {{3+1}}+2 |-| *[detect thoughts]* ^D^, *[protection from energy]* ^D^, *[restoration, lesser]*, *[silence]*, unprepared, unprepared
+3rd | {{2+1}}+2 |-| *[bestow curse]*, *[dispel magic]*, *[glyph of warding]* ^D^, *[protection from energy]* ^D^, *[summon monster iii]*
+2nd | {{3+1}}+2 |-| *[augury]*, *[detect thoughts]* ^D^, *[restoration, lesser]*, *[silence]* ^D^, unprepared, unprepared
 1st | {{3+2}}+2 |-| *[comprehend languages]* ^D^, *[deathwatch]*, *[detect alignment]*, *[sanctuary]* ^D^, *[shield of faith]*, unprepared, unprepared
 0th |    5      |-| *[detect magic]*, *[detect poison]*, *[purify food and drink]*, *[read magic]*, *[stabilize]*
 
@@ -108,11 +108,11 @@
 
 [Solitude Domain (M)]: #
   [greater create demiplane]: :d20-spell:create-demiplane
-  [mirage arcana]: :d20-spell:mirage-arcana
-  [detect scrying]: :d20-spell:detect-scrying
-  [silence]: :d20-spell:silence
   [mind blank]: :d20-spell:mind-blank
   [repulsion]: :d20-spell:repulsion
   [antimagic field]: :d20-spell:antimagic-field
+  [mirage arcana]: :d20-spell:mirage-arcana
+  [detect scrying]: :d20-spell:detect-scrying
   [protection from energy]: :d20-spell:protection-from-energy
+  [silence]: :d20-spell:silence
   [sanctuary]: :d20-spell:sanctuary

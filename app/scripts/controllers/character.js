@@ -317,6 +317,8 @@ app.controller('CharacterCtrl', [
 					scores
 				);
 				// Combat Maneuver Bonus
+				character.offense.cmb.name = 'combat maneuver';
+				character.offense.cmb.hideName = true;
 				character.offense.cmb = new Attack(
 					character.offense.cmb,
 					character.stats.bab,

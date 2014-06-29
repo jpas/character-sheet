@@ -25,8 +25,8 @@
 				<span ng-if="c.info.subtypes">(<md c="c" ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
 			</p>
 			<p>
-				<b>Initiative</b>
-				&#32;<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
+				<b>Initiative</b>&#32;
+				<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
 				<span ng-if="c.info.senses">
 					<b>Senses</b>&#32;
 					<md c="c" ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
@@ -35,7 +35,7 @@
 				<roll name="c.perception.name" die="c.perception.roll()"></roll>
 			</p>
 			<p ng-if="c.info.auras">
-				<b>Auras</b>
+				<b>Auras</b>&#32;
 				<md c="c" ng-repeat="aura in c.info.auras" md="aura"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<hr>
@@ -64,12 +64,12 @@
 				<md c="c" ng-repeat="sp in c.info.hpSpecials" md="sp"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<p>
-				<b>Fortitude</b>
-				&#32;<roll name="'Fortitude Save'" die="c.defense.fort.roll()"></roll>;
-				<b>Reflex</b>
-				&#32;<roll name="'Reflex Save'" die="c.defense.refl.roll()"></roll>;
-				<b>Will</b>
-				&#32;<roll name="'Will Save'" die="c.defense.will.roll()"></roll>
+				<b>Fortitude</b>&#32;
+				<roll name="'Fortitude Save'" die="c.defense.fort.roll()"></roll>;
+				<b>Reflex</b>&#32;
+				<roll name="'Reflex Save'" die="c.defense.refl.roll()"></roll>;
+				<b>Will</b>&#32;
+				<roll name="'Will Save'" die="c.defense.will.roll()"></roll>
 			</p>
 			<p>
 				<span ng-if="c.defense.dr">
@@ -82,17 +82,17 @@
 					<span ng-if="c.defense.resist || c.defense.sr">;&#32;</span>
 				</span>
 				<span ng-if="c.defense.resist">
-					<b>Resist</b>
+					<b>Resist</b>&#32;
 					{{c.defense.resist}}
 					<span ng-if="c.defense.sr">;&#32;</span>
 				</span>
 				<span ng-if="c.defense.sr">
-					<b>SR</b>
+					<b>SR</b>&#32;
 					{{c.defense.sr}}
 				</span>
 			</p>
 			<p ng-if="c.defense.special">
-				<b>Special</b>
+				<b>Special</b>&#32;
 				<md c="c" ng-repeat="def in c.defense.special" md="def"><span ng-if="!$last">,&#32;</span></md>
 			</p>
 			<hr>
@@ -101,7 +101,17 @@
 			<p ng-repeat="(type, attacks) in c.offense.attacks">
 				<b>{{type.toProperCase()}}</b>
 				<span ng-repeat="attack in attacks | orderBy:'name'">
-					<attack data="attack"></attack><span ng-if="!$last">,&#32;</span>
+					<span ng-if="attack.quantity">{{attack.quantity}}&#32;</span>
+					<md ng-if="!attack.hideName" md="attack.name">&#32;</md>
+					<span ng-if="!attack.autoHit" ng-repeat="die in attack.rolls() track by $index">
+						<roll name="attack.name + ' to hit'" die="die"></roll>
+						<span ng-if="!$last">&#32;/&#32;</span>
+						<span ng-if="$last">&#32;</span>
+					</span>
+					<small ng-if="attack.dc">(DC {{attack.dc}})&#32;</small>
+					<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"><span ng-if="!$last && !attack.crit">,</span></roll>
+					<code ng-if="attack.crit">{{attack.crit}}</code>
+					<span ng-if="!$last && attack.crit">,&#32;</span>
 				</span>
 			</p>
 			<div ng-if="c.offense.spells" ng-repeat="caster in c.offense.spells | orderBy:'class'">
@@ -130,7 +140,7 @@
 				<b>Base Attack Bonus</b>
 				<roll name="'Base Attack'" die="pf.concat('1d20', c.stats.bab)"></roll>;
 				<b>Combat Maneuver Bonus</b>
-				<attack name="'Combat Maneuver'" data="c.offense.cmb"></attack>
+				<roll name="'Combat Maneuver to hit'" die="c.offense.cmb.rolls()[0]"></roll>
 				{{c.offense.cmbSpecial}}
 			</p>
 			<hr>

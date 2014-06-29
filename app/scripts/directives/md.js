@@ -53,14 +53,16 @@ app.directive('md', [
 						{ re: /&lt;\/ng-bind&gt;<\/code>/g, text: '}}'},
 						{ re: /\^([^\^]*)\^/g, text: '<sup>$1</sup>' },
 						{ re: /\$([^\$]*)\$/g, text: '<small>$1</small>' },
+						{ re: /<a/g, text: '<a target="_blank"'},
+						{ re: /target="_blank" href="#/g, text: 'href="#/' + $routeParams.characterId + '#' },
+						// link shortcuts
 						{ re: /:d20-spell:([a-z])/g, text: 'http://www.d20pfsrd.com/magic/all-spells/$1/$1' },
-						{ re: /:d20-feat-([^\:]*):/g, text: 'http://www.d20pfsrd.com/feats/$1-feats/'},
-						{ re: /:d20-trait-([^\:]*):/g, text: 'http://www.d20pfsrd.com/traits/$1-traits/'},
-						{ re: /:d20-wop-effect:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/effect-words/'},
-						{ re: /:d20-wop-meta:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/meta-words/'},
-						{ re: /:d20-wop-target:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/target-words/'},
-						{ re: /<a ^(href="#)$/g, text: '<a target="_blank"' },
-						{ re: /href="#/g, text: 'href="#/' + $routeParams.characterId + '#'}
+						{ re: /:d20-feat-([^\:]*):/g, text: 'http://www.d20pfsrd.com/feats/$1-feats/' },
+						{ re: /:d20-trait-([^\:]*):/g, text: 'http://www.d20pfsrd.com/traits/$1-traits/' },
+						{ re: /:d20-wop-effect:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/effect-words/' },
+						{ re: /:d20-wop-meta:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/meta-words/' },
+						{ re: /:d20-wop-target:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/target-words/' },
+						{ re: /:nethys-([^\:]*):/g, text: 'http://www.archivesofnethys.com/$1Display.aspx?ItemName=' }
 					];
 
 					if (isText === true) {
