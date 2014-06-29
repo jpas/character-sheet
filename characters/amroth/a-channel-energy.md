@@ -8,4 +8,3 @@ Creatures healed by channel energy cannot exceed their maximum hit point totalâ€
 A priest may channel energy {{3 + c.stats.scores.cha.modifier()}} times per day.
 This is a standard action that does not provoke an attack of opportunity.
 A priest can choose whether or not to include herself in this effect.
-
