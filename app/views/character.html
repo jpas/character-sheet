@@ -108,9 +108,14 @@
 						<span ng-if="!$last">&#32;/&#32;</span>
 						<span ng-if="$last">&#32;</span>
 					</span>
-					<small ng-if="attack.dc">(DC {{attack.dc}})&#32;</small>
-					<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"><span ng-if="!$last && !attack.crit">,</span></roll>
-					<code ng-if="attack.crit">{{attack.crit}}</code>
+					<small ng-if="attack.dc">(DC <md c='c' md="attack.dc"></md>)&#32;</small>
+					<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"><span ng-if="!$last && !attack.crit && !attack.special">,</span></roll>
+					<code ng-if="attack.special">
+						<roll ng-if="attack.special.damage" name="attack.name + attack.special.text + ' damage'"></roll>
+						<span ng-if="attack.special.text"></span>
+					</code>
+					<span ng-if="!$last && attack.special && !attack.crit">,&#32;</span>
+					<code ng-if="attack.crit"><md c='c' md="attack.crit"></md></code>
 					<span ng-if="!$last && attack.crit">,&#32;</span>
 				</span>
 			</p>

@@ -95,7 +95,7 @@
 					{
 						"name": "[channel positive energy](#-channel-energy-su-)",
 						"quantity": "5/day",
-						"dc": 15,
+						"dc": "{{10 + Math.floor(c.info.levels.priest/2) + c.stats.scores.cha.modifier()}}",
 						"autoHit": true,
 						"stat": "cha",
 						"damage": "3d8"
@@ -571,7 +571,7 @@
 						"name": "slams",
 						"quantity": 2,
 						"stat": "str",
-						"damage": "2d6+8",
+						"damage": "2d6+13",
 						"bonuses": [
 							"size:-2"
 						]
@@ -581,7 +581,7 @@
 					{
 						"name": "trample",
 						"stat": "str",
-						"damage": "2d6+12",
+						"damage": "2d6+19",
 						"autoHit": true,
 						"dc": "{{10 + Math.floor(c.info.levels.hd/2) + Math.floor(c.stats.scores.str.modifier()*1.5)}}"
 					}
