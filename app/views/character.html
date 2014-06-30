@@ -142,11 +142,11 @@
 				{{c.offense.reach}}
 			</p>
 			<p>
-				<b>Base Attack Bonus</b>
+				<b>Base Attack Bonus</b>&#32;
 				<roll name="'Base Attack'" die="pf.concat('1d20', c.stats.bab)"></roll>;
-				<b>Combat Maneuver Bonus</b>
+				<b>Combat Maneuver Bonus</b>&#32;
 				<roll name="'Combat Maneuver to hit'" die="c.offense.cmb.rolls()[0]"></roll>
-				{{c.offense.cmbSpecial}}
+				<span ng-if="c.offense.cmb.special">&#32;({{c.offense.cmb.special}})</span>
 			</p>
 			<hr>
 		</section>
