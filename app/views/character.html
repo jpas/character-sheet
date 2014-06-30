@@ -108,7 +108,7 @@
 						<span ng-if="!$last">&#32;/&#32;</span>
 						<span ng-if="$last">&#32;</span>
 					</span>
-					<small ng-if="attack.dc">(DC <md c='c' md="attack.dc"></md>)&#32;</small>
+					<small ng-if="attack.dc">(DC&#32;<md c='c' md="attack.dc"></md>)&#32;</small>
 					<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"><span ng-if="!$last && !attack.crit && !attack.special">,</span></roll>
 					<code ng-if="attack.special">
 						<roll ng-if="attack.special.damage" name="attack.name + attack.special.text + ' damage'"></roll>
