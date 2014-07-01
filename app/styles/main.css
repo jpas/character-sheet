@@ -6,6 +6,11 @@ code {
 	font-size: 100%;
 }
 
+roll code {
+    cursor: pointer;
+    cursor: hand;
+}
+
 .roll p {
     margin: 0;
 }
@@ -100,4 +105,13 @@ code {
 
 .text-bold {
     font-weight: bold;
+}
+
+.mode-switcher {
+    float: right;
+    margin-right: 20px;
+}
+
+.mode-switcher a {
+    color: #333;
 }

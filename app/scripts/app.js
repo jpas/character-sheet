@@ -9,8 +9,11 @@ var app = angular.module('charactersApp', [
 ]);
 
 app.config([
+	'$compileProvider',
 	'$routeProvider',
-	function ($routeProvider) {
+	function ($compileProvider, $routeProvider) {
+		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
+
 		$routeProvider
 		.when('/', {
 			templateUrl: 'views/main.html',
