@@ -264,35 +264,6 @@ app.controller('CharacterCtrl', [
 		$scope.pf = pf;
 		$scope.Math = Math;
 
-		$scope.mode = 'edit';
-		$scope.switchMode = function(mode) {
-			$scope.mode = mode;
-		};
-
-
-		$scope.blob = {
-			name: $routeParams.characterId + '.json',
-		};
-
-		function newCharacterBlob() {
-			var json = angular.toJson($scope.characters);
-			var blob = new Blob([json], {type: 'application/json'});
-			$scope.blob.url = URL.createObjectURL(blob);
-			return $scope.blob.url;
-		}
-
-		$scope.add = {
-			character: function() {
-				$scope.characters.push({});
-			}
-		};
-
-		$scope.remove = {
-			character: function(index) {
-				$scope.characters.splice(index, 1);
-			}
-		};
-
 		$http.get('characters/' + $routeParams.characterId + '/_data.json').success(function (data) {
 			$scope.characters = data;
 
@@ -412,24 +383,11 @@ app.controller('CharacterCtrl', [
 				// Spells/SLAs
 				angular.forEach(character.offense.spells, function (caster, key) {
 					character.offense.spells[key] = new Caster(
-
 						caster,
 						scores
 					);
 				});
 			});
-
-			var firstChange = false;
-			$scope.$watch('characters', function() {
-				if (firstChange) {
-					window.onbeforeunload = function() {
-						return 'Changes have been made to your character, they will not be saved unless you download them. Are you sure you want to close?';
-					};
-				}
-				firstChange = true;
-				newCharacterBlob();
-				console.log('changed ' + $scope.blob.url)
-			}, true);
 		});
 	}
 ]);

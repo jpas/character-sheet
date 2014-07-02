@@ -33,15 +33,10 @@ All keys are optional unless mentioned otherwise.
 
 			"alignment": "!md!",
 			"size": "!md!",
-			"type": "!md!",
-			"subtypes": [
-			"!md!"
-			],
+			"type": "!md!", /* this also contains subtypes */
 
 			"initiative": 1, /* mandatory */
-			"senses": [
-			"!md!"
-			],
+			"senses": "!md!",
 
 			"aura": "!md!"
 

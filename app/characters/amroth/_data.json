@@ -13,10 +13,7 @@
 			},
 			"alignment": "TN",
 			"size": "Medium",
-			"type": "humanoid",
-			"subtypes": [
-				"human"
-			],
+			"type": "humanoid (human)",
 			"initiative": 5,
 			"hp": 40,
 			"hd": "6d6+6",
@@ -310,9 +307,7 @@
 			"size": "Tiny",
 			"type": "[magical beast](http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Magical-Beast)",
 			"initiative": 2,
-			"senses": [
-				"[low-light vision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision)"
-			],
+			"senses": "[low-light vision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Low-Light-Vision)",
 			"hp": 20,
 			"hd": "6 HD",
 			"languages": [
@@ -513,15 +508,10 @@
 			"size": "Huge",
 			"type": "[construct](http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-Construct)",
 			"initiative": -3,
-			"senses": [
-				"[darkvision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision) 60 ft.",
-				"[low-light vision](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-)"
-			],
+			"senses": "[darkvision](http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-Darkvision) 60 ft., [low-light vision](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Low-Light-Vision-Ex-)",
 			"hp": 86,
 			"hd": "6d10+40",
-			"hpSpecials": [
-				"[fast healing](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-) 5"
-			]
+			"hpSpecials": "[fast healing](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Fast-Healing-Ex-) 5"
 		},
 		"stats": {
 			"scores": {

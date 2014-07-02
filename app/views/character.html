@@ -1,4 +1,4 @@
-<div ng-show="mode == 'view'" id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
+<div id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
 	<h2>
 		{{c.info.name}}&#32;
 		<small ng-if="c.info.cr">
@@ -7,15 +7,10 @@
 		<small ng-if="c.info.mr">
 			MR&#32;{{c.info.mr}}
 		</small>
-		<span class="mode-switcher" ng-if="$index == 0">
-			<a download="{{blob.name}}" ng-href="{{blob.url}}"><i class="fa fa-download"></i></a>
-			<i ng-click="switchMode('edit')" class="fa fa-edit"></i>
-		</span>
 	</h2>
 	<hr>
 	<section id="{{c.info.name.toLowerCase()}}-info">
-		<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
-		<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="hidden-xs col-sm-4 portrait-sm img-responsive img-thumbnail pull-right">
+		<img ng-if="c.info.portrait" ng-src="{{c.info.portrait}}" class="portrait col-sm-4 img-responsive img-thumbnail pull-right">
 		<p>
 			<md c="c" ng-if="c.info.templates" md="c.info.templates">&#32;</md>
 			<md c="c" ng-if="c.info.race" md="c.info.race">&#32;</md>
@@ -25,21 +20,20 @@
 			<md c="c" ng-if="c.info.alignment" md="c.info.alignment">&#32;</md>
 			<md c="c" ng-if="c.info.size" md="c.info.size">&#32;</md>
 			<md c="c" ng-if="c.info.type" md="c.info.type">&#32;</md>
-			<span ng-if="c.info.subtypes">(<md c="c" ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
 		</p>
 		<p>
 			<b>Initiative</b>&#32;
 			<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
 			<span ng-if="c.info.senses">
 				<b>Senses</b>&#32;
-				<md c="c" ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
+				<md c="c" md="c.info.senses"></md>;
 			</span>
 			<b>Perception</b>&#32;
 			<roll name="c.perception.name" die="c.perception.roll()"></roll>
 		</p>
 		<p ng-if="c.info.auras">
 			<b>Auras</b>&#32;
-			<md c="c" ng-repeat="aura in c.info.auras" md="aura"><span ng-if="!$last">,&#32;</span></md>
+			<md c="c" md="c.info.aura"></md>
 		</p>
 		<hr>
 	</section>
@@ -64,7 +58,7 @@
 			<b>HP</b>
 			{{c.info.hp}}
 			({{c.info.hd}})<span ng-if="c.info.hpSpecials">;&#32;</span>
-			<md c="c" ng-repeat="sp in c.info.hpSpecials" md="sp"><span ng-if="!$last">,&#32;</span></md>
+			<md c="c" md="c.info.hpSpecials"></md>
 		</p>
 		<p>
 			<b>Fortitude</b>&#32;
@@ -122,6 +116,13 @@
 				<span ng-if="!$last && attack.crit">,&#32;</span>
 			</span>
 		</p>
+		<p>
+			<b>Base Attack Bonus</b>&#32;
+			<roll name="'Base Attack'" die="pf.concat('1d20', c.stats.bab)"></roll>;
+			<b>Combat Maneuver Bonus</b>&#32;
+			<roll name="'Combat Maneuver to hit'" die="c.offense.cmb.rolls()[0]"></roll>
+			<span ng-if="c.offense.cmb.special">&#32;({{c.offense.cmb.special}})</span>
+		</p>
 		<div ng-if="c.offense.spells" ng-repeat="caster in c.offense.spells | orderBy:'class'">
 			<p>
 				<b>{{caster.name}}</b>
@@ -143,13 +144,6 @@
 			{{c.offense.space}};
 			<b>Reach</b>
 			{{c.offense.reach}}
-		</p>
-		<p>
-			<b>Base Attack Bonus</b>&#32;
-			<roll name="'Base Attack'" die="pf.concat('1d20', c.stats.bab)"></roll>;
-			<b>Combat Maneuver Bonus</b>&#32;
-			<roll name="'Combat Maneuver to hit'" die="c.offense.cmb.rolls()[0]"></roll>
-			<span ng-if="c.offense.cmb.special">&#32;({{c.offense.cmb.special}})</span>
 		</p>
 		<hr>
 	</section>
@@ -200,73 +194,5 @@
 		<hr>
 		<md c="c" ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
 	</section>
-	<hr ng-if="!$last">
-</div>
-<div ng-if="mode == 'edit'" id="{{c.info.name.toLowerCase()}}">
-	<h2>
-		<button type="button" class="btn btn-success btn-sm" ng-click="add.character()">Add Character</button>
-		<span class="mode-switcher">
-			<a download="{{blob.name}}" ng-href="{{blob.url}}"><i class="fa fa-download"></i></a>
-			<i ng-click="switchMode('view')" class="fa fa-eye"></i>
-		</span>
-	</h2>
-	<hr>
-</div>
-<div ng-show="mode == 'edit'" id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
-	<button type="button" class="remove-character pull-right btn btn-danger btn-sm" ng-click="remove.character($index)">Remove Character</button>
-	<form id="{{c.info.name.toLowerCase()}}-name" class="form-inline">
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-addon">Name</div>
-				<input ng-model="c.info.name" type="text" class="form-control">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-addon">CR</div>
-				<input ng-model="c.info.cr" class="form-control cr" type="text">
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-addon">MR</div>
-				<input ng-model="c.info.mr" class="form-control cr" type="text">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="sr-only">Portrait</label>
-			<input ng-model="c.info.portrait" type="text" class="form-control portrait" placeholder="Portrait">
-		</div>
-	</form>
-	<section id="{{c.info.name.toLowerCase()}}-info">
-		<p>
-			<md c="c" ng-if="c.info.templates" md="c.info.templates">&#32;</md>
-			<md c="c" ng-if="c.info.race" md="c.info.race">&#32;</md>
-			<md c="c" ng-if="c.info.classes" md="c.info.classes">&#32;</md>
-		</p>
-		<p>
-			<md c="c" ng-if="c.info.alignment" md="c.info.alignment">&#32;</md>
-			<md c="c" ng-if="c.info.size" md="c.info.size">&#32;</md>
-			<md c="c" ng-if="c.info.type" md="c.info.type">&#32;</md>
-			<span ng-if="c.info.subtypes">(<md c="c" ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
-		</p>
-		<p>
-			<b>Initiative</b>&#32;
-			<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
-			<span ng-if="c.info.senses">
-				<b>Senses</b>&#32;
-				<md c="c" ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
-			</span>
-			<b>Perception</b>&#32;
-			<roll name="c.perception.name" die="c.perception.roll()"></roll>
-		</p>
-		<p ng-if="c.info.auras">
-			<b>Auras</b>&#32;
-			<md c="c" ng-repeat="aura in c.info.auras" md="aura"><span ng-if="!$last">,&#32;</span></md>
-		</p>
-		<hr>
-	</section>
-	<!-- edit -->
-	<!-- /edit -->
 	<hr ng-if="!$last">
 </div>
