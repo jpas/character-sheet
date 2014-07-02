@@ -214,6 +214,18 @@ function Skill(_name, _skill, scores, acp) {
 		'Use Magic Device': 'cha'
 	};
 
+	var acpSkills = {
+		'Acrobatics': true,
+		'Climb': true,
+		'Disable Device': true,
+		'Escape Artist': true,
+		'Fly': true,
+		'Ride': true,
+		'Sleight of Hand': true,
+		'Stealth': true,
+		'Swim': true
+	}
+
 	var re = /\s\(|\)/;
 	this.name = (_name.split(re).length > 1 ? _name.split(re)[1] : _name);
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
@@ -223,7 +235,7 @@ function Skill(_name, _skill, scores, acp) {
 	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
-		var t = _skill.acp ? acp : 0;
+		var t = acpSkills[this.baseName] !== undefined ? acp : 0;
 		for (var i = bonuses.length - 1; i >= 0; i--) {
 			t += (typeof bonuses[i] === 'number') ? bonuses[i] : parseInt(bonuses[i].split(':')[1], 10);
 		}

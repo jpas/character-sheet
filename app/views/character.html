@@ -106,14 +106,13 @@
 					<span ng-if="$last">&#32;</span>
 				</span>
 				<small ng-if="attack.dc">(DC&#32;<md c='c' md="attack.dc"></md>)&#32;</small>
-				<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"><span ng-if="!$last && !attack.crit && !attack.special">,</span></roll>
+				<roll ng-if="attack.damage" name="attack.name + ' damage'" die="attack.damage"></roll>
 				<code ng-if="attack.special">
 					<roll ng-if="attack.special.damage" name="attack.name + attack.special.text + ' damage'"></roll>
 					<span ng-if="attack.special.text"></span>
 				</code>
-				<span ng-if="!$last && attack.special && !attack.crit">,&#32;</span>
 				<code ng-if="attack.crit"><md c='c' md="attack.crit"></md></code>
-				<span ng-if="!$last && attack.crit">,&#32;</span>
+				<span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p>
@@ -126,10 +125,10 @@
 		<div ng-if="c.offense.spells" ng-repeat="caster in c.offense.spells | orderBy:'class'">
 			<p>
 				<b>{{caster.name}}</b>
-				(CL
+				(CL&#32;
 				{{caster.casterLevel.toOrdinal()}};
-				concentration
-				&#32;<roll name="'Concentration'" die="pf.concat('1d20', caster.concentration())"></roll>)
+				concentration&#32;
+				<roll name="'Concentration'" die="pf.concat('1d20', caster.concentration())"></roll>)
 			</p>
 			<div class="spellList">
 				<md c="c" md="caster.markdown"></md>
@@ -151,24 +150,24 @@
 		<p>
 			<span ng-repeat="ability in c.stats.scores | orderAbilityScores">
 				<b>{{ability.sname.toProperCase()}}</b>
-				{{ability.score()}}
-				&#32;<roll name="ability.name" die="ability.roll()"></roll><span ng-if="!$last">,&#32;</span>
+				{{ability.score()}}&#32;
+				<roll name="ability.name" die="ability.roll()"></roll><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p ng-if="c.hasTrainedSkills()">
 			<b>Trained Skills</b>
 			<span class="block" ng-repeat="skill in c.skills | filterSkills:'trained' | orderObjectBy:'name'">
 				<i ng-class="skill.icon()"></i>
-				{{skill.name}}
-				&#32;<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,&#32;</span>
+				{{skill.name}}&#32;
+				<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p ng-if="c.hasUntrainedSkills()">
 			<b>Untrained Skills</b>
 			<span class="block" ng-repeat="skill in c.skills | filterSkills | orderObjectBy:'name'">
 				<i ng-class="skill.icon()"></i>
-				{{skill.name}}
-				&#32;<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,&#32;</span>
+				{{skill.name}}&#32;
+				<roll name="skill.name" die="skill.roll()" validation="skill.validation"></roll><span ng-if="!$last">,&#32;</span>
 			</span>
 		</p>
 		<p ng-if="c.feats">

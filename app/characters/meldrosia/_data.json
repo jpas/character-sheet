@@ -21,7 +21,8 @@
 			"hd": "2d8+4",
 			"languages": [
 				"Common"
-			]
+			],
+			"acp": -2
 		},
 		"stats": {
 			"scores": {
