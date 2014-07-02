@@ -202,25 +202,70 @@
 	</section>
 	<hr ng-if="!$last">
 </div>
-<div ng-if="mode == 'edit'" id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
+<div ng-if="mode == 'edit'" id="{{c.info.name.toLowerCase()}}">
 	<h2>
-		<button type="button" class="btn btn-success btn-md" ng-click="add.character()">Add Character</button>
-		<button type="button" class="btn btn-danger btn-md" ng-click="remove.character($index)">Remove Character</button>
-		<span class="mode-switcher" ng-if="$index == 0">
+		<button type="button" class="btn btn-success btn-sm" ng-click="add.character()">Add Character</button>
+		<span class="mode-switcher">
 			<a download="{{blob.name}}" ng-href="{{blob.url}}"><i class="fa fa-download"></i></a>
 			<i ng-click="switchMode('view')" class="fa fa-eye"></i>
 		</span>
 	</h2>
 	<hr>
-	<p>
-		{{c.info.name}}&#32;
-		<small ng-if="c.info.cr">
-			CR&#32;{{c.info.cr}}&#32;
-		</small>
-		<small ng-if="c.info.mr">
-			MR&#32;{{c.info.mr}}
-		</small>
-	</p>
+</div>
+<div ng-show="mode == 'edit'" id="{{c.info.name.toLowerCase()}}" ng-repeat="c in characters">
+	<button type="button" class="remove-character pull-right btn btn-danger btn-sm" ng-click="remove.character($index)">Remove Character</button>
+	<form id="{{c.info.name.toLowerCase()}}-name" class="form-inline">
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">Name</div>
+				<input ng-model="c.info.name" type="text" class="form-control">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">CR</div>
+				<input ng-model="c.info.cr" class="form-control cr" type="text">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">MR</div>
+				<input ng-model="c.info.mr" class="form-control cr" type="text">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="sr-only">Portrait</label>
+			<input ng-model="c.info.portrait" type="text" class="form-control portrait" placeholder="Portrait">
+		</div>
+	</form>
+	<section id="{{c.info.name.toLowerCase()}}-info">
+		<p>
+			<md c="c" ng-if="c.info.templates" md="c.info.templates">&#32;</md>
+			<md c="c" ng-if="c.info.race" md="c.info.race">&#32;</md>
+			<md c="c" ng-if="c.info.classes" md="c.info.classes">&#32;</md>
+		</p>
+		<p>
+			<md c="c" ng-if="c.info.alignment" md="c.info.alignment">&#32;</md>
+			<md c="c" ng-if="c.info.size" md="c.info.size">&#32;</md>
+			<md c="c" ng-if="c.info.type" md="c.info.type">&#32;</md>
+			<span ng-if="c.info.subtypes">(<md c="c" ng-repeat="subtype in c.info.subtypes" md="subtype"><span ng-if="!$last">,&#32;</span></md>)</span>
+		</p>
+		<p>
+			<b>Initiative</b>&#32;
+			<roll name="'Initiative'" die="pf.concat('1d20', c.info.initiative)"></roll>;
+			<span ng-if="c.info.senses">
+				<b>Senses</b>&#32;
+				<md c="c" ng-repeat="sense in c.info.senses" md="sense"><span ng-if="!$last">,&#32;</span></md>;
+			</span>
+			<b>Perception</b>&#32;
+			<roll name="c.perception.name" die="c.perception.roll()"></roll>
+		</p>
+		<p ng-if="c.info.auras">
+			<b>Auras</b>&#32;
+			<md c="c" ng-repeat="aura in c.info.auras" md="aura"><span ng-if="!$last">,&#32;</span></md>
+		</p>
+		<hr>
+	</section>
 	<!-- edit -->
 	<!-- /edit -->
 	<hr ng-if="!$last">

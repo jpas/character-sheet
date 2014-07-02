@@ -108,10 +108,30 @@ roll code {
 }
 
 .mode-switcher {
+    display: none;
     float: right;
-    margin-right: 20px;
+    margin-top: 13.5px;
+    font-size: 19.5px;
+    color: #999;
+
+}
+
+h2:hover > .mode-switcher {
+    display: inline;
 }
 
 .mode-switcher a {
-    color: #333;
+    color: #999;
+}
+
+.btn-sm {
+    padding: 7px 10px;
+}
+
+.form-control.cr {
+    width: 50px !important;
+    text-align: center;
+}
+.form-control.portrait {
+    width: 100px !important;
 }

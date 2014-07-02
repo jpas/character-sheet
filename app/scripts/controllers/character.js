@@ -264,7 +264,7 @@ app.controller('CharacterCtrl', [
 		$scope.pf = pf;
 		$scope.Math = Math;
 
-		$scope.mode = 'view';
+		$scope.mode = 'edit';
 		$scope.switchMode = function(mode) {
 			$scope.mode = mode;
 		};
