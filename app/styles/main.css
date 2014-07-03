@@ -6,20 +6,18 @@ code {
 	font-size: 100%;
 }
 
-.portrait-list-sm {
-    margin: -21px 20px -21px 0;
+img.portrait-list {
+    margin: 0 20px 0 0;
     padding: 10px;
+    border: none;
+    border-right: 1px solid #eee;
     border-radius: 0;
 }
 
-.portrait-list-xs {
-    margin: -21px 0 20px;
-    padding: 10px;
-    border-radius: 0;
-}
-
-.character-list-text {
-    margin: 0 20px;
+.character-list {
+    border: 1px solid #eee;
+    border-right: none;
+    margin: 20px 0;
 }
 
 .img-thumbnail {

@@ -53,6 +53,7 @@ app.directive('md', [
 						{ re: /&lt;\/ng-bind&gt;<\/code>/g, text: '}}'},
 						{ re: /\^([^\^]*)\^/g, text: '<sup>$1</sup>' },
 						{ re: /\$([^\$]*)\$/g, text: '<small>$1</small>' },
+						{ re: /\@([^\@]*)\@/g, text: '<roll>$1</roll>' },
 						{ re: /<a/g, text: '<a target="_blank"'},
 						{ re: /target="_blank" href="#/g, text: 'href="#/' + $routeParams.characterId + '#' },
 						// link shortcuts

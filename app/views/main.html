@@ -1,13 +1,7 @@
-<div ng-repeat="c in characters">
-	<hr>
+<div class="character-list clearfix" ng-repeat="c in characters">
 	<a ng-if="c.portrait" ng-href="#/{{c.id}}">
-		<img ng-src="{{c.portrait}}" class="visible-xs col-xs-12 portrait-xs img-responsive img-thumbnail">
-		<img ng-src="{{c.portrait}}" class="hidden-xs col-sm-4 portrait-list-sm img-responsive img-thumbnail">
+		<img ng-src="{{c.portrait}}" class="col-sm-4 portrait-list img-responsive img-thumbnail">
 	</a>
-	<div class="character-list-text">
-		<h3><a ng-href="#/{{c.id}}">{{c.name}}</a></h3>
-		<p>{{c.snippet}}</p>
-	</div>
-	<div class="clearfix"></div>
-	<hr>
+	<h3><a ng-href="#/{{c.id}}">{{c.name}}</a></h3>
+	<p>{{c.snippet}}</p>
 </div>

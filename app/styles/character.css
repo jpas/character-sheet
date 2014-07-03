@@ -1,18 +1,27 @@
-roll code {
-    cursor: pointer;
-    cursor: hand;
+section {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
 }
 
-.roll p {
+section>:first-child {
+    margin-top: 20px;
+}
+
+img.portrait {
     margin: 0;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 0;
+    border-top: none;
 }
 
-.roll h3 {
-    margin: 0 0 15px;
-}
-
-.panel {
-    margin-bottom: 0;
+roll {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    padding: 2px 4px;
+    color: #C7254E;
+    background-color: #F9F2F4;
+    white-space: nowrap;
+    border-radius: 4px;
 }
 
 .spellList {
@@ -25,17 +34,9 @@ roll code {
     display: none;
 }
 
-.spellList table {
-    max-width: 100%;
-}
-
 .spellList tr td {
     text-align: center;
     padding: 10px 5px 0;
-}
-
-.spellList del, .spellList del > a {
-    color: #A8C3DA;
 }
 
 .spellList tr td:first-child {
@@ -51,8 +52,6 @@ roll code {
     margin: 0;
 }
 
-img.portrait {
-    margin: -21px 0 20px 20px;
-    padding: 10px;
-    border-radius: 0;
+.spellList del, .spellList del > a {
+    color: #A8C3DA;
 }

@@ -4,8 +4,7 @@
 var app = angular.module('charactersApp', [
 	'ngResource',
 	'ngRoute',
-	'ngSanitize',
-	'ui.bootstrap'
+	'ngSanitize'
 ]);
 
 app.config([

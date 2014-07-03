@@ -10,6 +10,14 @@ var pf = {
 			}
 		}
 		return args.join('');
+	},
+	dice: function (die, mod) {
+		mod = mod || 0;
+		if (die === '1d20') {
+			return mod <= 0 ? mod.toString() : '+' + mod.toString();
+		} else {
+			return die + (mod < 0 ? mod.toString() : '+' + mod.toString());
+		}
 	}
 };
 

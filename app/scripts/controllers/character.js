@@ -26,7 +26,7 @@ function AbilityScore(_name, _score) {
 	};
 
 	this.roll = function () {
-		return pf.concat(
+		return pf.dice(
 			'1d20',
 			this.modifier()
 		);
@@ -60,7 +60,7 @@ function Attack(_attack, _bab, scores) {
 				));
 			}
 		} else {
-			arr.push(pf.concat(
+			arr.push(pf.dice(
 				'1d20',
 				toHit
 			));
@@ -77,7 +77,7 @@ function Caster(_caster, scores) {
 	var concentrationBonus = _caster.concentrationBonus;
 
 	this.concentration = function () {
-		return stat.modifier() + concentrationBonus + this.casterLevel;
+		return pf.dice('1d20', stat.modifier() + concentrationBonus + this.casterLevel);
 	};
 
 	return this;
@@ -178,7 +178,7 @@ function Save(_save, scores) {
 				t += parseInt(_save.bonuses[i].split(':')[1]);
 			}
 		}
-		return pf.concat('1d20', t);
+		return pf.dice('1d20', t);
 	};
 
 	return this;
@@ -251,7 +251,7 @@ function Skill(_name, _skill, scores, acp) {
 	};
 
 	this.roll = function () {
-		return pf.concat('1d20', this.total());
+		return pf.dice('1d20', this.total());
 	};
 
 	this.icon = function () {
