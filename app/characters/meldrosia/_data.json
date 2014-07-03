@@ -12,10 +12,7 @@
 			},
 			"alignment": "LG",
 			"size": "Medium",
-			"type": "humanoid",
-			"subtypes": [
-				"human"
-			],
+			"type": "humanoid (human)",
 			"initiative": 1,
 			"hp": 18,
 			"hd": "2d8+4",

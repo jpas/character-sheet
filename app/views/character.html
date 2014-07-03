@@ -57,7 +57,7 @@
 		<p>
 			<b>HP</b>
 			{{c.info.hp}}
-			({{c.info.hd}})<span ng-if="c.info.hpSpecials">;&#32;</span>
+			(<md c="c" md="c.info.hd"></md>)<span ng-if="c.info.hpSpecials">;&#32;</span>
 			<md c="c" md="c.info.hpSpecials"></md>
 		</p>
 		<p>
@@ -67,25 +67,26 @@
 			<roll name="'Reflex Save'" die="c.defense.refl.roll()"></roll>;
 			<b>Will</b>&#32;
 			<roll name="'Will Save'" die="c.defense.will.roll()"></roll>
+			<span ng-if="c.defense.saveSpecial">;&#32;<md c="c" md="c.defense.saveSpecial"></md></span>
 		</p>
 		<p>
 			<span ng-if="c.defense.dr">
 				<b>DR</b>
-				{{c.defense.dr}}<span ng-if="c.defense.immune || c.defense.resist || c.defense.sr">;&#32;</span>
+				<md c="c" md="c.defense.dr"></md><span ng-if="c.defense.immune || c.defense.resist || c.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="c.defense.immune">
 				<b>Immune</b>&#32;
-				<md c="c" ng-repeat="im in c.defense.immune" md="im"><span ng-if="!$last">,&#32;</span></md>
+				<md c="c" md="c.defense.immune"></md>
 				<span ng-if="c.defense.resist || c.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="c.defense.resist">
 				<b>Resist</b>&#32;
-				{{c.defense.resist}}
+				<md c="c" md="c.defense.resist"></md>
 				<span ng-if="c.defense.sr">;&#32;</span>
 			</span>
 			<span ng-if="c.defense.sr">
 				<b>SR</b>&#32;
-				{{c.defense.sr}}
+				<md c="c" md="c.defense.sr"></md>
 			</span>
 		</p>
 		<p ng-if="c.defense.special">
