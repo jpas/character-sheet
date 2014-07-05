@@ -21,6 +21,14 @@ var pf = {
 	}
 };
 
+String.prototype.contains = function (c) {
+	return this.indexOf(c) > -1;
+};
+
+String.prototype.lacks = function (c) {
+	return this.indexOf(c) === -1;
+};
+
 String.prototype.capitalize = function () {
 	return this.charAt(0).toUpperCase() + this.slice(1);
 };

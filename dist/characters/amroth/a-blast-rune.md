@@ -1,4 +1,4 @@
-#### **Blast Rune** (Sp)
+### **Blast Rune** (Sp)
 
 As a standard action, you can create a blast rune in any adjacent square.
 Any creature entering this square takes 1d6+{{Math.floor(c.info.levels.priest/2)}} points of damage.

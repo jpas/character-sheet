@@ -9,18 +9,13 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<!-- ref:css //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-	<!-- endref -->
 	<!-- ref:css //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css -->
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 	<!-- endref -->
-	<!-- bower:css -->
-	<!-- endbower -->
 	<!-- build:css({.tmp,app}) styles/main.css -->
-	<link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/utilities.css">
-	<link rel="stylesheet" href="styles/character.css">
+	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="styles/simplegrid.css" />
+	<link rel="stylesheet" href="styles/new.css" />
 	<!-- endbuild -->
 </head>
 <body ng-app="charactersApp">
@@ -29,7 +24,7 @@
 	<![endif]-->
 
 	<!-- Add your site or application content here -->
-	<div class="container" ng-view></div>
+	<div ng-view></div>
 
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
@@ -52,7 +47,6 @@
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<!-- endref -->
 	<!-- ref:js //netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js -->
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<!-- endref -->
 
 	<!-- build:js scripts/vendor.js -->
@@ -64,8 +58,8 @@
 	<script src="scripts/utilities.js"></script>
 	<script src="scripts/app.js"></script>
 	<script src="scripts/filters.js"></script>
-	<script src="scripts/controllers/character.js"></script>
 	<script src="scripts/controllers/main.js"></script>
+	<script src="scripts/controllers/character.js"></script>
 	<script src="scripts/directives/md.js"></script>
 	<!-- endbuild -->
 </body>

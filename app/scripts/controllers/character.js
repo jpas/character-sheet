@@ -224,7 +224,7 @@ function Skill(_name, _skill, scores, acp) {
 		'Sleight of Hand': true,
 		'Stealth': true,
 		'Swim': true
-	}
+	};
 
 	var re = /\s\(|\)/;
 	this.name = (_name.split(re).length > 1 ? _name.split(re)[1] : _name);

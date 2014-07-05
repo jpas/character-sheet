@@ -59,20 +59,18 @@
 					{
 						"name": "longsword",
 						"stat": "str",
-						"damage": "1d8+3",
+						"damage": "1d8+3/19-20",
 						"bonuses": [
 							"masterwork:+1"
-						],
-						"crit": "19-20"
+						]
 					},
 					{
 						"name": "warhammer",
 						"stat": "str",
-						"damage": "1d8+3",
+						"damage": "1d8+3/x3",
 						"bonuses": [
 							"masterwork:+1"
-						],
-						"crit": "x3"
+						]
 					},
 					{
 						"name": "touch",

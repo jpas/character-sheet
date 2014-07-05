@@ -285,13 +285,13 @@
 			"a-aura-of-protection-@8.md",
 			"a-blast-rune.md",
 			"a-channel-energy.md",
-			"a-lore-keeper.md",
-			"a-remote-viewing.md",
-			"a-spell-rune-@8.md",
-			"a-taboo.md",
 			"a-energy-absorption.md",
+			"a-lore-keeper.md",
 			"a-protective-ward.md",
-			"a-resistance.md"
+			"a-remote-viewing.md",
+			"a-resistance.md",
+			"a-spell-rune-@8.md",
+			"a-taboo.md"
 		]
 	},
 	{
@@ -549,10 +549,7 @@
 				"stat": "wis"
 			},
 			"dr": "10/adamantine",
-			"immune": [
-				"[construct traits](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-)",
-				"magic"
-			]
+			"immune": "[construct traits](http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-Construct-Traits-Ex-), magic"
 		},
 		"offense": {
 			"attacks": {
