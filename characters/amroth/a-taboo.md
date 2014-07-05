@@ -1,4 +1,4 @@
-#### **Taboo** (Su)
+### **Taboo** (Su)
 
 When a creature touches you or strikes you with a melee attack, you can activate this power as an immediate action.
 That creature takes a –{{1 + Math.floor(c.info.levels.priest/5)}} penalty on saving throws for 1 minute.

@@ -1,4 +1,4 @@
-#### **Nothras' Amulet**
+### **Nothras' Amulet**
 
 **Aura** moderate abjuration; **CL** 9
 

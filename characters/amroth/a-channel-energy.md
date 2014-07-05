@@ -1,4 +1,4 @@
-#### **Channel Energy** (Su)
+### **Channel Energy** (Su)
 
 Channeling energy causes a burst that affects all creatures of one type (either undead or living) in a 30-foot radius centered on the priest.
 The amount of damage dealt or healed {{Math.ceil(c.info.levels.priest/2)}}d8 points of damage.

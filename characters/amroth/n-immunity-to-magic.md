@@ -1,4 +1,4 @@
-#### **Immunity to Magic** (Ex)
+### **Immunity to Magic** (Ex)
 
 A stone golem is immune to any spell or spell-like ability that allows spell resistance. In addition, certain spells and effects function differently against the creature, as noted below.
 
