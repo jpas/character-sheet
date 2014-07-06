@@ -23,12 +23,12 @@
 		},
 		"stats": {
 			"scores": {
-				"str": 16,
+				"str": 17,
 				"dex": 12,
-				"con": 13,
-				"int": 10,
-				"wis": 10,
-				"cha": 16
+				"con": 14,
+				"int": 14,
+				"wis":  7,
+				"cha": 14
 			},
 			"bab": 1
 		},
@@ -127,6 +127,14 @@
 				"classSkill": true
 			},
 			"Intimidate": {},
+			"Knowledge (History)": {
+				"ranks": 2,
+				"classSkill": true
+			},
+			"Knowledge (Nature)": {
+				"ranks": 2,
+				"classSkill": true
+			},
 			"Knowledge (Religion)": {
 				"ranks": 2,
 				"classSkill": true
