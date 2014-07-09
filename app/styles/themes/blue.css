@@ -1,0 +1,43 @@
+/* text colors */
+/* primary color */
+body {
+	color: #fff;
+}
+
+/* secondary gray */
+small,
+.spells .unprepared {
+	color: #6A717F;
+}
+
+/* secondary color */
+a,
+roll {
+	color: #6D89CC;
+}
+
+/* casted spells */
+.spells del,
+.spells del a {
+	color: #88ABFF;
+}
+
+/* backgrounds */
+body,
+.character .portrait,
+.index .portrait {
+	background-color: #6A717F;
+}
+
+roll {
+	/* secondary */
+	background-color: #44567F;
+}
+
+/* borders */
+img,
+section,
+.index,
+.spells {
+	border-color: #D5E1FF;
+}
