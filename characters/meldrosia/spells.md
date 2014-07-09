@@ -1,5 +1,5 @@
 -|-|-|-
--|-|-|-
+:-:|:-:|:-:|:-
 1st | {{4+1}} |-| *[cure light wounds]*, *[detect undead]* ^M^, *[divine favor]*, *[sun metal]*
 0th | at will |-| *[detect magic]*, *[light]*, *[mending]*, *[detect poison]*, *[stabilize]*
 
