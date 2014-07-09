@@ -1,9 +1,7 @@
 -|-|-|-
 -|-|-|-
-1st | 1 |-| *[cure light wounds]*, *[detect undead]* ^M^, *[divine favor]*, *[sun metal]*
-0th |   |-| *[detect magic]*, *[light]*, *[mending]*, *[detect poison]*, *[stabilize]*
-
-**Mana Pool** {{3 * c.info.levels.oracle + c.stats.scores.cha.modifier()}}; **Regeneration** 1/2
+1st | {{4+1}} |-| *[cure light wounds]*, *[detect undead]* ^M^, *[divine favor]*, *[sun metal]*
+0th | at will |-| *[detect magic]*, *[light]*, *[mending]*, *[detect poison]*, *[stabilize]*
 
 [1st]: #
   [cure light wounds]: :d20spell:cure-light-wounds
