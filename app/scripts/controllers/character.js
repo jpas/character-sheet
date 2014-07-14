@@ -123,11 +123,13 @@ function Defense(_ac, scores) {
 
 	_stats.forEach(function (stat) {
 		stat = scores[stat || 'none'];
-		_bonuses.push(pf.concat(
-			stat.sname,
-			':',
-			stat.modifier()
-		));
+		if (stat.modifier() !== 0) {
+			_bonuses.push(pf.concat(
+				stat.sname,
+				':',
+				stat.modifier()
+			));
+		}
 	});
 
 	_bonuses.forEach(function (stat, index) {
