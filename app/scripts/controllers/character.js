@@ -54,7 +54,7 @@ function Attack(_attack, _bab, scores) {
 
 		if (angular.isArray(_attack.iterative)) {
 			for (i = 0; i < _attack.iterative.length; i++) {
-				arr.push(pf.concat(
+				arr.push(pf.dice(
 					'1d20',
 					toHit + _attack.iterative[i]
 				));

@@ -85,6 +85,7 @@ section {
 }
 
 section > :first-child,
+section > md:first-child,
 section > md:first-child > :first-child {
 	margin-top: 20px;
 }
