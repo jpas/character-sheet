@@ -64,6 +64,9 @@ app.directive('md', [
 						{ re: /:d20-wop-effect:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/effect-words/' },
 						{ re: /:d20-wop-meta:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/meta-words/' },
 						{ re: /:d20-wop-target:/g, text: 'http://www.d20pfsrd.com/magic/variant-magic-rules/words-of-power/target-words/' },
+						{ re: /:d20-special-abilities:/g, text: 'http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-' },
+						{ re: /:d20-creature-types:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-' },
+						{ re: /:d20-universal-monster-rules:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-' },
 						{ re: /:nethys-([^\:]*):/g, text: 'http://www.archivesofnethys.com/$1Display.aspx?ItemName=' }
 					];
 
