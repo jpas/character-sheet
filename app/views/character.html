@@ -1,5 +1,6 @@
 <div id="{{c.info.name.toLowerCase()}}" class="grid grid-pad character" ng-repeat="c in characters">
 	<section id="{{c.info.name.toLowerCase()}}-header">
+		<hr>
 		<div ng-if="c.info.portrait" class="portrait push-right col-4-12 hide-on-mobile">
 			<img ng-src="{{c.info.portrait}}">
 		</div>
@@ -12,6 +13,7 @@
 				MR&#32;{{c.info.mr}}
 			</small>
 		</h1>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-info">
 		<p style="margin-top: 20px">
@@ -38,6 +40,7 @@
 			<b>Auras</b>&#32;
 			<md c="c" md="c.info.aura"></md>
 		</p>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-defense" ng-if="c.defense">
 		<p>
@@ -95,6 +98,7 @@
 			<b>Special</b>&#32;
 			<md c="c" ng-repeat="def in c.defense.special" md="def"><span ng-if="!$last">,&#32;</span></md>
 		</p>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-offense" ng-if="c.offense">
 		<p ng-repeat="(type, attacks) in c.offense.attacks">
@@ -139,6 +143,7 @@
 			<b>Reach</b>
 			{{c.offense.reach}}
 		</p>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-stats">
 		<p>
@@ -178,9 +183,11 @@
 			<b>Languages</b>&#32;
 			<md c="c" ng-repeat="lang in c.info.languages" md="lang"><span ng-if="!$last">,&#32;</span></md>
 		</p>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-specials" ng-if="c.specials">
 		<md ng-if="special.lacks('@')" c="c" ng-repeat="special in c.specials | orderBy:'toString()'" md="special"></md>
+		<hr>
 	</section>
 	<section id="{{c.info.name.toLowerCase()}}-gear" ng-if="c.gear">
 		<md c="c" ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
