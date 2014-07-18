@@ -233,7 +233,7 @@ function Skill(_name, _skill, scores, acp) {
 	this.baseName = (_name.split(re).length > 1 ? _name.split(re)[0] : _name);
 	var ranks = (_skill.ranks >= 0 ? _skill.ranks : 0);
 	var classSkill = ((_skill.classSkill && ranks > 0) ? 3 : 0);
-	var stat = (_skill.override ? scores[_skill.override] : scores[skills[this.baseName] || 'none']);
+	var stat = (_skill.stat ? scores[_skill.stat] : scores[skills[this.baseName] || 'none']);
 	var bonuses = _skill.bonuses || [0];
 
 	this.total = function () {
