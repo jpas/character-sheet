@@ -58,6 +58,7 @@ app.directive('md', [
 						{ re: /<a/g, text: '<a target="_blank"'},
 						{ re: /target="_blank" href="#/g, text: 'href="#/' + $routeParams.characterId + '#' },
 						// link shortcuts
+						{ re: /:d20:/g, text: 'http://www.d20pfsrd.com/' },
 						{ re: /:d20-spell:([a-z])/g, text: 'http://www.d20pfsrd.com/magic/all-spells/$1/$1' },
 						{ re: /:d20-feat-([^\:]*):/g, text: 'http://www.d20pfsrd.com/feats/$1-feats/' },
 						{ re: /:d20-trait-([^\:]*):/g, text: 'http://www.d20pfsrd.com/traits/$1-traits/' },
