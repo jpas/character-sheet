@@ -18,10 +18,12 @@
 			"senses": "low-light vision",
 			"languages": [
 				"Common",
-				"Int 1",
-				"Int 2",
-				"Int 3",
-				"Int 4"
+				"Draconic",
+				"Dwarven",
+				"Elven",
+				"Halfling",
+				"Orc",
+				"Undercommon"
 			]
 		},
 		"stats": {
@@ -82,7 +84,7 @@
 			"cmb": {},
 			"spells": [
 				{
-					"name": "Wizard Prepared Spells",
+					"name": "Universalist Prepared Spells",
 					"casterLevel": 5,
 					"concentrationBonus": 0,
 					"stat": "int",
@@ -111,6 +113,7 @@
 			"Disguise": {},
 			"Escape Artist": {},
 			"Fly": {
+				"ranks": 5,
 				"classSkill": true
 			},
 			"Heal": {},
@@ -171,11 +174,11 @@
 		],
 		"specials": [
 			"bonded-ring.md",
-			"spellbook.md",
 			"race-traits.md"
 		],
 		"gear": [
-			"gear.md"
+			"gear.md",
+			"spellbook.md"
 		]
 	}
 ]
