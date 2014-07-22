@@ -14,10 +14,12 @@
 			"size": "Medium",
 			"type": "humanoid (human)",
 			"initiative": 1,
-			"hp": 18,
+			"hp": 20,
 			"hd": "2d8+4",
 			"languages": [
-				"Common"
+				"Common",
+				"Int 1",
+				"Int 2"
 			],
 			"acp": -2
 		},
