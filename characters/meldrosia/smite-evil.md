@@ -1,0 +1,7 @@
+#### **Smite Evil** (Su)
+
+{{Math.ceil(c.info.levels.paladin/3)}} {{ Math.ceil(c.info.levels.paladin/3) > 1 ? "times" : "time" }} per day, a paladin can call out to the powers of good to aid her in her struggle against evil. As a swift action, the paladin chooses one target within sight to smite. If this target is evil, the paladin adds her Cha bonus (if any) to her attack rolls and adds her paladin level to all damage rolls made against the target of her smite. If the target of smite evil is an outsider with the evil subtype, an evil-aligned dragon, or an undead creature, the bonus to damage on the first successful attack increases to 2 points of damage per level the paladin possesses. Regardless of the target, smite evil attacks automatically bypass any DR the creature might possess.
+
+In addition, while smite evil is in effect, the paladin gains a +{{c.stats.scores.cha.modifier()}} deflection bonus equal to her AC against attacks made by the target of the smite. If the paladin targets a creature that is not evil, the smite is wasted with no effect.
+
+The smite evil effect remains until the target of the smite is dead or the next time the paladin rests and regains her uses of this ability.
