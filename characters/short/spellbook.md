@@ -1,4 +1,4 @@
-###**Spellbook**
+### **Spellbook**
 
 **3rd**
 *[arcane sight] ^d^*,
