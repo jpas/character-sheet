@@ -1,0 +1,47 @@
+@media print {
+	.hide-on-print {
+		display: none;
+	}
+	body {
+		font-size: 75%;
+	}
+	h1 {
+		margin: 0;
+	}
+	.character {
+		page-break-after: always;
+	}
+	p {
+		margin: 5px 0;
+	}
+	img {
+		padding: 0;
+		border: none;
+	}
+	.spells {
+		border: none;
+	}
+	.spells table td,
+	.spell p {
+		padding-top: 2.5px;
+		padding-bottom: 2.5px;
+	}
+	section {
+		margin: 0;
+	}
+	md {
+		page-break-inside: avoid;
+	}
+	hr {
+		margin: 10px;
+	}
+	roll {
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		padding: 0;
+	}
+	.character .portrait {
+		margin-top: 0;
+	}
+}

@@ -1,7 +1,7 @@
 <div id="{{c.info.name.toLowerCase()}}" class="grid grid-pad character" ng-repeat="c in characters">
 	<section id="{{c.info.name.toLowerCase()}}-header">
 		<hr>
-		<div ng-if="c.info.portrait" class="portrait push-right col-4-12 hide-on-mobile">
+		<div ng-if="c.info.portrait" class="portrait push-right col-5-12 hide-on-mobile">
 			<img ng-src="{{c.info.portrait}}">
 		</div>
 		<h1>
@@ -192,5 +192,4 @@
 	<section id="{{c.info.name.toLowerCase()}}-gear" ng-if="c.gear">
 		<md c="c" ng-repeat="item in c.gear | orderBy:'toString()'" md="item"></md>
 	</section>
-	<hr ng-if="$last">
 </div>

@@ -125,6 +125,12 @@ roll {
 	color: #3c757b;
 }
 
+@media screen {
+	.hide-on-screen {
+		display: none;
+	}
+}
+
 @media handheld, only screen and (max-width: 767px) {
 	section {
 		margin-right: 10px;
