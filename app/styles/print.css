@@ -29,9 +29,6 @@
 	section {
 		margin: 0;
 	}
-	md {
-		page-break-inside: avoid;
-	}
 	hr {
 		margin: 10px;
 	}
@@ -40,6 +37,9 @@
 		border: none;
 		border-radius: 0;
 		padding: 0;
+	}
+	.no-break {
+		page-break-inside: avoid !important;
 	}
 	.character .portrait {
 		margin-top: 0;

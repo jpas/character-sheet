@@ -24,7 +24,7 @@ app.directive('md', [
 			},
 			templateUrl: 'views/directives/md.html',
 			link: function(scope, elem) {
-				if (scope.md === undefined && scope.md === undefined) {
+				if (scope.md === undefined) {
 					return;
 				}
 
@@ -76,6 +76,8 @@ app.directive('md', [
 							{ re: /<p/g, text: '<span'},
 							{ re: /<\/p>/g, text: '</span>'}
 						]);
+					} else {
+						html = '<div class="no-break">' + html + '</div>';
 					}
 
 					angular.forEach(post, function(r) {
