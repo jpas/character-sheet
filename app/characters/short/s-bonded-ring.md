@@ -1,4 +1,4 @@
-### **Bonded Ring** (Sp)
+## **Bonded Ring** (Sp)
 
 If a wizard attempts to cast a spell without his bonded ring worn or in hand, he must make a concentration check or lose the spell. The DC for this check is equal to 20 + the spell's level. If the ring is a ring or amulet, it occupies the ring or neck slot accordingly.
 

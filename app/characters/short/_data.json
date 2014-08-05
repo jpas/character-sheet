@@ -17,13 +17,13 @@
 			"hd": "5d6+15",
 			"senses": "low-light vision",
 			"languages": [
+				"Code",
 				"Common",
-				"Draconic",
 				"Dwarven",
 				"Elven",
+				"Goblin",
 				"Halfling",
-				"Orc",
-				"Undercommon"
+				"Orc"
 			]
 		},
 		"stats": {
@@ -88,7 +88,7 @@
 					"casterLevel": 5,
 					"concentrationBonus": 0,
 					"stat": "int",
-					"markdown": "short-spells.md"
+					"markdown": "s-spells.md"
 				}
 			],
 			"speed": "30 ft.",
@@ -173,19 +173,19 @@
 			"[Reactionary](:d20-trait-combat:reactionary)"
 		],
 		"specials": [
-			"bonded-ring.md",
-			"race-traits.md"
+			"s-bonded-ring.md",
+			"s-race-traits.md"
 		],
 		"gear": [
-			"gear.md",
-			"spellbook.md"
+			"s-gear.md",
+			"s-spellbook.md"
 		]
 	},
 	{
 		"info": {
 			"name": "Tall",
 			"race": "Wyrwood",
-			"classes": "Fighter 1",
+			"classes": "Magus 5",
 			"levels": {
 				"hd": 5,
 				"magus": 5
@@ -193,26 +193,23 @@
 			"alignment": "LN",
 			"size": "Medium",
 			"type": "construct",
-			"initiative": 2,
+			"initiative": 6,
 			"hp": 60,
 			"hd": "5d8+20",
 			"senses": "darkvision 60 ft., low-light vision",
 			"languages": [
+				"Code",
 				"Common",
-				"Draconic",
-				"Dwarven",
-				"Elven",
-				"Halfling",
-				"Orc",
-				"Undercommon"
+				"Gnome",
+				"Halfling"
 			]
 		},
 		"stats": {
 			"scores": {
-				"str": 18,
+				"str": 20,
 				"dex": 14,
 				"con": null,
-				"int": 16,
+				"int": 18,
 				"wis": 14,
 				"cha":  5
 			},
@@ -224,47 +221,69 @@
 					"dex",
 					"int"
 				],
-
+				"ignore": {
+					"flatfooted": [
+						"int"
+					]
+				},
 				"bonuses": [
-					"natural:+9",
+					"natural:+10",
 					"shield:+4"
 				]
 			},
-			"cmd": {},
+			"cmd": {
+				"stats": [
+					"int"
+				],
+				"ignore": {
+					"flatfooted": [
+						"int"
+					]
+				}
+			},
 			"fort": {
 				"base": 4,
 				"stat": "con",
-				"bonuses": []
+				"bonuses": [
+					"Cloak of Resistance:+2"
+				]
 			},
 			"refl": {
 				"base": 1,
 				"stat": "dex",
-				"bonuses": []
+				"bonuses": [
+					"Cloak of Resistance:+2"
+				]
 			},
 			"will": {
 				"base": 4,
 				"stat": "wis",
-				"bonuses": []
-			}
+				"bonuses": [
+					"Cloak of Resistance:+2"
+				]
+			},
+			"immune": "construct traits"
 		},
 		"offense": {
 			"attacks": {
 				"melee": [
 					{
 						"name": "bastard sword",
-						"damage": "1d10+4/19-20",
+						"damage": "1d10+5/19-20",
 						"stat": "str",
 						"bonuses": [
-							"weapon focus: +1"
-							]
+							"weapon focus:+1",
+							"enhancement:+1"
+						]
 					},
 					{
 						"name": "bastard sword",
-						"damage": "1d10+6/19-20",
+						"damage": "1d10+7/19-20",
 						"stat": "str",
 						"bonuses": [
-							"weapon focus: +1"
-							],
+							"weapon focus:+1",
+							"enhancement:+1"
+						],
 						"special": "$2h$"
 					},
 					{
@@ -287,7 +306,7 @@
 					"casterLevel": 5,
 					"concentrationBonus": 0,
 					"stat": "int",
-					"markdown": "tall-spells.md"
+					"markdown": "t-spells.md"
 				}
 			],
 			"speed": "30 ft.",
@@ -296,19 +315,19 @@
 		},
 		"skills": {
 			"Acrobatics": {},
-			"Appraise": {
-				"classSkill": true
-			},
+			"Appraise": {},
 			"Bluff": {},
-			"Climb": {},
-			"Craft (Carpentry)": {
-				"ranks": 5,
+			"Climb": {
+				"ranks": 1,
 				"classSkill": true
 			},
 			"Craft": {
 				"classSkill": true
 			},
 			"Diplomacy": {},
+			"Disable Device": {
+				"ranks": 5
+			},
 			"Disguise": {},
 			"Escape Artist": {},
 			"Fly": {
@@ -317,65 +336,65 @@
 			},
 			"Heal": {},
 			"Intimidate": {},
-			"Perception": {
-				"bonuses": [
-					"Keen Senses:+2"
-				]
-			},
-			"Perform": {},
-			"Ride": {},
-			"Sense Motive": {},
-			"Stealth": {},
-			"Survival": {},
-			"Swim": {},
-
 			"Knowledge (Arcana)": {
 				"ranks": 5,
 				"classSkill": true
 			},
-			"Knowledge (Engineering)": {
-				"ranks": 5,
+			"Knowledge (Dungeoneering)": {
+				"ranks": 1,
 				"classSkill": true
 			},
-			"Linguistics": {
-				"ranks": 5,
+			"Perception": {},
+			"Perform": {},
+			"Ride": {
 				"classSkill": true
+			},
+			"Sense Motive": {},
+			"Sleight of Hand": {
+				"ranks": 2
 			},
 			"Spellcraft": {
 				"ranks": 5,
+				"classSkill": true
+			},
+			"Stealth": {
+				"ranks": 5,
 				"classSkill": true,
 				"bonuses": [
-					"Skill Focus:+3",
-					"Magical Aptitude:+2"
+					"burgular:+1",
+					"shadow armor:+5"
 				]
 			},
+			"Survival": {},
+			"Swim": {
+				"ranks": 1,
+				"classSkill": true
+			},
 			"Use Magic Device": {
-				"ranks": 5,
-				"stat": "int",
-				"bonuses": [
-					"Magical Aptitude:+2"
-				]
+				"ranks": 1,
+				"classSkill": true
 			}
 		},
 		"feats": [
 			"[Exotic Weapon Proficiency (Bastard Sword)](:d20-feat-combat:exotic-weapon-proficiency-combat---final)",
-			"[Weapon Focus (Bastard Sword)](:d20-feat-combat:weapon-focus-combat---final)",
-			"1st",
-			"3rd",
-			"5th",
-			"magus 5th"
+			"[Extra Arcana (Silent Magic)](:d20:classes/base-classes/magus/magus-arcana/paizo---magus-arcana/silent-magic-su)",
+			"[Extra Arcane Pool](:d20-feat-general:extra-arcane-pool)",
+			"[Improved Initaitive](:d20-feat-combat:improved-initiative-combat---final)",
+			"[Intensify Spell](:d20-feat-metamagic:intensified-spell-metamagic)",
+			"[Weapon Focus (Bastard Sword)](:d20-feat-combat:weapon-focus-combat---final)"
 		],
 		"traits": [
-			"1st",
-			"2nd"
+			"[Bandit](:d20-trait-regional:bandit-regional-river-kingdoms)",
+			"[Magical Lineage (Chilling Grasp)](:d20-trait-magic:magical-lineage)"
 		],
 		"specials": [
-			"arcane-pool.md",
-			"spell-combat.md",
-			"spellstrike.md"
+			"t-arcane-pool.md",
+			"t-spell-combat.md",
+			"t-spellstrike.md"
 		],
 		"gear": [
-			"tall-spellbook.md"
+			"t-gear.md",
+			"t-spellbook.md"
 		]
 	}
 ]
