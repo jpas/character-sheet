@@ -57,7 +57,7 @@ app.directive('md', [
 						{ re: /\@([^\@]*)\@/g, text: '<roll>$1</roll>' },
 						{ re: /<a/g, text: '<a target="_blank"'},
 						{ re: /target="_blank" href="#/g, text: 'href="#/' + $routeParams.characterId + '#' },
-						// link shortcuts
+						// d20pfsrd.com shortcuts
 						{ re: /:d20:/g, text: 'http://www.d20pfsrd.com/' },
 						{ re: /:d20-spell:([a-z])/g, text: 'http://www.d20pfsrd.com/magic/all-spells/$1/$1' },
 						{ re: /:d20-feat-([^\:]*):/g, text: 'http://www.d20pfsrd.com/feats/$1-feats/' },
@@ -68,6 +68,7 @@ app.directive('md', [
 						{ re: /:d20-special-abilities:/g, text: 'http://www.d20pfsrd.com/gamemastering/special-abilities#TOC-' },
 						{ re: /:d20-creature-types:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-' },
 						{ re: /:d20-universal-monster-rules:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-' },
+						// archive of nethys shortcuts
 						{ re: /:nethys-([^\:]*):/g, text: 'http://www.archivesofnethys.com/$1Display.aspx?ItemName=' }
 					];
 

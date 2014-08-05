@@ -2,9 +2,6 @@
 	.hide-on-print {
 		display: none;
 	}
-	body {
-		font-size: 75%;
-	}
 	h1 {
 		margin: 0;
 	}
@@ -25,6 +22,9 @@
 	.spell p {
 		padding-top: 2.5px;
 		padding-bottom: 2.5px;
+	}
+	small {
+		color: #a5a5a5;
 	}
 	section {
 		margin: 0;
