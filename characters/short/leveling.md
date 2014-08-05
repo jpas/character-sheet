@@ -1,4 +1,4 @@
-### Leveling Guide
+## Leveling Guide
 
 Race: [Half-Elf]
 Traits: [Pragmatic Activator], [Reactionary]

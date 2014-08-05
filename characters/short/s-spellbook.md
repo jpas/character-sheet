@@ -25,37 +25,38 @@
 *[seek thoughts] ^d^*,
 *[slow] ^t^*,
 *[spiked pit] ^c^*,
+*[suggestion] ^en^*
 *[summon monster iii] ^c^*,
 *[tongues] ^d^*
 
 **2nd**
-*[arcane lock] ^a^*
-*[blindness/deafness] ^n^*
-*[blood transcription] ^d^*
-*[book ward] ^a^*
-*[continual flame] ^ev^*
-*[create pit] ^c^*
-*[create treasure map] ^d^*
-*[darkvision] ^t^*
-*[detect thoughts] ^d^*
-*[endure elements, communal] ^a^*
-*[false life] ^n^*
-*[fog cloud] ^c^*
-*[glitterdust] ^c^*
-*[invisibility] ^i^*
-*[knock] ^t^*
-*[levitate] ^t^*
-*[locate object] ^d^*
-*[make whole] ^t^*
-*[mirror image] ^i^*
-*[obscure object] ^a^*
-*[protection from alignment, communal] ^a^*
-*[protection from arrows] ^a^*
-*[resist energy] ^a^*
-*[scorching ray] ^ev^*
-*[see invisibility] ^d^*
-*[share language] ^d^*
-*[symbol of mirroring] ^i^*
+*[arcane lock] ^a^*,
+*[blindness/deafness] ^n^*,
+*[blood transcription] ^d^*,
+*[book ward] ^a^*,
+*[continual flame] ^ev^*,
+*[create pit] ^c^*,
+*[create treasure map] ^d^*,
+*[darkvision] ^t^*,
+*[detect thoughts] ^d^*,
+*[endure elements, communal] ^a^*,
+*[false life] ^n^*,
+*[fog cloud] ^c^*,
+*[glitterdust] ^c^*,
+*[invisibility] ^i^*,
+*[knock] ^t^*,
+*[levitate] ^t^*,
+*[locate object] ^d^*,
+*[make whole] ^t^*,
+*[mirror image] ^i^*,
+*[obscure object] ^a^*,
+*[protection from alignment, communal] ^a^*,
+*[protection from arrows] ^a^*,
+*[resist energy] ^a^*,
+*[scorching ray] ^ev^*,
+*[see invisibility] ^d^*,
+*[share language] ^d^*,
+*[symbol of mirroring] ^i^*,
 *[touch of idiocy] ^en^*
 
 **1st**
@@ -72,6 +73,7 @@
 *[feather fall] ^t^*,
 *[floating disk] ^ev^*,
 *[grease] ^c^*,
+*[hypnotism] ^en^*,
 *[identify] ^d^*,
 *[infernal healing] ^c^*,
 *[mage armor] ^c^*,
@@ -109,6 +111,9 @@
 *[resistance] ^a^*,
 *[touch of fatigue] ^n^*
 
+[5th]: #
+  [modify memory]: :d20-spell:modify-memory
+
 [3rd]: #
   [arcane sight]: :d20-spell:arcane-sight
   [battering blast]: :d20-spell:battering-blast
@@ -134,6 +139,7 @@
   [seek thoughts]: :d20-spell:seek-thoughts
   [slow]: :d20-spell:slow
   [spiked pit]: :d20-spell:spiked-pit
+  [suggestion]: :d20-spell:suggestion
   [summon monster iii]: :d20-spell:summon-monster#TOC-Summon-Monster-III
   [tongues]: :d20-spell:tongues
 
@@ -181,6 +187,7 @@
   [feather fall]: :d20-spell:feather-fall
   [floating disk]: :d20-spell:floating-disk
   [grease]: :d20-spell:grease
+  [hypnotism]: :d20-spell:hypnotism
   [identify]: :d20-spell:identify
   [infernal healing]: :d20-spell:infernal-healing
   [mage armor]: :d20-spell:mage-armor
