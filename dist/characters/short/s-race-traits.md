@@ -1,4 +1,4 @@
-### **Racial Traits**
+## **Racial Traits**
 
 **Elven Immunities** Half-elves are immune to magic sleep effects and gain a +2 racial saving throw bonus against enchantment spells and effects.
 

@@ -1,6 +1,6 @@
-### **Arcane Pool** (Su)
+## **Arcane Pool** (Su)
 
-The magus has a reservoir of mystical arcane energy that he can draw upon to fuel his powers and enhance his weapon. This arcane pool has a {{Math.floor(c.info.levels.magus/2) + c.stats.scores.int.modifier()}} points. The pool refreshes once per day when the magus prepares his spells.
+The magus has a reservoir of mystical arcane energy that he can draw upon to fuel his powers and enhance his weapon. This arcane pool has a {{Math.floor(c.info.levels.magus/2) + c.stats.scores.int.modifier() + 2}} points. The pool refreshes once per day when the magus prepares his spells.
 
 A magus can spend points from his arcane pool as a swift action use the following abilities:
 
