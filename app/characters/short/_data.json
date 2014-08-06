@@ -269,7 +269,7 @@
 				"melee": [
 					{
 						"name": "bastard sword",
-						"damage": "1d10+5/19-20",
+						"damage": "1d10+6/19-20",
 						"stat": "str",
 						"bonuses": [
 							"weapon focus:+1",
@@ -278,7 +278,7 @@
 					},
 					{
 						"name": "bastard sword",
-						"damage": "1d10+7/19-20",
+						"damage": "1d10+8/19-20",
 						"stat": "str",
 						"bonuses": [
 							"weapon focus:+1",
