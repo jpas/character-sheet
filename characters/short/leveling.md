@@ -1,6 +1,6 @@
 ## Leveling Guide
 
-Race: [Half-Elf]
+Race: Custon Gnome
 Traits: [Pragmatic Activator], [Reactionary]
 
 |Level |          Class          | BAB | Fort | Ref | Will | Class Features                                                               | 0th | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
