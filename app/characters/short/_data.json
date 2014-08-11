@@ -2,7 +2,7 @@
 	{
 		"info": {
 			"name": "Short",
-			"race": "Half Elf",
+			"race": "Gnome",
 			"portrait": "http://i.imgur.com/bIQpnOw.jpg",
 			"classes": "Universalist 5",
 			"levels": {
@@ -10,26 +10,36 @@
 				"wizard": 5
 			},
 			"alignment": "LN",
-			"size": "Medium",
-			"type": "humanoid (human)",
-			"initiative": 8,
+			"size": "Small",
+			"type": "humanoid (gnome)",
+			"initiative": 9,
 			"hp": 45,
 			"hd": "5d6+15",
 			"senses": "low-light vision",
 			"languages": [
-				"Code",
 				"Common",
-				"Dwarven",
-				"Elven",
-				"Goblin",
-				"Halfling",
-				"Orc"
+				"Gnomish",
+				"Code",
+				"INT 2",
+				"INT 3",
+				"INT 4",
+				"INT 5",
+				"Linguistics 1a",
+				"Linguistics 1b",
+				"Linguistics 2a",
+				"Linguistics 2b",
+				"Linguistics 3a",
+				"Linguistics 3b",
+				"Linguistics 4a",
+				"Linguistics 4b",
+				"Linguistics 5a",
+				"Linguistics 5b"
 			]
 		},
 		"stats": {
 			"scores": {
 				"str": 10,
-				"dex": 14,
+				"dex": 16,
 				"con": 14,
 				"int": 20,
 				"wis": 14,
@@ -40,14 +50,20 @@
 		"defense": {
 			"ac": {
 				"bonuses": [
-					"armor:+4"
+					"armor:+4",
+					"size:+1"
 				]
 			},
-			"cmd": {},
+			"cmd": {
+				"bonuses": [
+					"size:-1"
+				]
+			},
 			"fort": {
 				"base": 1,
 				"stat": "con",
 				"bonuses": [
+					"lucky:+1",
 					"Cloak of Resistance:+1"
 				]
 			},
@@ -55,6 +71,7 @@
 				"base": 1,
 				"stat": "dex",
 				"bonuses": [
+					"lucky:+1",
 					"Cloak of Resistance:+1"
 				]
 			},
@@ -62,6 +79,7 @@
 				"base": 4,
 				"stat": "wis",
 				"bonuses": [
+					"lucky:+1",
 					"Cloak of Resistance:+1"
 				]
 			}
@@ -84,6 +102,13 @@
 			"cmb": {},
 			"spells": [
 				{
+					"name": "Magical Linguist Spells",
+					"casterLevel": 5,
+					"concentrationBonus": 0,
+					"stat": "cha",
+					"markdown": "s-magical-linguist-spells.md"
+				},
+				{
 					"name": "Universalist Prepared Spells",
 					"casterLevel": 5,
 					"concentrationBonus": 0,
@@ -102,10 +127,6 @@
 			},
 			"Bluff": {},
 			"Climb": {},
-			"Craft (Carpentry)": {
-				"ranks": 5,
-				"classSkill": true
-			},
 			"Craft": {
 				"classSkill": true
 			},
@@ -126,10 +147,14 @@
 			"Perform": {},
 			"Ride": {},
 			"Sense Motive": {},
-			"Stealth": {},
+			"Stealth": {
+				"ranks": 5,
+				"bonuses": [
+					"size:+4"
+				]
+			},
 			"Survival": {},
 			"Swim": {},
-
 			"Knowledge (Arcana)": {
 				"ranks": 5,
 				"classSkill": true
@@ -140,7 +165,10 @@
 			},
 			"Linguistics": {
 				"ranks": 5,
-				"classSkill": true
+				"classSkill": true,
+				"bonuses": [
+					"Gifted Linguist:+4"
+				]
 			},
 			"Spellcraft": {
 				"ranks": 5,
@@ -174,7 +202,7 @@
 		],
 		"specials": [
 			"s-bonded-ring.md",
-			"s-race-traits.md"
+			"s-magical-linguist.md"
 		],
 		"gear": [
 			"s-gear.md",
@@ -268,23 +296,13 @@
 			"attacks": {
 				"melee": [
 					{
-						"name": "bastard sword",
-						"damage": "1d10+6/19-20",
+						"name": "wyroot greatsword",
+						"damage": "2d6+8/18-20",
 						"stat": "str",
 						"bonuses": [
 							"weapon focus:+1",
 							"enhancement:+1"
 						]
-					},
-					{
-						"name": "bastard sword",
-						"damage": "1d10+8/19-20",
-						"stat": "str",
-						"bonuses": [
-							"weapon focus:+1",
-							"enhancement:+1"
-						],
-						"special": "$2h$"
 					},
 					{
 						"name": "touch attack",
@@ -376,12 +394,12 @@
 			}
 		},
 		"feats": [
-			"[Exotic Weapon Proficiency (Bastard Sword)](:d20-feat-combat:exotic-weapon-proficiency-combat---final)",
+			"[Exotic Weapon Proficiency (Greatsword)](:d20-feat-combat:exotic-weapon-proficiency-combat---final)",
 			"[Extra Arcana (Silent Magic)](:d20:classes/base-classes/magus/magus-arcana/paizo---magus-arcana/silent-magic-su)",
 			"[Extra Arcane Pool](:d20-feat-general:extra-arcane-pool)",
 			"[Improved Initaitive](:d20-feat-combat:improved-initiative-combat---final)",
 			"[Intensify Spell](:d20-feat-metamagic:intensified-spell-metamagic)",
-			"[Weapon Focus (Bastard Sword)](:d20-feat-combat:weapon-focus-combat---final)"
+			"[Weapon Focus (Greatsword)](:d20-feat-combat:weapon-focus-combat---final)"
 		],
 		"traits": [
 			"[Bandit](:d20-trait-regional:bandit-regional-river-kingdoms)",
