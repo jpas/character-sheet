@@ -9,6 +9,10 @@
 				"hd": 5,
 				"wizard": 5
 			},
+			"xp": {
+				"current": 18600,
+				"next": 23000
+			},
 			"alignment": "LN",
 			"size": "Small",
 			"type": "humanoid (gnome)",
@@ -222,8 +226,8 @@
 			"size": "Medium",
 			"type": "construct",
 			"initiative": 6,
-			"hp": 60,
-			"hd": "5d8+20",
+			"hp": 65,
+			"hd": "5d8+25",
 			"senses": "darkvision 60 ft., low-light vision",
 			"languages": [
 				"Code",

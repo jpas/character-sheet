@@ -11,4 +11,4 @@
 linked chest (home),
 general adventuring gear
 
-**Gold**  82.5 gp
+**Gold**  10782.5 gp
