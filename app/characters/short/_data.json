@@ -3,7 +3,6 @@
 		"info": {
 			"name": "Short",
 			"race": "Gnome",
-			"portrait": "http://i.imgur.com/bIQpnOw.jpg",
 			"classes": "Universalist 5",
 			"levels": {
 				"hd": 5,
@@ -21,28 +20,34 @@
 			"hd": "5d6+15",
 			"senses": "low-light vision",
 			"languages": [
-				"Common",
-				"Gnomish",
+				"Aklo",
+				"Aquan",
+				"Auran",
+				"Celestial",
 				"Code",
-				"INT 2",
-				"INT 3",
-				"INT 4",
-				"INT 5",
-				"Linguistics 1a",
-				"Linguistics 1b",
-				"Linguistics 2a",
-				"Linguistics 2b",
-				"Linguistics 3a",
-				"Linguistics 3b",
-				"Linguistics 4a",
-				"Linguistics 4b",
-				"Linguistics 5a",
-				"Linguistics 5b"
+				"Common",
+				"Draconic",
+				"Dwarven",
+				"Elven",
+				"Giant",
+				"Gnome",
+				"Goblin",
+				"Halfling",
+				"Ignan",
+				"Orc",
+				"Sylvan",
+				"Terran"
+			],
+			"languages_unknown": [
+				"Abyssal",
+				"Gnoll",
+				"Infernal",
+				"Undercommon"
 			]
 		},
 		"stats": {
 			"scores": {
-				"str": 10,
+				"str":  8,
 				"dex": 16,
 				"con": 14,
 				"int": 20,

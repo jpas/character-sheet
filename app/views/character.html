@@ -1,6 +1,6 @@
 <div id="{{c.info.name.toLowerCase()}}" class="grid grid-pad character" ng-repeat="c in characters">
 	<section id="{{c.info.name.toLowerCase()}}-header">
-		<hr>
+		<hr class="hide-on-print">
 		<div ng-if="c.info.portrait" class="portrait push-right col-5-12 hide-on-mobile">
 			<img ng-src="{{c.info.portrait}}">
 		</div>
