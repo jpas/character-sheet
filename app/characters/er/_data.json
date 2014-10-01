@@ -83,6 +83,7 @@
 					"casterLevel": 1,
 					"concentrationBonus": 2,
 					"stat": "int",
+					"markdown": "spells.md",
 					"spells": {
 						"level": [
 							{
