@@ -129,20 +129,20 @@
 				concentration&#32;
 				<roll ng-bind="caster.concentration()"></roll>)
 			</p>
-			<div ng-if="caster.markdown" class="spells">
-				<md c="c" md="caster.markdown"></md>
-			</div>
 			<div ng-if="caster.spells" class="spells">
 				<table>
 					<tr ng-repeat="level in caster.spells.level">
 						<td>{{level.name}}</td>
 						<td>
 							<span ng-repeat="spell in level | spellsFilter track by $index">
-								<md md="spell"></md><span ng-if="!$last">,</span>
+								<md md="spell"></md><span ng-if="!$last">,&#32;</span>
 							</span>
 						</td>
 					</tr>
 				</table>
+			</div>
+			<div ng-if="caster.markdown" class="spells">
+				<md c="c" md="caster.markdown"></md>
 			</div>
 		</div>
 		<p>
