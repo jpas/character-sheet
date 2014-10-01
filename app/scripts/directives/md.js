@@ -69,7 +69,13 @@ app.directive('md', [
 						{ re: /:d20-creature-types:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types#TOC-' },
 						{ re: /:d20-universal-monster-rules:/g, text: 'http://www.d20pfsrd.com/bestiary/rules-for-monsters/universal-monster-rules#TOC-' },
 						// archive of nethys shortcuts
-						{ re: /:nethys-([^\:]*):/g, text: 'http://www.archivesofnethys.com/$1Display.aspx?ItemName=' }
+						{ re: /:nethys-([^\:]*):/g, text: 'http://www.archivesofnethys.com/$1Display.aspx?ItemName=' },
+						// paizo prd
+						{ re: /:prd-spell-crb:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/spells/$1.html'},
+						{ re: /:prd-spell-apg:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/advanced/spells/$1.html'},
+						{ re: /:prd-spell-uc:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateCombat/spells/$1.html'},
+						{ re: /:prd-spell-um:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateMagic/spells/$1.html'}
+
 					];
 
 					if (isText === true) {

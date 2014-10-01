@@ -31,6 +31,19 @@ app.filter('reverse', function () {
 	};
 });
 
+app.filter('spellsFilter', function() {
+	return function (spellLevel) {
+		var output = [];
+		for (var i=0; i < spellLevel.perDay; i++) {
+			if (spellLevel.prepared[i])
+				output[i] = spellLevel.prepared[i];
+			else
+				output[i] = "*unprepared*";
+		};
+		return output;
+	}
+})
+
 app.filter('orderObjectBy', function(){
 	return function(input, attribute) {
 		if (!angular.isObject(input)) {
