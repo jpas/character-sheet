@@ -193,7 +193,11 @@
 			"Linguistics": {
 				"classSkill": true
 			},
-			"Perception": {},
+			"Perception": {
+				"bonuses": [
+					"keen senses:+2"
+				]
+			},
 			"Perform": {},
 			"Ride": {},
 			"Sense Motive": {},
