@@ -1,6 +1,6 @@
--|-|-
-:-:|:-:|-
-1/day |-| *[arcane mark]*, *[comprehend languages]*, *[message]*, *[read magic]*
+-|-
+:-:|-
+1/day | *[arcane mark]*, *[comprehend languages]*, *[message]*, *[read magic]*
 
 [comprehend languages]: :d20-spell:comprehend-languages
 [arcane mark]: :d20-spell:arcane-mark
