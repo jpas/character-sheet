@@ -98,6 +98,8 @@ function Defense(_ac, scores) {
 	_ignore.touch = _ignore.touch.concat([
 		'armor',
 		'armour',
+		'mage armor',
+		'mage armour',
 		'natural armor',
 		'natural armour',
 		'natural',
