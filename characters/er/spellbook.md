@@ -5,7 +5,7 @@
 *[feather fall]*,
 *[floating disk]* ^b^,
 *[grease]* ^s^,
-*[mage armor]* ^s^,
+*[mage armour]* ^s^,
 *[magic missile]*,
 *[obscuring mist]* ^s^,
 *[unseen servant]* ^s^
@@ -35,7 +35,7 @@
   [feather fall]: :prd-spell-crb:featherFall
   [floating disk]: :prd-spell-crb:floatingDisk
   [grease]: :prd-spell-crb:grease
-  [mage armor]: :prd-spell-crb:mageArmor
+  [mage armour]: :prd-spell-crb:mageArmor
   [magic missile]: :prd-spell-crb:magicMissile
   [obscuring mist]: :prd-spell-crb:obscuringMist
   [unseen servant]: :prd-spell-crb:unseenServant
