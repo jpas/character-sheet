@@ -41,7 +41,11 @@
 			"bab": 0
 		},
 		"defense": {
-			"ac": {},
+			"ac": {
+				"bonuses": [
+					"mage armour:+4"
+				]
+			},
 			"cmd": {},
 			"fort": {
 				"base": 0,
@@ -92,13 +96,13 @@
 								"prepared": [
 									"[*color spray*](:prd-spell-crb:colorSpray)",
 									"[*grease*](:prd-spell-crb:grease) ^s^",
-									"[*mage armor*](:prd-spell-crb:mageArmor) ^s^",
-									"[*unseen servant*](:prd-spell-crb:unseenServant) ^s^"
+									"[*unseen servant*](:prd-spell-crb:unseenServant) ^s^",
+									"~~[*mage armor*](:prd-spell-crb:mageArmor)~~ ^s^"
 								],
 								"unprepared": [
 									"[*feather fall*](:prd-spell-crb:featherFall)",
 									"[*floating disk*](:prd-spell-crb:floatingDisk) ^b^",
-									"[*magic missile](prd-spell-crb:magicMissile)",
+									"[*magic missile*](prd-spell-crb:magicMissile)",
 									"[*obscuring mist*](:prd-spell-crb:obscuringMist) ^s^"
 								]
 							},
