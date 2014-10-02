@@ -170,12 +170,6 @@
 				],
 				"ranks": 1
 			},
-			"Knowledge (Engineering)": {
-				"classSkill": true
-			},
-			"Knowledge (Geography)": {
-				"classSkill": true
-			},
 			"Knowledge (History)": {
 				"classSkill": true,
 				"bonuses": [
@@ -183,25 +177,9 @@
 				],
 				"ranks": 1
 			},
-			"Knowledge (Local)": {
-				"classSkill": true
-			},
 			"Knowledge (Nature)": {
 				"classSkill": true,
 				"ranks": 1
-			},
-			"Knowledge (Nobility)": {
-				"classSkill": true
-			},
-			"Knowledge (Planes)": {
-				"classSkill": true,
-				"ranks": 1
-			},
-			"Knowledge (Religion)": {
-				"classSkill": true
-			},
-			"Linguistics": {
-				"classSkill": true
 			},
 			"Perception": {
 				"bonuses": [
