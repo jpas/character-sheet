@@ -97,7 +97,7 @@
 									"[*color spray*](:prd-spell-crb:colorSpray)",
 									"[*grease*](:prd-spell-crb:grease) ^s^",
 									"[*unseen servant*](:prd-spell-crb:unseenServant) ^s^",
-									"~~[*mage armor*](:prd-spell-crb:mageArmor)~~ ^s^"
+									"~~[*mage armour*](:prd-spell-crb:mageArmor)~~ ^s^"
 								],
 								"unprepared": [
 									"[*feather fall*](:prd-spell-crb:featherFall)",
