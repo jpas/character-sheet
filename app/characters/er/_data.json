@@ -107,8 +107,9 @@
 								"perDay": 4,
 								"prepared": [
 									"[*detect magic*](:prd-spell-crb:detectMagic)",
-									"[*read magic*](:prd-spell-crb:readMagic)",
-									"[*light*](:prd-spell-crb:light)"
+									"[*light*](:prd-spell-crb:light)",
+									"[*message*](:prd-spell-crb:message)",
+									"[*read magic*](:prd-spell-crb:readMagic)"
 								],
 								"unprepared": [
 									"[*acid splash*](:prd-spell-crb:acidSplash) ^s^",
@@ -120,7 +121,6 @@
 									"[*haunted fey aspect*](:prd-spell-uc:hauntedFeyAspect)",
 									"[*mage hand*](:prd-spell-crb:mageHand)",
 									"[*mending*](:prd-spell-crb:mending)",
-									"[*message*](:prd-spell-crb:message)",
 									"[*open/close*](:prd-spell-crb:openClose)",
 									"[*prestidigitation*](:prd-spell-crb:prestidigitation)",
 									"[*ray of frost*](:prd-spell-crb:rayOfFrost)",
@@ -161,17 +161,23 @@
 			},
 			"Knowledge (Dungeoneering)": {
 				"classSkill": true,
+				"bonuses": [
+					"Eldritch Delver:+1"
+				],
 				"ranks": 1
 			},
 			"Knowledge (Engineering)": {
-				"classSkill": true,
-				"ranks": 1
+				"classSkill": true
 			},
 			"Knowledge (Geography)": {
 				"classSkill": true
 			},
 			"Knowledge (History)": {
-				"classSkill": true
+				"classSkill": true,
+				"bonuses": [
+					"Eldritch Delver:+1"
+				],
+				"ranks": 1
 			},
 			"Knowledge (Local)": {
 				"classSkill": true
@@ -218,10 +224,12 @@
 			"[Eldritch Delver](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)"
 		],
 		"specials": [
+			"spellbond.md",
 			"conjurer.md",
-			"racial-traits.md"
+			"z-racial-traits.md"
 		],
 		"gear": [
+			"gear.md",
 			"spellbook.md"
 		]
 	}
