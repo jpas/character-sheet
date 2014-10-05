@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"follow_symlinks": true,
+			"folder_exclude_patterns": [
+				".*",
+				"node_modules",
+				"dist",
+				"bower_components"
+			],
+			"file_exclude_patterns": [
+				".*",
+				"*.sublime*"
+			]
+		}
+	],
+	"settings": {
+		"tab_size": 4,
+	    "translate_tabs_to_spaces": false,
+        "build_switcher_systems": [
+            "character-sheet build"
+        ]
+	},
+	"build_systems": [
+		{
+			"name": "character-sheet build",
+			"working_dir": "$project_path",
+			"shell": true,
+			"cmd": ["grunt --no-color build"]
+		}
+	]
+}

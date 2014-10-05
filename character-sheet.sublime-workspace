@@ -1,0 +1,1356 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"num",
+				"numPrimes"
+			],
+			[
+				"max",
+				"maxPrime"
+			],
+			[
+				"nu",
+				"numPrimes"
+			],
+			[
+				"improved",
+				"improved-initiative-combat---final"
+			],
+			[
+				"ini",
+				"Initaitive"
+			],
+			[
+				"d20-f",
+				"d20-feat-general"
+			],
+			[
+				"page",
+				"page-break-inside"
+			],
+			[
+				"inital",
+				"initialBonuses"
+			],
+			[
+				"cans",
+				"canStackOverride"
+			],
+			[
+				"bonsu",
+				"bonuses"
+			],
+			[
+				"bonu",
+				"bonuses"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"bonuses",
+				"Bonuses"
+			],
+			[
+				"paraly",
+				"paralyzing-touch-su"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"clas",
+				"classSkill"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"chara",
+				"characters"
+			],
+			[
+				"cha",
+				"characterId"
+			],
+			[
+				"chare",
+				"characters"
+			],
+			[
+				"marign",
+				"margin-bottom"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"comp",
+				"compile"
+			],
+			[
+				"pop",
+				"population"
+			],
+			[
+				"ng",
+				"ng-repeat"
+			],
+			[
+				"tye",
+				"typeList"
+			],
+			[
+				"filter",
+				"filtered"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"sp",
+				"spell"
+			],
+			[
+				"concen",
+				"concentrationBonus"
+			],
+			[
+				"con",
+				"Constitution"
+			],
+			[
+				"caste",
+				"casterLevel"
+			],
+			[
+				"spell",
+				"spellName"
+			],
+			[
+				"valid",
+				"validation"
+			],
+			[
+				"prepen",
+				"prependToString"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"dis",
+				"dieSpec"
+			],
+			[
+				"charac",
+				"character"
+			],
+			[
+				"stat",
+				"statistics"
+			],
+			[
+				"_stat",
+				"_statName"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"ret",
+				"returned"
+			],
+			[
+				"skill",
+				"skillsFiltered"
+			],
+			[
+				"other",
+				"otherBonuses"
+			],
+			[
+				"_sta",
+				"_statName"
+			],
+			[
+				"ab",
+				"Abjurer"
+			],
+			[
+				"cah",
+				"charactersApp"
+			],
+			[
+				"spel",
+				"spellName"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"spl",
+				"splitName"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"die",
+				"dieSizes"
+			],
+			[
+				"modal",
+				"modalInstance"
+			],
+			[
+				"dice",
+				"diceSpec"
+			],
+			[
+				"characters",
+				"charactersApp"
+			],
+			[
+				"json",
+				"jsonUrl"
+			],
+			[
+				"alert",
+				"alertType"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"aler",
+				"alertType"
+			],
+			[
+				"final",
+				"finalString"
+			],
+			[
+				"str",
+				"strMod"
+			],
+			[
+				"get",
+				"get	Get Elements"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"handle",
+				"handleCommentSubmit"
+			],
+			[
+				"Char",
+				"CharacterGeneratorController"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"path",
+				"pathfinderDB"
+			],
+			[
+				"Pira",
+				"piratenames"
+			],
+			[
+				"bade",
+				"badgeName"
+			],
+			[
+				"cap",
+				"capacity"
+			],
+			[
+				"find",
+				"findLCA_AUX"
+			],
+			[
+				"FIND",
+				"findLCA_AUX"
+			],
+			[
+				"Print",
+				"PrintInOrder"
+			],
+			[
+				"DestroyBSTNo",
+				"DestroyBSTNode"
+			],
+			[
+				"Des",
+				"DestroyBST_AUX"
+			],
+			[
+				"Destr",
+				"DestroyBST"
+			],
+			[
+				"new",
+				"newTree"
+			],
+			[
+				"Ins",
+				"InsertBST"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"is",
+				"isKnown"
+			],
+			[
+				"Sp",
+				"spellList"
+			],
+			[
+				"descri",
+				"descriptor"
+			],
+			[
+				"fil",
+				"filtered"
+			],
+			[
+				"class",
+				"classData"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Han",
+				"Handler_Character"
+			],
+			[
+				"en",
+				"Enhancement"
+			],
+			[
+				"sub",
+				"substitutes"
+			],
+			[
+				"allowed",
+				"allowedList"
+			],
+			[
+				"test-source",
+				"test-source-1"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 101.0,
+		"selected_items":
+		[
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"ss mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"ss c++",
+				"Set Syntax: C++"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"swap",
+				"Convert Case: Swap Case"
+			],
+			[
+				"bookmark",
+				"Bookmarks: Select Next"
+			],
+			[
+				"book",
+				"Bookmarks: Toggle"
+			],
+			[
+				"",
+				"Bookmarks: Toggle"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rmo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"insall",
+				"Package Control: Install Package"
+			],
+			[
+				"riend",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rend",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"ss py",
+				"Set Syntax: Python"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ss java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ssm",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"rtabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss jason",
+				"Set Syntax: JSON"
+			],
+			[
+				"Upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"ss markd",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"s mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss json",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss md",
+				"Snippet: bs3-sm-button-danger"
+			],
+			[
+				"markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ss shell",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ss html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ren",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"text",
+				"Set Syntax: Textile"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"Reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ss markdwon",
+				"Set Syntax: Markdown"
+			],
+			[
+				"lwoer",
+				"Convert Case: Lower Case"
+			],
+			[
+				"marked",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdown ex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"ssmarkdow",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"ss amrk",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ss markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"package contr",
+				"Package Control: Remove Package"
+			],
+			[
+				"ss  mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"Title",
+				"Convert Case: Title Case"
+			],
+			[
+				"rined",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ypper",
+				"Set Syntax: Java Properties"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"rin",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rendent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ereind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"bootstrap ",
+				"Snippet: Bootstrap starter"
+			],
+			[
+				"markdown e",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"ss jsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reidn",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"add rep",
+				"Package Control: Add Repository"
+			],
+			[
+				"zurb bread",
+				"Snippet: ZURB Foundation 5 Breadcrumbs"
+			],
+			[
+				"acka",
+				"Package Control: Disable Package"
+			],
+			[
+				"bs3html",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"bs3 temp",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"inline",
+				"Snippet: bs3-form-inline"
+			],
+			[
+				"panel",
+				"Snippet: bs3-panel"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"rien",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"bs3emp",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"templa",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"bs3-temp",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"ss dart",
+				"Set Syntax: Dart"
+			],
+			[
+				"ss jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"view",
+				"View In Browser"
+			],
+			[
+				"Browser setting",
+				"Browser Integration: Settings (Default)"
+			],
+			[
+				"reload",
+				"Browser Integration: Reload"
+			],
+			[
+				"Browser Int",
+				"Browser Integration: Reload"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ss jaa",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rreind",
+				"Preferences: Settings - Default"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"snippet",
+				"Snippet: Class"
+			],
+			[
+				"colorsublime",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"SPACES",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"ried",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"filedi",
+				"FileDiffs: Menu"
+			],
+			[
+				"preind",
+				"Preferences: Settings - Default"
+			],
+			[
+				"minif",
+				"Minify Javascript"
+			],
+			[
+				"ss javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"lint",
+				"SublimeLinter: Enable Debug Mode"
+			],
+			[
+				"ss j",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"javascr",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"jas",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"reund",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"ss jasva",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"ss jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ss ja",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"ss js",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"Theme",
+				"SublimeLinter: Choose Mark Style"
+			],
+			[
+				"linting",
+				"SublimeLinter: Enable Linting"
+			],
+			[
+				"Remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"Siblime",
+				"SublimeLinter: Choose Mark Style"
+			],
+			[
+				"Linter",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"Color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Con remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Them",
+				"Themr: Add current theme to favorites"
+			],
+			[
+				"packagein",
+				"Package Control: Install Package"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"syntax javascript",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 583.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jpas/Developer/character-sheet"
+	],
+	"file_history":
+	[
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/notes/2014-10-01.md",
+		"/Users/jpas/Developer/character-sheet/app/scripts/directives/md.js",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbook.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/_data.json",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbond.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/gear.md",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/character.js",
+		"/Users/jpas/Developer/character-sheet/app/scripts/filters.js",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/conjurer.md",
+		"/Users/jpas/Desktop/euler/5.js",
+		"/Users/jpas/Desktop/euler/5.py",
+		"/Users/jpas/Desktop/euler/4.py",
+		"/Users/jpas/Desktop/euler/3.py",
+		"/Users/jpas/Developer/character-sheet/app/characters/_list.json",
+		"/Users/jpas/Developer/character-sheet/app/styles/main.css",
+		"/Users/jpas/Downloads/EnderIO-1.7.10-2.0.8.221/crazypants/enderio/conduit/power/PowerConduit.class",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/racial-traits.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/short/s-race-traits.md",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Please look these over for me! 09:30:2014/a2q4.cpp",
+		"/Users/jpas/Desktop/euler/2.py",
+		"/Users/jpas/Desktop/euler/1.cpp",
+		"/Users/jpas/Desktop/hello.cpp",
+		"/Users/jpas/Desktop/spells.md",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/syllabus.md",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/Syllabus.md",
+		"/Users/jpas/Desktop/compile.sh",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/index.html",
+		"/Users/jpas/Desktop/primes.cpp",
+		"/Users/jpas/Desktop/helloWorld.cpp",
+		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jpas/Developer/pathfinder-race-builder/.jshintrc",
+		"/Users/jpas/Developer/pathfinder-race-builder/.tmp/scripts/combined-scripts.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/scripts/app.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/scripts/router.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/scripts/routes/application_route.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/scripts/store.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/test/.bowerrc",
+		"/Users/jpas/Developer/pathfinder-race-builder/pathfinder-race-builder.sublime-project",
+		"/Users/jpas/Developer/pathfinder-race-builder/Gruntfile.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/templates/index.hbs",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/templates/application.hbs",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/styles/style.css",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/styles/normalize.css",
+		"/Users/jpas/Developer/pathfinder-race-builder/.yo-rc.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/.tmp/scripts/compiled-templates.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/.tmp/index.html",
+		"/Users/jpas/Developer/pathfinder-race-builder/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/test/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/test/index.html",
+		"/Users/jpas/Developer/pathfinder-race-builder/test/spec/test.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/package.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/sizzle/dist/sizzle.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/selector-native.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/event.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/data/Data.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/data/accepts.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/src/ajax.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/dist/jquery.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/jquery/.bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/lib/handlebars/source.rb",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.runtime.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.runtime.amd.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.min.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.amd.min.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars.amd.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/handlebars-source.gemspec",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/composer.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/component.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/handlebars/.bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/package.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/ember.prod.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/ember.min.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/ember.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/ember-template-compiler.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/composer.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/component.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember/.bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-mocha-adapter/README.md",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-mocha-adapter/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-mocha-adapter/adapter.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-mocha-adapter/.bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/package.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/ember-data.prod.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/ember-data.min.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/ember-data.js",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/composer.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/component.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/app/bower_components/ember-data/.bower.json",
+		"/Users/jpas/Developer/pathfinder-race-builder/.bowerrc",
+		"/Users/jpas/Developer/pathfinder-race-builder/npm-debug.log",
+		"/Users/jpas/Documents/Torrents/Backgrounds/print.sh",
+		"/Users/jpas/Documents/Torrents/Backgrounds/sort.sh",
+		"/Users/jpas/Downloads/PF Spell Database/spells.xsd",
+		"/Users/jpas/Documents/Torrents/In Progress/Mega background dump/Background_Dump/sort.sh",
+		"/Users/jpas/Developer/Unity/Tutorial - Stealth/stealth.sublime-project",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/2014-09-11.md",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/2014-09-09.md",
+		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Computer Science 110/controlCentralHeating.txt",
+		"/Users/jpas/Desktop/rpg.md",
+		"/Users/jpas/Dropbox/School/Philosophy 120/2014-09-09.md",
+		"/Users/jpas/Desktop/rpg.js",
+		"/Users/jpas/Desktop/test.html",
+		"/Users/jpas/Downloads/forge/eula.txt",
+		"/Users/jpas/Developer/pathfinder_db/js/pf-character-data/untitled",
+		"/Users/jpas/Developer/pathfinder_db/js/app.js",
+		"/Users/jpas/Developer/pathfinder_db/views/main.html",
+		"/Users/jpas/Developer/pathfinder_db/index.html",
+		"/Users/jpas/Developer/pathfinder_db/css/style.css",
+		"/Users/jpas/Developer/pathfinder_db/bower.json",
+		"/Users/jpas/Developer/pathfinder_db/feats.json",
+		"/Users/jpas/Desktop/fortune/node_modules/json-server/README.md",
+		"/Users/jpas/Desktop/fortune/fortune.js",
+		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/jpas/Developer/node RESTful/app/models/bear.js",
+		"/Users/jpas/Developer/node RESTful/package.json",
+		"/Users/jpas/Developer/node RESTful/server.js",
+		"/Users/jpas/Developer/node restful/package.json",
+		"/Users/jpas/Downloads/starter-kit-1.7.0/js/app.js",
+		"/Users/jpas/Downloads/starter-kit-1.7.0/js/router.js",
+		"/Users/jpas/Downloads/starter-kit-1.7.0/css/style.css",
+		"/Users/jpas/Desktop/t.jsx",
+		"/Users/jpas/Developer/character-sheet/app/characters/short/s-spells.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/short/_data.json"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+			"/Users/jpas/Downloads/EnderIO-1.7.10-2.0.8.221.src/crazypants/enderio/conduit",
+			"/Users/jpas/Developer/pathfinder-race-builder",
+			"/Users/jpas/Developer/character-sheet/app/characters/short",
+			"/Users/jpas/Developer/character-sheet/app/characters/amroth",
+			"/Users/jpas/Developer/character-sheet/app/scripts",
+			"/Users/jpas/Developer/character-sheet/app/characters/amroth",
+			"/Users/jpas/Developer/characters-sheet/app/characters",
+			"/Users/jpas/Developer/characters-sheet/app/characters/amroth",
+			"/Users/jpas/Developer/characters-sheet/app/characters",
+			"/Users/jpas/Developer/characters-sheet/app/scripts/directives",
+			"/Users/jpas/Developer/characters-sheet/app/scripts",
+			"/Users/jpas/Developer/characters-sheet/app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"armor",
+			"armour",
+			"magic missile",
+			"\"",
+			"which are:",
+			", which are: ",
+			"wizard",
+			"the",
+			"3^2",
+			"2\\^4",
+			"2\\^3",
+			"2\\^2",
+			"2\\^1",
+			"//",
+			"←",
+			"false",
+			"20480",
+			"700",
+			"bol700",
+			"Source Sans Pro",
+			":",
+			"::",
+			"cin",
+			"cout",
+			"-",
+			"know",
+			"	",
+			"\\*",
+			"	",
+			"	No",
+			"No",
+			")",
+			"(basename \"$1\")",
+			"numPrimes",
+			"numberOfPrimes",
+			"toSieve",
+			"grid",
+			"i",
+			"PathfinderRaceBuilder",
+			"  ",
+			"js",
+			"		",
+			"  ",
+			"	",
+			"// Generated on 2014-09-18 using generator-ember 0.8.4\n'use strict';\nvar LIVERELOAD_PORT = 35729;\nvar lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});\nvar mountFolder = function (connect, dir) {\n	return connect.static(require('path').resolve(dir));\n};\n\n// # Globbing\n// for performance reasons we're only matching one level down:\n// 'test/spec/{,*/}*.js'\n// use this if you want to match all subfolders:\n// 'test/spec/**/*.js'\n\nmodule.exports = function (grunt) {\n	// show elapsed time at the end\n	require('time-grunt')(grunt);\n	// load all grunt tasks\n	require('load-grunt-tasks')(grunt);\n\n	// configurable paths\n	var yeomanConfig = {\n		app: 'app',\n		dist: 'dist'\n	};\n\n	grunt.initConfig({\n		yeoman: yeomanConfig,\n		watch: {\n			emberTemplates: {\n				files: '<%= yeoman.app %>/templates/**/*.hbs',\n				tasks: ['emberTemplates']\n			},\n			neuter: {\n				files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],\n				tasks: ['neuter']\n			},\n			livereload: {\n				options: {\n					livereload: LIVERELOAD_PORT\n				},\n				files: [\n					'.tmp/scripts/*.js',\n					'<%= yeoman.app %>/*.html',\n					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',\n					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'\n				]\n			}\n		},\n		connect: {\n			options: {\n				port: 9000,\n				// change this to '0.0.0.0' to access the server from outside\n				hostname: 'localhost'\n			},\n			livereload: {\n				options: {\n					middleware: function (connect) {\n						return [\n							lrSnippet,\n							mountFolder(connect, '.tmp'),\n							mountFolder(connect, yeomanConfig.app)\n						];\n					}\n				}\n			},\n			test: {\n				options: {\n					middleware: function (connect) {\n						return [\n							mountFolder(connect, 'test'),\n							mountFolder(connect, '.tmp')\n						];\n					}\n				}\n			},\n			dist: {\n				options: {\n					middleware: function (connect) {\n						return [\n							mountFolder(connect, yeomanConfig.dist)\n						];\n					}\n				}\n			}\n		},\n		open: {\n			server: {\n				path: 'http://localhost:<%= connect.options.port %>'\n			}\n		},\n		clean: {\n			dist: {\n				files: [{\n					dot: true,\n					src: [\n						'.tmp',\n						'<%= yeoman.dist %>/*',\n						'!<%= yeoman.dist %>/.git*'\n					]\n				}]\n			},\n			server: '.tmp'\n		},\n		jshint: {\n			options: {\n				jshintrc: '.jshintrc',\n				reporter: require('jshint-stylish')\n			},\n			all: [\n				'Gruntfile.js',\n				'<%= yeoman.app %>/scripts/{,*/}*.js',\n				'!<%= yeoman.app %>/scripts/vendor/*',\n				'test/spec/{,*/}*.js'\n			]\n		},\n		mocha: {\n			all: {\n				options: {\n					run: true,\n					urls: ['http://localhost:<%= connect.options.port %>/index.html']\n				}\n			}\n		},\n		// not used since Uglify task does concat,\n		// but still available if needed\n		/*concat: {\n			dist: {}\n		},*/\n		// not enabled since usemin task does concat and uglify\n		// check index.html to edit your build targets\n		// enable this task if you prefer defining your build targets here\n		/*uglify: {\n			dist: {}\n		},*/\n		rev: {\n			dist: {\n				files: {\n					src: [\n						'<%= yeoman.dist %>/scripts/{,*/}*.js',\n						'<%= yeoman.dist %>/styles/{,*/}*.css',\n						'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',\n						'<%= yeoman.dist %>/styles/fonts/*'\n					]\n				}\n			}\n		},\n		useminPrepare: {\n			html: '.tmp/index.html',\n			options: {\n				dest: '<%= yeoman.dist %>'\n			}\n		},\n		usemin: {\n			html: ['<%= yeoman.dist %>/{,*/}*.html'],\n			css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],\n			options: {\n				dirs: ['<%= yeoman.dist %>']\n			}\n		},\n		imagemin: {\n			dist: {\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>/images',\n					src: '{,*/}*.{png,jpg,jpeg}',\n					dest: '<%= yeoman.dist %>/images'\n				}]\n			}\n		},\n		svgmin: {\n			dist: {\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>/images',\n					src: '{,*/}*.svg',\n					dest: '<%= yeoman.dist %>/images'\n				}]\n			}\n		},\n		cssmin: {\n			dist: {\n				files: {\n					'<%= yeoman.dist %>/styles/main.css': [\n						'.tmp/styles/{,*/}*.css',\n						'<%= yeoman.app %>/styles/{,*/}*.css'\n					]\n				}\n			}\n		},\n		htmlmin: {\n			dist: {\n				options: {\n					/*removeCommentsFromCDATA: true,\n					// https://github.com/yeoman/grunt-usemin/issues/44\n					//collapseWhitespace: true,\n					collapseBooleanAttributes: true,\n					removeAttributeQuotes: true,\n					removeRedundantAttributes: true,\n					useShortDoctype: true,\n					removeEmptyAttributes: true,\n					removeOptionalTags: true*/\n				},\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>',\n					src: '*.html',\n					dest: '<%= yeoman.dist %>'\n				}]\n			}\n		},\n		replace: {\n			app: {\n			options: {\n				variables: {\n				ember: 'bower_components/ember/ember.js',\n				ember_data: 'bower_components/ember-data/ember-data.js'\n				}\n			},\n			files: [\n				{src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}\n			]\n			},\n			dist: {\n			options: {\n				variables: {\n				ember: 'bower_components/ember/ember.prod.js',\n				ember_data: 'bower_components/ember-data/ember-data.prod.js'\n				}\n			},\n			files: [\n				{src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}\n			]\n			}\n		},\n		// Put files not handled in other tasks here\n		copy: {\n			dist: {\n				files: [\n					{\n						expand: true,\n						dot: true,\n						cwd: '<%= yeoman.app %>',\n						dest: '<%= yeoman.dist %>',\n						src: [\n							'*.{ico,txt}',\n							'.htaccess',\n							'images/{,*/}*.{webp,gif}',\n							'styles/fonts/*'\n						]\n					}\n				]\n			}\n		},\n		concurrent: {\n			server: [\n				'emberTemplates',\n			],\n			test: [\n				'emberTemplates',\n			],\n			dist: [\n				'emberTemplates',\n				'imagemin',\n				'svgmin',\n				'htmlmin'\n			]\n		},\n		emberTemplates: {\n			options: {\n				templateName: function (sourceFile) {\n					var templatePath = yeomanConfig.app + '/templates/';\n					return sourceFile.replace(templatePath, '');\n				}\n			},\n			dist: {\n				files: {\n					'.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/**/*.hbs'\n				}\n			}\n		},\n		neuter: {\n			app: {\n				options: {\n					filepathTransform: function (filepath) {\n						return yeomanConfig.app + '/' + filepath;\n					}\n				},\n				src: '<%= yeoman.app %>/scripts/app.js',\n				dest: '.tmp/scripts/combined-scripts.js'\n			}\n		}\n	});\n\n	grunt.registerTask('server', function (target) {\n		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');\n		grunt.task.run(['serve:' + target]);\n	});\n\n	grunt.registerTask('serve', function (target) {\n		if (target === 'dist') {\n			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);\n		}\n\n		grunt.task.run([\n			'clean:server',\n			'replace:app',\n			'concurrent:server',\n			'neuter:app',\n			'connect:livereload',\n			'open',\n			'watch'\n		]);\n	});\n\n	grunt.registerTask('test', [\n		'clean:server',\n		'replace:app',\n		'concurrent:test',\n		'connect:test',\n		'neuter:app',\n		'mocha'\n	]);\n\n	grunt.registerTask('build', [\n		'clean:dist',\n		'replace:dist',\n		'useminPrepare',\n		'concurrent:dist',\n		'neuter:app',\n		'concat',\n		'cssmin',\n		'uglify',\n		'copy',\n		'rev',\n		'usemin'\n	]);\n\n	grunt.registerTask('default', [\n		'jshint',\n		'test',\n		'build'\n	]);\n};\n",
+			"  ",
+			"	",
+			" - ",
+			"Euthephro",
+			"     ",
+			"  |",
+			" ",
+			"  ",
+			"09",
+			"November",
+			"October",
+			"Spetember",
+			"Nov.",
+			"Oct.",
+			"Sept.",
+			"|  ",
+			"September",
+			"…",
+			"\\.\\.+",
+			".",
+			"*,",
+			": ",
+			":",
+			"	",
+			"newValue",
+			"current.setTo",
+			"x",
+			"() {",
+			"(",
+			"base",
+			"\n\n",
+			"<tr>",
+			"<tr><td ",
+			"</[a-z]+>",
+			">",
+			"	",
+			"  ",
+			"\\d+[^)]",
+			"#",
+			"\\n\\n",
+			"\\d+[^)]",
+			"  ",
+			"	*",
+			"\n	*",
+			"	",
+			"  ",
+			"	",
+			"  ",
+			"ember",
+			"-",
+			"js/libs",
+			"'",
+			":",
+			"'",
+			"app",
+			"adapter",
+			"app.",
+			"\"",
+			"  ",
+			"}}",
+			"|-|",
+			"-|",
+			"\"",
+			"	",
+			"(",
+			", ",
+			"**,",
+			",\n,",
+			"\n**\n",
+			"]:",
+			"\\}",
+			",",
+			"\\{",
+			"	",
+			"{}",
+			"CC",
+			"C",
+			"Yes",
+			"YesYes",
+			"	",
+			"###",
+			"*",
+			"							]"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"RaceBuilder",
+			"	",
+			"##",
+			"###",
+			"#### ",
+			"#",
+			"a",
+			"app",
+			":d20-",
+			"Math.",
+			"m.",
+			":d20spell",
+			"c.stats.scores",
+			"directives",
+			".html",
+			"partial"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 296.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.pub":
+	{
+		"height": 104.0
+	},
+	"project": "character-sheet.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"grunt",
+				"bower_components/bootstrap/Gruntfile.js"
+			],
+			[
+				"reind",
+				"node_modules/grunt-google-cdn/node_modules/bower/node_modules/cardinal/node_modules/redeyed/examples/browser/index.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 147.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
