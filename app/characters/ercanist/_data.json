@@ -42,11 +42,7 @@
 			"bab": 0
 		},
 		"defense": {
-			"ac": {
-				"bonuses": [
-					"mage armour:+4"
-				]
-			},
+			"ac": {},
 			"cmd": {},
 			"fort": {
 				"base": 0,
