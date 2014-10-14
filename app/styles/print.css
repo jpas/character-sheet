@@ -1,4 +1,8 @@
 @media print {
+	body {
+		background-color: #fff;
+		color: #000;
+	}
 	.hide-on-print {
 		display: none;
 	}
@@ -12,6 +16,7 @@
 		margin: 5px 0;
 	}
 	img {
+
 		padding: 0;
 		border: none;
 	}
@@ -30,9 +35,11 @@
 		margin: 0;
 	}
 	hr {
+		background-color: #fff;
 		margin: 10px;
 	}
 	roll {
+		background-color: #fff;
 		margin: 0;
 		border: none;
 		border-radius: 0;
@@ -42,6 +49,7 @@
 		page-break-inside: avoid !important;
 	}
 	.character .portrait {
+		background-color: #fff;
 		margin-top: 0;
 	}
 }
