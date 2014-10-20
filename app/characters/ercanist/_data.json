@@ -1,7 +1,7 @@
 [
 	{
 		"info": {
-			"name": "Ercanist",
+			"name": "Gengar",
 			"race": "Half-Elf",
 			"portrait": "http://i.imgur.com/chPIyvw.png",
 			"classes": "Arcanist 1",
@@ -10,7 +10,7 @@
 				"arcanist": 1
 			},
 			"xp": {
-				"current": 0,
+				"current": 860,
 				"next": 1300
 			},
 			"alignment": "CN",
