@@ -1,6 +1,6 @@
 -|-|-|-
 :-:|:-:|:-:|:-
-1st | {{3+2}}/day |-| *[color spray]*, *[grease]*
+1st | {{3+2}}/day |-| *[grease]*, *[sleep]*
 0th |   at will   |-| *[detect magic]*, *[read magic]*, *[light]*, *[acid splash]*
 
 **Arcane Reservoir** Initial {{3 + Math.floor(c.info.levels.arcanist/2)}}; Maximum {{3 + c.info.levels.arcanist*2 }}
