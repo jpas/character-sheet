@@ -17,8 +17,9 @@
 			"size": "Medium",
 			"type": "humanoid (elf, human)",
 			"initiative": 9,
-			"hp": 8,
-			"hd": "1d6+2",
+			"hp": 19,
+			"hp-breakdown": "[6+2+1]+[6+2+1]+1",
+			"hd": "2d6+7",
 			"senses": "low-light vision",
 			"languages": [
 				"Celestial",
@@ -155,7 +156,8 @@
 		},
 		"feats": [
 			"[Improved Initiative](http://paizo.com/prd/feats.html#improved-initiative)",
-			"[Skill Focus (Use Magic Device)](http://paizo.com/prd/feats.html#skill-focus)"
+			"[Skill Focus (Use Magic Device)](http://paizo.com/prd/feats.html#skill-focus)",
+			"[Toughness](http://paizo.com/prd/feats.html#toughness)"
 		],
 		"traits": [
 			"[Pragmatic Activator](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)",
