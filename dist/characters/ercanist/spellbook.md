@@ -8,6 +8,8 @@
 *[mage armour]*,
 *[magic missile]*,
 *[obscuring mist]*,
+*[ray of enfeeblement]*,
+*[sleep]*,
 *[unseen servant]*
 
 **0th**
@@ -42,6 +44,8 @@
   [mage armour]: :prd-spell-crb:mageArmor
   [magic missile]: :prd-spell-crb:magicMissile
   [obscuring mist]: :prd-spell-crb:obscuringMist
+  [ray of enfeeblement]: :prd-spell-crb:rayOfEnfeeblement
+  [sleep]: :prd-spell-crb:sleep
   [unseen servant]: :prd-spell-crb:unseenServant
 
 [0th]: #

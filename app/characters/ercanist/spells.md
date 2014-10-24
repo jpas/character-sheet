@@ -1,6 +1,6 @@
 -|-|-|-
 :-:|:-:|:-:|:-
-1st | {{2+2}}/day |-| *[color spray]*, *[grease]*
+1st | {{3+2}}/day |-| *[color spray]*, *[grease]*
 0th |   at will   |-| *[detect magic]*, *[read magic]*, *[light]*, *[acid splash]*
 
 **Arcane Reservoir** Initial {{3 + Math.floor(c.info.levels.arcanist/2)}}; Maximum {{3 + c.info.levels.arcanist*2 }}
@@ -13,9 +13,11 @@
   [mage armour]: :prd-spell-crb:mageArmor
   [magic missile]: :prd-spell-crb:magicMissile
   [obscuring mist]: :prd-spell-crb:obscuringMist
+  [ray of enfeeblement]: :prd-spell-crb:rayOfEnfeeblement
+  [sleep]: :prd-spell-crb:sleep
   [unseen servant]: :prd-spell-crb:unseenServant
 
-[0th]: 4/day
+[0th]: 5/day
   [acid splash]: :prd-spell-crb:acidSplash
   [arcane mark]: :prd-spell-crb:arcaneMark
   [bleed]: :prd-spell-crb:bleed

@@ -7,10 +7,10 @@
 			"classes": "Arcanist 1",
 			"levels": {
 				"hd": 1,
-				"arcanist": 1
+				"arcanist": 2
 			},
 			"xp": {
-				"current": 860,
+				"current": 955,
 				"next": 1300
 			},
 			"alignment": "CN",
@@ -39,7 +39,7 @@
 				"wis":  7,
 				"cha":  7
 			},
-			"bab": 0
+			"bab": 1
 		},
 		"defense": {
 			"ac": {},
@@ -53,7 +53,7 @@
 				"stat": "dex"
 			},
 			"will": {
-				"base": 2,
+				"base": 3,
 				"stat": "wis"
 			}
 		},
@@ -81,7 +81,7 @@
 			"spells": [
 				{
 					"name": "Conjurer Prepared Spells",
-					"casterLevel": 1,
+					"casterLevel": 2,
 					"concentrationBonus": 0,
 					"stat": "int",
 					"markdown": "spells.md"
@@ -111,23 +111,23 @@
 			"Intimidate": {},
 			"Knowledge (Arcana)": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Knowledge (Dungeoneering)": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Knowledge (Engineering)": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Knowledge (Nature)": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Knowledge (Planes)": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Perception": {
 				"bonuses": [
@@ -139,7 +139,7 @@
 			"Sense Motive": {},
 			"Spellcraft": {
 				"classSkill": true,
-				"ranks": 1
+				"ranks": 2
 			},
 			"Stealth": {},
 			"Survival": {},
@@ -147,7 +147,7 @@
 			"Use Magic Device": {
 				"stat": "int",
 				"classSkill": true,
-				"ranks": 1,
+				"ranks": 2,
 				"bonuses": [
 					"Skill Focus: +3"
 				]
