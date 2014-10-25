@@ -5,7 +5,7 @@
 var PF = function(c) {
 	var applyFactor = function(value, factor, useCeil) {
 		factor = factor || 1;
-		if (useCeil) {
+		if (useCeil === true) {
 			return Math.ceil(value*factor);
 		}
 		return Math.floor(value*factor);
@@ -21,9 +21,8 @@ var PF = function(c) {
 
 	this.level = function(className, factor, useCeil) {
 		var classLevel = c.info.levels[className];
-
 		if (classLevel) {
-			applyFactor(classLevel, factor, useCeil);
+			return applyFactor(classLevel, factor, useCeil);
 		} else {
 			return 0;
 		}
