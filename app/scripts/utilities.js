@@ -1,8 +1,39 @@
 'use strict';
-/*exported pf*/
+/*exported PF, pf*/
 
-var pf = {
-	concat: function () {
+
+var PF = function(c) {
+	var applyFactor = function(value, factor, useCeil) {
+		factor = factor || 1;
+		if (useCeil) {
+			return Math.ceil(value*factor);
+		}
+		return Math.floor(value*factor);
+	};
+
+	this.hitDice = function(factor, useCeil) {
+		var total = 0;
+		angular.forEach(c.info.levels, function(value) {
+			total += value;
+		});
+		return applyFactor(total, factor, useCeil);
+	};
+
+	this.level = function(className, factor, useCeil) {
+		var classLevel = c.info.levels[className];
+
+		if (classLevel) {
+			applyFactor(classLevel, factor, useCeil);
+		} else {
+			return 0;
+		}
+	};
+
+	this.modifier = function(stat) {
+		return c.stats.scores[stat].modifier();
+	};
+
+	this.concat = function () {
 		var args = Array.prototype.slice.call(arguments);
 		for (var i = args.length - 1; i >= 0; i--) {
 			if (typeof args[i] === 'number') {
@@ -10,16 +41,19 @@ var pf = {
 			}
 		}
 		return args.join('');
-	},
-	dice: function (die, mod) {
+	};
+
+	this.dice = function (die, mod) {
 		mod = mod || 0;
 		if (die === '1d20') {
 			return mod <= 0 ? mod.toString() : '+' + mod.toString();
 		} else {
 			return die + (mod < 0 ? mod.toString() : '+' + mod.toString());
 		}
-	}
+	};
 };
+
+var pf = new PF(undefined);
 
 String.prototype.contains = function (c) {
 	return this.indexOf(c) > -1;

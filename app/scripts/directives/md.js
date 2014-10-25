@@ -28,7 +28,7 @@ app.directive('md', [
 					return;
 				}
 
-				scope.pf = pf;
+				scope.pf = new PF(scope.c);
 				scope.Math = Math;
 				if (typeof scope.md !== 'string') {
 					scope.md = scope.md.toString();

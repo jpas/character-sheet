@@ -23,6 +23,7 @@
     "marked": false,
     "FastClick": false,
     "app": true,
+    "PF": true,
     "pf": true
   }
 }
