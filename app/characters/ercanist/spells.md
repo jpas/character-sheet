@@ -1,9 +1,9 @@
 -|-|-|-
 :-:|:-:|:-:|:-
-1st | {{3+2}}/day |-| *[grease]*, *[sleep]*
-0th |   at will   |-| *[acid splash]*, *[detect magic]*, *[ghost sound]*, *[light]*, *[read magic]*
+1st | {{3+2}}/day | DC {{11 + pf.modifier('int')}} | *[grease]*, *[sleep]*
+0th |   at will   | DC {{10 + pf.modifier('int')}} | *[acid splash]*, *[detect magic]*, *[ghost sound]*, *[light]*, *[read magic]*
 
-**Arcane Reservoir** Initial {{3 + Math.floor(c.info.levels.arcanist/2)}}; Maximum {{3 + c.info.levels.arcanist*2}}
+**Arcane Reservoir** Initial {{3 + pf.level('arcanist', 0.5)}}; Maximum {{3 + pf.level('arcanist', 2)}}
 
 [1st]: 2/day
   [color spray]: :prd-spell-crb:colorSpray
