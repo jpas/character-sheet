@@ -133,6 +133,7 @@
 				<table>
 					<tr ng-repeat="level in caster.spells.level">
 						<td>{{level.name}}</td>
+						<td>DC {{level.dc}}</td>
 						<td>
 							<span ng-repeat="spell in level | spellsFilter track by $index">
 								<md md="spell"></md><span ng-if="!$last">,&#32;</span>

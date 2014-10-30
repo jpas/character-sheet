@@ -4,10 +4,10 @@
 			"name": "Er",
 			"race": "Half-Elf",
 			"portrait": "http://i.imgur.com/chPIyvw.png",
-			"classes": "Diviner 2",
+			"classes": "Arcanist 2",
 			"levels": {
 				"hd": 1,
-				"wizard": 2
+				"arcanist": 2
 			},
 			"xp": {
 				"current": 1540,
@@ -16,8 +16,7 @@
 			"alignment": "CN",
 			"size": "Medium",
 			"type": "humanoid (elf, human)",
-			"initiative": 10,
-			"initiative-breakdown": "[4+2]+[3]+[wizard/2]",
+			"initiative": 9,
 			"hp": 19,
 			"hp-breakdown": "[6+2+1]+[6+2+1]+1",
 			"hd": "2d6+7",
@@ -82,61 +81,11 @@
 			"cmb": {},
 			"spells": [
 				{
-					"name": "Diviner Prepared Spells",
+					"name": "Conjurer Prepared Spells",
 					"casterLevel": 2,
 					"concentrationBonus": 0,
 					"stat": "int",
-					"markdown": "spells.md",
-					"spells": {
-						"level": [
-							{
-								"name": "1st",
-								"perDay": 5,
-								"dc": 16,
-								"prepared": [
-									"[*detect secret doors*](:prd-spell-crb:detectSecretDoors) ^s^",
-									"[*feather fall*](:prd-spell-crb:featherFall)",
-									"[*grease*](:prd-spell-crb:grease)",
-									"[*sleep*](:prd-spell-crb:sleep)",
-									"[*unseen servant*](:prd-spell-crb:unseenServant)"
-								],
-								"unprepared": [
-									"[*color spray*](:prd-spell-crb:colorSpray)",
-									"[*comprehend languages*](:prd-spell-crb:comprehendLanguages)",
-									"[*mage armour*](:prd-spell-crb:mageArmor)",
-									"[*magic missile*](:prd-spell-crb:magicMissile)",
-									"[*obscuring mist*](:prd-spell-crb:obscuringMist)"
-								]
-							},
-							{
-								"name": "0th",
-								"perDay": 4,
-								"dc": 15,
-								"prepared": [
-									"[*detect magic*](:prd-spell-crb:detectMagic)",
-									"[*light*](:prd-spell-crb:light)",
-									"[*message*](:prd-spell-crb:message)",
-									"[*read magic*](:prd-spell-crb:readMagic)"
-								],
-								"unprepared": [
-									"[*acid splash*](:prd-spell-crb:acidSplash)",
-									"[*arcane mark*](:prd-spell-crb:arcaneMark)",
-									"[*dancing lights*](:prd-spell-crb:dancingLights)",
-									"[*detect poison*](:prd-spell-crb:detectPoison)",
-									"[*flare*](:prd-spell-crb:flare)",
-									"[*ghost sound*](:prd-spell-crb:ghostSound)",
-									"[*haunted fey aspect*](:prd-spell-uc:hauntedFeyAspect)",
-									"[*mage hand*](:prd-spell-crb:mageHand)",
-									"[*mending*](:prd-spell-crb:mending)",
-									"[*open/close*](:prd-spell-crb:openClose)",
-									"[*prestidigitation*](:prd-spell-crb:prestidigitation)",
-									"[*ray of frost*](:prd-spell-crb:rayOfFrost)",
-									"[*resistance*](:prd-spell-crb:resistance)",
-									"[*spark*](:prd-spell-apg:spark)"
-								]
-							}
-						]
-					}
+					"markdown": "spells.md"
 				}
 			],
 			"speed": "30 ft.",
@@ -198,6 +147,7 @@
 			"Swim": {},
 			"Use Magic Device": {
 				"stat": "int",
+				"classSkill": true,
 				"ranks": 2,
 				"bonuses": [
 					"Skill Focus: +3"
@@ -206,7 +156,6 @@
 		},
 		"feats": [
 			"[Improved Initiative](http://paizo.com/prd/feats.html#improved-initiative)",
-			"[Scribe Scroll](http://paizo.com/prd/feats.html#scribe-scroll)",
 			"[Skill Focus (Use Magic Device)](http://paizo.com/prd/feats.html#skill-focus)",
 			"[Toughness](http://paizo.com/prd/feats.html#toughness)"
 		],
@@ -215,7 +164,7 @@
 			"[Reactionary](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)"
 		],
 		"specials": [
-			"school.md",
+			"exploits.md",
 			"z-racial-traits.md"
 		],
 		"gear": [

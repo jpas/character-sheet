@@ -1,33 +1,42 @@
 {
-	"folders": [
+	"build_systems":
+	[
 		{
-			"path": ".",
-			"follow_symlinks": true,
-			"folder_exclude_patterns": [
+			"cmd":
+			[
+				"grunt --no-color build"
+			],
+			"name": "character-sheet build",
+			"shell": true,
+			"working_dir": "$project_path"
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".*",
+				"*.sublime*"
+			],
+			"folder_exclude_patterns":
+			[
 				".*",
 				"node_modules",
 				"dist",
 				"bower_components"
 			],
-			"file_exclude_patterns": [
-				".*",
-				"*.sublime*"
-			]
+			"follow_symlinks": true,
+			"path": "."
 		}
 	],
-	"settings": {
+	"settings":
+	{
+		"build_switcher_systems":
+		[
+			"character-sheet build"
+		],
 		"tab_size": 4,
-	    "translate_tabs_to_spaces": false,
-        "build_switcher_systems": [
-            "character-sheet build"
-        ]
-	},
-	"build_systems": [
-		{
-			"name": "character-sheet build",
-			"working_dir": "$project_path",
-			"shell": true,
-			"cmd": ["grunt --no-color build"]
-		}
-	]
+		"translate_tabs_to_spaces": false
+	}
 }

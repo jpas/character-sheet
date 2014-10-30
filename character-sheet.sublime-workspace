@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cu",
+				"current"
+			],
+			[
+				"cur",
+				"currentRoute"
+			],
+			[
 				"num",
 				"numPrimes"
 			],
@@ -419,9 +427,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 101.0,
+		"height": 203.0,
 		"selected_items":
 		[
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"loe",
+				"Convert Case: Lower Case"
+			],
 			[
 				"lower",
 				"Convert Case: Lower Case"
@@ -473,10 +489,6 @@
 			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"reind",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"insall",
@@ -911,7 +923,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 583.0
+		"width": 475.0
 	},
 	"console":
 	{
@@ -932,10 +944,17 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jpas/Developer/character-sheet"
 	],
 	"file_history":
 	[
+		"/Users/jpas/Developer/vue-sheet/sheet/index.js",
+		"/Users/jpas/Developer/vue-sheet/sheet/template.html",
+		"/Users/jpas/Developer/vue-sheet/list/template.html",
+		"/Users/jpas/Developer/vue-sheet/index.html",
+		"/Users/jpas/Developer/vue-sheet/main.js",
+		"/Users/jpas/Developer/vue-sheet/router.js",
+		"/Users/jpas/Developer/vue-sheet/main.css",
+		"/Users/jpas/Developer/vue-sheet/sheet.html",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/notes/2014-10-01.md",
 		"/Users/jpas/Developer/character-sheet/app/scripts/directives/md.js",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbook.md",
@@ -1055,19 +1074,11 @@
 		"/Users/jpas/Desktop/fortune/fortune.js",
 		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/jpas/Developer/node RESTful/app/models/bear.js",
-		"/Users/jpas/Developer/node RESTful/package.json",
-		"/Users/jpas/Developer/node RESTful/server.js",
-		"/Users/jpas/Developer/node restful/package.json",
-		"/Users/jpas/Downloads/starter-kit-1.7.0/js/app.js",
-		"/Users/jpas/Downloads/starter-kit-1.7.0/js/router.js",
-		"/Users/jpas/Downloads/starter-kit-1.7.0/css/style.css",
-		"/Users/jpas/Desktop/t.jsx",
-		"/Users/jpas/Developer/character-sheet/app/characters/short/s-spells.md",
-		"/Users/jpas/Developer/character-sheet/app/characters/short/_data.json"
+		"/Users/jpas/Developer/node RESTful/package.json"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -1093,6 +1104,14 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"currentRoute",
+			"list",
+			"page",
+			"sheet",
+			"= function (",
+			"= function () {",
+			"var",
+			"() {",
 			"armor",
 			"armour",
 			"magic missile",
@@ -1212,15 +1231,7 @@
 			",",
 			"\\{",
 			"	",
-			"{}",
-			"CC",
-			"C",
-			"Yes",
-			"YesYes",
-			"	",
-			"###",
-			"*",
-			"							]"
+			"{}"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1257,11 +1268,16 @@
 			"sheets":
 			[
 			]
+		},
+		{
+			"sheets":
+			[
+			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1276,11 +1292,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1305,7 +1328,7 @@
 	"project": "character-sheet.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
