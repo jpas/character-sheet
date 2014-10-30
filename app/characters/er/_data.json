@@ -16,8 +16,8 @@
 			"alignment": "CN",
 			"size": "Medium",
 			"type": "humanoid (elf, human)",
-			"initiative": 10,
-			"initiative-breakdown": "[4+2]+[3]+[wizard/2]",
+			"initiative": 8,
+			"initiative-breakdown": "[4]+[3]+[wizard/2]",
 			"hp": 19,
 			"hp-breakdown": "[6+2+1]+[6+2+1]+1",
 			"hd": "2d6+7",
@@ -113,16 +113,16 @@
 								"perDay": 4,
 								"dc": 15,
 								"prepared": [
-									"[*detect magic*](:prd-spell-crb:detectMagic)",
+									"[*detect magic*](:prd-spell-crb:detectMagic) ^s^",
 									"[*light*](:prd-spell-crb:light)",
 									"[*message*](:prd-spell-crb:message)",
-									"[*read magic*](:prd-spell-crb:readMagic)"
+									"[*read magic*](:prd-spell-crb:readMagic) ^s^"
 								],
 								"unprepared": [
 									"[*acid splash*](:prd-spell-crb:acidSplash)",
 									"[*arcane mark*](:prd-spell-crb:arcaneMark)",
 									"[*dancing lights*](:prd-spell-crb:dancingLights)",
-									"[*detect poison*](:prd-spell-crb:detectPoison)",
+									"[*detect poison*](:prd-spell-crb:detectPoison) ^s^",
 									"[*flare*](:prd-spell-crb:flare)",
 									"[*ghost sound*](:prd-spell-crb:ghostSound)",
 									"[*haunted fey aspect*](:prd-spell-uc:hauntedFeyAspect)",
@@ -182,8 +182,10 @@
 				"ranks": 2
 			},
 			"Perception": {
+				"classSkill": true,
 				"bonuses": [
-					"Keen Senses: +2"
+					"Keen Senses: +2",
+					"Eyes and Ears of the City: +1"
 				]
 			},
 			"Perform": {},
@@ -211,8 +213,8 @@
 			"[Toughness](http://paizo.com/prd/feats.html#toughness)"
 		],
 		"traits": [
-			"[Pragmatic Activator](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)",
-			"[Reactionary](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)"
+			"[Eyes and Ears of the City](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)",
+			"[Pragmatic Activator](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)"
 		],
 		"specials": [
 			"school.md",
