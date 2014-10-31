@@ -20,6 +20,7 @@
   "smarttabs": true,
   "globals": {
     "angular": false,
+    "_": false,
     "marked": false,
     "FastClick": false,
     "app": true,

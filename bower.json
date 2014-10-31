@@ -13,6 +13,7 @@
     "fastclick": "1.0.2",
     "font-awesome": "4.1.0",
     "marked": "0.3.2",
-    "normalize-css": "3.0.1"
+    "normalize-css": "3.0.1",
+    "underscore": "~1.7.0"
   }
 }
