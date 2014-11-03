@@ -668,6 +668,8 @@ var Character = function(data) {
 		}, data.defense.will))
 	};
 
+	this.saves.special = _.sprintf('(%s)', data.defense.saveSpecial);
+
 	this.specialDefenses = '';
 	if (defense.dr) { this.specialDefenses += _.sprintf('**Damage Reduction** %s;', defense.dr); }
 	if (defense.immune) { this.specialDefenses += _.sprintf('**Immune** %s;', defense.immune); }

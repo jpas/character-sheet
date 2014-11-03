@@ -64,7 +64,7 @@
 			<b>Reflex</b>
 			<roll ng-bind='c.saves.reflex.getRoll()'></roll>;
 			<b>Will</b>
-			<roll ng-bind='c.saves.will.getRoll()'></roll>
+			<roll ng-bind='c.saves.will.getRoll()'></roll><span ng-if='c.saves.special'>;</span>
 			<md md='c.saves.special' pf='c.pf'></md>
 		</p>
 		<p>
