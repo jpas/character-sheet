@@ -101,6 +101,46 @@ roll {
 	font-weight: 600;
 }
 
+
+[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+}
+
+input ~ label >  span {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+[type="checkbox"] + label {
+	cursor: pointer;
+	display: table;
+}
+
+[type="checkbox"] + label:before {
+	font-family: 'FontAwesome';
+	display: inline-block;
+	font-size: 12px;
+}
+
+[type="checkbox"]:checked + label:before {
+	content: "\f14a";
+}
+
+[type="checkbox"]:not(:checked) + label:before {
+	content: "\f0c8";
+}
+
+[type="checkbox"]:hover + label:before {
+	color: #2c9fab;
+}
+
+[disabled="disabled"] + label:before,
+[disabled="disabled"]:hover + label:before {
+	color: #a5a5a5;
+}
+
 .bonuses {
 	margin: 10px 0 0;
 	padding-left: 10px;
@@ -108,11 +148,11 @@ roll {
 
 .bonuses:after {
 	content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
 }
 
 .bonuses li {
@@ -122,7 +162,6 @@ roll {
 	padding-right: 10px;
 	float: left;
 }
-
 
 b:after,
 span:after {

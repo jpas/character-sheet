@@ -70,6 +70,7 @@ var Character = function(data) {
 		this.name = data.name;
 		this.active = data.active;
 		this.canToggle = !_.isUndefined(data.active);
+		this.locked = data.locked;
 
 		this.getTargetting = function(targetID) {
 			if (this.active === false) { return {}; }

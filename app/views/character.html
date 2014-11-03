@@ -4,8 +4,8 @@
 		<p><b>Temporary Bonuses</b></p>
 		<ul class='bonuses'>
 			<li ng-repeat='bonus in c.bonuses' ng-if='bonus.canToggle'>
-				<input type='checkbox' id='{{c.id}}-bonus-{{$index}}' ng-model='bonus.active'/>
-				<md for='{{c.id}}-bonus-{{$index}}' ng-bind='bonus.name'></md>
+				<input ng-model='bonus.active' id='{{c.id}}-bonus-{{$index}}' ng-disabled='{{bonus.locked}}' type='checkbox'/>
+				<label for='{{c.id}}-bonus-{{$index}}'><span ng-bind='bonus.name'></span></label>
 			</li>
 		</ul>
 		<hr style='margin-top: 10px;'>
