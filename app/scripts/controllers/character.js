@@ -67,8 +67,12 @@ var Character = function(data) {
 			this[index] = new Bonus(bonus);
 		}, data.bonuses);
 
+		this.name = data.name;
+		this.active = data.active;
+		this.canToggle = !_.isUndefined(data.active);
+
 		this.getTargetting = function(targetID) {
-			if (data.active === false) { return {}; }
+			if (this.active === false) { return {}; }
 
 			var found = _.filter(data.bonuses, function(bonus) {
 				return bonus.target === targetID;
@@ -100,8 +104,9 @@ var Character = function(data) {
 			return new BonusSet(bonus);
 		}),
 
-		getBonuses: function(targetID, exempt) {
+		getBonuses: function(targetID, exempt, factor) {
 			if (!_.isArray(exempt)) { exempt = []; }
+			factor = factor || 1;
 			var total = 0;
 
 			var bonuses = _.map(this.data, function(bonusSet) {
@@ -116,7 +121,12 @@ var Character = function(data) {
 				if (isValidBonusType(typeName, exempt)) {
 					if (bonusHandler.canStack(typeName)) {
 						_.each(type, function(bonus) {
-							total += bonus.value;
+							var value = bonus.value;
+							if (value < 0) {
+								total += value;
+							} else {
+								total += Math.floor(bonus.value * factor);
+							}
 						});
 					} else {
 						var values = _.map(type, function(bonus) {
@@ -126,8 +136,10 @@ var Character = function(data) {
 							return 0;
 						});
 
+
+
 						if (!_.isEmpty(values)) {
-							total += _.max(values);
+							total += Math.floor(_.max(values) * factor);
 						}
 
 						values = _.map(type, function(bonus) {
@@ -240,25 +252,18 @@ var Character = function(data) {
 
 		this.getToHit = function() {
 			var bab = defaultValue(0, data.bab);
-			var bonusTotal = this.getTotal();
+			var total = this.getTotal();
 
-			bonusTotal += abilityScores.getModifiers(data.stats);
-			bonusTotal += bonusHandler.getBonuses(
-				_.sprintf('%s-to-hit', this.id),
-				this.exemptTypes);
-			bonusTotal += bonusHandler.getBonuses(
-				_.sprintf('%s-to-hit', data.range),
-				this.exemptTypes);
-			bonusTotal += bonusHandler.getBonuses(
-				_.sprintf('%s-%s-to-hit', data.range, this.id),
-				this.exemptTypes);
+			total += abilityScores.getModifiers(data.stats);
+			total += bonusHandler.getBonuses(this.id + '_to_hit', this.exemptTypes);
+			total += bonusHandler.getBonuses(data.range + '_to_hit', this.exemptTypes);
 
-			var rolls = _.sprintf('%+d', bab + bonusTotal);
+			var rolls = _.sprintf('%+d', bab + total);
 
 			if(data.type === 'natural') { return rolls; }
 
 			for (var itterative = bab - 5; itterative > 0; itterative -= 5) {
-				rolls += _.sprintf('/%+d', itterative + bonusTotal);
+				rolls += _.sprintf('/%+d', itterative + total);
 			}
 
 			return rolls;
@@ -266,39 +271,32 @@ var Character = function(data) {
 
 		this.getDamage = function() {
 			if (data.noDamage) { return false; }
-			var damageDice = defaultValue('', data.damageDice);
-			var total = defaultValue(0, data.damageBase);
+			var dice = defaultValue('', data.damageDice);
 
-			total += abilityScores.getModifiers(data.damageStats);
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-damage-mult', this.id),
-				this.exemptTypes);
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-damage-mult', data.range),
-				this.exemptTypes);
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-%s-damage-mult', data.range, this.id),
-				this.exemptTypes);
+			var total = 0;
+			var factor = data.damageFactor || 1;
+			var stats = data.damageStats;
+			var range = data.range;
 
-			if (data.twoHanded) { total += Math.floor(total*0.5); }
+			if (data.damageBase) { total += data.damageBase; }
+			if (_.contains(stats, 'str')) { total += abilityScores.getModifier('str', factor); }
+			total += abilityScores.getModifiers(_.without(data.damageStats, 'str'));
 
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-damage', this.id),
-				this.exemptTypes);
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-damage', data.range),
-				this.exemptTypes);
-			total += bonusHandler.getBonuses(
-				_.sprintf('%s-%s-damage', data.range, this.id),
-				this.exemptTypes);
+			total += bonusHandler.getBonuses('damage', this.exemptTypes);
+			total += bonusHandler.getBonuses(this.id + '_damage', this.exemptTypes);
+			total += bonusHandler.getBonuses(range + '_damage', this.exemptTypes);
+			total += bonusHandler.getBonuses(range + '_strength_like_damage', this.exemptTypes, factor);
 
-			if (total === 0) { return damageDice; }
+			if (total === 0) { return dice; }
 
 			total = _.sprintf('%+d', total);
 
-			var slashIndex = damageDice.indexOf('/');
-			if (slashIndex > -1) { return _(damageDice).insert(slashIndex, total); }
-			return damageDice + total;
+			if (_.contains(dice, '/')) {
+				var index = dice.indexOf('/');
+				return _(dice).insert(index, total);
+			}
+
+			return dice + total;
 		};
 	}
 
@@ -318,7 +316,7 @@ var Character = function(data) {
 		data.base = defaultValue(10, data.base) + defaultValue(0, data.bab);
 
 		data.touch = defaultValue({
-			id: 'touch-',
+			id: 'touch_',
 			stats: ['dex'],
 			exemptTypes: [
 				'armor',
@@ -328,7 +326,7 @@ var Character = function(data) {
 		}, data.touch);
 
 		data.flatfooted = defaultValue({
-			id: 'flat-footed-',
+			id: 'flat_footed_',
 			stats: ['str'],
 			exemptTypes: []
 		}, data.flatfooted);
@@ -454,6 +452,8 @@ var Character = function(data) {
 		}));
 	}
 
+	this.bonuses = bonusHandler.data;
+
 	// info
 	var info = data.info;
 	this.id = _(info.name).underscored();
@@ -555,16 +555,20 @@ var Character = function(data) {
 		})
 	};
 
-	abilityScores.getModifier = function(scoreID) {
-		return this[scoreID].getModifier(); };
+	abilityScores.getModifier = function(scoreID, factor) {
+		factor = factor || 1;
+		var modifier = this[scoreID].getModifier();
+		if (modifier < 0) { return modifier; }
+		return Math.floor(modifier * factor);
+	};
 	abilityScores.getRoll = function(scoreID) {
 		return this[scoreID].getRoll(); };
 
-	abilityScores.getModifiers = function(scoreIDs) {
+	abilityScores.getModifiers = function(scoreIDs, factor) {
 		var modifiers = [];
 
 		_.each(scoreIDs, function(scoreID, index) {
-			this[index] = abilityScores.getModifier(scoreID);
+			this[index] = abilityScores.getModifier(scoreID, factor);
 		}, modifiers);
 
 		return _.reduce(modifiers, function(a, b) {

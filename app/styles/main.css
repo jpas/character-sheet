@@ -101,6 +101,29 @@ roll {
 	font-weight: 600;
 }
 
+.bonuses {
+	margin: 10px 0 0;
+	padding-left: 10px;
+}
+
+.bonuses:after {
+	content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.bonuses li {
+	margin-bottom: 10px;
+	display: inline;
+	list-style-type: none;
+	padding-right: 10px;
+	float: left;
+}
+
+
 b:after,
 span:after {
 	content: ' ';

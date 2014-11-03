@@ -1,12 +1,22 @@
 <div id='{{c.id}}' class='grid grid-pad character' ng-repeat='c in characters'>
+	<section class='hide-on-print' id='{{c.id}}-bonuses'>
+		<hr>
+		<p><b>Temporary Bonuses</b></p>
+		<ul class='bonuses'>
+			<li ng-repeat='bonus in c.bonuses' ng-if='bonus.canToggle'>
+				<input type='checkbox' id='{{c.id}}-bonus-{{$index}}' ng-model='bonus.active'/>
+				<md for='{{c.id}}-bonus-{{$index}}' ng-bind='bonus.name'></md>
+			</li>
+		</ul>
+		<hr style='margin-top: 10px;'>
+	</section>
 	<section id='{{c.id}}-header'>
-		<hr class='hide-on-print'>
 		<div ng-if='c.portrait' class='portrait push-right col-5-12 hide-on-mobile'>
 			<img ng-src='{{c.portrait}}'>
 		</div>
 		<h1>
 			<b>{{c.name}}</b>
-			<small class="pull-right header">{{c.difficulty}} ({{c.xp}})</small>
+			<small class='pull-right header'>{{c.difficulty}} ({{c.xp}})</small>
 		</h1>
 		<hr>
 	</section>
@@ -55,10 +65,10 @@
 			<roll ng-bind='c.saves.reflex.getRoll()'></roll>;
 			<b>Will</b>
 			<roll ng-bind='c.saves.will.getRoll()'></roll>
-			<md md='c.saves.special' pf='c.pf'>
+			<md md='c.saves.special' pf='c.pf'></md>
 		</p>
 		<p>
-			<md md='c.specialDefenses' pf='c.pf'>
+			<md md='c.specialDefenses' pf='c.pf'></md>
 		</p>
 		<p ng-if='c.otherDefenses'>
 			<b>Special</b>
@@ -67,17 +77,17 @@
 		<hr>
 	</section>
 	<section id='{{c.id}}-offense'>
-		<p ng-if="c.meleeAttacks">
+		<p ng-if='c.meleeAttacks'>
 			<b>Melee</b>
-			<span ng-repeat="attack in c.meleeAttacks">
+			<span ng-repeat='attack in c.meleeAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
 			</span>
 		</p>
-		<p ng-if="c.rangedAttacks">
+		<p ng-if='c.rangedAttacks'>
 			<b>Ranged</b>
-			<span ng-repeat="attack in c.rangedAttacks">
+			<span ng-repeat='attack in c.rangedAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
@@ -134,15 +144,15 @@
 		</p>
 		<p ng-if='c.feats'>
 			<b>Feats</b>
-			<md md="c.feats" fn="fn"></md>
+			<md md='c.feats' fn='fn'></md>
 		</p>
 		<p ng-if='c.traits'>
 			<b>Traits</b>
-			<md md="c.traits" fn="fn"></md>
+			<md md='c.traits' fn='fn'></md>
 		</p>
 		<p ng-if='c.languages'>
 			<b>Languages</b>
-			<md md="c.languages" fn="fn"></md>
+			<md md='c.languages' fn='fn'></md>
 		</p>
 		<hr>
 	</section>
