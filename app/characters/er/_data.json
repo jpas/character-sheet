@@ -8,8 +8,8 @@
 				"Diviner": 2
 			},
 			"xp": {
-				"current": 1540,
-				"next": 3300
+				"current": 2210,
+				"nextLevel": 3300
 			},
 			"alignment": "CN",
 			"size": "Medium",
@@ -35,13 +35,13 @@
 		},
 		"bonuses": [
 			{	"name": "Mage Armor",
-				"active": true,
+				"active": false,
 				"bonuses": [
 					{ "value": 4, "type": "armor", "target": "armor_class" }
 				]
 			},
 			{	"name": "Resistance",
-				"active": true,
+				"active": false,
 				"bonuses": [
 					{ "value": 1, "type": "resistance", "target": "saves" }
 				]
