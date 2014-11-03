@@ -53,12 +53,12 @@
 			},
 			{	"name": "Keen Senses",
 				"bonuses": [
-					{ "value": 2, "target": "perception" }
+					{ "value": 2, "type": "racial", "target": "perception" }
 				]
 			},
 			{	"name": "Eyes and Ears of the City",
 				"bonuses": [
-					{ "value": 1, "target": "perception" }
+					{ "value": 1, "type": "trait", "target": "perception" }
 				]
 			},
 			{	"name": "Improved Initiative",
