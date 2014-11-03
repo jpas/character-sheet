@@ -469,7 +469,17 @@ var Character = function(data) {
 		this.difficulty = _.sprintf('MR %d', info.mr);
 	}
 
+	if (info.xp.awarded) {
+		this.xp = _.numberFormat(info.xp.awarded);
+	} else {
+		this.xp = _.sprintf(
+			'%s / %s XP',
+			_.numberFormat(info.xp.current),
+			_.numberFormat(info.xp.nextLevel));
+	}
+
 	this.levels = info.levels;
+
 
 	info.templates = defaultValue([], info.templates);
 	info.race = defaultValue('', info.race);

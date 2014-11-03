@@ -139,6 +139,10 @@ md span:after {
 	color: #3c757b;
 }
 
+h1 small.pull-right {
+	margin-top: 8px;
+}
+
 @media screen {
 	.hide-on-screen {
 		display: none;
