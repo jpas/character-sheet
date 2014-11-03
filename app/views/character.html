@@ -70,16 +70,16 @@
 		<p ng-if="c.meleeAttacks">
 			<b>Melee</b>
 			<span ng-repeat="attack in c.meleeAttacks">
-				{{attack.name}}
-				<roll ng-bind='attack.getToHit()'></roll>
+				<span>{{attack.name}}</span>
+				<span><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
 			</span>
 		</p>
 		<p ng-if="c.rangedAttacks">
 			<b>Ranged</b>
 			<span ng-repeat="attack in c.rangedAttacks">
-				{{attack.name}}
-				<roll ng-bind='attack.getToHit()'></roll>
+				<span>{{attack.name}}</span>
+				<span><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
 			</span>
 		</p>
@@ -121,14 +121,14 @@
 		<p ng-if='c.skills.trained'>
 			<b>Trained Skills</b>
 			<span ng-repeat='skill in c.skills.trained'>
-				{{skill.name}}
+				<span>{{skill.name}}</span>
 				<roll ng-bind='skill.getRoll()'></roll><span ng-if='!$last'>,</span>
 			</span>
 		</p>
 		<p ng-if='c.skills.untrained'>
 			<b>Untrained Skills</b>
 			<span ng-repeat='skill in c.skills.untrained'>
-				{{skill.name}}
+				<span>{{skill.name}}</span>
 				<roll ng-bind='skill.getRoll()'></roll><span ng-if='!$last'>,</span>
 			</span>
 		</p>
