@@ -94,7 +94,8 @@
 			},
 			"will": {
 				"base": 3
-			}
+			},
+			"saveSpecial": "+2 vs enchantment"
 		},
 		"attacks": {
 			"melee": [
