@@ -1,7 +1,9 @@
 {
   "name": "character-sheet",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-jsonlint": "^1.0.4"
+  },
   "devDependencies": {
     "grunt": ">=0.4.1",
     "grunt-autoprefixer": ">=0.4.0",

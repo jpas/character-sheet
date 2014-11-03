@@ -101,6 +101,15 @@ roll {
 	font-weight: 600;
 }
 
+b:after,
+span:after {
+	content: ' ';
+}
+
+md span:after {
+	content: '';
+}
+
 .spells {
 	border-left: 1px solid #a5a5a5;
 	padding-left: 20px;

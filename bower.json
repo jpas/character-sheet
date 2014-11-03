@@ -1,19 +1,28 @@
 {
-  "name": "characters",
-  "version": "0.0.0",
-  "devDependencies": {
-    "angular-mocks": "1.2.16",
-    "angular-scenario": "1.2.16"
-  },
-  "dependencies": {
-    "angular": "1.2.16",
-    "angular-resource": "1.2.16",
-    "angular-route": "1.2.16",
-    "angular-sanitize": "1.2.16",
-    "fastclick": "1.0.2",
-    "font-awesome": "4.1.0",
-    "marked": "0.3.2",
-    "normalize-css": "3.0.1",
-    "underscore": "~1.7.0"
-  }
+	"name": "characters",
+	"version": "0.0.0",
+	"devDependencies": {
+		"angular-mocks": "1.2.16",
+		"angular-scenario": "1.2.16"
+	},
+	"dependencies": {
+		"angular": "1.2.16",
+		"angular-resource": "1.2.16",
+		"angular-route": "1.2.16",
+		"angular-sanitize": "1.2.16",
+		"fastclick": "1.0.2",
+		"font-awesome": "4.1.0",
+		"marked": "0.3.2",
+		"normalize-css": "3.0.1",
+		"underscore": "~1.7.0",
+		"underscore.string": "~2.3.3"
+	},
+	"overrides": {
+		"marked": {
+			"main": "./lib/marked.js"
+		},
+		"underscore.string": {
+			"main": "./lib/underscore.string.js"
+		}
+	}
 }

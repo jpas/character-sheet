@@ -19,8 +19,8 @@ app.directive('md', [
 			restrict: 'E',
 			transclude: true,
 			scope: {
-				md: '=',
-				c: '='
+				pf: '=',
+				md: '='
 			},
 			templateUrl: 'views/directives/md.html',
 			link: function(scope, elem) {
@@ -28,11 +28,9 @@ app.directive('md', [
 					return;
 				}
 
-				scope.pf = new PF(scope.c);
 				scope.Math = Math;
-				if (typeof scope.md !== 'string') {
-					scope.md = scope.md.toString();
-				}
+
+				if(!_.isString(scope.md)) { scope.md.toString(); }
 
 				function parse(data, isText) {
 					var markdown = data;

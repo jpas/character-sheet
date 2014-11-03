@@ -4,10 +4,8 @@
 			"name": "Er",
 			"race": "Half-Elf",
 			"portrait": "http://i.imgur.com/chPIyvw.png",
-			"classes": "Diviner 2",
 			"levels": {
-				"hd": 1,
-				"wizard": 2
+				"Diviner": 2
 			},
 			"xp": {
 				"current": 1540,
@@ -16,12 +14,12 @@
 			"alignment": "CN",
 			"size": "Medium",
 			"type": "humanoid (elf, human)",
-			"initiative": 8,
-			"initiative-breakdown": "[4]+[3]+[wizard/2]",
+			"senses": [
+				"low-light vision"
+			],
 			"hp": 19,
 			"hp-breakdown": "[6+2+1]+[6+2+1]+1",
 			"hd": "2d6+7",
-			"senses": "low-light vision",
 			"languages": [
 				"Celestial",
 				"Common",
@@ -30,191 +28,216 @@
 				"Goblin",
 				"Halfling",
 				"Sylvan"
-			]
+			],
+			"speed": "30 ft.",
+			"space": "5 ft.",
+			"reach": "5 ft."
 		},
+		"bonuses": [
+			{	"name": "Mage Armor",
+				"active": true,
+				"bonuses": [
+					{ "value": 4, "type": "armor", "target": "armor_class" }
+				]
+			},
+			{	"name": "Resistance",
+				"active": true,
+				"bonuses": [
+					{ "value": 1, "type": "resistance", "target": "saves" }
+				]
+			},
+			{	"name": "Skill Focus (Use Magic Device)",
+				"bonuses": [
+					{ "value": 3, "target": "use_magic_device" }
+				]
+			},
+			{	"name": "Keen Senses",
+				"bonuses": [
+					{ "value": 2, "target": "perception" }
+				]
+			},
+			{	"name": "Eyes and Ears of the City",
+				"bonuses": [
+					{ "value": 1, "target": "perception" }
+				]
+			},
+			{	"name": "Improved Initiative",
+				"bonuses": [
+					{ "value": 4, "target": "initiative" }
+				]
+			},
+			{	"name": "Forewarned",
+				"bonuses": [
+					{ "value": 1, "target": "initiative" }
+				]
+			}
+		],
 		"stats": {
 			"scores": {
-				"str":  7,
+				"str": 7,
 				"dex": 16,
 				"con": 14,
 				"int": 20,
-				"wis":  7,
-				"cha":  7
+				"wis": 7,
+				"cha": 7
 			},
 			"bab": 1
 		},
 		"defense": {
 			"ac": {},
 			"cmd": {},
-			"fort": {
-				"base": 0,
-				"stat": "con"
+			"fortitude": {
+				"base": 0
 			},
-			"refl": {
-				"base": 0,
-				"stat": "dex"
+			"reflex": {
+				"base": 0
 			},
 			"will": {
-				"base": 3,
-				"stat": "wis"
+				"base": 3
 			}
 		},
-		"offense": {
-			"attacks": {
-				"melee": [
-					{
-						"name": "touch attack",
-						"stat": "str"
-					}
-				],
-				"ranged": [
-					{
-						"name": "light crossbow",
-						"stat": "dex",
-						"damage": "1d8/19-20"
-					},
-					{
-						"name": "touch attack",
-						"stat": "dex"
-					}
-				]
-			},
-			"cmb": {},
-			"spells": [
-				{
-					"name": "Diviner Prepared Spells",
-					"casterLevel": 2,
-					"concentrationBonus": 0,
-					"stat": "int",
-					"markdown": "spells.md",
-					"spells": {
-						"level": [
-							{
-								"name": "1st",
-								"perDay": 5,
-								"dc": 16,
-								"prepared": [
-									"[*detect secret doors*](:prd-spell-crb:detectSecretDoors) ^s^",
-									"[*feather fall*](:prd-spell-crb:featherFall)",
-									"[*grease*](:prd-spell-crb:grease)",
-									"[*sleep*](:prd-spell-crb:sleep)",
-									"[*unseen servant*](:prd-spell-crb:unseenServant)"
-								],
-								"unprepared": [
-									"[*color spray*](:prd-spell-crb:colorSpray)",
-									"[*comprehend languages*](:prd-spell-crb:comprehendLanguages)",
-									"[*mage armour*](:prd-spell-crb:mageArmor)",
-									"[*magic missile*](:prd-spell-crb:magicMissile)",
-									"[*obscuring mist*](:prd-spell-crb:obscuringMist)"
-								]
-							},
-							{
-								"name": "0th",
-								"perDay": 4,
-								"dc": 15,
-								"prepared": [
-									"[*detect magic*](:prd-spell-crb:detectMagic) ^s^",
-									"[*light*](:prd-spell-crb:light)",
-									"[*message*](:prd-spell-crb:message)",
-									"[*read magic*](:prd-spell-crb:readMagic) ^s^"
-								],
-								"unprepared": [
-									"[*acid splash*](:prd-spell-crb:acidSplash)",
-									"[*arcane mark*](:prd-spell-crb:arcaneMark)",
-									"[*dancing lights*](:prd-spell-crb:dancingLights)",
-									"[*detect poison*](:prd-spell-crb:detectPoison) ^s^",
-									"[*flare*](:prd-spell-crb:flare)",
-									"[*ghost sound*](:prd-spell-crb:ghostSound)",
-									"[*haunted fey aspect*](:prd-spell-uc:hauntedFeyAspect)",
-									"[*mage hand*](:prd-spell-crb:mageHand)",
-									"[*mending*](:prd-spell-crb:mending)",
-									"[*open/close*](:prd-spell-crb:openClose)",
-									"[*prestidigitation*](:prd-spell-crb:prestidigitation)",
-									"[*ray of frost*](:prd-spell-crb:rayOfFrost)",
-									"[*resistance*](:prd-spell-crb:resistance)",
-									"[*spark*](:prd-spell-apg:spark)"
-								]
-							}
-						]
-					}
+		"attacks": {
+			"melee": [
+				{	"name": "touch attack",
+					"noDamage": true,
+					"type": "natural"
 				}
 			],
-			"speed": "30 ft.",
-			"space": "5 ft.",
-			"reach": "5 ft."
+			"ranged": [
+				{	"name": "light crossbow",
+					"damageDice": "1d8/19-20"
+				},
+				{	"name": "touch attack",
+					"noDamage": true,
+					"type": "natural"
+				}
+			]
 		},
-		"skills": {
-			"Acrobatics": {},
-			"Appraise": {
-				"classSkill": true
-			},
-			"Bluff": {},
-			"Climb": {},
-			"Craft": {
-				"classSkill": true
-			},
-			"Diplomacy": {},
-			"Disguise": {},
-			"Escape Artist": {},
-			"Fly": {
-				"classSkill": true
-			},
-			"Heal": {},
-			"Intimidate": {},
-			"Knowledge (Arcana)": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Knowledge (Dungeoneering)": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Knowledge (Engineering)": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Knowledge (Nature)": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Knowledge (Planes)": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Perception": {
-				"classSkill": true,
-				"bonuses": [
-					"Keen Senses: +2",
-					"Eyes and Ears of the City: +1"
-				]
-			},
-			"Perform": {},
-			"Ride": {},
-			"Sense Motive": {},
-			"Spellcraft": {
-				"classSkill": true,
-				"ranks": 2
-			},
-			"Stealth": {},
-			"Survival": {},
-			"Swim": {},
-			"Use Magic Device": {
-				"stat": "int",
-				"ranks": 2,
-				"bonuses": [
-					"Skill Focus: +3"
-				]
+		"cmb": {},
+		"spells": [
+			{	"name": "Diviner",
+				"type": "prepared",
+				"stats": [
+					"int"
+				],
+				"markdown": "spells.md"
 			}
-		},
+		],
+		"skills": [
+			{	"name": "Acrobatics",
+				"stat": "int"
+			},
+			{	"name": "Appraise",
+				"stat": "int",
+				"classSkill": true
+			},
+			{	"name": "Bluff",
+				"stat": "cha"
+			},
+			{	"name": "Climb",
+				"stat": "str"
+			},
+			{	"name": "Craft",
+				"stat": "int",
+				"classSkill": true
+			},
+			{	"name": "Diplomacy",
+				"stat": "cha"
+			},
+			{	"name": "Disguise",
+				"stat": "cha"
+			},
+			{	"name": "Escape Artist",
+				"stat": "dex"
+			},
+			{	"name": "Fly",
+				"stat": "dex",
+				"classSkill": true
+			},
+			{	"name": "Heal",
+				"stat": "wis"
+			},
+			{	"name": "Intimidate",
+				"stat": "cha"
+			},
+			{	"name": "Knowledge (Arcana)",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Knowledge (Dungeoneering)",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Knowledge (Engineering)",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Knowledge (Nature)",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Knowledge (Planes)",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Perception",
+				"stat": "wis",
+				"classSkill": true
+			},
+			{	"name": "Perform",
+				"stat": "cha"
+			},
+			{	"name": "Ride",
+				"stat": "dex"
+			},
+			{	"name": "Sense Motive",
+				"stat": "wis"
+			},
+			{	"name": "Spellcraft",
+				"stat": "int",
+				"classSkill": true,
+				"ranks": 2
+			},
+			{	"name": "Stealth",
+				"stat": "dex"
+			},
+			{	"name": "Survival",
+				"stat": "wis"
+			},
+			{	"name": "Swim",
+				"stat": "str"
+			},
+			{	"name": "Use Magic Device",
+				"stat": "int",
+				"ranks": 2
+			}
+		],
 		"feats": [
-			"[Improved Initiative](http://paizo.com/prd/feats.html#improved-initiative)",
-			"[Scribe Scroll](http://paizo.com/prd/feats.html#scribe-scroll)",
-			"[Skill Focus (Use Magic Device)](http://paizo.com/prd/feats.html#skill-focus)",
-			"[Toughness](http://paizo.com/prd/feats.html#toughness)"
+			{	"name": "Improved Initiative",
+				"link": "http://paizo.com/prd/feats.html#improved-initiative"
+			},
+			{	"name": "Scribe Scroll",
+				"link": "http://paizo.com/prd/feats.html#scribe-scroll"
+			},
+			{	"name": "Skill Focus",
+				"link": "http://paizo.com/prd/feats.html#skill-focus"
+			},
+			{	"name": "Toughness",
+				"link": "http://paizo.com/prd/feats.html#touhness"
+			}
 		],
 		"traits": [
-			"[Eyes and Ears of the City](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)",
-			"[Pragmatic Activator](http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html)"
+			{	"name": "Eyes and Ears of the City",
+				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
+			},
+			{	"name": "Pragmatic Activator",
+				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
+			}
 		],
 		"specials": [
 			"school.md",
