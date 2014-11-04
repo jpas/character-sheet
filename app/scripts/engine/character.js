@@ -30,19 +30,8 @@ var Character = function(data) {
 		return types.indexOf(type) !== -1 && exempt.indexOf(type) === -1;
 	};
 
-	var defaultValue = function(value, param) {
-		if(_.isObject(value)) {
-			return _.extend(value, param);
-		}
-		if (_.isUndefined(param)) {
-			return value;
-		} else {
-			return param;
-		}
-	};
-
 	function Bonus(data) {
-		data = defaultValue({
+		data = _.defaultValue({
 			value: 0,
 			type: 'untyped',
 			target: 'none'
@@ -58,7 +47,7 @@ var Character = function(data) {
 	}
 
 	function BonusSet(data) {
-		data = defaultValue({
+		data = _.defaultValue({
 			name: 'Unnamed',
 			bonuses: []
 		}, data);
@@ -252,7 +241,7 @@ var Character = function(data) {
 		this._exemptTypes();
 
 		this.getToHit = function() {
-			var bab = defaultValue(0, data.bab);
+			var bab = _.defaultValue(0, data.bab);
 			var total = this.getTotal();
 
 			total += abilityScores.getModifiers(data.stats);
@@ -272,7 +261,7 @@ var Character = function(data) {
 
 		this.getDamage = function() {
 			if (data.noDamage) { return false; }
-			var dice = defaultValue('', data.damageDice);
+			var dice = _.defaultValue('', data.damageDice);
 
 			var total = 0;
 			var factor = data.damageFactor || 1;
@@ -314,9 +303,9 @@ var Character = function(data) {
 		];
 		this._exemptTypes();
 
-		data.base = defaultValue(10, data.base) + defaultValue(0, data.bab);
+		data.base = _.defaultValue(10, data.base) + _.defaultValue(0, data.bab);
 
-		data.touch = defaultValue({
+		data.touch = _.defaultValue({
 			id: 'touch_',
 			stats: ['dex'],
 			exemptTypes: [
@@ -326,7 +315,7 @@ var Character = function(data) {
 			]
 		}, data.touch);
 
-		data.flatfooted = defaultValue({
+		data.flatfooted = _.defaultValue({
 			id: 'flat_footed_',
 			stats: ['str'],
 			exemptTypes: []
@@ -440,13 +429,13 @@ var Character = function(data) {
 		this.level = _.sprintf('%+d', that.levels[data.name]);
 		this.stats = data.stats;
 
-		this.concentration = new Skill(defaultValue({
+		this.concentration = new Skill(_.defaultValue({
 			name: _.sprintf('%s Concentration', data.name),
 			ranks: that.levels[data.name],
 			stats: data.stats || ['cha']
 		}, data.concentration));
 
-		this.spellResistance = new Skill(defaultValue({
+		this.spellResistance = new Skill(_.defaultValue({
 			name: _.sprintf('%s Overcome Spell Resistance', data.name),
 			ranks: that.levels[data.name],
 			stats: data.stats || ['cha']
@@ -482,8 +471,8 @@ var Character = function(data) {
 	this.levels = info.levels;
 
 
-	info.templates = defaultValue([], info.templates);
-	info.race = defaultValue('', info.race);
+	info.templates = _.defaultValue([], info.templates);
+	info.race = _.defaultValue('', info.race);
 	info.levels = _.map(info.levels, function(level, className) {
 		return _.sprintf('%s %d', _(className).titleize(), level);
 	}).join(', ');
@@ -594,7 +583,7 @@ var Character = function(data) {
 		base: data.stats.bab
 	});
 
-	this.cmb = new Attack(defaultValue({
+	this.cmb = new Attack(_.defaultValue({
 		name: 'Combat Maneuver Bonus',
 		bab: this.bab.getTotal(),
 		base: 0,
@@ -602,7 +591,7 @@ var Character = function(data) {
 	}));
 
 	this.meleeAttacks = _.map(data.attacks.melee, function (attack) {
-		return new Attack(defaultValue({
+		return new Attack(_.defaultValue({
 			range: 'melee',
 			type: 'weapon',
 			bab: that.bab.getTotal(),
@@ -613,7 +602,7 @@ var Character = function(data) {
 	});
 
 	this.rangedAttacks = _.map(data.attacks.ranged, function (attack) {
-		return new Attack(defaultValue({
+		return new Attack(_.defaultValue({
 			range: 'ranged',
 			type: 'weapon',
 			bab: that.bab.getTotal(),
@@ -630,7 +619,7 @@ var Character = function(data) {
 	var defense = data.defense;
 
 	this.ac = new Defense(
-		defaultValue({
+		_.defaultValue({
 			name: 'Armor Class',
 			stats: ['dex'],
 			exemptTypes: []
@@ -638,7 +627,7 @@ var Character = function(data) {
 	);
 
 	this.cmd = new Defense(
-		defaultValue({
+		_.defaultValue({
 			name: 'Combat Maneuver Defense',
 			stats: ['str', 'dex'],
 			bab: this.bab.getTotal(),
@@ -651,17 +640,17 @@ var Character = function(data) {
 	);
 
 	this.saves = {
-		fortitude: new Save(defaultValue({
+		fortitude: new Save(_.defaultValue({
 			name: 'Fortitude',
 			stats: ['con'],
 			base: 0
 		}, data.defense.fortitude)),
-		reflex: new Save(defaultValue({
+		reflex: new Save(_.defaultValue({
 			name: 'Reflex',
 			stats: ['dex'],
 			base: 0
 		}, data.defense.reflex)),
-		will: new Save(defaultValue({
+		will: new Save(_.defaultValue({
 			name: 'Will',
 			stats: ['wis'],
 			base: 0
@@ -677,7 +666,7 @@ var Character = function(data) {
 	if (defense.sr) { this.specialDefenses += _.sprintf('**Spell Resistance** %s;', defense.sr); }
 	this.specialDefenses = _.trim(this.specialDefenses, ';');
 
-	this.otherDefenses = defaultValue([], defense.otherDefenses).join(', ');
+	this.otherDefenses = _.defaultValue([], defense.otherDefenses).join(', ');
 
 	// skills
 	_.each(data.skills, function(skill, skillIndex) {
@@ -720,22 +709,3 @@ var Character = function(data) {
 		}
 	};
 };
-
-app.controller('CharacterCtrl', [
-	'$http',
-	'$routeParams',
-	'$scope',
-	'$window',
-	function ($http, $routeParams, $scope, $window) {
-		$scope.Math = Math;
-		$scope.characters = [];
-
-		$http.get('characters/' + $routeParams.characterId + '/_data.json').success(function (data) {
-			_.every(data, function(characterData, index) {
-				$scope.characters[index] = new Character(characterData);
-			});
-
-			$window.document.title = $scope.characters[0].name + ' - Character Sheet';
-		});
-	}
-]);
