@@ -74,12 +74,12 @@
 		],
 		"stats": {
 			"scores": {
-				"str": 7,
-				"dex": 16,
-				"con": 14,
-				"int": 20,
-				"wis": 7,
-				"cha": 7
+				"strength": 7,
+				"dexterity": 16,
+				"constitution": 14,
+				"intelligence": 20,
+				"wisdom": 7,
+				"charisma": 7
 			},
 			"bab": 1
 		},
@@ -119,102 +119,102 @@
 			{	"name": "Diviner",
 				"type": "prepared",
 				"stats": [
-					"int"
+					"intelligence"
 				],
 				"markdown": "spells.md"
 			}
 		],
 		"skills": [
 			{	"name": "Acrobatics",
-				"stat": "int"
+				"stat": "intelligence"
 			},
 			{	"name": "Appraise",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true
 			},
 			{	"name": "Bluff",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Climb",
-				"stat": "str"
+				"stat": "strength"
 			},
 			{	"name": "Craft",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true
 			},
 			{	"name": "Diplomacy",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Disguise",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Escape Artist",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Fly",
-				"stat": "dex",
+				"stat": "dexterity",
 				"classSkill": true
 			},
 			{	"name": "Heal",
-				"stat": "wis"
+				"stat": "wisdom"
 			},
 			{	"name": "Intimidate",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Knowledge (Arcana)",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Knowledge (Dungeoneering)",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Knowledge (Engineering)",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Knowledge (Nature)",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Knowledge (Planes)",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Perception",
-				"stat": "wis",
+				"stat": "wisdom",
 				"classSkill": true
 			},
 			{	"name": "Perform",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Ride",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Sense Motive",
-				"stat": "wis"
+				"stat": "wisdom"
 			},
 			{	"name": "Spellcraft",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 2
 			},
 			{	"name": "Stealth",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Survival",
-				"stat": "wis"
+				"stat": "wisdom"
 			},
 			{	"name": "Swim",
-				"stat": "str"
+				"stat": "strength"
 			},
 			{	"name": "Use Magic Device",
-				"stat": "int",
+				"stat": "intelligence",
 				"ranks": 2
 			}
 		],
