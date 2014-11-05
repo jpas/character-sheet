@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Tester",
+		"hp": 0,
+		"hd": "0d0",
+		"abilityScores": {
+			"strength": 10,
+			"dexterity": 10,
+			"constitution": 10,
+			"intelligence": 10,
+			"wisdom": 10,
+			"charisma": 10
+		},
+		"speed": 30,
+		"space": 5,
+		"reach": 5,
+		"skills": [
+			{	"name": "Perception",
+				"stat": "wisdom"
+			}
+		]
+	}
+]

@@ -1,41 +1,21 @@
 [
 	{
-		"info": {
-			"name": "Meldrosia",
-			"race": "Human",
-			"portrait": "http://i.imgur.com/omi4X1N.jpg",
-			"levels": {
-				"Paladin": 2
-			},
-			"xp": {
-				"current": 0,
-				"nextLevel": 0
-			},
-			"alignment": "LG",
-			"size": "Medium",
-			"type": "humanoid (human)",
-			"initiative": 1,
-			"hp": 24,
-			"hd": "2d10+4",
-			"languages": [
-				"Common",
-				"Int 1",
-				"Int 2"
-			],
-			"speed": "30 ft.",
-			"space": "5 ft.",
-			"reach": "5 ft."
+		"name": "Meldrosia",
+		"portrait": "http://i.imgur.com/omi4X1N.jpg",
+		"levels": {
+			"Paladin": 2
 		},
-		"stats": {
-			"scores": {
-				"strength": 17,
-				"dexterity": 12,
-				"constitution": 14,
-				"intelligence": 14,
-				"wisdom":  7,
-				"charisma": 14
-			},
-			"bab": 2
+		"xp": {
+			"current": 0,
+			"nextLevel": 0
+		},
+		"abilityScores": {
+			"strength": 17,
+			"dexterity": 12,
+			"constitution": 14,
+			"intelligence": 14,
+			"wisdom":  7,
+			"charisma": 14
 		},
 		"bonuses": [
 			{	"name": "Light Steel Shield",
@@ -64,22 +44,6 @@
 				]
 			}
 		],
-		"defense": {
-			"ac": {},
-			"cmd": {},
-			"fortitude": {
-				"base": 3,
-				"stats": ["constitution", "charisma"]
-			},
-			"reflex": {
-				"base": 0,
-				"stats": ["dexterity", "charisma"]
-			},
-			"will": {
-				"base": 3,
-				"stats": ["wisdom", "charisma"]
-			}
-		},
 		"attacks": {
 			"melee": [
 				{	"name": "longsword",
@@ -100,8 +64,36 @@
 				}
 			]
 		},
-		"cmb": {},
-		"spells": [],
+		"race": "Human",
+		"alignment": "LG",
+		"size": "Medium",
+		"type": "humanoid (human)",
+		"initiative": 1,
+		"hp": 24,
+		"hd": "2d10+4",
+		"languages": [
+			"Common",
+			"Int 1",
+			"Int 2"
+		],
+		"speed": "30 ft.",
+		"space": "5 ft.",
+		"reach": "5 ft.",
+		"baseAttackBonus": 2,
+		"saves": {
+			"fortitude": {
+				"base": 3,
+				"stats": ["constitution", "charisma"]
+			},
+			"reflex": {
+				"base": 0,
+				"stats": ["dexterity", "charisma"]
+			},
+			"will": {
+				"base": 3,
+				"stats": ["wisdom", "charisma"]
+			}
+		},
 		"skills": [
 			{	"name": "Acrobatics",
 				"stat": "dexterity"

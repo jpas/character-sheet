@@ -1,37 +1,18 @@
 [
 	{
-		"info": {
-			"name": "Er",
-			"race": "Half-Elf",
-			"portrait": "http://i.imgur.com/chPIyvw.png",
-			"levels": {
-				"Diviner": 2
-			},
-			"xp": {
-				"current": 2210,
-				"nextLevel": 3300
-			},
-			"alignment": "CN",
-			"size": "Medium",
-			"type": "humanoid (elf, human)",
-			"senses": [
-				"low-light vision"
-			],
-			"hp": 19,
-			"hp-breakdown": "[6+2+1]+[6+2+1]+1",
-			"hd": "2d6+7",
-			"languages": [
-				"Celestial",
-				"Common",
-				"Draconic",
-				"Elven",
-				"Goblin",
-				"Halfling",
-				"Sylvan"
-			],
-			"speed": "30 ft.",
-			"space": "5 ft.",
-			"reach": "5 ft."
+		"name": "Er",
+		"portrait": "http://i.imgur.com/chPIyvw.png",
+		"xp": {
+			"current": 2210,
+			"nextLevel": 3300
+		},
+		"abilityScores": {
+			"strength": 7,
+			"dexterity": 16,
+			"constitution": 14,
+			"intelligence": 20,
+			"wisdom": 7,
+			"charisma": 7
 		},
 		"bonuses": [
 			{	"name": "Mage Armor",
@@ -72,20 +53,10 @@
 				]
 			}
 		],
-		"stats": {
-			"scores": {
-				"strength": 7,
-				"dexterity": 16,
-				"constitution": 14,
-				"intelligence": 20,
-				"wisdom": 7,
-				"charisma": 7
-			},
-			"bab": 1
-		},
-		"defense": {
-			"ac": {},
-			"cmd": {},
+		"hp": 19,
+		"hp-breakdown": "[6+2+1]+[6+2+1]+1",
+		"hd": "2d6+7",
+		"saves": {
 			"fortitude": {
 				"base": 0
 			},
@@ -95,8 +66,9 @@
 			"will": {
 				"base": 3
 			},
-			"saveSpecial": "+2 vs enchantment"
+			"special": "+2 vs enchantment"
 		},
+		"baseAttackBonus": 1,
 		"attacks": {
 			"melee": [
 				{	"name": "touch attack",
@@ -114,13 +86,10 @@
 				}
 			]
 		},
-		"cmb": {},
 		"spells": [
 			{	"name": "Diviner",
 				"type": "prepared",
-				"stats": [
-					"intelligence"
-				],
+				"stat": "intelligence",
 				"markdown": "spells.md"
 			}
 		],
@@ -239,6 +208,28 @@
 			{	"name": "Pragmatic Activator",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			}
+		],
+		"levels": {
+			"Diviner": 2
+		},
+		"race": "Half-Elf",
+		"alignment": "CN",
+		"size": "Medium",
+		"type": "humanoid (elf, human)",
+		"senses": [
+			"low-light vision"
+		],
+		"speed": "30 ft.",
+		"space": "5 ft.",
+		"reach": "5 ft.",
+		"languages": [
+			"Celestial",
+			"Common",
+			"Draconic",
+			"Elven",
+			"Goblin",
+			"Halfling",
+			"Sylvan"
 		],
 		"specials": [
 			"school.md",
