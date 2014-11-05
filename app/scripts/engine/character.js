@@ -461,6 +461,8 @@ var Character = function(data) {
 		this.name = data.name;
 		this.type = _.capitalize(data.type);
 		this.level = _.sprintf('%+d', that.levels[data.name]);
+
+		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
 
 		this.concentration = new Skill(_.defaultValue({
@@ -510,22 +512,19 @@ var Character = function(data) {
 	data.levels = _.map(data.levels, function(level, className) {
 		return _.sprintf('%s %d', _(className).titleize(), level);
 	}).join(', ');
-	this.dataText = [
+	this.infoText = [
 		_.join(' ', data.templates.join(' '), data.race, data.levels),
 		_.join(' ', data.alignment, data.size, data.type)
 	];
-
 
 	if (data.senses) {
 		this.senses = data.senses.join(', ');
 	}
 
-	data.initiative = data.initiative || {};
-	this.initiative = new Skill({
+	this.initiative = new Skill(_.defaultValue({
 		name: 'Initiative',
-		base: data.initiative.base,
-		stats: data.initiative.stats || ['dexterity']
-	});
+		base: ['dexterity']
+	}, data.initiative));
 
 	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
 	if(data.hpSpecials) {
@@ -626,7 +625,7 @@ var Character = function(data) {
 		bab: this.bab.getTotal(),
 		base: 0,
 		stats: ['strength']
-	}));
+	}), data.combatManeuverBonus);
 
 	if (data.attacks) {
 		if (data.attacks.melee) {
@@ -674,13 +673,6 @@ var Character = function(data) {
 
 	if(_.isUndefined(defense.ac)) { defense.ac = {}; }
 	if(_.isUndefined(defense.cmd)) { defense.cmd = {}; }
-	if(_.isUndefined(defense.saves)) {
-		defense.saves = {
-			fortitude: {},
-			reflex: {},
-			will: {}
-		};
-	}
 
 	this.ac = new Defense(
 			_.defaultValue({
@@ -703,25 +695,34 @@ var Character = function(data) {
 		}, defense.cmd)
 	);
 
+	if(_.isUndefined(data.saves)) {
+		data.saves = {
+			fortitude: {},
+			reflex: {},
+			will: {},
+			special: undefined
+		};
+	}
+
 	this.saves = {
 		fortitude: new Save(_.defaultValue({
 			name: 'Fortitude',
 			stats: ['constitution'],
 			base: 0
-		}, defense.fortitude)),
+		}, data.saves.fortitude)),
 		reflex: new Save(_.defaultValue({
 			name: 'Reflex',
 			stats: ['dexterity'],
 			base: 0
-		}, defense.reflex)),
+		}, data.saves.reflex)),
 		will: new Save(_.defaultValue({
 			name: 'Will',
 			stats: ['wisdom'],
 			base: 0
-		}, defense.will))
+		}, data.saves.will))
 	};
 
-	if(defense.saves.special)	{ this.saves.special = _.sprintf('(%s)', defense.saves.special); }
+	if(data.saves.special)	{ this.saves.special = _.sprintf('(%s)', data.saves.special); }
 
 	this.specialDefenses = '';
 	if (defense.dr) { this.specialDefenses += _.sprintf('**Damage Reduction** %s;', defense.dr); }
