@@ -83,7 +83,7 @@ var Character = function(data) {
 
 			if (!_.isUndefined(bonus.value)) {
 				if (bonus.value !== 0) {
-					return _.sprintf('%+d:%s', bonus.value, data.name.toLowerCase()); }
+					return _.sprintf('%+d:%s', bonus.value, bonus.type); }
 			}
 
 			return '';
@@ -95,10 +95,9 @@ var Character = function(data) {
 			return new BonusSet(bonus);
 		}),
 
-		getBonuses: function(targetID, exempt, factor) {
+		getTypes: function(targetID, exempt, factor) {
 			if (!_.isArray(exempt)) { exempt = []; }
 			factor = factor || 1;
-			var total = 0;
 
 			var bonuses = _.map(this.data, function(bonusSet) {
 				return bonusSet.getTargetting(targetID);
@@ -108,15 +107,18 @@ var Character = function(data) {
 				return bonus.type;
 			});
 
+			var typeTotal = {};
+
 			_.each(types, function(type, typeName) {
 				if (isValidBonusType(typeName, exempt)) {
+					typeTotal[typeName] = 0;
 					if (bonusHandler.canStack(typeName)) {
 						_.each(type, function(bonus) {
 							var value = bonus.value;
 							if (value < 0) {
-								total += value;
+								typeTotal[typeName] += value;
 							} else {
-								total += Math.floor(bonus.value * factor);
+								typeTotal[typeName] += Math.floor(bonus.value * factor);
 							}
 						});
 					} else {
@@ -127,10 +129,8 @@ var Character = function(data) {
 							return 0;
 						});
 
-
-
 						if (!_.isEmpty(values)) {
-							total += Math.floor(_.max(values) * factor);
+							typeTotal[typeName] += Math.floor(_.max(values) * factor);
 						}
 
 						values = _.map(type, function(bonus) {
@@ -140,19 +140,28 @@ var Character = function(data) {
 							return 0;
 						});
 
-						total += _.reduce(values, function(sum, x) {
+						typeTotal[typeName] += _.reduce(values, function(sum, x) {
 							return sum + x;
 						}, 0);
 					}
 				}
 			});
 
-			return total;
+			return typeTotal;
 		},
 
-		getBonusesStrings: function(targetID) {
-			return _.compactMap(this.data, function(bonusSet) {
-				return bonusSet.getBonusString(targetID);
+		getBonus: function(targetID, exempt, factor) {
+			var types = this.getTypes(targetID, exempt, factor);
+			return _.reduce(types, function(sum, x) {
+				return sum + x;
+			}, 0)
+		},
+
+		getBonusStrings: function(targetID, exempt, factor) {
+			var types = this.getTypes(targetID, exempt, factor);
+
+			return _.compactMap(types, function(bonus, type) {
+				return _.sprintf('%+d:%s', bonus, type);
 			});
 		},
 
@@ -194,7 +203,7 @@ var Character = function(data) {
 			var total;
 
 			if (_.isNumber(data.base)) { total = data.base; }
-			total += bonusHandler.getBonuses(this.id, this.exemptTypes);
+			total += bonusHandler.getBonus(this.id, this.exemptTypes);
 
 			return total;
 		};
@@ -217,7 +226,7 @@ var Character = function(data) {
 		this._exemptTypes();
 
 		this.getTotal = function() {
-			return data.base + bonusHandler.getBonuses(this.id, this.exemptTypes);
+			return data.base + bonusHandler.getBonus(this.id, this.exemptTypes);
 		};
 
 		this.getModifier = function() {
@@ -246,8 +255,8 @@ var Character = function(data) {
 			var total = this.getTotal();
 
 			total += abilityScores.getModifiers(data.stats);
-			total += bonusHandler.getBonuses(this.id + '_to_hit', this.exemptTypes);
-			total += bonusHandler.getBonuses(data.range + '_to_hit', this.exemptTypes);
+			total += bonusHandler.getBonus(this.id + '_to_hit', this.exemptTypes);
+			total += bonusHandler.getBonus(data.range + '_to_hit', this.exemptTypes);
 
 			var rolls = _.sprintf('%+d', bab + total);
 
@@ -273,10 +282,10 @@ var Character = function(data) {
 			if (_.contains(stats, 'str')) { total += abilityScores.getModifier('str', factor); }
 			total += abilityScores.getModifiers(_.without(data.damageStats, 'str'));
 
-			total += bonusHandler.getBonuses('damage', this.exemptTypes);
-			total += bonusHandler.getBonuses(this.id + '_damage', this.exemptTypes);
-			total += bonusHandler.getBonuses(range + '_damage', this.exemptTypes);
-			total += bonusHandler.getBonuses(range + '_strength_like_damage', this.exemptTypes, factor);
+			total += bonusHandler.getBonus('damage', this.exemptTypes);
+			total += bonusHandler.getBonus(this.id + '_damage', this.exemptTypes);
+			total += bonusHandler.getBonus(range + '_damage', this.exemptTypes);
+			total += bonusHandler.getBonus(range + '_strength_like_damage', this.exemptTypes, factor);
 
 			if (total === 0) { return dice; }
 
@@ -326,7 +335,7 @@ var Character = function(data) {
 			var total = data.base;
 
 			total += abilityScores.getModifiers(data.stats);
-			total += bonusHandler.getBonuses(this.id, this.exemptTypes);
+			total += bonusHandler.getBonus(this.id, this.exemptTypes);
 
 			return total;
 		};
@@ -337,8 +346,8 @@ var Character = function(data) {
 			var exemptTypes = _.flatten([this.exemptTypes, specialData.exemptTypes]);
 
 			total += abilityScores.getModifiers(stats);
-			total += bonusHandler.getBonuses(this.id, exemptTypes);
-			total += bonusHandler.getBonuses(specialData.id + this.id, exemptTypes);
+			total += bonusHandler.getBonus(this.id, exemptTypes);
+			total += bonusHandler.getBonus(specialData.id + this.id, exemptTypes);
 
 			return total;
 		};
@@ -353,7 +362,7 @@ var Character = function(data) {
 		};
 
 		this.toString = function() {
-			var strings = bonusHandler.getBonusesStrings(this.id);
+			var strings = bonusHandler.getBonusStrings(this.id);
 
 			_.each(data.stats, function(statName) {
 				var roll = abilityScores.getRoll(statName, ':');
@@ -395,8 +404,8 @@ var Character = function(data) {
 		this.getTotal = function() {
 			var total = data.base;
 			total += abilityScores.getModifiers(data.stats);
-			total += bonusHandler.getBonuses(this.id, this.exemptTypes);
-			total += bonusHandler.getBonuses('saves', this.exemptTypes);
+			total += bonusHandler.getBonus(this.id, this.exemptTypes);
+			total += bonusHandler.getBonus('saves', this.exemptTypes);
 			return total;
 		};
 	}
@@ -410,10 +419,10 @@ var Character = function(data) {
 		this.getTotal = function() {
 			var total = abilityScores.getModifiers(this.stats);
 
-			total += bonusHandler.getBonuses(this.id, this.exemptTypes);
-			if(data.baseID) { total += bonusHandler.getBonuses(data.baseID, this.exemptTypes); }
+			total += bonusHandler.getBonus(this.id, this.exemptTypes);
+			if(data.baseID) { total += bonusHandler.getBonus(data.baseID, this.exemptTypes); }
 			if(_.contains(data.stats, 'str') || _.contains(data.stats, 'dex')) {
-				total += bonusHandler.getBonuses('armor-check-penalty', this.exemptTypes);
+				total += bonusHandler.getBonus('armor-check-penalty', this.exemptTypes);
 			}
 			if(data.ranks) { total += data.ranks; }
 			if(data.classSkill && data.ranks > 0) { total += 3; }
@@ -450,10 +459,10 @@ var Character = function(data) {
 
 	// info
 	var info = data.info;
-	this.id = _(info.name).underscored();
-	this.portrait = info.portrait;
+	this.name = info.name || '';
+	this.id = _(this.name).underscored();
+	this.portrait = info.portrait || '';
 
-	this.name = info.name;
 
 	if (info.cr && info.mr) {
 		this.difficulty = _.sprintf('CR %d / MR %d', info.cr, info.mr);
@@ -463,17 +472,18 @@ var Character = function(data) {
 		this.difficulty = _.sprintf('MR %d', info.mr);
 	}
 
-	if (info.xp.awarded) {
-		this.xp = _.numberFormat(info.xp.awarded);
-	} else {
-		this.xp = _.sprintf(
-			'%s / %s XP',
-			_.numberFormat(info.xp.current),
-			_.numberFormat(info.xp.nextLevel));
+	if (info.xp) {
+		if (info.xp.awarded) {
+			this.xp = _.numberFormat(info.xp.awarded);
+		} else {
+			this.xp = _.sprintf(
+				'%s / %s XP',
+				_.numberFormat(info.xp.current),
+				_.numberFormat(info.xp.nextLevel));
+		}
 	}
 
 	this.levels = info.levels;
-
 
 	info.templates = _.defaultValue([], info.templates);
 	info.race = _.defaultValue('', info.race);
@@ -485,7 +495,10 @@ var Character = function(data) {
 		_.join(' ', info.alignment, info.size, info.type)
 	];
 
-	this.senses = info.senses.join(', ');
+
+	if (info.senses) {
+		this.senses = info.senses.join(', ');
+	}
 
 	info.initiative = info.initiative || {};
 	this.initiative = new Skill({
@@ -648,20 +661,20 @@ var Character = function(data) {
 			name: 'Fortitude',
 			stats: ['con'],
 			base: 0
-		}, data.defense.fortitude)),
+		}, defense.fortitude)),
 		reflex: new Save(_.defaultValue({
 			name: 'Reflex',
 			stats: ['dex'],
 			base: 0
-		}, data.defense.reflex)),
+		}, defense.reflex)),
 		will: new Save(_.defaultValue({
 			name: 'Will',
 			stats: ['wis'],
 			base: 0
-		}, data.defense.will))
+		}, defense.will))
 	};
 
-	this.saves.special = _.sprintf('(%s)', data.defense.saveSpecial);
+	if(defense.saveSpecial)	{ this.saves.special = _.sprintf('(%s)', defense.saveSpecial); }
 
 	this.specialDefenses = '';
 	if (defense.dr) { this.specialDefenses += _.sprintf('**Damage Reduction** %s;', defense.dr); }
