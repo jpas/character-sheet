@@ -1,5 +1,0 @@
-#### **Lay on Hands** (Su)
-
-A paladin can heal wounds (her own or those of others) by touch. Each day she can use this ability a number of times equal to 1/2 her paladin level plus her Charisma modifier. With one use of this ability, a paladin can heal {{Math.ceil(c.info.levels.paladin/2)}}d6 hit points of damage. Using this ability is a standard action, unless the paladin targets herself, in which case it is a swift action. Despite the name of this ability, a paladin only needs one free hand to use this ability.
-
-Alternatively, a paladin can use this healing power to deal damage to undead creatures, dealing {{Math.ceil(c.info.levels.paladin/2)}}d6 points of damage. Using lay on hands in this way requires a successful melee touch attack and doesn't provoke an attack of opportunity. Undead do not receive a saving throw against this damage.
