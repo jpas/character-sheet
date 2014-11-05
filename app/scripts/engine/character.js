@@ -390,7 +390,7 @@ var Character = function(data) {
 				if (roll !== '+0') { strings.push(roll + ':' + statName); }
 			});
 
-			if (_.isNumber(data.bab)) {
+			if (_.isNumber(data.bab) && data.bab !== 0) {
 				strings.push(_.sprintf('%+d', data.bab) + ':base attack bonus');
 			}
 
@@ -478,59 +478,58 @@ var Character = function(data) {
 
 	this.bonuses = bonusHandler.data;
 
-	// info
-	var info = data.info;
-	this.name = info.name || '';
+	// data
+	this.name = data.name || '';
 	this.id = _(this.name).underscored();
-	this.portrait = info.portrait || '';
+	this.portrait = data.portrait || '';
 
 
-	if (info.cr && info.mr) {
-		this.difficulty = _.sprintf('CR %d / MR %d', info.cr, info.mr);
-	} else if (info.cr) {
-		this.difficulty = _.sprintf('CR %d', info.cr);
-	} else if (info.mr) {
-		this.difficulty = _.sprintf('MR %d', info.mr);
+	if (data.cr && data.mr) {
+		this.difficulty = _.sprintf('CR %d / MR %d', data.cr, data.mr);
+	} else if (data.cr) {
+		this.difficulty = _.sprintf('CR %d', data.cr);
+	} else if (data.mr) {
+		this.difficulty = _.sprintf('MR %d', data.mr);
 	}
 
-	if (info.xp) {
-		if (info.xp.awarded) {
-			this.xp = _.numberFormat(info.xp.awarded);
+	if (data.xp) {
+		if (data.xp.awarded) {
+			this.xp = _.numberFormat(data.xp.awarded);
 		} else {
 			this.xp = _.sprintf(
 				'%s / %s XP',
-				_.numberFormat(info.xp.current),
-				_.numberFormat(info.xp.nextLevel));
+				_.numberFormat(data.xp.current),
+				_.numberFormat(data.xp.nextLevel));
 		}
 	}
 
-	this.levels = info.levels;
+	this.levels = data.levels;
 
-	info.templates = _.defaultValue([], info.templates);
-	info.race = _.defaultValue('', info.race);
-	info.levels = _.map(info.levels, function(level, className) {
+	data.templates = _.defaultValue([], data.templates);
+	data.race = _.defaultValue('', data.race);
+	data.levels = _.map(data.levels, function(level, className) {
 		return _.sprintf('%s %d', _(className).titleize(), level);
 	}).join(', ');
-	this.infoText = [
-		_.join(' ', info.templates.join(' '), info.race, info.levels),
-		_.join(' ', info.alignment, info.size, info.type)
+	this.dataText = [
+		_.join(' ', data.templates.join(' '), data.race, data.levels),
+		_.join(' ', data.alignment, data.size, data.type)
 	];
 
 
-	if (info.senses) {
-		this.senses = info.senses.join(', ');
+	if (data.senses) {
+		this.senses = data.senses.join(', ');
 	}
 
-	info.initiative = info.initiative || {};
+	data.initiative = data.initiative || {};
 	this.initiative = new Skill({
 		name: 'Initiative',
-		base: info.initiative.base,
-		stats: info.initiative.stats || ['dexterity']
+		base: data.initiative.base,
+		stats: data.initiative.stats || ['dexterity']
 	});
 
-	this.hp = _.sprintf('%d (%s)', info.hp, info.hd);
-	if(info.hpSpecials) {
-		this.hp += _.sprintf('; %s', info.hpSpecials.join(', ')); }
+	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
+	if(data.hpSpecials) {
+		this.hp += _.sprintf('; %s', data.hpSpecials.join(', ')); }
 
 	function makeLink(thing) {
 		if (_.isString(thing)) { return thing; }
@@ -541,13 +540,13 @@ var Character = function(data) {
 		}
 	}
 
-	this.feats = _.map(data.feats, makeLink).join(', ');
-	this.traits = _.map(data.traits, makeLink).join(', ');
-	this.languages = data.info.languages.join(', ');
+	if(data.feats) { this.feats = _.map(data.feats, makeLink).join(', '); }
+	if(data.traits) { this.traits = _.map(data.traits, makeLink).join(', '); }
+	if(data.languages) { this.languages = data.languages.join(', '); }
 
-	this.speed = info.speed;
-	this.space = info.space;
-	this.reach = info.reach;
+	this.speed = data.speed;
+	this.space = data.space;
+	this.reach = data.reach;
 
 	this.specials = _.compactMap(data.specials, function(special) {
 		if (special.indexOf('@') > 0) { return null; }
@@ -559,27 +558,27 @@ var Character = function(data) {
 	var abilityScores = {
 		strength: new AbilityScore({
 			name: 'Strength',
-			base: data.stats.scores.strength
+			base: data.abilityScores.strength
 		}),
 		dexterity: new AbilityScore({
 			name: 'Dexterity',
-			base: data.stats.scores.dexterity
+			base: data.abilityScores.dexterity
 		}),
 		constitution: new AbilityScore({
 			name: 'Constitution',
-			base: data.stats.scores.constitution
+			base: data.abilityScores.constitution
 		}),
 		intelligence: new AbilityScore({
 			name: 'Intelligence',
-			base: data.stats.scores.intelligence
+			base: data.abilityScores.intelligence
 		}),
 		wisdom: new AbilityScore({
 			name: 'Wisdom',
-			base: data.stats.scores.wisdom
+			base: data.abilityScores.wisdom
 		}),
 		charisma: new AbilityScore({
 			name: 'Charisma',
-			base: data.stats.scores.charisma
+			base: data.abilityScores.charisma
 		})
 	};
 
@@ -619,7 +618,7 @@ var Character = function(data) {
 	// offense
 	this.bab = new Attack({
 		name: 'Base Attack Bonus',
-		base: data.stats.bab
+		base: _.defaultValue(0, data.baseAttackBonus)
 	});
 
 	this.cmb = new Attack(_.defaultValue({
@@ -629,40 +628,66 @@ var Character = function(data) {
 		stats: ['strength']
 	}));
 
-	this.meleeAttacks = _.map(data.attacks.melee, function (attack) {
-		return new Attack(_.defaultValue({
-			range: 'melee',
-			type: 'weapon',
-			bab: that.bab.getTotal(),
-			base: 0,
-			stats: ['strength'],
-			damageStats: ['strength']
-		}, attack));
-	});
-
-	this.rangedAttacks = _.map(data.attacks.ranged, function (attack) {
-		return new Attack(_.defaultValue({
-			range: 'ranged',
-			type: 'weapon',
-			bab: that.bab.getTotal(),
-			base: 0,
-			stats: ['dexterity']
-		}, attack));
-	});
+	if (data.attacks) {
+		if (data.attacks.melee) {
+			this.meleeAttacks = _.map(data.attacks.melee, function (attack) {
+				return new Attack(_.defaultValue({
+					range: 'melee',
+					type: 'weapon',
+					bab: that.bab.getTotal(),
+					base: 0,
+					stats: ['strength'],
+					damageStats: ['strength']
+				}, attack));
+			});
+		}
+		if (data.attacks.ranged) {
+			this.rangedAttacks = _.map(data.attacks.ranged, function (attack) {
+				return new Attack(_.defaultValue({
+					range: 'ranged',
+					type: 'weapon',
+					bab: that.bab.getTotal(),
+					base: 0,
+					stats: ['dexterity']
+				}, attack));
+			});
+		}
+		if (data.attacks.special) {
+			this.rangedAttacks = _.map(data.attacks.ranged, function (attack) {
+				return new Attack(_.defaultValue({
+					range: 'ranged',
+					type: 'weapon',
+					bab: that.bab.getTotal(),
+					base: 0,
+					stats: []
+				}, attack));
+			});
+		}
+	}
 
 	this.spells = _.map(data.spells, function(caster) {
 		return new Caster(caster);
 	});
 
 	// defense
-	var defense = data.defense;
+	var defense = data.defense || {};
+
+	if(_.isUndefined(defense.ac)) { defense.ac = {}; }
+	if(_.isUndefined(defense.cmd)) { defense.cmd = {}; }
+	if(_.isUndefined(defense.saves)) {
+		defense.saves = {
+			fortitude: {},
+			reflex: {},
+			will: {}
+		};
+	}
 
 	this.ac = new Defense(
-		_.defaultValue({
-			name: 'Armor Class',
-			stats: ['dexterity'],
-			exemptTypes: []
-		}, defense.ac)
+			_.defaultValue({
+				name: 'Armor Class',
+				stats: ['dexterity'],
+				exemptTypes: []
+			}, defense.ac)
 	);
 
 	this.cmd = new Defense(
@@ -696,7 +721,7 @@ var Character = function(data) {
 		}, defense.will))
 	};
 
-	if(defense.saveSpecial)	{ this.saves.special = _.sprintf('(%s)', defense.saveSpecial); }
+	if(defense.saves.special)	{ this.saves.special = _.sprintf('(%s)', defense.saves.special); }
 
 	this.specialDefenses = '';
 	if (defense.dr) { this.specialDefenses += _.sprintf('**Damage Reduction** %s;', defense.dr); }

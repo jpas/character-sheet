@@ -1,5 +1,5 @@
 <div id='{{c.id}}' class='grid grid-pad character' ng-repeat='c in characters'>
-	<section class='hide-on-print' id='{{c.id}}-bonuses'>
+	<section ng-if="c.bonuses" class='hide-on-print' id='{{c.id}}-bonuses'>
 		<hr>
 		<p><b>Temporary Bonuses</b></p>
 		<ul class='bonuses'>
@@ -11,12 +11,13 @@
 		<hr style='margin-top: 10px;'>
 	</section>
 	<section id='{{c.id}}-header'>
+		<hr class="hide-on-print">
 		<div ng-if='c.portrait' class='portrait push-right col-5-12 hide-on-mobile'>
 			<img ng-src='{{c.portrait}}'>
 		</div>
 		<h1>
 			<b>{{c.name}}</b>
-			<small class='pull-right header'>{{c.difficulty}} ({{c.xp}})</small>
+			<small class='pull-right header'>{{c.difficulty}} <span ng-if="c.xp">({{c.xp}})</span></small>
 		</h1>
 		<hr>
 	</section>
@@ -43,14 +44,14 @@
 			{{c.ac.getTouch()}},
 			<b>flat-footed</b>
 			{{c.ac.getFlatFooted()}}
-			({{c.ac.toString()}})
+			<span ng-if="c.ac.toString()">({{c.ac.toString()}})</span>
 		</p>
 		<p>
 			<b>CMD</b>
 			{{c.cmd.getTotal()}},
 			<b>flat-footed</b>
 			{{c.cmd.getFlatFooted()}}
-			({{c.cmd.toString()}})
+			<span ng-if="c.cmd.toString()">({{c.cmd.toString()}})</span>
 		</p>
 		<p>
 			<b>HP</b>
