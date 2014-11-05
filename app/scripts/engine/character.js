@@ -1,4 +1,5 @@
 'use strict';
+/* exported Character */
 
 var Character = function(data) {
 	var that = this;
@@ -411,6 +412,9 @@ var Character = function(data) {
 
 			total += bonusHandler.getBonuses(this.id, this.exemptTypes);
 			if(data.baseID) { total += bonusHandler.getBonuses(data.baseID, this.exemptTypes); }
+			if(_.contains(data.stats, 'str') || _.contains(data.stats, 'dex')) {
+				total += bonusHandler.getBonuses('armor-check-penalty', this.exemptTypes);
+			}
 			if(data.ranks) { total += data.ranks; }
 			if(data.classSkill && data.ranks > 0) { total += 3; }
 			return total;
