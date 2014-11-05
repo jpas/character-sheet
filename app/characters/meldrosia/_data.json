@@ -28,12 +28,12 @@
 		},
 		"stats": {
 			"scores": {
-				"str": 17,
-				"dex": 12,
-				"con": 14,
-				"int": 14,
-				"wis":  7,
-				"cha": 14
+				"strength": 17,
+				"dexterity": 12,
+				"constitution": 14,
+				"intelligence": 14,
+				"wisdom":  7,
+				"charisma": 14
 			},
 			"bab": 2
 		},
@@ -42,7 +42,8 @@
 				"active": true,
 				"bonuses": [
 					{ "value": 1, "type": "shield", "target": "armor_class" },
-					{ "value": -1, "target": "armor_check_penalty" }
+					{ "value": -1, "target": "armor_check_penalty" },
+					{ "value": 4, "target": "maximum_dexterity" }
 				]
 			},
 			{	"name": "Chain Shirt",
@@ -68,15 +69,15 @@
 			"cmd": {},
 			"fortitude": {
 				"base": 3,
-				"stats": ["con", "cha"]
+				"stats": ["constitution", "charisma"]
 			},
 			"reflex": {
 				"base": 0,
-				"stats": ["dex", "cha"]
+				"stats": ["dexterity", "charisma"]
 			},
 			"will": {
 				"base": 3,
-				"stats": ["wis", "cha"]
+				"stats": ["wisdom", "charisma"]
 			}
 		},
 		"attacks": {
@@ -103,73 +104,73 @@
 		"spells": [],
 		"skills": [
 			{	"name": "Acrobatics",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Appraise",
-				"stat": "int"
+				"stat": "intelligence"
 			},
 			{	"name": "Bluff",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Climb",
-				"stat": "str"
+				"stat": "strength"
 			},
 			{	"name": "Craft",
-				"stat": "int",
+				"stat": "intelligence",
 				"classSkill": true
 			},
 			{	"name": "Diplomacy",
-				"stat": "cha",
+				"stat": "charisma",
 				"classSkill": true
 			},
 			{	"name": "Disguise",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Escape Artist",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Fly",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Heal",
 				"ranks": 2,
 				"classSkill": true
 			},
 			{	"name": "Intimidate",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Knowledge (Religion)",
-				"stat": "int",
+				"stat": "intelligence",
 				"ranks": 2,
 				"classSkill": true
 			},
 			{	"name": "Perception",
-				"stat": "wis",
+				"stat": "wisdom",
 				"ranks": 2
 			},
 			{	"name": "Perform",
-				"stat": "cha"
+				"stat": "charisma"
 			},
 			{	"name": "Ride",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Sense Motive",
 				"ranks": 2,
 				"classSkill": true
 			},
 			{	"name": "Spellcraft",
-				"stat": "int",
+				"stat": "intelligence",
 				"ranks": 2,
 				"classSkill": true
 			},
 			{	"name": "Stealth",
-				"stat": "dex"
+				"stat": "dexterity"
 			},
 			{	"name": "Survival",
-				"stat": "wis"
+				"stat": "wisdom"
 			},
 			{	"name": "Swim",
-				"stat": "str"
+				"stat": "strength"
 			}
 		],
 		"feats": [

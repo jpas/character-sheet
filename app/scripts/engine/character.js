@@ -154,7 +154,7 @@ var Character = function(data) {
 			var types = this.getTypes(targetID, exempt, factor);
 			return _.reduce(types, function(sum, x) {
 				return sum + x;
-			}, 0)
+			}, 0);
 		},
 
 		getBonusStrings: function(targetID, exempt, factor) {
@@ -163,6 +163,16 @@ var Character = function(data) {
 			return _.compactMap(types, function(bonus, type) {
 				return _.sprintf('%+d:%s', bonus, type);
 			});
+		},
+
+		getMaxDex: function() {
+			var bonuses = _.map(this.data, function(bonusSet) {
+				return bonusSet.getTargetting('max_dex');
+			});
+
+			return _.min(bonuses, function(bonus) {
+				return bonus.value;
+			}).value;
 		},
 
 		canStack: function(type) {
@@ -226,11 +236,22 @@ var Character = function(data) {
 		this._exemptTypes();
 
 		this.getTotal = function() {
-			return data.base + bonusHandler.getBonus(this.id, this.exemptTypes);
+			var total = data.base + bonusHandler.getBonus(this.id, this.exemptTypes);
+
+			if (this.id === 'dexterity') {
+				var maxDex = bonusHandler.getMaxDex()*2 + 11;
+				if (total > maxDex) {
+					return maxDex;
+				}
+			}
+
+			return total;
 		};
 
-		this.getModifier = function() {
-			return Math.floor((this.getTotal()-10)/2);
+		this.getModifier = function(factor) {
+			factor = factor || 1;
+			var modifier = Math.floor((this.getTotal()-10)/2);
+			return Math.floor(modifier * factor);
 		};
 
 		this.getRoll = function() {
@@ -279,8 +300,8 @@ var Character = function(data) {
 			var range = data.range;
 
 			if (data.damageBase) { total += data.damageBase; }
-			if (_.contains(stats, 'str')) { total += abilityScores.getModifier('str', factor); }
-			total += abilityScores.getModifiers(_.without(data.damageStats, 'str'));
+			if (_.contains(stats, 'strength')) { total += abilityScores.getModifier('strength', factor); }
+			total += abilityScores.getModifiers(_.without(data.damageStats, 'strength'));
 
 			total += bonusHandler.getBonus('damage', this.exemptTypes);
 			total += bonusHandler.getBonus(this.id + '_damage', this.exemptTypes);
@@ -317,7 +338,7 @@ var Character = function(data) {
 
 		data.touch = _.defaultValue({
 			id: 'touch_',
-			stats: ['dex'],
+			stats: ['dexterity'],
 			exemptTypes: [
 				'armor',
 				'shield',
@@ -327,7 +348,7 @@ var Character = function(data) {
 
 		data.flatfooted = _.defaultValue({
 			id: 'flat_footed_',
-			stats: ['str'],
+			stats: ['strength'],
 			exemptTypes: []
 		}, data.flatfooted);
 
@@ -370,7 +391,7 @@ var Character = function(data) {
 			});
 
 			if (_.isNumber(data.bab)) {
-				strings.push(_.sprintf('%+d', data.bab) + ':bab');
+				strings.push(_.sprintf('%+d', data.bab) + ':base attack bonus');
 			}
 
 			strings = _.sortBy(strings, function(string) {
@@ -421,7 +442,7 @@ var Character = function(data) {
 
 			total += bonusHandler.getBonus(this.id, this.exemptTypes);
 			if(data.baseID) { total += bonusHandler.getBonus(data.baseID, this.exemptTypes); }
-			if(_.contains(data.stats, 'str') || _.contains(data.stats, 'dex')) {
+			if(_.contains(data.stats, 'strength') || _.contains(data.stats, 'dexterity')) {
 				total += bonusHandler.getBonus('armor-check-penalty', this.exemptTypes);
 			}
 			if(data.ranks) { total += data.ranks; }
@@ -445,13 +466,13 @@ var Character = function(data) {
 		this.concentration = new Skill(_.defaultValue({
 			name: _.sprintf('%s Concentration', data.name),
 			ranks: that.levels[data.name],
-			stats: data.stats || ['cha']
+			stats: data.stats || ['charisma']
 		}, data.concentration));
 
 		this.spellResistance = new Skill(_.defaultValue({
 			name: _.sprintf('%s Overcome Spell Resistance', data.name),
 			ranks: that.levels[data.name],
-			stats: data.stats || ['cha']
+			stats: data.stats || ['charisma']
 		}));
 	}
 
@@ -504,7 +525,7 @@ var Character = function(data) {
 	this.initiative = new Skill({
 		name: 'Initiative',
 		base: info.initiative.base,
-		stats: info.initiative.stats || ['dex']
+		stats: info.initiative.stats || ['dexterity']
 	});
 
 	this.hp = _.sprintf('%d (%s)', info.hp, info.hd);
@@ -536,37 +557,38 @@ var Character = function(data) {
 
 	// ability scores
 	var abilityScores = {
-		str: new AbilityScore({
+		strength: new AbilityScore({
 			name: 'Strength',
-			base: data.stats.scores.str
+			base: data.stats.scores.strength
 		}),
-		dex: new AbilityScore({
+		dexterity: new AbilityScore({
 			name: 'Dexterity',
-			base: data.stats.scores.dex
+			base: data.stats.scores.dexterity
 		}),
-		con: new AbilityScore({
+		constitution: new AbilityScore({
 			name: 'Constitution',
-			base: data.stats.scores.con
+			base: data.stats.scores.constitution
 		}),
-		int: new AbilityScore({
+		intelligence: new AbilityScore({
 			name: 'Intelligence',
-			base: data.stats.scores.int
+			base: data.stats.scores.intelligence
 		}),
-		wis: new AbilityScore({
+		wisdom: new AbilityScore({
 			name: 'Wisdom',
-			base: data.stats.scores.wis
+			base: data.stats.scores.wisdom
 		}),
-		cha: new AbilityScore({
+		charisma: new AbilityScore({
 			name: 'Charisma',
-			base: data.stats.scores.cha
+			base: data.stats.scores.charisma
 		})
 	};
 
 	abilityScores.getModifier = function(scoreID, factor) {
 		factor = factor || 1;
-		var modifier = this[scoreID].getModifier();
+		var modifier = this[scoreID].getModifier(factor);
 		if (modifier < 0) { return modifier; }
-		return Math.floor(modifier * factor);
+
+		return modifier;
 	};
 	abilityScores.getRoll = function(scoreID) {
 		return this[scoreID].getRoll(); };
@@ -585,12 +607,12 @@ var Character = function(data) {
 
 	this.abilityScores = function() {
 		return [
-			abilityScores.str,
-			abilityScores.dex,
-			abilityScores.con,
-			abilityScores.int,
-			abilityScores.wis,
-			abilityScores.cha
+			abilityScores.strength,
+			abilityScores.dexterity,
+			abilityScores.constitution,
+			abilityScores.intelligence,
+			abilityScores.wisdom,
+			abilityScores.charisma
 		];
 	};
 
@@ -604,7 +626,7 @@ var Character = function(data) {
 		name: 'Combat Maneuver Bonus',
 		bab: this.bab.getTotal(),
 		base: 0,
-		stats: ['str']
+		stats: ['strength']
 	}));
 
 	this.meleeAttacks = _.map(data.attacks.melee, function (attack) {
@@ -613,8 +635,8 @@ var Character = function(data) {
 			type: 'weapon',
 			bab: that.bab.getTotal(),
 			base: 0,
-			stats: ['str'],
-			damageStats: ['str']
+			stats: ['strength'],
+			damageStats: ['strength']
 		}, attack));
 	});
 
@@ -624,7 +646,7 @@ var Character = function(data) {
 			type: 'weapon',
 			bab: that.bab.getTotal(),
 			base: 0,
-			stats: ['dex']
+			stats: ['dexterity']
 		}, attack));
 	});
 
@@ -638,7 +660,7 @@ var Character = function(data) {
 	this.ac = new Defense(
 		_.defaultValue({
 			name: 'Armor Class',
-			stats: ['dex'],
+			stats: ['dexterity'],
 			exemptTypes: []
 		}, defense.ac)
 	);
@@ -646,7 +668,7 @@ var Character = function(data) {
 	this.cmd = new Defense(
 		_.defaultValue({
 			name: 'Combat Maneuver Defense',
-			stats: ['str', 'dex'],
+			stats: ['strength', 'dexterity'],
 			bab: this.bab.getTotal(),
 			exemptTypes: [
 				'armor',
@@ -659,17 +681,17 @@ var Character = function(data) {
 	this.saves = {
 		fortitude: new Save(_.defaultValue({
 			name: 'Fortitude',
-			stats: ['con'],
+			stats: ['constitution'],
 			base: 0
 		}, defense.fortitude)),
 		reflex: new Save(_.defaultValue({
 			name: 'Reflex',
-			stats: ['dex'],
+			stats: ['dexterity'],
 			base: 0
 		}, defense.reflex)),
 		will: new Save(_.defaultValue({
 			name: 'Will',
-			stats: ['wis'],
+			stats: ['wisdom'],
 			base: 0
 		}, defense.will))
 	};
