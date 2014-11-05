@@ -19,13 +19,11 @@
 	"trailing": true,
 	"smarttabs": true,
 	"globals": {
-		"angular": false,
 		"_": false,
-		"Character": true,
-		"marked": false,
-		"FastClick": false,
+		"angular": false,
 		"app": true,
-		"PF": true,
-		"pf": true
+		"Character": true,
+		"FastClick": false,
+		"marked": false
 	}
 }
