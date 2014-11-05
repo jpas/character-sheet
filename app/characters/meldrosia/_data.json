@@ -1,0 +1,188 @@
+[
+	{
+		"info": {
+			"name": "Meldrosia",
+			"race": "Human",
+			"portrait": "http://i.imgur.com/omi4X1N.jpg",
+			"levels": {
+				"Paladin": 2
+			},
+			"xp": {
+				"current": 0,
+				"nextLevel": 0
+			},
+			"alignment": "LG",
+			"size": "Medium",
+			"type": "humanoid (human)",
+			"initiative": 1,
+			"hp": 24,
+			"hd": "2d10+4",
+			"languages": [
+				"Common",
+				"Int 1",
+				"Int 2"
+			],
+			"speed": "30 ft.",
+			"space": "5 ft.",
+			"reach": "5 ft."
+		},
+		"stats": {
+			"scores": {
+				"str": 17,
+				"dex": 12,
+				"con": 14,
+				"int": 14,
+				"wis":  7,
+				"cha": 14
+			},
+			"bab": 2
+		},
+		"bonuses": [
+			{	"name": "Light Steel Shield",
+				"active": true,
+				"bonuses": [
+					{ "value": 1, "type": "shield", "target": "armor_class" },
+					{ "value": -1, "target": "armor_check_penalty" }
+				]
+			},
+			{	"name": "Chain Shirt",
+				"bonuses": [
+					{ "value": 4, "type": "armor", "target": "armor_class" },
+					{ "value": -2, "target": "armor_check_penalty" }
+				]
+			},
+			{	"name": "Chain Shirt",
+				"bonuses": [
+					{ "value": 4, "type": "armor", "target": "armor_class" },
+					{ "value": -2, "target": "armor_check_penalty" }
+				]
+			},
+			{	"name": "Masterwork Warhammer",
+				"bonuses": [
+					{ "value": 1, "target": "warhammer_to_hit" }
+				]
+			}
+		],
+		"defense": {
+			"ac": {},
+			"cmd": {},
+			"fortitude": {
+				"base": 3,
+				"stats": ["con", "cha"]
+			},
+			"reflex": {
+				"base": 0,
+				"stats": ["dex", "cha"]
+			},
+			"will": {
+				"base": 3,
+				"stats": ["wis", "cha"]
+			}
+		},
+		"attacks": {
+			"melee": [
+				{	"name": "longsword",
+					"damageDice": "1d8/19-20"
+				},
+				{	"name": "warhammer",
+					"damageDice": "1d8/x3"
+				},
+				{	"name": "touch attack",
+					"noDamage": true,
+					"type": "natural"
+				}
+			],
+			"ranged": [
+				{	"name": "touch attack",
+					"noDamage": true,
+					"type": "natural"
+				}
+			]
+		},
+		"cmb": {},
+		"spells": [],
+		"skills": [
+			{	"name": "Acrobatics",
+				"stat": "dex"
+			},
+			{	"name": "Appraise",
+				"stat": "int"
+			},
+			{	"name": "Bluff",
+				"stat": "cha"
+			},
+			{	"name": "Climb",
+				"stat": "str"
+			},
+			{	"name": "Craft",
+				"stat": "int",
+				"classSkill": true
+			},
+			{	"name": "Diplomacy",
+				"stat": "cha",
+				"classSkill": true
+			},
+			{	"name": "Disguise",
+				"stat": "cha"
+			},
+			{	"name": "Escape Artist",
+				"stat": "dex"
+			},
+			{	"name": "Fly",
+				"stat": "dex"
+			},
+			{	"name": "Heal",
+				"ranks": 2,
+				"classSkill": true
+			},
+			{	"name": "Intimidate",
+				"stat": "cha"
+			},
+			{	"name": "Knowledge (Religion)",
+				"stat": "int",
+				"ranks": 2,
+				"classSkill": true
+			},
+			{	"name": "Perception",
+				"stat": "wis",
+				"ranks": 2
+			},
+			{	"name": "Perform",
+				"stat": "cha"
+			},
+			{	"name": "Ride",
+				"stat": "dex"
+			},
+			{	"name": "Sense Motive",
+				"ranks": 2,
+				"classSkill": true
+			},
+			{	"name": "Spellcraft",
+				"stat": "int",
+				"ranks": 2,
+				"classSkill": true
+			},
+			{	"name": "Stealth",
+				"stat": "dex"
+			},
+			{	"name": "Survival",
+				"stat": "wis"
+			},
+			{	"name": "Swim",
+				"stat": "str"
+			}
+		],
+		"feats": [
+			"[Fearless Curiosity](:d20-feat-racial:fearless-curiosity-human)",
+			"[Selective Channeling](:d20-feat-general:selective-channeling---final)"
+		],
+		"traits": [
+			"[Ghost Sight](:d20-trait-magic:ghost-sight)",
+			"[Necrotic Aura](:d20-trait-faith:necrotic-aura-whispering-way)"
+		],
+		"specials": [
+			"smite-evil.md",
+			"lay-on-hands.md"
+		]
+	}
+]
