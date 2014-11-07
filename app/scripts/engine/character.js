@@ -400,10 +400,10 @@ var Character = function(data) {
 			});
 
 			_.each(strings, function(string, index) {
-				this[index] = string.replace(':', ' ');
+				this[index] = _(string).replace(':', ' ');
 			}, strings);
 
-			return strings.join(', ');
+			return _.join(', ', strings);
 		};
 	}
 
@@ -509,26 +509,27 @@ var Character = function(data) {
 
 	data.templates = _.defaultValue([], data.templates);
 	data.race = _.defaultValue('', data.race);
-	data.levels = _.map(data.levels, function(level, className) {
+	data.levels = _.join(', ', _.map(data.levels, function(level, className) {
 		return _.sprintf('%s %d', _(className).titleize(), level);
-	}).join(', ');
+	}));
 	this.infoText = [
-		_.join(' ', data.templates.join(' '), data.race, data.levels),
+		_.join(' ', _.join(' ', data.templates), data.race, data.levels),
 		_.join(' ', data.alignment, data.size, data.type)
 	];
 
 	if (data.senses) {
-		this.senses = data.senses.join(', ');
+		this.senses = _.join(', ', data.senses);
 	}
 
 	this.initiative = new Skill(_.defaultValue({
 		name: 'Initiative',
-		base: ['dexterity']
+		stats: ['dexterity'],
+		base: 0
 	}, data.initiative));
 
 	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
 	if(data.hpSpecials) {
-		this.hp += _.sprintf('; %s', data.hpSpecials.join(', ')); }
+		this.hp += _.sprintf('; %s', _.join(', ', data.hpSpecials)); }
 
 	function makeLink(thing) {
 		if (_.isString(thing)) { return thing; }
@@ -539,9 +540,9 @@ var Character = function(data) {
 		}
 	}
 
-	if(data.feats) { this.feats = _.map(data.feats, makeLink).join(', '); }
-	if(data.traits) { this.traits = _.map(data.traits, makeLink).join(', '); }
-	if(data.languages) { this.languages = data.languages.join(', '); }
+	if(data.feats) { this.feats = _.join(', ', _.map(data.feats, makeLink)); }
+	if(data.traits) { this.traits = _.join(', ', _.map(data.traits, makeLink)); }
+	if(data.languages) { this.languages = _.join(', ', data.languages); }
 
 	this.speed = data.speed;
 	this.space = data.space;
@@ -731,7 +732,7 @@ var Character = function(data) {
 	if (defense.sr) { this.specialDefenses += _.sprintf('**Spell Resistance** %s;', defense.sr); }
 	this.specialDefenses = _.trim(this.specialDefenses, ';');
 
-	this.otherDefenses = _.defaultValue([], defense.otherDefenses).join(', ');
+	this.otherDefenses = _.join(', ', _.defaultValue([], defense.otherDefenses));
 
 	// skills
 	_.each(data.skills, function(skill, skillIndex) {
@@ -752,6 +753,7 @@ var Character = function(data) {
 
 	// markdown extentions
 	this.pf = {
+		name: this.name,
 		level: function(className, factor) {
 			factor = factor || 1;
 			return Math.floor(that.levels[className] * factor);
