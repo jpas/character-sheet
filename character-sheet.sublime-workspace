@@ -944,9 +944,26 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/jpas/Developer/character-sheet",
+		"/Users/jpas/Developer/character-sheet/app",
+		"/Users/jpas/Developer/character-sheet/app/characters",
+		"/Users/jpas/Developer/character-sheet/app/characters/er",
+		"/Users/jpas/Developer/character-sheet/app/scripts",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers",
+		"/Users/jpas/Developer/character-sheet/app/scripts/directives",
+		"/Users/jpas/Developer/character-sheet/app/scripts/engine"
 	],
 	"file_history":
 	[
+		"/Users/jpas/Desktop/com.apple.windowserver.plist",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/_data.json",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/racial-traits.md",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/character.js",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/main.js",
+		"/Users/jpas/Developer/character-sheet/app/index.html",
+		"/Users/jpas/Developer/character-sheet/app/scripts/engine/character.js",
+		"/Users/jpas/Developer/character-sheet/bower.json",
+		"/Users/jpas/Developer/character-sheet/app/scripts/directives/md.js",
 		"/Users/jpas/Developer/vue-sheet/sheet/index.js",
 		"/Users/jpas/Developer/vue-sheet/sheet/template.html",
 		"/Users/jpas/Developer/vue-sheet/list/template.html",
@@ -956,12 +973,9 @@
 		"/Users/jpas/Developer/vue-sheet/main.css",
 		"/Users/jpas/Developer/vue-sheet/sheet.html",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/notes/2014-10-01.md",
-		"/Users/jpas/Developer/character-sheet/app/scripts/directives/md.js",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbook.md",
-		"/Users/jpas/Developer/character-sheet/app/characters/er/_data.json",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbond.md",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/gear.md",
-		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/character.js",
 		"/Users/jpas/Developer/character-sheet/app/scripts/filters.js",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/conjurer.md",
 		"/Users/jpas/Desktop/euler/5.js",
@@ -971,7 +985,6 @@
 		"/Users/jpas/Developer/character-sheet/app/characters/_list.json",
 		"/Users/jpas/Developer/character-sheet/app/styles/main.css",
 		"/Users/jpas/Downloads/EnderIO-1.7.10-2.0.8.221/crazypants/enderio/conduit/power/PowerConduit.class",
-		"/Users/jpas/Developer/character-sheet/app/characters/er/racial-traits.md",
 		"/Users/jpas/Developer/character-sheet/app/characters/short/s-race-traits.md",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Please look these over for me! 09:30:2014/a2q4.cpp",
 		"/Users/jpas/Desktop/euler/2.py",
@@ -1069,12 +1082,7 @@
 		"/Users/jpas/Developer/pathfinder_db/index.html",
 		"/Users/jpas/Developer/pathfinder_db/css/style.css",
 		"/Users/jpas/Developer/pathfinder_db/bower.json",
-		"/Users/jpas/Developer/pathfinder_db/feats.json",
-		"/Users/jpas/Desktop/fortune/node_modules/json-server/README.md",
-		"/Users/jpas/Desktop/fortune/fortune.js",
-		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/jpas/Developer/node RESTful/app/models/bear.js",
-		"/Users/jpas/Developer/node RESTful/package.json"
+		"/Users/jpas/Developer/pathfinder_db/feats.json"
 	],
 	"find":
 	{
@@ -1104,6 +1112,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			".replace",
+			"[^_].join",
+			".join",
 			"currentRoute",
 			"list",
 			"page",
@@ -1228,10 +1239,7 @@
 			"\n**\n",
 			"]:",
 			"\\}",
-			",",
-			"\\{",
-			"	",
-			"{}"
+			","
 		],
 		"highlight": true,
 		"in_selection": false,

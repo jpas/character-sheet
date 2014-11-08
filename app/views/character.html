@@ -103,9 +103,9 @@
 		<div ng-if='c.spells' ng-repeat='caster in c.spells'>
 			<p>
 				<b>{{caster.name}} {{caster.type}} Spells</b>
-				Caster Level <roll ng-bind='caster.level'></roll>;
-				Concentration <roll ng-bind='caster.concentration.getRoll()'></roll>;
-				Spell Resistance  <roll ng-bind='caster.spellResistance.getRoll()'></roll>
+				<span>Caster Level</span> <roll ng-bind='caster.level'></roll>;
+				<span>Concentration</span> <roll ng-bind='caster.concentration.getRoll()'></roll>;
+				<span>Spell Resistance </span> <roll ng-bind='caster.spellResistance.getRoll()'></roll>
 			</p>
 			<div ng-if='caster.md' class='spells'>
 				<md md='caster.md' pf='c.pf'></md>
