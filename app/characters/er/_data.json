@@ -68,6 +68,9 @@
 			},
 			"special": "+2 vs enchantment"
 		},
+		"immune": [
+			"sleep"
+		],
 		"baseAttackBonus": 1,
 		"attacks": {
 			"melee": [

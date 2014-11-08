@@ -8,7 +8,7 @@
 				<label for='{{c.id}}-bonus-{{$index}}'><span ng-bind='bonus.name'></span></label>
 			</li>
 		</ul>
-		<hr style='margin-top: 10px; margin-bottom: -21px;'>
+		<hr class='bonuses-hr'>
 	</section>
 	<section id='{{c.id}}-header'>
 		<hr class="hide-on-print">
@@ -38,60 +38,52 @@
 	</section>
 	<section id='{{c.id}}-defense'>
 		<p>
-			<b>AC</b>
-			{{c.ac.getTotal()}},
-			<b>touch</b>
-			{{c.ac.getTouch()}},
-			<b>flat-footed</b>
-			{{c.ac.getFlatFooted()}}
+			<b>AC</b> {{c.ac.getTotal()}},
+			<b>touch</b> {{c.ac.getTouch()}},
+			<b>flat-footed</b> {{c.ac.getFlatFooted()}}
 			<span ng-if="c.ac.toString()">({{c.ac.toString()}})</span>
 		</p>
 		<p>
-			<b>CMD</b>
-			{{c.cmd.getTotal()}},
-			<b>flat-footed</b>
-			{{c.cmd.getFlatFooted()}}
+			<b>CMD</b> {{c.cmd.getTotal()}},
+			<b>flat-footed</b> {{c.cmd.getFlatFooted()}}
 			<span ng-if="c.cmd.toString()">({{c.cmd.toString()}})</span>
 		</p>
 		<p>
-			<b>HP</b>
-			<md md= 'c.hp' pf='c.pf'></md>
-			<span ng-if='c.info.hpSpecials'>; </span>
-			<md md='c.info.hpSpecials' pf='c.pf'></md>
+			<b>HP</b> <md md= 'c.hp' pf='c.pf'></md>
 		</p>
 		<p>
-			<b>Fortitude</b>
-			<roll ng-bind='c.saves.fortitude.getRoll()'></roll>;
-			<b>Reflex</b>
-			<roll ng-bind='c.saves.reflex.getRoll()'></roll>;
-			<b>Will</b>
-			<roll ng-bind='c.saves.will.getRoll()'></roll><span ng-if='c.saves.special'>;</span>
+			<b>Fortitude</b> <span class='semi-colon'><roll ng-bind='c.saves.fortitude.getRoll()'></roll></span>
+			<b>Reflex</b> <span class='semi-colon'><roll ng-bind='c.saves.reflex.getRoll()'></roll></span>
+			<b>Will</b> <span class='semi-colon'><roll ng-bind='c.saves.will.getRoll()'></roll></span>
 			<md md='c.saves.special' pf='c.pf'></md>
 		</p>
 		<p>
-			<md md='c.specialDefenses' pf='c.pf'></md>
+			<span class='semi-colon' ng-if='c.dr'><b>DR</b> <md md='c.dr'></md></span>
+			<span class='semi-colon' ng-if='c.immune'><b>Immune</b> <md md='c.immune'></md></span>
+			<span class='semi-colon' ng-if='c.resist'><b>Resist</b> <md md='c.resist'></md></span>
+			<span class='semi-colon' ng-if='c.sr'><b>SR</b> <md md='c.sr'></md></span>
 		</p>
-		<p ng-if='c.otherDefenses'>
-			<b>Special</b>
-			<md md='c.otherDefenses' pf='c.pf'></md>
+		<p ng-if='c.defensiveAbilities'>
+			<b>Defensive Abilities</b>
+			<md md='c.defensiveAbilities' pf='c.pf'></md>
 		</p>
 		<hr>
 	</section>
 	<section id='{{c.id}}-offense'>
 		<p ng-if='c.meleeAttacks'>
 			<b>Melee</b>
-			<span ng-repeat='attack in c.meleeAttacks'>
+			<span class='comma' ng-repeat='attack in c.meleeAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
+				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll>
 			</span>
 		</p>
 		<p ng-if='c.rangedAttacks'>
 			<b>Ranged</b>
-			<span ng-repeat='attack in c.rangedAttacks'>
+			<span class='comma' ng-repeat='attack in c.rangedAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll><span ng-if='!$last'>, </span>
+				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'>
 			</span>
 		</p>
 		<p>
@@ -99,6 +91,7 @@
 			<roll ng-bind='c.bab.getToHit()'></roll>;
 			<b>Combat Maneuver Bonus</b>
 			<roll ng-bind='c.cmb.getToHit()'></roll>
+			<span ng-if='c.cmb.special'>({{c.cmb.special}})</span>
 		</p>
 		<div ng-if='c.spells' ng-repeat='caster in c.spells'>
 			<p>
@@ -112,35 +105,32 @@
 			</div>
 		</div>
 		<p>
-			<b>Speed</b>
-			{{c.speed}};
-			<b>Space</b>
-			{{c.space}};
-			<b>Reach</b>
-			{{c.reach}}
+			<b>Speed</b> {{c.speed}};
+			<b>Space</b> {{c.space}};
+			<b>Reach</b> {{c.reach}}
 		</p>
 		<hr>
 	</section>
 	<section id='{{c.id}}-stats'>
 		<p>
-			<span ng-repeat='score in c.abilityScores()'>
+			<span class='comma' ng-repeat='score in c.abilityScores()'>
 				<b>{{score.name}}</b>
 				<span>{{score.getTotal()}}</span>
-				<roll ng-bind='score.getRoll()'></roll><span ng-if='!$last'>,</span>
+				<roll ng-bind='score.getRoll()'></roll>
 			</span>
 		</p>
 		<p ng-if='c.skills.trained'>
 			<b>Trained Skills</b>
-			<span ng-repeat='skill in c.skills.trained'>
+			<span class='comma' ng-repeat='skill in c.skills.trained'>
 				<span>{{skill.name}}</span>
-				<roll ng-bind='skill.getRoll()'></roll><span ng-if='!$last'>,</span>
+				<roll ng-bind='skill.getRoll()'></roll>
 			</span>
 		</p>
 		<p ng-if='c.skills.untrained'>
 			<b>Untrained Skills</b>
-			<span ng-repeat='skill in c.skills.untrained'>
+			<span class='comma' ng-repeat='skill in c.skills.untrained'>
 				<span>{{skill.name}}</span>
-				<roll ng-bind='skill.getRoll()'></roll><span ng-if='!$last'>,</span>
+				<roll ng-bind='skill.getRoll()'></roll>
 			</span>
 		</p>
 		<p ng-if='c.feats'>

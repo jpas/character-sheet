@@ -70,7 +70,7 @@ var Character = function(data) {
 			});
 
 			if (!_.isEmpty(found)) {
-				return _.max(found, function(bonus)  {
+				return _.max(found, function(bonus) {
 					return bonus.value;
 				});
 			}
@@ -400,7 +400,7 @@ var Character = function(data) {
 			});
 
 			_.each(strings, function(string, index) {
-				this[index] = _(string).replace(':', ' ');
+				this[index] = string.replace(':', ' ');
 			}, strings);
 
 			return _.join(', ', strings);
@@ -507,46 +507,29 @@ var Character = function(data) {
 
 	this.levels = data.levels;
 
-	data.templates = _.defaultValue([], data.templates);
-	data.race = _.defaultValue('', data.race);
-	data.levels = _.join(', ', _.map(data.levels, function(level, className) {
-		return _.sprintf('%s %d', _(className).titleize(), level);
-	}));
-	this.infoText = [
-		_.join(' ', _.join(' ', data.templates), data.race, data.levels),
-		_.join(' ', data.alignment, data.size, data.type)
-	];
-
-	if (data.senses) {
-		this.senses = _.join(', ', data.senses);
-	}
-
 	this.initiative = new Skill(_.defaultValue({
 		name: 'Initiative',
 		stats: ['dexterity'],
 		base: 0
 	}, data.initiative));
 
+	this.senses = _.stringify(data.senses);
+
 	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
-	if(data.hpSpecials) {
-		this.hp += _.sprintf('; %s', _.join(', ', data.hpSpecials)); }
-
-	function makeLink(thing) {
-		if (_.isString(thing)) { return thing; }
-		if (thing.link) {
-			return _.sprintf('[%(name)s](%(link)s)', thing);
-		} else {
-			return thing.name;
-		}
-	}
-
-	if(data.feats) { this.feats = _.join(', ', _.map(data.feats, makeLink)); }
-	if(data.traits) { this.traits = _.join(', ', _.map(data.traits, makeLink)); }
-	if(data.languages) { this.languages = _.join(', ', data.languages); }
+	this.hpSpecial = _.stringify(data.hpSpecial);
 
 	this.speed = data.speed;
 	this.space = data.space;
 	this.reach = data.reach;
+
+	this.infoText = [
+		_.stringify([data.templates, data.race, data.levels], ' '),
+		_.stringify([data.alignment, data.size, data.type], ' ')
+	];
+
+	this.feats = _.stringify(data.feats);
+	this.traits = _.stringify(data.traits);
+	this.languages = _.stringify(data.languages);
 
 	this.specials = _.compactMap(data.specials, function(special) {
 		if (special.indexOf('@') > 0) { return null; }
@@ -554,7 +537,10 @@ var Character = function(data) {
 	});
 	this.gear = data.gear;
 
+	// ************************************************************
 	// ability scores
+	// ************************************************************
+
 	var abilityScores = {
 		strength: new AbilityScore({
 			name: 'Strength',
@@ -589,8 +575,7 @@ var Character = function(data) {
 
 		return modifier;
 	};
-	abilityScores.getRoll = function(scoreID) {
-		return this[scoreID].getRoll(); };
+	abilityScores.getRoll = function(scoreID) { return this[scoreID].getRoll(); };
 
 	abilityScores.getModifiers = function(scoreIDs, factor) {
 		var modifiers = [];
@@ -615,7 +600,10 @@ var Character = function(data) {
 		];
 	};
 
+	// ************************************************************
 	// offense
+	// ************************************************************
+
 	this.bab = new Attack({
 		name: 'Base Attack Bonus',
 		base: _.defaultValue(0, data.baseAttackBonus)
@@ -669,11 +657,11 @@ var Character = function(data) {
 		return new Caster(caster);
 	});
 
+	// ************************************************************
 	// defense
-	var defense = data.defense || {};
+	// ************************************************************
 
-	if(_.isUndefined(defense.ac)) { defense.ac = {}; }
-	if(_.isUndefined(defense.cmd)) { defense.cmd = {}; }
+	var defense = data.defense || {};
 
 	this.ac = new Defense(
 			_.defaultValue({
@@ -723,27 +711,33 @@ var Character = function(data) {
 		}, data.saves.will))
 	};
 
-	if(data.saves.special)	{ this.saves.special = _.sprintf('(%s)', data.saves.special); }
+	this.saves.special = _.stringify(data.saves.special);
+	this.defensiveAbilities = _.stringify(data.defense);
 
-	this.specialDefenses = '';
-	if (defense.dr) { this.specialDefenses += _.sprintf('**Damage Reduction** %s;', defense.dr); }
-	if (defense.immune) { this.specialDefenses += _.sprintf('**Immune** %s;', defense.immune); }
-	if (defense.resist) { this.specialDefenses += _.sprintf('**Resist** %s;', defense.resist); }
-	if (defense.sr) { this.specialDefenses += _.sprintf('**Spell Resistance** %s;', defense.sr); }
-	this.specialDefenses = _.trim(this.specialDefenses, ';');
+	this.dr = _.stringify(data.dr);
+	this.immune = _.stringify(data.immune);
+	this.resist = _.stringify(data.resist);
+	this.sr = _.stringify(data.sr);
 
-	this.otherDefenses = _.join(', ', _.defaultValue([], defense.otherDefenses));
+	// ************************************************************
+	// Info Strings
+	// ************************************************************
 
-	// skills
+	// ************************************************************
+	// Skills
+	// ************************************************************
+
 	_.each(data.skills, function(skill, skillIndex) {
 		this[skillIndex] = new Skill(skill);
 	}, data.skills);
 
 	this.skills = {};
 	this.skills.trained = _.filter(data.skills, function(skill) {
-		return skill.isTrained(); });
+		return skill.isTrained();
+	});
 	this.skills.untrained = _.filter(data.skills, function(skill) {
-		return !skill.isTrained(); });
+		return !skill.isTrained();
+	});
 
 	this.skills.get = function(skillID) {
 		var trained = _.findWhere(this.trained, {id: skillID});

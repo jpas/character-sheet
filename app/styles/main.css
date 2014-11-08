@@ -163,15 +163,37 @@ input ~ label >  span {
 	float: left;
 }
 
+.bonuses-hr {
+	margin-top: 10px;
+	margin-bottom: -21px;
+}
+
+/* spacing */
 b:after,
 span:after {
 	content: ' ';
+}
+
+span.semi-colon:after {
+	content: '; '
+}
+span.semi-colon:last-child:after {
+	content: ''
+}
+
+span.comma:after {
+	content: ', ';
+}
+span.comma:last-child:after {
+	content: '';
 }
 
 md span:after {
 	content: '';
 }
 
+
+/* spells */
 .spells {
 	border-left: 1px solid #a5a5a5;
 	padding-left: 20px;

@@ -30,6 +30,7 @@ app.directive('md', [
 
 				scope.Math = Math;
 
+				if(_.isNumber(scope.md)) { scope.md = '' + scope.md; }
 				if(!_.isString(scope.md)) { scope.md.toString(); }
 
 				function parse(data, isText) {
