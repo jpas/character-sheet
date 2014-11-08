@@ -1,4 +1,31 @@
 'use strict';
+/* exported isValidBonusType */
+
+var isValidBonusType = function(type, exempt) {
+	var types = [
+		'alchemical',
+		'armor',
+		'circumstance',
+		'competence',
+		'deflection',
+		'dodge',
+		'enhancement',
+		'inherent',
+		'insight',
+		'luck',
+		'morale',
+		'natural armor',
+		'profane',
+		'racial',
+		'resistance',
+		'sacred',
+		'shield',
+		'size',
+		'trait',
+		'untyped'
+	];
+	return types.indexOf(type) !== -1 && exempt.indexOf(type) === -1;
+};
 
 _.mixin({
 	compactMap: function(list, iteratee, context) {
@@ -60,6 +87,5 @@ _.mixin({
 		return str;
 	},
 });
-
 
 _.mixin(_.str.exports());

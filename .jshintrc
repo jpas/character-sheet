@@ -24,6 +24,7 @@
 		"app": true,
 		"Character": true,
 		"FastClick": false,
-		"marked": false
+		"marked": false,
+		"isValidBonusType": true
 	}
 }
