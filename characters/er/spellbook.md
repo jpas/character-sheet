@@ -1,5 +1,9 @@
 ### **Spellbook**
 
+**2nd**
+*[create treasure map]* ^s^,
+*[create pit]*
+
 **1st**
 *[color spray]*,
 *[comprehend languages]* ^s^,
@@ -31,6 +35,10 @@
 *[read magic]* ^s^,
 *[resistance]*,
 *[spark]*
+
+[2nd]: #
+  [create treasure map]: :prd-spell-apg:createTreasureMap
+  [create pit]: :prd-spell-apg:createPit
 
 [1st]: #
   [color spray]: :prd-spell-crb:colorSpray
