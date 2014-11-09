@@ -588,8 +588,12 @@ function Character(data) {
 
 	this.bab = new Attack({
 		name: 'Base Attack Bonus',
-		base: _.defaultValue(0, data.baseAttackBonus)
+		bab: 0,
+		base: _.defaultValue(0, data.baseAttackBonus),
+		stats: []
 	});
+
+	console.log(this.bab);
 
 	this.cmb = new Attack(data.combatManeuverBonus, {
 		name: 'Combat Maneuver Bonus',

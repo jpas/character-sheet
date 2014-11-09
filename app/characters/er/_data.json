@@ -3,8 +3,8 @@
 		"name": "Er",
 		"portrait": "http://i.imgur.com/chPIyvw.png",
 		"xp": {
-			"current": 2210,
-			"nextLevel": 3300
+			"current": 3615,
+			"nextLevel": 7500
 		},
 		"abilityScores": {
 			"strength": 7,
@@ -37,9 +37,9 @@
 					{ "value": 2, "type": "racial", "target": "perception" }
 				]
 			},
-			{	"name": "Eyes and Ears of the City",
+			{	"name": "Vagabond Child",
 				"bonuses": [
-					{ "value": 1, "type": "trait", "target": "perception" }
+					{ "value": 1, "type": "trait", "target": "disable_device" }
 				]
 			},
 			{	"name": "Improved Initiative",
@@ -53,9 +53,9 @@
 				]
 			}
 		],
-		"hp": 19,
-		"hp-breakdown": "[6+2+1]+[6+2+1]+1",
-		"hd": "2d6+7",
+		"hp": 27,
+		"hp-breakdown": "[6+2+1]+[6+2+1]+[6+2+1]",
+		"hd": "3d6+9",
 		"saves": {
 			"fortitude": {
 				"base": 0
@@ -90,7 +90,7 @@
 			]
 		},
 		"spells": [
-			{	"name": "Diviner",
+			{	"name": "Wizard",
 				"type": "prepared",
 				"stat": "intelligence",
 				"markdown": "spells.md"
@@ -117,6 +117,11 @@
 			{	"name": "Diplomacy",
 				"stat": "charisma"
 			},
+			{	"name": "Disable Device",
+				"classSkill": true,
+				"stat": "dexterity",
+				"ranks": 3
+			},
 			{	"name": "Disguise",
 				"stat": "charisma"
 			},
@@ -136,31 +141,30 @@
 			{	"name": "Knowledge (Arcana)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Knowledge (Dungeoneering)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Knowledge (Engineering)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Knowledge (Nature)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Knowledge (Planes)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Perception",
-				"stat": "wisdom",
-				"classSkill": true
+				"stat": "wisdom"
 			},
 			{	"name": "Perform",
 				"stat": "charisma"
@@ -174,7 +178,7 @@
 			{	"name": "Spellcraft",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 2
+				"ranks": 3
 			},
 			{	"name": "Stealth",
 				"stat": "dexterity"
@@ -187,10 +191,13 @@
 			},
 			{	"name": "Use Magic Device",
 				"stat": "intelligence",
-				"ranks": 2
+				"ranks": 3
 			}
 		],
 		"feats": [
+			{	"name": "Craft Wonderous Item",
+				"link": "http://paizo.com/prd/feats.html#craft-wondrous-item"
+			},
 			{	"name": "Improved Initiative",
 				"link": "http://paizo.com/prd/feats.html#improved-initiative"
 			},
@@ -205,15 +212,15 @@
 			}
 		],
 		"traits": [
-			{	"name": "Eyes and Ears of the City",
+			{	"name": "Pragmatic Activator",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			},
-			{	"name": "Pragmatic Activator",
+			{	"name": "Vagabond Child",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			}
 		],
 		"levels": {
-			"Diviner": 2
+			"Wizard": 3
 		},
 		"race": "Half-Elf",
 		"alignment": "CN",
@@ -235,6 +242,7 @@
 			"Sylvan"
 		],
 		"specials": [
+			"bonded-item.md",
 			"school.md",
 			"racial-traits.md"
 		],
