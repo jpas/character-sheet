@@ -1,41 +1,5 @@
 [
-	{
-		"name": "Tester",
-		"hp": 0,
-		"hd": "0d0",
-		"abilityScores": {
-			"strength": 15,
-			"dexterity": 12,
-			"constitution": 12,
-			"intelligence": 10,
-			"wisdom": 10,
-			"charisma": 16
-		},
-		"bonuses": [
-			{	"name": "Halfling Luck",
-				"bonuses": [
-					{ "value": 1, "type": "luck", "target": "saves" }
-				]
-			}
-		],
-		"saves": {
-			"fortitude": {
-				"base": 1
-			},
-			"reflex": {
-				"base": 1
-			},
-			"will": {
-				"base": 3
-			}
-		},
-		"speed": 30,
-		"space": 5,
-		"reach": 5,
-		"skills": [
-			{	"name": "Perception",
-				"stat": "wisdom"
-			}
-		]
+	{	"name": "Tester"
+
 	}
 ]

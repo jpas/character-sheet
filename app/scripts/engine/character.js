@@ -484,7 +484,7 @@ function Character(data) {
 	// Character Info
 	// *********************************************************************************************
 
-	this.name = data.name || '';
+	this.name = data.name || 'Unnamed';
 	this.id = _(this.name).underscored();
 	this.portrait = data.portrait || '';
 
@@ -520,12 +520,12 @@ function Character(data) {
 	this.senses = stringify(data.senses);
 	this.aura = stringify(data.aura);
 
-	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
+	this.hp = _.sprintf('%d (%s)', data.hp || Infinity, data.hd || '');
 	this.hpSpecial = stringify(data.hpSpecial);
 
-	this.speed = stringify(data.speed);
-	this.space = stringify(data.space);
-	this.reach = stringify(data.reach);
+	this.speed = data.speed;
+	this.space = data.space;
+	this.reach = data.reach;
 
 	this.infoText = [
 		stringify([data.templates, data.race, data.classes], ' '),
@@ -546,30 +546,39 @@ function Character(data) {
 	// Ability Scores
 	// *********************************************************************************************
 
-	var abilityScores = {
+	var abilityScores = _.defaultValue({
+		strength: 10,
+		dexterity: 10,
+		constitution: 10,
+		intelligence: 10,
+		wisdom: 10,
+		charisma: 10
+	}, data.abilityScores);
+
+	abilityScores = {
 		strength: new AbilityScore({
 			name: 'Strength',
-			base: data.abilityScores.strength
+			base: abilityScores.strength
 		}),
 		dexterity: new AbilityScore({
 			name: 'Dexterity',
-			base: data.abilityScores.dexterity
+			base: abilityScores.dexterity
 		}),
 		constitution: new AbilityScore({
 			name: 'Constitution',
-			base: data.abilityScores.constitution
+			base: abilityScores.constitution
 		}),
 		intelligence: new AbilityScore({
 			name: 'Intelligence',
-			base: data.abilityScores.intelligence
+			base: abilityScores.intelligence
 		}),
 		wisdom: new AbilityScore({
 			name: 'Wisdom',
-			base: data.abilityScores.wisdom
+			base: abilityScores.wisdom
 		}),
 		charisma: new AbilityScore({
 			name: 'Charisma',
-			base: data.abilityScores.charisma
+			base: abilityScores.charisma
 		})
 	};
 
@@ -714,7 +723,7 @@ function Character(data) {
 			stats: ['wisdom'],
 			base: 0
 		}),
-		special: stringify(data.saves.special)
+		special: stringify(saves.special)
 	};
 
 	this.dr = stringify(data.dr);
@@ -744,7 +753,7 @@ function Character(data) {
 	this.skills.get = function(skillID) {
 		var trained = _.findWhere(this.trained, {id: skillID});
 		var untrained = _.findWhere(this.untrained, {id: skillID});
-		return trained || untrained;
+		return trained || untrained || new Skill({name: 'Dummy Skill'});
 	};
 
 	// *********************************************************************************************

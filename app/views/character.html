@@ -121,9 +121,9 @@
 			</div>
 		</div>
 		<p>
-			<b>Speed</b> {{c.speed}};
-			<b>Space</b> {{c.space}};
-			<b>Reach</b> {{c.reach}}
+			<span ng-if='c.speed' class='semi-colon'><b>Speed</b> {{c.speed}}</span>
+			<span ng-if='c.space' class='semi-colon'><b>Space</b> {{c.space}}</span>
+			<span ng-if='c.reach' class='semi-colon'><b>Reach</b> {{c.reach}}</span>
 		</p>
 		<hr>
 	</section>

@@ -11,9 +11,10 @@ app.controller('CharacterCtrl', [
 		$http
 			.get('characters/' + $routeParams.characterId + '/_data.json')
 			.success(function (data) {
-				_.every(data, function(characterData, index) {
-					$scope.characters[index] = new Character(characterData);
-				});
+				_.each(data, function(characterData, index) {
+					console.log(index);
+					this[index] = new Character(characterData);
+				}, $scope.characters);
 
 				$window.document.title = $scope.characters[0].name + ' - Character Sheet';
 			});
