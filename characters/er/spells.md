@@ -1,13 +1,13 @@
 -|-|-
 -|-|-
-2nd | {{pf.spellDC('Diviner', 2)}} | *[create pit]*, *[create pit]*, *[create treasure map]* ^s^
+2nd | {{pf.spellDC('Diviner', 2)}} | *[create pit]* $2 ({{pf.spellDC('Diviner', 2, 1)}})$, *[see invisibility]* ^s^
 1st | {{pf.spellDC('Diviner', 1)}} | *[detect secret doors]* ^s^, *[grease]*, *[magic missile]*, *[sleep]*, *[unseen servant]*
 0th | {{pf.spellDC('Diviner', 0)}} | *[detect magic]* ^s^, *[light]*, *[message]*, *[read magic]* ^s^
 
 **Opposition Schools** Enchantment, Necromancy
 
 [2nd]: #1+1+1
-  [create treasure map]: :prd-spell-apg:createTreasureMap
+  [see invisibility]: :prd-spell-crb:seeInvisibility
   [create pit]: :prd-spell-apg:createPit
 
 [1st]: #2+2+1
