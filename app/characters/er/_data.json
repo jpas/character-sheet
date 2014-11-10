@@ -1,7 +1,6 @@
 [
 	{
 		"name": "Er",
-		"portrait": "http://i.imgur.com/chPIyvw.png",
 		"xp": {
 			"current": 3615,
 			"nextLevel": 7500
@@ -195,9 +194,6 @@
 			}
 		],
 		"feats": [
-			{	"name": "Craft Wonderous Item",
-				"link": "http://paizo.com/prd/feats.html#craft-wondrous-item"
-			},
 			{	"name": "Improved Initiative",
 				"link": "http://paizo.com/prd/feats.html#improved-initiative"
 			},
@@ -206,6 +202,9 @@
 			},
 			{	"name": "Skill Focus (Use Magic Device)",
 				"link": "http://paizo.com/prd/feats.html#skill-focus"
+			},
+			{	"name": "Spell Focus (Conjuration)",
+				"link": "http://paizo.com/prd/feats.html#spell-focus"
 			},
 			{	"name": "Toughness",
 				"link": "http://paizo.com/prd/feats.html#touhness"
@@ -249,6 +248,10 @@
 		"gear": [
 			"gear.md",
 			"spellbook.md"
-		]
+		],
+		"options": {
+			"showBonuses": true,
+			"portrait": "http://i.imgur.com/chPIyvw.png"
+		}
 	}
 ]
