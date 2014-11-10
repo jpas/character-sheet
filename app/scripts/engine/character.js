@@ -270,11 +270,11 @@ function Character(data) {
 
 			_.each(data.stats, function(statName) {
 				var roll = abilityScores.getRoll(statName, ':');
-				if (roll !== '+0') { strings.push(roll + ':' + statName); }
+				if (roll !== '+0') { strings.push(roll + ':' + statName.slice(0, 3)); }
 			});
 
 			if (_.isNumber(data.bab) && data.bab !== 0) {
-				strings.push(_.sprintf('%+d', data.bab) + ':base attack bonus');
+				strings.push(_.sprintf('%+d', data.bab) + ':bab');
 			}
 
 			strings = _.sortBy(strings, function(string) {
@@ -286,7 +286,7 @@ function Character(data) {
 				this[index] = string.replace(':', ' ');
 			}, strings);
 
-			return _.join(', ', strings);
+			return strings.join(', ');
 		};
 	}
 
@@ -478,10 +478,10 @@ function Character(data) {
 
 	if (data.xp) {
 		if (data.xp.awarded) {
-			this.xp = _.numberFormat(data.xp.awarded);
+			this.xp = 'XP ' + _.numberFormat(data.xp.awarded);
 		} else {
 			this.xp = _.sprintf(
-				'%s / %s XP',
+				'XP %s / %s',
 				_.numberFormat(data.xp.current),
 				_.numberFormat(data.xp.nextLevel));
 		}
@@ -496,6 +496,7 @@ function Character(data) {
 	}, data.initiative));
 
 	this.senses = _.stringify(data.senses);
+	this.aura = _.stringify(data.aura);
 
 	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
 	this.hpSpecial = _.stringify(data.hpSpecial);
@@ -734,12 +735,16 @@ function Character(data) {
 		modifier: function(stat) {
 			return abilityScores.getModifier(stat);
 		},
-		spellDC: function(className, level) {
+		spellDC: function(className, level, bonus) {
+			var bonus = _.defaultValue(0, bonus);
+
 			var caster = _.findWhere(that.spells, function(caster) {
 				return caster.name === className;
 			});
 
-			return _.sprintf('DC %d', 10 + level + abilityScores.getModifiers(caster.stats));
+			var dc = 10 + level + abilityScores.getModifiers(caster.stats) + bonus;
+
+			return _.sprintf('DC %d', dc);
 		},
 		classDC: function(className, stat, factor, min) {
 			factor = factor || 0.5;
@@ -748,4 +753,10 @@ function Character(data) {
 			return _.sprintf('DC %d', 10 + classLevel + abilityScores.getModifier(stat));
 		}
 	};
+
+	// *********************************************************************************************
+	// Options
+	// *********************************************************************************************
+
+	this.options = data.options;
 }

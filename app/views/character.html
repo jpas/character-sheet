@@ -1,5 +1,5 @@
 <div id='{{c.id}}' class='grid grid-pad character' ng-repeat='c in characters'>
-	<section ng-if="c.bonuses" class='hide-on-print' id='{{c.id}}-bonuses'>
+	<section ng-if="c.bonuses && c.options.showBonuses" class='hide-on-print' id='{{c.id}}-bonuses'>
 		<hr>
 		<p><b>Temporary Bonuses</b></p>
 		<ul class='bonuses'>
@@ -12,17 +12,18 @@
 	</section>
 	<section id='{{c.id}}-header'>
 		<hr class="hide-on-print">
-		<div ng-if='c.portrait' class='portrait push-right col-5-12 hide-on-mobile'>
-			<img ng-src='{{c.portrait}}'>
+		<div ng-if='c.options.portrait' class='portrait push-right col-5-12 hide-on-mobile'>
+			<img ng-src='{{c.options.portrait}}'>
 		</div>
 		<h1>
 			<b>{{c.name}}</b>
-			<small class='pull-right header'>{{c.difficulty}} <span ng-if="c.xp">({{c.xp}})</span></small>
+			<small class='pull-right header'>{{c.difficulty}}</small>
 		</h1>
 		<hr>
 	</section>
 	<section id='{{c.id}}-info'>
-		<p><md md='c.infoText[0]' style='margin-top: 20px' pf='c.pf'></md></p>
+		<p><md md='c.xp' style='margin-top: 20px' pf='c.pf'></md></p>
+		<p><md md='c.infoText[0]' pf='c.pf'></md></p>
 		<p><md md='c.infoText[1]' pf='c.pf'></md></p>
 		<p>
 			<b>Initiative</b> <roll>{{c.initiative.getRoll()}}</roll>;
@@ -31,8 +32,8 @@
 			</span>
 			<b>Perception</b> <roll>{{c.skills.get('perception').getRoll()}}</roll>
 		</p>
-		<p ng-if='c.info.auras'>
-			<b>Auras</b> <md md='c.info.aura' pf='c.pf'></md>
+		<p ng-if='c.aura'>
+			<b>Aura</b> <md md='c.aura' pf='c.pf'></md>
 		</p>
 		<hr>
 	</section>
@@ -114,7 +115,7 @@
 	<section id='{{c.id}}-stats'>
 		<p>
 			<span class='comma' ng-repeat='score in c.abilityScores()'>
-				<b>{{score.name}}</b>
+				<b>{{score.name.slice(0,3)}}</b>
 				<span>{{score.getTotal()}}</span>
 				<roll ng-bind='score.getRoll()'></roll>
 			</span>
