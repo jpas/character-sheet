@@ -68,6 +68,10 @@
 			<b>Defensive Abilities</b>
 			<md md='c.defensiveAbilities' pf='c.pf'></md>
 		</p>
+		<p ng-if='c.weaknesses'>
+			<b>Defensive Abilities</b>
+			<md md='c.weaknesses' pf='c.pf'></md>
+		</p>
 		<hr>
 	</section>
 	<section id='{{c.id}}-offense'>
@@ -97,6 +101,17 @@
 		<div ng-if='c.spells' ng-repeat='caster in c.spells'>
 			<p>
 				<b>{{caster.name}} {{caster.type}} Spells</b>
+				<span>Caster Level</span> <roll ng-bind='caster.level'></roll>;
+				<span>Concentration</span> <roll ng-bind='caster.concentration.getRoll()'></roll>;
+				<span>Spell Resistance </span> <roll ng-bind='caster.spellResistance.getRoll()'></roll>
+			</p>
+			<div ng-if='caster.md' class='spells'>
+				<md md='caster.md' pf='c.pf'></md>
+			</div>
+		</div>
+		<div ng-if='c.spellLikeAbilities' ng-repeat='caster in c.spellLikeAbilities'>
+			<p>
+				<b>{{caster.name}} Spell-Like Abilities</b>
 				<span>Caster Level</span> <roll ng-bind='caster.level'></roll>;
 				<span>Concentration</span> <roll ng-bind='caster.concentration.getRoll()'></roll>;
 				<span>Spell Resistance </span> <roll ng-bind='caster.spellResistance.getRoll()'></roll>
@@ -148,12 +163,25 @@
 		</p>
 		<hr>
 	</section>
-	<section id='{{c.id}}-specials' ng-if='c.specials'>
-		<md ng-repeat='special in c.specials' md='special' pf='c.pf'></md>
+	<section id='{{c.id}}-special-qualities' ng-if='c.specialQualities'>
+		<md ng-repeat='item in c.specialQualities' md='item' pf='c.pf'></md>
 		<hr>
 	</section>
-	<section id='{{c.id}}-gear' ng-if='c.gear'>
-		<md ng-repeat='item in c.gear' md='item' pf='c.pf'></md>
+		<section id='{{c.id}}-environment' ng-if='c.environment'>
+		<md ng-repeat='item in c.environment' md='item' pf='c.pf'></md>
+		<hr>
+	</section>
+	</section>
+		<section id='{{c.id}}-organization' ng-if='c.organization'>
+		<md ng-repeat='item in c.organization' md='item' pf='c.pf'></md>
+		<hr>
+	</section>
+	<section id='{{c.id}}-specialAbilities' ng-if='c.specialAbilities'>
+		<md ng-repeat='special in c.specialAbilities' md='special' pf='c.pf'></md>
+		<hr>
+	</section>
+	<section id='{{c.id}}-treasure' ng-if='c.treasure'>
+		<md ng-repeat='item in c.treasure' md='item' pf='c.pf'></md>
 		<hr>
 	</section>
 </div>

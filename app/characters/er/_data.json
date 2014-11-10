@@ -218,7 +218,7 @@
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			}
 		],
-		"levels": {
+		"classes": {
 			"Wizard": 3
 		},
 		"race": "Half-Elf",
@@ -240,12 +240,12 @@
 			"Halfling",
 			"Sylvan"
 		],
-		"specials": [
+		"specialAbilities": [
 			"bonded-item.md",
 			"school.md",
 			"racial-traits.md"
 		],
-		"gear": [
+		"treasure": [
 			"gear.md",
 			"spellbook.md"
 		],

@@ -344,20 +344,42 @@ function Character(data) {
 
 		this.name = data.name;
 		this.type = _.capitalize(data.type);
-		this.level = _.sprintf('%+d', that.levels[data.name]);
+		this.level = _.sprintf('%+d', that.classes[data.name]);
 
 		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
 
 		this.concentration = new Skill(_.defaultValue({
 			name: _.sprintf('%s Concentration', data.name),
-			ranks: that.levels[data.name],
+			ranks: that.classes[data.name],
 			stats: data.stats || ['charisma']
 		}, data.concentration));
 
 		this.spellResistance = new Skill(_.defaultValue({
 			name: _.sprintf('%s Overcome Spell Resistance', data.name),
-			ranks: that.levels[data.name],
+			ranks: that.classes[data.name],
+			stats: data.stats || ['charisma']
+		}));
+	}
+
+	function SLA(data) {
+		this.md = data.markdown;
+
+		this.name = data.name;
+		this.level = data.level || 1;
+
+		if(data.stat) { data.stats = [data.stat]; }
+		this.stats = data.stats;
+
+		this.concentration = new Skill(_.defaultValue({
+			name: _.sprintf('%s Concentration', data.name),
+			ranks: that.classes[data.name],
+			stats: data.stats || ['charisma']
+		}, data.concentration));
+
+		this.spellResistance = new Skill(_.defaultValue({
+			name: _.sprintf('%s Overcome Spell Resistance', data.name),
+			ranks: that.classes[data.name],
 			stats: data.stats || ['charisma']
 		}));
 	}
@@ -487,7 +509,7 @@ function Character(data) {
 		}
 	}
 
-	this.levels = data.levels;
+	this.classes = data.classes;
 
 	this.initiative = new Skill(_.defaultValue({
 		name: 'Initiative',
@@ -495,30 +517,30 @@ function Character(data) {
 		base: 0
 	}, data.initiative));
 
-	this.senses = _.stringify(data.senses);
-	this.aura = _.stringify(data.aura);
+	this.senses = stringify(data.senses);
+	this.aura = stringify(data.aura);
 
 	this.hp = _.sprintf('%d (%s)', data.hp, data.hd);
-	this.hpSpecial = _.stringify(data.hpSpecial);
+	this.hpSpecial = stringify(data.hpSpecial);
 
-	this.speed = _.stringify(data.speed);
-	this.space = _.stringify(data.space);
-	this.reach = _.stringify(data.reach);
+	this.speed = stringify(data.speed);
+	this.space = stringify(data.space);
+	this.reach = stringify(data.reach);
 
 	this.infoText = [
-		_.stringify([data.templates, data.race, data.levels], ' '),
-		_.stringify([data.alignment, data.size, data.type], ' ')
+		stringify([data.templates, data.race, data.classes], ' '),
+		stringify([data.alignment, data.size, data.type], ' ')
 	];
 
-	this.feats = _.stringify(data.feats);
-	this.traits = _.stringify(data.traits);
-	this.languages = _.stringify(data.languages);
+	this.feats = stringify(data.feats);
+	this.traits = stringify(data.traits);
+	this.languages = stringify(data.languages);
 
-	this.specials = _.compactMap(data.specials, function(special) {
-		if (special.indexOf('@') > 0) { return null; }
-		return special;
-	});
-	this.gear = data.gear;
+	this.specialQualities = markdownArray(data.specialQualities);
+	this.environment = markdownArray(data.environment);
+	this.organization = markdownArray(data.organization);
+	this.specialAbilities = markdownArray(data.specialAbilities);
+	this.treasure = markdownArray(data.treasure);
 
 	// *********************************************************************************************
 	// Ability Scores
@@ -594,8 +616,6 @@ function Character(data) {
 		stats: []
 	});
 
-	console.log(this.bab);
-
 	this.cmb = new Attack(data.combatManeuverBonus, {
 		name: 'Combat Maneuver Bonus',
 		bab: this.bab.getTotal(),
@@ -644,6 +664,10 @@ function Character(data) {
 		return new Caster(caster);
 	});
 
+	this.spellLikeAbilities = _.map(data.spellLikeAbilities, function(caster) {
+		return new SLA(caster);
+	});
+
 	// *********************************************************************************************
 	// Defense
 	// *********************************************************************************************
@@ -690,15 +714,16 @@ function Character(data) {
 			stats: ['wisdom'],
 			base: 0
 		}),
-		special: _.stringify(data.saves.special)
+		special: stringify(data.saves.special)
 	};
 
-	this.defensiveAbilities = _.stringify(data.defense);
+	this.dr = stringify(data.dr);
+	this.immune = stringify(data.immune);
+	this.resist = stringify(data.resist);
+	this.sr = stringify(data.sr);
 
-	this.dr = _.stringify(data.dr);
-	this.immune = _.stringify(data.immune);
-	this.resist = _.stringify(data.resist);
-	this.sr = _.stringify(data.sr);
+	this.defensive = stringify(data.defensive);
+	this.weaknesses = stringify(data.weaknesses);
 
 	// *********************************************************************************************
 	// Skills
@@ -730,7 +755,7 @@ function Character(data) {
 		name: this.name,
 		level: function(className, factor) {
 			factor = factor || 1;
-			return Math.floor(that.levels[className] * factor);
+			return Math.floor(that.classes[className] * factor);
 		},
 		modifier: function(stat) {
 			return abilityScores.getModifier(stat);
@@ -749,7 +774,7 @@ function Character(data) {
 		classDC: function(className, stat, factor, min) {
 			factor = factor || 0.5;
 			min = min || 1;
-			var classLevel = Math.floor(that.levels[className] * factor) || min;
+			var classLevel = Math.floor(that.classes[className] * factor) || min;
 			return _.sprintf('DC %d', 10 + classLevel + abilityScores.getModifier(stat));
 		}
 	};

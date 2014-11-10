@@ -25,6 +25,8 @@
 		"Character": true,
 		"FastClick": false,
 		"marked": false,
-		"isValidBonusType": true
+		"isValidBonusType": true,
+		"markdownArray": true,
+		"stringify": true
 	}
 }
