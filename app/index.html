@@ -1,64 +1,64 @@
 <!doctype html>
-<!--[if lt IE 7]>    	<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>       	<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>       	<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>    	<html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->
+<!--[if IE 7]>       	<html class='no-js lt-ie9 lt-ie8'> <![endif]-->
+<!--[if IE 8]>       	<html class='no-js lt-ie9'> <![endif]-->
+<!--[if gt IE 8]><!--> <html class='no-js'> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
+	<meta charset='utf-8'>
 	<title>Character Sheets</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"/>
+	<meta name='description' content=''>
+	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0'/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- ref:css //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css -->
-	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+	<link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.css' />
 	<!-- endref -->
 	<!-- build:css({.tmp,app}) styles/main.css -->
-	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-	<link rel="stylesheet" href="styles/simplegrid.css" />
-	<link rel="stylesheet" href="styles/main.css" />
-	<link rel="stylesheet" href="styles/print.css" />
+	<link rel='stylesheet' href='bower_components/normalize-css/normalize.css'>
+	<link rel='stylesheet' href='styles/simplegrid.css' />
+	<link rel='stylesheet' href='styles/main.css' />
+	<link rel='stylesheet' href='styles/print.css' />
 	<!-- endbuild -->
 </head>
-<body ng-app="charactersApp">
+<body ng-app='charactersApp'>
 	<!--[if lt IE 7]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
 	<!-- Add your site or application content here -->
 	<div ng-view></div>
 
 	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.3.1/json3.min.js"></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js'></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/json3/3.3.1/json3.min.js'></script>
 	<![endif]-->
 
 	<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
-	<script src="bower_components/angular/angular.js"></script>
+	<script src='bower_components/angular/angular.js'></script>
 	<!-- endref -->
 	<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js -->
-	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src='bower_components/angular-route/angular-route.js'></script>
 	<!-- endref -->
 	<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.min.js -->
-	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src='bower_components/angular-sanitize/angular-sanitize.js'></script>
 	<!-- endref -->
 	<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.min.js -->
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src='bower_components/angular-resource/angular-resource.js'></script>
 	<!-- endref -->
 
 	<!-- build:js scripts/vendor.js -->
-	<script src="bower_components/fastclick/lib/fastclick.js"></script>
-	<script src="bower_components/marked/lib/marked.js"></script>
-	<script src="bower_components/underscore/underscore.js"></script>
-	<script src="bower_components/underscore.string/lib/underscore.string.js"></script>
+	<script src='bower_components/fastclick/lib/fastclick.js'></script>
+	<script src='bower_components/marked/lib/marked.js'></script>
+	<script src='bower_components/underscore/underscore.js'></script>
+	<script src='bower_components/underscore.string/lib/underscore.string.js'></script>
 	<!-- endbuild -->
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
-	<script src="scripts/utilities.js"></script>
-	<script src="scripts/engine/character.js"></script>
-	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/main.js"></script>
-	<script src="scripts/controllers/character.js"></script>
-	<script src="scripts/directives/md.js"></script>
+	<script src='scripts/utilities.js'></script>
+	<script src='scripts/engine/character.js'></script>
+	<script src='scripts/app.js'></script>
+	<script src='scripts/controllers/main.js'></script>
+	<script src='scripts/controllers/character.js'></script>
+	<script src='scripts/directives/md.js'></script>
 	<!-- endbuild -->
 </body>
 </html>

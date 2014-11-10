@@ -736,7 +736,7 @@ function Character(data) {
 			return abilityScores.getModifier(stat);
 		},
 		spellDC: function(className, level, bonus) {
-			var bonus = _.defaultValue(0, bonus);
+			bonus = _.defaultValue(0, bonus);
 
 			var caster = _.findWhere(that.spells, function(caster) {
 				return caster.name === className;
