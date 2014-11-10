@@ -2,7 +2,6 @@
 /*exported app*/
 
 var app = angular.module('charactersApp', [
-	'ngResource',
 	'ngRoute',
 	'ngSanitize'
 ]);
