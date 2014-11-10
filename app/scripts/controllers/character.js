@@ -12,7 +12,6 @@ app.controller('CharacterCtrl', [
 			.get('characters/' + $routeParams.characterId + '/_data.json')
 			.success(function (data) {
 				_.each(data, function(characterData, index) {
-					console.log(index);
 					this[index] = new Character(characterData);
 				}, $scope.characters);
 
