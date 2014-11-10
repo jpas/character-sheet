@@ -63,8 +63,8 @@ var stringify = function(things, separator) {
 		}
 
 		else if(_.isObject(things)) {
-			if(things.link && things.name) {
-				str += _.sprintf('[%s](%s)', things.name, things.link);
+			if(things.link && things.text) {
+				str += _.sprintf('[%s](%s)', things.text, things.link);
 			} else {
 				str = _stringify(_.map(things, function(thing, thingKey) {
 					return _.sprintf('%s %s', thingKey, thing);
@@ -77,8 +77,8 @@ var stringify = function(things, separator) {
 
 	var str = _stringify(things);
 
-	if(str.slice(-2) === ', ') {
-		return str.slice(0, -2);
+	if(str.slice(-separator.length) === separator) {
+		return str.slice(0, -separator.length);
 	}
 
 	return str;

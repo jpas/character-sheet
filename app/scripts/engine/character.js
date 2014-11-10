@@ -174,16 +174,16 @@ function Character(data) {
 
 		this.getDamage = function() {
 			if (data.noDamage) { return false; }
-			var dice = _.defaultValue('', data.damageDice);
+			var dice = _.defaultValue('', data.damage);
 
 			var total = 0;
-			var factor = data.damageFactor || 1;
+			var factor = data.factor || 1;
 			var stats = data.damageStats;
 			var range = data.range;
 
 			if (data.damageBase) { total += data.damageBase; }
 			if (_.contains(stats, 'strength')) {total += abilityScores.getModifier('strength', factor); }
-			total += abilityScores.getModifiers(_.without(data.damageStats, 'strength'));
+			total += abilityScores.getModifiers(_.without(stats, 'strength'));
 
 			total += bonusHandler.getBonus('damage', this.exemptTypes);
 			total += bonusHandler.getBonus(this.id + '_damage', this.exemptTypes);
@@ -479,6 +479,7 @@ function Character(data) {
 			return stackable.indexOf(type) > -1;
 		},
 	};
+	this.bonuses = bonusHandler.data;
 
 	// *********************************************************************************************
 	// Character Info
@@ -486,9 +487,6 @@ function Character(data) {
 
 	this.name = data.name || 'Unnamed';
 	this.id = _(this.name).underscored();
-	this.portrait = data.portrait || '';
-
-	this.bonuses = bonusHandler.data;
 
 	if (data.cr && data.mr) {
 		this.difficulty = _.sprintf('CR %d / MR %d', data.cr, data.mr);
@@ -498,15 +496,15 @@ function Character(data) {
 		this.difficulty = _.sprintf('MR %d', data.mr);
 	}
 
-	if (data.xp) {
-		if (data.xp.awarded) {
-			this.xp = 'XP ' + _.numberFormat(data.xp.awarded);
-		} else {
-			this.xp = _.sprintf(
-				'XP %s / %s',
-				_.numberFormat(data.xp.current),
-				_.numberFormat(data.xp.nextLevel));
-		}
+	if(_.isString(data.xp)) {
+		var temp = data.xp.split('/');
+		_.each(temp, function(val, index) {
+			this[index] = _.numberFormat(parseInt(val));
+		}, temp);
+		this.xp = _.sprintf('XP %s/%s', temp[0], temp[1]);
+	}
+	if (_.isNumber(data.xp)) {
+		this.xp = 'XP ' + _.numberFormat(data.xp);
 	}
 
 	this.classes = data.classes;
@@ -528,7 +526,11 @@ function Character(data) {
 	this.reach = data.reach;
 
 	this.infoText = [
-		stringify([data.templates, data.race, data.classes], ' '),
+		stringify([
+			data.templates,
+			data.race,
+			stringify(data.classes, '/')
+		], ' '),
 		stringify([data.alignment, data.size, data.type], ' ')
 	];
 

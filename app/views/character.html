@@ -50,7 +50,8 @@
 			<span ng-if="c.cmd.toString()">({{c.cmd.toString()}})</span>
 		</p>
 		<p>
-			<b>HP</b> <md md= 'c.hp' pf='c.pf'></md>
+			<span class="semi-colon"><b>HP</b> <md md= 'c.hp' pf='c.pf'></md></span>
+			<span ng-if='c.hpSpecial'>{{c.hpSpecial}}</span>
 		</p>
 		<p>
 			<b>Fortitude</b> <span class='semi-colon'><roll ng-bind='c.saves.fortitude.getRoll()'></roll></span>

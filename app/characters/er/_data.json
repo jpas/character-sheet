@@ -80,7 +80,7 @@
 			],
 			"ranged": [
 				{	"name": "light crossbow",
-					"damageDice": "1d8/19-20"
+					"damage": "1d8/19-20"
 				},
 				{	"name": "touch attack",
 					"noDamage": true,
@@ -194,27 +194,27 @@
 			}
 		],
 		"feats": [
-			{	"name": "Improved Initiative",
+			{	"text": "Improved Initiative",
 				"link": "http://paizo.com/prd/feats.html#improved-initiative"
 			},
-			{	"name": "Scribe Scroll",
+			{	"text": "Scribe Scroll",
 				"link": "http://paizo.com/prd/feats.html#scribe-scroll"
 			},
-			{	"name": "Skill Focus (Use Magic Device)",
+			{	"text": "Skill Focus (Use Magic Device)",
 				"link": "http://paizo.com/prd/feats.html#skill-focus"
 			},
-			{	"name": "Spell Focus (Conjuration)",
+			{	"text": "Spell Focus (Conjuration)",
 				"link": "http://paizo.com/prd/feats.html#spell-focus"
 			},
-			{	"name": "Toughness",
+			{	"text": "Toughness",
 				"link": "http://paizo.com/prd/feats.html#touhness"
 			}
 		],
 		"traits": [
-			{	"name": "Pragmatic Activator",
+			{	"text": "Pragmatic Activator",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			},
-			{	"name": "Vagabond Child",
+			{	"text": "Vagabond Child",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			}
 		],
