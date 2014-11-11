@@ -158,6 +158,7 @@ function Character(data) {
 			var total = this.getTotal();
 
 			total += abilityScores.getModifiers(data.stats);
+			total += bonusHandler.getBonus('to_hit', this.exemptTypes);
 			total += bonusHandler.getBonus(this.id + '_to_hit', this.exemptTypes);
 			total += bonusHandler.getBonus(data.range + '_to_hit', this.exemptTypes);
 
@@ -232,7 +233,7 @@ function Character(data) {
 		data.flatfooted = _.defaultValue({
 			id: 'flat_footed_',
 			stats: ['strength'],
-			exemptTypes: []
+			exemptTypes: ['dodge']
 		}, data.flatfooted);
 
 		this.getTotal = function() {
@@ -326,11 +327,13 @@ function Character(data) {
 
 			total += bonusHandler.getBonus(this.id, this.exemptTypes);
 			if(data.baseID) { total += bonusHandler.getBonus(data.baseID, this.exemptTypes); }
-			if(_.contains(data.stats, 'strength') || _.contains(data.stats, 'dexterity')) {
-				total += bonusHandler.getBonus('armor-check-penalty', this.exemptTypes);
-			}
 			if(data.ranks) { total += data.ranks; }
 			if(data.classSkill && data.ranks > 0) { total += 3; }
+
+			if(data.acp) {
+				total += bonusHandler.getBonus('armor_check_penalty', this.exemptTypes);
+			}
+
 			return total;
 		};
 

@@ -1,0 +1,2 @@
+### **Healer's Blessing** (Su)
+At 6th level, all of your cure spells are treated as if they were empowered, increasing the amount of damage healed by half (+50%). This does not apply to damage dealt to undead with a cure spell. This does not stack with the Empower Spell metamagic feat.

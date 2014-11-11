@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"mardo",
+				"markdownArray"
+			],
+			[
+				"spec",
+				"specialQualities"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
 				"cu",
 				"current"
 			],
@@ -427,19 +439,39 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 101.0,
 		"selected_items":
 		[
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
 			[
 				"reind",
 				"Indentation: Reindent Lines"
 			],
 			[
-				"loe",
-				"Convert Case: Lower Case"
+				"tabs",
+				"Indentation: Convert to Tabs"
 			],
 			[
-				"lower",
+				"ss md",
+				"Set Syntax: Markdown"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"tit",
+				"Convert Case: Title Case"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"loe",
 				"Convert Case: Lower Case"
 			],
 			[
@@ -449,10 +481,6 @@
 			[
 				"ss c++",
 				"Set Syntax: C++"
-			],
-			[
-				"title",
-				"Convert Case: Title Case"
 			],
 			[
 				"upper",
@@ -501,10 +529,6 @@
 			[
 				"rend",
 				"Indentation: Reindent Lines"
-			],
-			[
-				"tabs",
-				"Indentation: Convert to Tabs"
 			],
 			[
 				"ss py",
@@ -561,10 +585,6 @@
 			[
 				"ss json",
 				"Set Syntax: JSON"
-			],
-			[
-				"ss md",
-				"Snippet: bs3-sm-button-danger"
 			],
 			[
 				"markdow",
@@ -923,7 +943,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 475.0
+		"width": 457.0
 	},
 	"console":
 	{
@@ -948,22 +968,37 @@
 		"/Users/jpas/Developer/character-sheet/app",
 		"/Users/jpas/Developer/character-sheet/app/characters",
 		"/Users/jpas/Developer/character-sheet/app/characters/er",
+		"/Users/jpas/Developer/character-sheet/app/characters/test",
 		"/Users/jpas/Developer/character-sheet/app/scripts",
 		"/Users/jpas/Developer/character-sheet/app/scripts/controllers",
 		"/Users/jpas/Developer/character-sheet/app/scripts/directives",
-		"/Users/jpas/Developer/character-sheet/app/scripts/engine"
+		"/Users/jpas/Developer/character-sheet/app/styles",
+		"/Users/jpas/Developer/character-sheet/app/views"
 	],
 	"file_history":
 	[
-		"/Users/jpas/Desktop/com.apple.windowserver.plist",
-		"/Users/jpas/Developer/character-sheet/app/characters/er/_data.json",
-		"/Users/jpas/Developer/character-sheet/app/characters/er/racial-traits.md",
-		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/character.js",
-		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/main.js",
-		"/Users/jpas/Developer/character-sheet/app/index.html",
 		"/Users/jpas/Developer/character-sheet/app/scripts/engine/character.js",
+		"/Users/jpas/Developer/character-sheet/app/scripts/utilities.js",
+		"/Users/jpas/Developer/character-sheet/app/characters/test/_data.json",
+		"/Users/jpas/Developer/character-sheet/app/views/character.html",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/character.js",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/_data.json",
+		"/Users/jpas/Developer/character-sheet/.jshintrc",
+		"/Users/jpas/Developer/character-sheet/app/index.html",
+		"/Users/jpas/Developer/character-sheet/app/scripts/app.js",
 		"/Users/jpas/Developer/character-sheet/bower.json",
+		"/Users/jpas/Developer/character-sheet/app/bower_components/angular-local-storage/dist/angular-local-storage.js",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/bonded-item.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/school.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/racial-traits.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/spells.md",
+		"/Users/jpas/Developer/character-sheet/app/views/stat-block.html",
+		"/Users/jpas/Desktop/emberflame-1.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbook.md",
+		"/Users/jpas/Developer/character-sheet/app/styles/main.css",
 		"/Users/jpas/Developer/character-sheet/app/scripts/directives/md.js",
+		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jpas/Developer/character-sheet/app/scripts/controllers/main.js",
 		"/Users/jpas/Developer/vue-sheet/sheet/index.js",
 		"/Users/jpas/Developer/vue-sheet/sheet/template.html",
 		"/Users/jpas/Developer/vue-sheet/list/template.html",
@@ -973,7 +1008,6 @@
 		"/Users/jpas/Developer/vue-sheet/main.css",
 		"/Users/jpas/Developer/vue-sheet/sheet.html",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/notes/2014-10-01.md",
-		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbook.md",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/spellbond.md",
 		"/Users/jpas/Developer/character-sheet/app/characters/er/gear.md",
 		"/Users/jpas/Developer/character-sheet/app/scripts/filters.js",
@@ -983,7 +1017,6 @@
 		"/Users/jpas/Desktop/euler/4.py",
 		"/Users/jpas/Desktop/euler/3.py",
 		"/Users/jpas/Developer/character-sheet/app/characters/_list.json",
-		"/Users/jpas/Developer/character-sheet/app/styles/main.css",
 		"/Users/jpas/Downloads/EnderIO-1.7.10-2.0.8.221/crazypants/enderio/conduit/power/PowerConduit.class",
 		"/Users/jpas/Developer/character-sheet/app/characters/short/s-race-traits.md",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Please look these over for me! 09:30:2014/a2q4.cpp",
@@ -997,7 +1030,6 @@
 		"/Users/jpas/Developer/pathfinder-race-builder/app/index.html",
 		"/Users/jpas/Desktop/primes.cpp",
 		"/Users/jpas/Desktop/helloWorld.cpp",
-		"/Users/jpas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jpas/Developer/pathfinder-race-builder/.jshintrc",
 		"/Users/jpas/Developer/pathfinder-race-builder/.tmp/scripts/combined-scripts.js",
 		"/Users/jpas/Developer/pathfinder-race-builder/app/scripts/app.js",
@@ -1072,17 +1104,7 @@
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/2014-09-09.md",
 		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Computer Science 110/controlCentralHeating.txt",
 		"/Users/jpas/Desktop/rpg.md",
-		"/Users/jpas/Dropbox/School/Philosophy 120/2014-09-09.md",
-		"/Users/jpas/Desktop/rpg.js",
-		"/Users/jpas/Desktop/test.html",
-		"/Users/jpas/Downloads/forge/eula.txt",
-		"/Users/jpas/Developer/pathfinder_db/js/pf-character-data/untitled",
-		"/Users/jpas/Developer/pathfinder_db/js/app.js",
-		"/Users/jpas/Developer/pathfinder_db/views/main.html",
-		"/Users/jpas/Developer/pathfinder_db/index.html",
-		"/Users/jpas/Developer/pathfinder_db/css/style.css",
-		"/Users/jpas/Developer/pathfinder_db/bower.json",
-		"/Users/jpas/Developer/pathfinder_db/feats.json"
+		"/Users/jpas/Dropbox/School/Philosophy 120/2014-09-09.md"
 	],
 	"find":
 	{
@@ -1112,6 +1134,99 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"data.damageDice",
+			"name",
+			"data",
+			"this",
+			"stringify(",
+			"data",
+			" || 10",
+			"caster",
+			"spells",
+			"stringify",
+			"function",
+			"functionstringify",
+			"stringify",
+			"_.stringify",
+			"special",
+			"defensive",
+			"defensiveAbilities",
+			"classes",
+			"environment",
+			"treasure",
+			"levels",
+			"specials",
+			"gear",
+			"specials",
+			"equipment",
+			"gear",
+			"levelsclas",
+			"levels",
+			"classes",
+			"level",
+			"levels",
+			"level",
+			"  ",
+			"\"",
+			"'",
+			"abilityScores",
+			"__",
+			"__Creatures__",
+			"\\*\\*\\*",
+			"***",
+			"\\*+",
+			"\\*",
+			"Diviner",
+			"glitterdust",
+			"),",
+			"Attack",
+			"2",
+			"0",
+			"+2+1",
+			"*****************************************************************************************************************",
+			"_.defaultValue(",
+			", defense.",
+			"_.defaultValue(",
+			"ranged",
+			"data.",
+			"default",
+			"defaultValue",
+			"// *****************************************************************************************************************\n	// ",
+			"	// ************************************************************\n",
+			"	// ************************************************************",
+			"canStack",
+			": fun",
+			": ",
+			"\nfunction ",
+			"function",
+			"}\nf",
+			"initializeString",
+			" =",
+			") {",
+			"data",
+			"return",
+			"return str;",
+			"_.map(",
+			"stringify",
+			"var str = '';",
+			"thing",
+			"resist",
+			"sr",
+			"  +",
+			"toString",
+			"_.join(', ', ",
+			"_.join(",
+			";",
+			"<roll",
+			"{{",
+			"semi-colon",
+			",",
+			"<span ng-if='!$last'>,</span>",
+			",",
+			"immune",
+			"damageReduction",
+			"immune",
+			"<r",
 			".replace",
 			"[^_].join",
 			".join",
@@ -1146,100 +1261,7 @@
 			":",
 			"::",
 			"cin",
-			"cout",
-			"-",
-			"know",
-			"	",
-			"\\*",
-			"	",
-			"	No",
-			"No",
-			")",
-			"(basename \"$1\")",
-			"numPrimes",
-			"numberOfPrimes",
-			"toSieve",
-			"grid",
-			"i",
-			"PathfinderRaceBuilder",
-			"  ",
-			"js",
-			"		",
-			"  ",
-			"	",
-			"// Generated on 2014-09-18 using generator-ember 0.8.4\n'use strict';\nvar LIVERELOAD_PORT = 35729;\nvar lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});\nvar mountFolder = function (connect, dir) {\n	return connect.static(require('path').resolve(dir));\n};\n\n// # Globbing\n// for performance reasons we're only matching one level down:\n// 'test/spec/{,*/}*.js'\n// use this if you want to match all subfolders:\n// 'test/spec/**/*.js'\n\nmodule.exports = function (grunt) {\n	// show elapsed time at the end\n	require('time-grunt')(grunt);\n	// load all grunt tasks\n	require('load-grunt-tasks')(grunt);\n\n	// configurable paths\n	var yeomanConfig = {\n		app: 'app',\n		dist: 'dist'\n	};\n\n	grunt.initConfig({\n		yeoman: yeomanConfig,\n		watch: {\n			emberTemplates: {\n				files: '<%= yeoman.app %>/templates/**/*.hbs',\n				tasks: ['emberTemplates']\n			},\n			neuter: {\n				files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],\n				tasks: ['neuter']\n			},\n			livereload: {\n				options: {\n					livereload: LIVERELOAD_PORT\n				},\n				files: [\n					'.tmp/scripts/*.js',\n					'<%= yeoman.app %>/*.html',\n					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',\n					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'\n				]\n			}\n		},\n		connect: {\n			options: {\n				port: 9000,\n				// change this to '0.0.0.0' to access the server from outside\n				hostname: 'localhost'\n			},\n			livereload: {\n				options: {\n					middleware: function (connect) {\n						return [\n							lrSnippet,\n							mountFolder(connect, '.tmp'),\n							mountFolder(connect, yeomanConfig.app)\n						];\n					}\n				}\n			},\n			test: {\n				options: {\n					middleware: function (connect) {\n						return [\n							mountFolder(connect, 'test'),\n							mountFolder(connect, '.tmp')\n						];\n					}\n				}\n			},\n			dist: {\n				options: {\n					middleware: function (connect) {\n						return [\n							mountFolder(connect, yeomanConfig.dist)\n						];\n					}\n				}\n			}\n		},\n		open: {\n			server: {\n				path: 'http://localhost:<%= connect.options.port %>'\n			}\n		},\n		clean: {\n			dist: {\n				files: [{\n					dot: true,\n					src: [\n						'.tmp',\n						'<%= yeoman.dist %>/*',\n						'!<%= yeoman.dist %>/.git*'\n					]\n				}]\n			},\n			server: '.tmp'\n		},\n		jshint: {\n			options: {\n				jshintrc: '.jshintrc',\n				reporter: require('jshint-stylish')\n			},\n			all: [\n				'Gruntfile.js',\n				'<%= yeoman.app %>/scripts/{,*/}*.js',\n				'!<%= yeoman.app %>/scripts/vendor/*',\n				'test/spec/{,*/}*.js'\n			]\n		},\n		mocha: {\n			all: {\n				options: {\n					run: true,\n					urls: ['http://localhost:<%= connect.options.port %>/index.html']\n				}\n			}\n		},\n		// not used since Uglify task does concat,\n		// but still available if needed\n		/*concat: {\n			dist: {}\n		},*/\n		// not enabled since usemin task does concat and uglify\n		// check index.html to edit your build targets\n		// enable this task if you prefer defining your build targets here\n		/*uglify: {\n			dist: {}\n		},*/\n		rev: {\n			dist: {\n				files: {\n					src: [\n						'<%= yeoman.dist %>/scripts/{,*/}*.js',\n						'<%= yeoman.dist %>/styles/{,*/}*.css',\n						'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',\n						'<%= yeoman.dist %>/styles/fonts/*'\n					]\n				}\n			}\n		},\n		useminPrepare: {\n			html: '.tmp/index.html',\n			options: {\n				dest: '<%= yeoman.dist %>'\n			}\n		},\n		usemin: {\n			html: ['<%= yeoman.dist %>/{,*/}*.html'],\n			css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],\n			options: {\n				dirs: ['<%= yeoman.dist %>']\n			}\n		},\n		imagemin: {\n			dist: {\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>/images',\n					src: '{,*/}*.{png,jpg,jpeg}',\n					dest: '<%= yeoman.dist %>/images'\n				}]\n			}\n		},\n		svgmin: {\n			dist: {\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>/images',\n					src: '{,*/}*.svg',\n					dest: '<%= yeoman.dist %>/images'\n				}]\n			}\n		},\n		cssmin: {\n			dist: {\n				files: {\n					'<%= yeoman.dist %>/styles/main.css': [\n						'.tmp/styles/{,*/}*.css',\n						'<%= yeoman.app %>/styles/{,*/}*.css'\n					]\n				}\n			}\n		},\n		htmlmin: {\n			dist: {\n				options: {\n					/*removeCommentsFromCDATA: true,\n					// https://github.com/yeoman/grunt-usemin/issues/44\n					//collapseWhitespace: true,\n					collapseBooleanAttributes: true,\n					removeAttributeQuotes: true,\n					removeRedundantAttributes: true,\n					useShortDoctype: true,\n					removeEmptyAttributes: true,\n					removeOptionalTags: true*/\n				},\n				files: [{\n					expand: true,\n					cwd: '<%= yeoman.app %>',\n					src: '*.html',\n					dest: '<%= yeoman.dist %>'\n				}]\n			}\n		},\n		replace: {\n			app: {\n			options: {\n				variables: {\n				ember: 'bower_components/ember/ember.js',\n				ember_data: 'bower_components/ember-data/ember-data.js'\n				}\n			},\n			files: [\n				{src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}\n			]\n			},\n			dist: {\n			options: {\n				variables: {\n				ember: 'bower_components/ember/ember.prod.js',\n				ember_data: 'bower_components/ember-data/ember-data.prod.js'\n				}\n			},\n			files: [\n				{src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}\n			]\n			}\n		},\n		// Put files not handled in other tasks here\n		copy: {\n			dist: {\n				files: [\n					{\n						expand: true,\n						dot: true,\n						cwd: '<%= yeoman.app %>',\n						dest: '<%= yeoman.dist %>',\n						src: [\n							'*.{ico,txt}',\n							'.htaccess',\n							'images/{,*/}*.{webp,gif}',\n							'styles/fonts/*'\n						]\n					}\n				]\n			}\n		},\n		concurrent: {\n			server: [\n				'emberTemplates',\n			],\n			test: [\n				'emberTemplates',\n			],\n			dist: [\n				'emberTemplates',\n				'imagemin',\n				'svgmin',\n				'htmlmin'\n			]\n		},\n		emberTemplates: {\n			options: {\n				templateName: function (sourceFile) {\n					var templatePath = yeomanConfig.app + '/templates/';\n					return sourceFile.replace(templatePath, '');\n				}\n			},\n			dist: {\n				files: {\n					'.tmp/scripts/compiled-templates.js': '<%= yeoman.app %>/templates/**/*.hbs'\n				}\n			}\n		},\n		neuter: {\n			app: {\n				options: {\n					filepathTransform: function (filepath) {\n						return yeomanConfig.app + '/' + filepath;\n					}\n				},\n				src: '<%= yeoman.app %>/scripts/app.js',\n				dest: '.tmp/scripts/combined-scripts.js'\n			}\n		}\n	});\n\n	grunt.registerTask('server', function (target) {\n		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');\n		grunt.task.run(['serve:' + target]);\n	});\n\n	grunt.registerTask('serve', function (target) {\n		if (target === 'dist') {\n			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);\n		}\n\n		grunt.task.run([\n			'clean:server',\n			'replace:app',\n			'concurrent:server',\n			'neuter:app',\n			'connect:livereload',\n			'open',\n			'watch'\n		]);\n	});\n\n	grunt.registerTask('test', [\n		'clean:server',\n		'replace:app',\n		'concurrent:test',\n		'connect:test',\n		'neuter:app',\n		'mocha'\n	]);\n\n	grunt.registerTask('build', [\n		'clean:dist',\n		'replace:dist',\n		'useminPrepare',\n		'concurrent:dist',\n		'neuter:app',\n		'concat',\n		'cssmin',\n		'uglify',\n		'copy',\n		'rev',\n		'usemin'\n	]);\n\n	grunt.registerTask('default', [\n		'jshint',\n		'test',\n		'build'\n	]);\n};\n",
-			"  ",
-			"	",
-			" - ",
-			"Euthephro",
-			"     ",
-			"  |",
-			" ",
-			"  ",
-			"09",
-			"November",
-			"October",
-			"Spetember",
-			"Nov.",
-			"Oct.",
-			"Sept.",
-			"|  ",
-			"September",
-			"…",
-			"\\.\\.+",
-			".",
-			"*,",
-			": ",
-			":",
-			"	",
-			"newValue",
-			"current.setTo",
-			"x",
-			"() {",
-			"(",
-			"base",
-			"\n\n",
-			"<tr>",
-			"<tr><td ",
-			"</[a-z]+>",
-			">",
-			"	",
-			"  ",
-			"\\d+[^)]",
-			"#",
-			"\\n\\n",
-			"\\d+[^)]",
-			"  ",
-			"	*",
-			"\n	*",
-			"	",
-			"  ",
-			"	",
-			"  ",
-			"ember",
-			"-",
-			"js/libs",
-			"'",
-			":",
-			"'",
-			"app",
-			"adapter",
-			"app.",
-			"\"",
-			"  ",
-			"}}",
-			"|-|",
-			"-|",
-			"\"",
-			"	",
-			"(",
-			", ",
-			"**,",
-			",\n,",
-			"\n**\n",
-			"]:",
-			"\\}",
-			","
+			"cout"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1379,7 +1401,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 147.0,
+	"side_bar_width": 166.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
