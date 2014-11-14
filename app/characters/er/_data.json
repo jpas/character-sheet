@@ -1,10 +1,7 @@
 [
 	{
 		"name": "Er",
-		"xp": {
-			"current": 3615,
-			"nextLevel": 7500
-		},
+		"xp": "4765/7500",
 		"abilityScores": {
 			"strength": 7,
 			"dexterity": 16,
@@ -15,15 +12,9 @@
 		},
 		"bonuses": [
 			{	"name": "Mage Armor",
-				"active": false,
+				"active": true,
 				"bonuses": [
 					{ "value": 4, "type": "armor", "target": "armor_class" }
-				]
-			},
-			{	"name": "Resistance",
-				"active": false,
-				"bonuses": [
-					{ "value": 1, "type": "resistance", "target": "saves" }
 				]
 			},
 			{	"name": "Skill Focus (Use Magic Device)",

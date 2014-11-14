@@ -1,5 +1,8 @@
 ## **Gear**
 
-**Ring** *[feather falling]*
+**Slotless** pearl of power (1st)
 
-[feather falling]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/ringsRodsStaves/rings.html#ring-of-feather-falling
+**Scrolls** *[fireball]*, *[fly]*
+
+[fireball]: :prd-spell-crb:fireball
+[fly]: :prd-spell-crb:fly

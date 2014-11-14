@@ -439,9 +439,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 101.0,
+		"height": 67.0,
 		"selected_items":
 		[
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
 			[
 				"lower",
 				"Convert Case: Lower Case"
@@ -481,10 +485,6 @@
 			[
 				"ss c++",
 				"Set Syntax: C++"
-			],
-			[
-				"upper",
-				"Convert Case: Upper Case"
 			],
 			[
 				"swap",
@@ -943,7 +943,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 457.0
+		"width": 583.0
 	},
 	"console":
 	{
@@ -968,15 +968,23 @@
 		"/Users/jpas/Developer/character-sheet/app",
 		"/Users/jpas/Developer/character-sheet/app/characters",
 		"/Users/jpas/Developer/character-sheet/app/characters/er",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk",
 		"/Users/jpas/Developer/character-sheet/app/characters/test",
 		"/Users/jpas/Developer/character-sheet/app/scripts",
 		"/Users/jpas/Developer/character-sheet/app/scripts/controllers",
 		"/Users/jpas/Developer/character-sheet/app/scripts/directives",
+		"/Users/jpas/Developer/character-sheet/app/scripts/engine",
 		"/Users/jpas/Developer/character-sheet/app/styles",
 		"/Users/jpas/Developer/character-sheet/app/views"
 	],
 	"file_history":
 	[
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/spells.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/domains@8.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/domains@6.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/racial-traits.md",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/_data.json",
+		"/Users/jpas/Developer/character-sheet/app/characters/hruk/domains.md",
 		"/Users/jpas/Developer/character-sheet/app/scripts/engine/character.js",
 		"/Users/jpas/Developer/character-sheet/app/scripts/utilities.js",
 		"/Users/jpas/Developer/character-sheet/app/characters/test/_data.json",
@@ -1098,13 +1106,7 @@
 		"/Users/jpas/Documents/Torrents/Backgrounds/print.sh",
 		"/Users/jpas/Documents/Torrents/Backgrounds/sort.sh",
 		"/Users/jpas/Downloads/PF Spell Database/spells.xsd",
-		"/Users/jpas/Documents/Torrents/In Progress/Mega background dump/Background_Dump/sort.sh",
-		"/Users/jpas/Developer/Unity/Tutorial - Stealth/stealth.sublime-project",
-		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/2014-09-11.md",
-		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Philosophy 120/2014-09-09.md",
-		"/Users/jpas/Dropbox/Shared/Victoria - Jarrod/Computer Science 110/controlCentralHeating.txt",
-		"/Users/jpas/Desktop/rpg.md",
-		"/Users/jpas/Dropbox/School/Philosophy 120/2014-09-09.md"
+		"/Users/jpas/Documents/Torrents/In Progress/Mega background dump/Background_Dump/sort.sh"
 	],
 	"find":
 	{
@@ -1134,6 +1136,33 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"luck",
+			" ",
+			", ",
+			"\"ranks\": 2",
+			"*",
+			"[",
+			" ",
+			"]",
+			"[",
+			" ",
+			":prd-spell-crb:",
+			" ",
+			"*]",
+			"**",
+			", ",
+			"** ",
+			" - ",
+			"1st - ",
+			"—",
+			":",
+			"—",
+			"\"e\\n",
+			"\"e",
+			"\"classSkill\": true",
+			"\"ranks\": 3",
+			"armor",
+			"Diviner",
 			"data.damageDice",
 			"name",
 			"data",
@@ -1234,34 +1263,7 @@
 			"list",
 			"page",
 			"sheet",
-			"= function (",
-			"= function () {",
-			"var",
-			"() {",
-			"armor",
-			"armour",
-			"magic missile",
-			"\"",
-			"which are:",
-			", which are: ",
-			"wizard",
-			"the",
-			"3^2",
-			"2\\^4",
-			"2\\^3",
-			"2\\^2",
-			"2\\^1",
-			"//",
-			"←",
-			"false",
-			"20480",
-			"700",
-			"bol700",
-			"Source Sans Pro",
-			":",
-			"::",
-			"cin",
-			"cout"
+			"= function ("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1298,11 +1300,6 @@
 			"sheets":
 			[
 			]
-		},
-		{
-			"sheets":
-			[
-			]
 		}
 	],
 	"incremental_find":
@@ -1322,18 +1319,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":

@@ -1,18 +1,23 @@
-### **Spellbook**
+## **Spellbook**
 
 **2nd**
+*[create pit]*,
 *[create treasure map]* ^s^,
-*[create pit]*
+*[bull's strength]*,
+*[glitterdust]*,
+*[mirror image]*,
+*[scorching ray]*
 
 **1st**
 *[color spray]*,
 *[comprehend languages]* ^s^,
-*[comprehend languages]*,
 *[detect secret doors]* ^s^,
+*[enlarge person]*,
 *[feather fall]*,
 *[grease]*,
 *[mage armour]*,
 *[magic missile]*,
+*[magic weapon]*,
 *[obscuring mist]*,
 *[unseen servant]*
 
@@ -37,18 +42,23 @@
 *[spark]*
 
 [2nd]: #
-  [create treasure map]: :prd-spell-apg:createTreasureMap
+  [bull's strength]: :prd-spell-crb:bullsStrength
   [create pit]: :prd-spell-apg:createPit
+  [create treasure map]: :prd-spell-apg:createTreasureMap
+  [glitterdust]: :prd-spell-crb:glitterdust
+  [mirror image]: :prd-spell-crb:mirrorImage
+  [scorching ray]: :prd-spell-crb:scorchingRay
 
 [1st]: #
   [color spray]: :prd-spell-crb:colorSpray
   [comprehend languages]: :prd-spell-crb:comprehendLanguages
-  [comprehend languages]: :prd-spell-crb:comprehendLanguages
   [detect secret doors]: :prd-spell-crb:detectSecretDoors
+  [enlarge person]: :prd-spell-crb:enlargePerson
   [feather fall]: :prd-spell-crb:featherFall
   [grease]: :prd-spell-crb:grease
   [mage armour]: :prd-spell-crb:mageArmor
   [magic missile]: :prd-spell-crb:magicMissile
+  [magic weapon]: :prd-spell-crb:magicWeapon
   [obscuring mist]: :prd-spell-crb:obscuringMist
   [unseen servant]: :prd-spell-crb:unseenServant
 
