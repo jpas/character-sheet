@@ -129,11 +129,6 @@
 				"classSkill": true,
 				"ranks": 3
 			},
-			{	"name": "Knowledge (Engineering)",
-				"stat": "intelligence",
-				"classSkill": true,
-				"ranks": 3
-			},
 			{ 	"name": "Knowledge (Local)",
 				"stat": "intelligence",
 				"classSkill": true,
@@ -145,6 +140,11 @@
 				"ranks": 3
 			},
 			{	"name": "Knowledge (Planes)",
+				"stat": "intelligence",
+				"classSkill": true,
+				"ranks": 3
+			},
+			{	"name": "Linguistics",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 3
@@ -225,7 +225,8 @@
 			"Elven",
 			"Goblin",
 			"Halfling",
-			"Sylvan"
+			"Sylvan",
+			"Undercommon"
 		],
 		"specialAbilities": [
 			"bonded-item.md",
