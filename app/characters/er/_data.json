@@ -73,7 +73,7 @@
 			{	"name": "Wizard",
 				"type": "prepared",
 				"stat": "intelligence",
-				"markdown": "spells.md+spell-links.md",
+				"markdown": "spells.md+links.md",
 				"baseSpells": [4, 3, 2]
 			}
 		],
@@ -233,8 +233,8 @@
 			"racial-traits.md"
 		],
 		"treasure": [
-			"gear.md+spell-links.md",
-			"spellbook.md+spell-links.md"
+			"gear.md+links.md",
+			"spellbook.md+links.md"
 		],
 		"options": {
 			"showBonuses": false,

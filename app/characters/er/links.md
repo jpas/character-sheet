@@ -1,23 +1,18 @@
--|-|-
--|-|-
-2nd | {{pf.spellDC('Wizard', 2)}} | {{pf.spellsPerDay('Wizard', 2)}}+1 | *[create pit]*, *[glitterdust]*, *[locate object]* ^s^, *[scorching ray]*, *[twilight haze]*
-1st | {{pf.spellDC('Wizard', 1)}} | {{pf.spellsPerDay('Wizard', 1)}}+1 | *[grease]*, *[magic missile]* $2$, *[true strike]* ^s^, ~~*[mage armour]*~~, ~~*[unseen servant]*~~
-0th | {{pf.spellDC('Wizard', 0)}} | {{pf.spellsPerDay('Wizard', 0)}}   | *[detect magic]* ^s^, *[light]*, *[read magic]* ^s^, *[resistance]*
+[3rd]: #
+  [fireball]: :prd-spell-crb:fireball
+  [fly]: :prd-spell-crb:fly
 
-**Opposition Schools** Enchantment, Necromancy
-
-[2nd]: #2+1+1
+[2nd]: #
   [bull's strength]: :prd-spell-crb:bullsStrength
   [contingent action]: prd-spell-acg:contingentAction
   [create pit]: :prd-spell-apg:createPit
-  [create treasure map]: :prd-spell-apg:createTreasureMap
   [glitterdust]: :prd-spell-crb:glitterdust
   [locate object]: :prd-spell-crb:locateObject
   [mirror image]: :prd-spell-crb:mirrorImage
   [scorching ray]: :prd-spell-crb:scorchingRay
   [twilight haze]: :prd-spell-acg:twilightHaze
 
-[1st]: #2+2+1
+[1st]: #
   [color spray]: :prd-spell-crb:colorSpray
   [comprehend languages]: :prd-spell-crb:comprehendLanguages
   [detect secret doors]: :prd-spell-crb:detectSecretDoors
@@ -31,7 +26,7 @@
   [true strike]: :prd-spell-crb:trueStrike
   [unseen servant]: :prd-spell-crb:unseenServant
 
-[0th]: #4
+[0th]: #
   [acid splash]: :prd-spell-crb:acidSplash
   [arcane mark]: :prd-spell-crb:arcaneMark
   [dancing lights]: :prd-spell-crb:dancingLights
@@ -50,3 +45,11 @@
   [read magic]: :prd-spell-crb:readMagic
   [resistance]: :prd-spell-crb:resistance
   [spark]: :prd-spell-apg:spark
+
+[Other Spells]: #
+  [cure moderate wounds]: :prd-spell-crb:cureModerateWounds
+  [cure light wounds]: :prd-spell-crb:cureLightWounds
+
+[Gear]: #
+  [headband of vast intelligence +2]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/headbands.html#headband-of-vast-intelligence
+  [pearl of power]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/slotless.html#pearl-of-power
