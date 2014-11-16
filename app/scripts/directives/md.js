@@ -73,7 +73,8 @@ app.directive('md', [
 						{ re: /:prd-spell-crb:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/spells/$1.html'},
 						{ re: /:prd-spell-apg:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/advanced/spells/$1.html'},
 						{ re: /:prd-spell-uc:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateCombat/spells/$1.html'},
-						{ re: /:prd-spell-um:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateMagic/spells/$1.html'}
+						{ re: /:prd-spell-um:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateMagic/spells/$1.html'},
+						{ re: /:prd-spell-acg:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/advancedClassGuide/spells/$1.html'}
 
 					];
 

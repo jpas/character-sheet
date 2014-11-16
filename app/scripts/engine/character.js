@@ -25,10 +25,15 @@ function Character(data) {
 	}
 
 	function BonusSet(data) {
+		if (!_.isUndefined(data.bonus)) {
+			data.bonuses = [data.bonus];
+		}
+
 		data = _.defaultValue({
 			name: 'Unnamed',
 			bonuses: []
 		}, data);
+
 
 		_.each(data.bonuses, function(bonus, index) {
 			this[index] = new Bonus(bonus);
@@ -348,6 +353,7 @@ function Character(data) {
 		this.name = data.name;
 		this.type = _.capitalize(data.type);
 		this.level = _.sprintf('%+d', that.classes[data.name]);
+		this.baseSpells = _.defaultValue([], data.baseSpells);
 
 		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
@@ -361,7 +367,7 @@ function Character(data) {
 		this.spellResistance = new Skill(_.defaultValue({
 			name: _.sprintf('%s Overcome Spell Resistance', data.name),
 			ranks: that.classes[data.name],
-			stats: data.stats || ['charisma']
+			stats: []
 		}));
 	}
 
@@ -784,6 +790,22 @@ function Character(data) {
 			var dc = 10 + level + abilityScores.getModifiers(caster.stats) + bonus;
 
 			return _.sprintf('DC %d', dc);
+		},
+		spellsPerDay: function(className, spellLevel) {
+			var spells = null;
+			var caster = _.findWhere(that.spells, function(caster) {
+				return caster.name === className;
+			});
+
+			if(!_.isUndefined(caster)) {
+				spells = caster.baseSpells[spellLevel];
+				if (spellLevel !== 0) {
+					var modifier = abilityScores.getModifier(caster.stats);
+					spells += Math.ceil((1+modifier-spellLevel)/4);
+				}
+			}
+
+			return spells;
 		},
 		classDC: function(className, stat, factor, min) {
 			factor = factor || 0.5;
