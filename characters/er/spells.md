@@ -1,18 +1,21 @@
 -|-|-
 -|-|-
-2nd | {{pf.spellDC('Wizard', 2)}} | *[bull's strength]*, *[create treasure map]* ^s^, *[scorching ray]*
-1st | {{pf.spellDC('Wizard', 1)}} | *[detect secret doors]* ^s^, *[enlarge person]*, *[magic missile]* $2$, ~~*[mage armour]*~~
-0th | {{pf.spellDC('Wizard', 0)}} | *[detect magic]* ^s^, *[light]*, *[read magic]* ^s^, *[resistance]*
+2nd | {{pf.spellDC('Wizard', 2)}} | {{pf.spellsPerDay('Wizard', 2)}}+1 | *[create pit]*, *[glitterdust]*, *[locate object]* ^s^, *[scorching ray]*, *[twilight haze]*
+1st | {{pf.spellDC('Wizard', 1)}} | {{pf.spellsPerDay('Wizard', 1)}}+1 | *[grease]*, *[magic missile]* $2$, *[true strike]* ^s^, ~~*[mage armour]*~~, ~~*[unseen servant]*~~
+0th | {{pf.spellDC('Wizard', 0)}} | {{pf.spellsPerDay('Wizard', 0)}}   | *[detect magic]* ^s^, *[light]*, *[read magic]* ^s^, *[resistance]*
 
 **Opposition Schools** Enchantment, Necromancy
 
-[2nd]: #1+1+1
+[2nd]: #2+1+1
   [bull's strength]: :prd-spell-crb:bullsStrength
+  [contingent action]: prd-spell-acg:contingentAction
   [create pit]: :prd-spell-apg:createPit
   [create treasure map]: :prd-spell-apg:createTreasureMap
   [glitterdust]: :prd-spell-crb:glitterdust
+  [locate object]: :prd-spell-crb:locateObject
   [mirror image]: :prd-spell-crb:mirrorImage
   [scorching ray]: :prd-spell-crb:scorchingRay
+  [twilight haze]: :prd-spell-acg:twilightHaze
 
 [1st]: #2+2+1
   [color spray]: :prd-spell-crb:colorSpray
