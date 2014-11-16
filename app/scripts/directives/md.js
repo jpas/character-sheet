@@ -17,33 +17,31 @@ app.directive('md', [
 	function ($compile, $http, $routeParams) {
 		return {
 			restrict: 'E',
-			transclude: true,
 			scope: {
 				pf: '=',
 				md: '='
 			},
 			templateUrl: 'views/directives/md.html',
-			link: function(scope, elem) {
-				if (scope.md === undefined) {
-					return;
-				}
+			link: function($scope, $element) {
+				if ($scope.md === undefined) { return undefined; }
 
-				scope.Math = Math;
+				$scope.Math = Math;
 
-				if(_.isNumber(scope.md)) { scope.md = '' + scope.md; }
-				if(!_.isString(scope.md)) { scope.md.toString(); }
+				var alias = function(markdown, aliases) {
+					_.each(aliases, function(alias) {
+						markdown = markdown.replace(alias.re, alias.text);
+					});
 
-				function parse(data, isText) {
-					var markdown = data;
+					return markdown;
+				};
 
+				var render = function() {
 					var pre = [
 						{ re: /\{\{/g, text: '`<ng-bind>'},
 						{ re: /\}\}/g, text: '</ng-bind>`'}
 					];
 
-					angular.forEach(pre, function(r) {
-						markdown = markdown.replace(r.re, r.text);
-					});
+					var markdown = alias($scope.md.join('\n\n'), pre);
 
 					var html = marked(markdown);
 
@@ -75,10 +73,9 @@ app.directive('md', [
 						{ re: /:prd-spell-uc:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateCombat/spells/$1.html'},
 						{ re: /:prd-spell-um:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/ultimateMagic/spells/$1.html'},
 						{ re: /:prd-spell-acg:([a-zA-Z]+)/g, text: 'http://paizo.com/pathfinderRPG/prd/advancedClassGuide/spells/$1.html'}
-
 					];
 
-					if (isText === true) {
+					if ($scope.isText === true) {
 						post = post.concat([
 							{ re: /<p/g, text: '<span'},
 							{ re: /<\/p>/g, text: '</span>'}
@@ -87,22 +84,40 @@ app.directive('md', [
 						html = '<div class="no-break">' + html + '</div>';
 					}
 
-					angular.forEach(post, function(r) {
-						html = html.replace(r.re, r.text);
-					});
+					html = alias(html, post);
 
-					var el = angular.element(html);
-					$compile(el)(scope);
-					elem.prepend(el);
-				}
+					return html;
+				};
 
-				if (scope.md.indexOf('.md') !== -1) {
-					if (scope.md.indexOf('@') === -1) {
-						var mdUrl = 'characters/' + $routeParams.characterId + '/' + scope.md;
-						$http.get(mdUrl).success(parse);
+				var unbindWatcher = $scope.$watch('isReady', function() {
+					if ($scope.isReady === true) {
+						var el = angular.element(render());
+						$compile(el)($scope);
+						$element.prepend(el);
+
+						unbindWatcher();
 					}
-				} else if(scope.md) {
-					parse(scope.md, true);
+				});
+
+				if ($scope.md.indexOf('.md') > -1) {
+					$scope.md = $scope.md.split('+');
+					var remainingMarkdown = $scope.md.length;
+					_.each($scope.md, function(uri, index) {
+						if (uri.indexOf('@') === -1) {
+							$http.get(_.sprintf('characters/%s/%s', $routeParams.characterId, uri))
+								.success(function (data) {
+									$scope.md[index] = data;
+									remainingMarkdown--;
+									if (remainingMarkdown === 0) {
+										$scope.isReady = true;
+									}
+								});
+						}
+					});
+				} else {
+					$scope.md = [$scope.md];
+					$scope.isReady = true;
+					$scope.isText = true;
 				}
 			}
 		};
