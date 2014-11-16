@@ -1,67 +1,57 @@
 [
 	{
 		"name": "Er",
-		"xp": "4765/7500",
+		"xp": "7635/10000",
 		"abilityScores": {
 			"strength": 7,
 			"dexterity": 16,
 			"constitution": 14,
-			"intelligence": 20,
+			"intelligence": 21,
 			"wisdom": 7,
 			"charisma": 7
 		},
 		"bonuses": [
 			{	"name": "Mage Armor",
-				"active": true,
-				"bonuses": [
-					{ "value": 4, "type": "armor", "target": "armor_class" }
-				]
-			},
-			{	"name": "Skill Focus (Use Magic Device)",
-				"bonuses": [
-					{ "value": 3, "target": "use_magic_device" }
-				]
-			},
-			{	"name": "Keen Senses",
-				"bonuses": [
-					{ "value": 2, "type": "racial", "target": "perception" }
-				]
-			},
-			{	"name": "Vagabond Child",
-				"bonuses": [
-					{ "value": 1, "type": "trait", "target": "disable_device" }
-				]
-			},
-			{	"name": "Improved Initiative",
-				"bonuses": [
-					{ "value": 4, "target": "initiative" }
-				]
+				"bonus": { "value": 4, "type": "armor", "target": "armor_class" }
 			},
 			{	"name": "Forewarned",
-				"bonuses": [
-					{ "value": 1, "target": "initiative" }
-				]
+				"bonus": { "value": 2, "target": "initiative" }
+			},
+			{	"name": "Headband of Vast Intelligence",
+				"bonus": { "value": 2, "type": "enhancement", "target": "intelligence" }
+			},
+			{	"name": "Improved Initiative",
+				"bonus": { "value": 4, "target": "initiative" }
+			},
+			{	"name": "Keen Senses",
+				"bonus": { "value": 2, "type": "racial", "target": "perception" }
+			},
+			{	"name": "Skill Focus (Use Magic Device)",
+				"bonus": { "value": 3, "target": "use_magic_device" }
+			},
+			{	"name": "Vagabond Child",
+				"bonus": { "value": 1, "type": "trait", "target": "disable_device" }
 			}
 		],
-		"hp": 27,
-		"hp-breakdown": "[6+2+1]+[6+2+1]+[6+2+1]",
+		"hp": 35,
+		"hp-breakdown": "3*9+8",
 		"hd": "3d6+9",
 		"saves": {
 			"fortitude": {
-				"base": 0
+				"base": 1
 			},
 			"reflex": {
-				"base": 0
+				"base": 1
 			},
 			"will": {
-				"base": 3
+				"base": 4
 			},
 			"special": "+2 vs enchantment"
 		},
 		"immune": [
 			"sleep"
 		],
-		"baseAttackBonus": 1,
+		"baseAttackBonus": 2,
 		"attacks": {
 			"melee": [
 				{	"name": "touch attack",
@@ -83,7 +73,8 @@
 			{	"name": "Wizard",
 				"type": "prepared",
 				"stat": "intelligence",
-				"markdown": "spells.md"
+				"markdown": "spells.md",
+				"baseSpells": [4, 3, 2]
 			}
 		],
 		"skills": [
@@ -108,8 +99,8 @@
 				"stat": "charisma"
 			},
 			{	"name": "Disable Device",
-				"classSkill": true,
 				"stat": "dexterity",
+				"classSkill": true,
 				"ranks": 3
 			},
 			{	"name": "Disguise",
@@ -139,6 +130,11 @@
 				"ranks": 3
 			},
 			{	"name": "Knowledge (Engineering)",
+				"stat": "intelligence",
+				"classSkill": true,
+				"ranks": 3
+			},
+			{ 	"name": "Knowledge (Local)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 3
@@ -210,7 +206,7 @@
 			}
 		],
 		"classes": {
-			"Wizard": 3
+			"Wizard": 4
 		},
 		"race": "Half-Elf",
 		"alignment": "CN",
@@ -241,7 +237,7 @@
 			"spellbook.md"
 		],
 		"options": {
-			"showBonuses": true,
+			"showBonuses": false,
 			"portrait": "http://i.imgur.com/chPIyvw.png"
 		}
 	}

@@ -1,12 +1,14 @@
 ## **Spellbook**
 
 **2nd**
-*[create pit]*,
-*[create treasure map]* ^s^,
 *[bull's strength]*,
+*[contingent action]*,
+*[create pit]*,
 *[glitterdust]*,
+*[locate object]* ^s^,
 *[mirror image]*,
 *[scorching ray]*
+*[twilight haze]*,
 
 **1st**
 *[color spray]*,
@@ -19,6 +21,7 @@
 *[magic missile]*,
 *[magic weapon]*,
 *[obscuring mist]*,
+*[true strike]*,
 *[unseen servant]*
 
 **0th**
@@ -41,15 +44,17 @@
 *[resistance]*,
 *[spark]*
 
-[2nd]: #
+[2nd]: #2+1+1
   [bull's strength]: :prd-spell-crb:bullsStrength
+  [contingent action]: prd-spell-acg:contingentAction
   [create pit]: :prd-spell-apg:createPit
-  [create treasure map]: :prd-spell-apg:createTreasureMap
   [glitterdust]: :prd-spell-crb:glitterdust
+  [locate object]: :prd-spell-crb:locateObject
   [mirror image]: :prd-spell-crb:mirrorImage
   [scorching ray]: :prd-spell-crb:scorchingRay
+  [twilight haze]: :prd-spell-acg:twilightHaze
 
-[1st]: #
+[1st]: #2+2+1
   [color spray]: :prd-spell-crb:colorSpray
   [comprehend languages]: :prd-spell-crb:comprehendLanguages
   [detect secret doors]: :prd-spell-crb:detectSecretDoors
@@ -60,9 +65,10 @@
   [magic missile]: :prd-spell-crb:magicMissile
   [magic weapon]: :prd-spell-crb:magicWeapon
   [obscuring mist]: :prd-spell-crb:obscuringMist
+  [true strike]: :prd-spell-crb:trueStrike
   [unseen servant]: :prd-spell-crb:unseenServant
 
-[0th]: #
+[0th]: #4
   [acid splash]: :prd-spell-crb:acidSplash
   [arcane mark]: :prd-spell-crb:arcaneMark
   [dancing lights]: :prd-spell-crb:dancingLights
