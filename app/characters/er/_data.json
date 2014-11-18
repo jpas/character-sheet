@@ -101,7 +101,7 @@
 			{	"name": "Disable Device",
 				"stat": "dexterity",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Disguise",
 				"stat": "charisma"
@@ -122,32 +122,32 @@
 			{	"name": "Knowledge (Arcana)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Knowledge (Dungeoneering)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{ 	"name": "Knowledge (Local)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Knowledge (Nature)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Knowledge (Planes)",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Linguistics",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Perception",
 				"stat": "wisdom"
@@ -164,7 +164,7 @@
 			{	"name": "Spellcraft",
 				"stat": "intelligence",
 				"classSkill": true,
-				"ranks": 3
+				"ranks": 4
 			},
 			{	"name": "Stealth",
 				"stat": "dexterity"
@@ -177,7 +177,7 @@
 			},
 			{	"name": "Use Magic Device",
 				"stat": "intelligence",
-				"ranks": 3
+				"ranks": 4
 			}
 		],
 		"feats": [
