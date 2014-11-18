@@ -59,17 +59,6 @@ function Character(data) {
 
 			return {};
 		};
-
-		this.getBonusString = function(targetID) {
-			var bonus = this.getTargetting(targetID);
-
-			if (!_.isUndefined(bonus.value)) {
-				if (bonus.value !== 0) {
-					return _.sprintf('%+d:%s', bonus.value, bonus.type); }
-			}
-
-			return '';
-		};
 	}
 
 	function Score(data) {
@@ -121,8 +110,14 @@ function Character(data) {
 		];
 		this._exemptTypes();
 
-		this.getTotal = function() {
-			var total = data.base + bonusHandler.getBonus(this.id, this.exemptTypes);
+		this.getTotal = function(exemptTemporary) {
+			var total = data.base;
+
+			total += bonusHandler.getBonus(this.id, this.exemptTypes);
+
+			if(exemptTemporary !== true) {
+				total += bonusHandler.getBonus(this.id + '_temporary', this.exemptTypes);
+			}
 
 			if (this.id === 'dexterity') {
 				var maxDex = bonusHandler.getMaxDex()*2 + 11;
@@ -134,9 +129,9 @@ function Character(data) {
 			return total;
 		};
 
-		this.getModifier = function(factor) {
+		this.getModifier = function(factor, exemptTemporary) {
 			factor = factor || 1;
-			var modifier = Math.floor((this.getTotal()-10)/2);
+			var modifier = Math.floor((this.getTotal(exemptTemporary)-10)/2);
 			return Math.floor(modifier * factor);
 		};
 
@@ -178,6 +173,59 @@ function Character(data) {
 			return rolls;
 		};
 
+		this.getDice = function() {
+			var dieSteps = 0;
+
+			dieSteps += bonusHandler.getBonus('dice_step');
+			dieSteps += bonusHandler.getBonus('melee_dice_step');
+			dieSteps += bonusHandler.getBonus(this.id + '_melee_dice_step');
+			dieSteps += bonusHandler.getBonus('ranged_dice_step');
+			dieSteps += bonusHandler.getBonus(this.id + '_ranged_dice_step');
+
+			if (dieSteps === 0) { return data.dice; }
+
+			var dice = data.dice.split('+');
+
+			for (dieSteps; dieSteps > 0; dieSteps--) {
+				var die = {
+					count: parseInt(dice[0].split('d')[0]),
+					size: parseInt(dice[0].split('d')[1])
+				};
+
+				if (die.count < 3) {
+					switch(dice[0]) {
+						case '1d3':  dice[0] = '1d4'; break;
+						case '1d4':  dice[0] = '1d6'; break;
+						case '1d6':  dice[0] = '1d8'; break;
+						case '1d8':  dice[0] = '2d6'; break;
+						case '1d10': dice[0] = '2d6'; break;
+						case '1d12': dice[0] = '3d6'; break;
+						case '2d4':  dice[0] = '2d6'; break;
+						case '2d6':  dice[0] = '3d6'; break;
+						case '2d8':  dice[0] = '3d8'; break;
+						case '2d10': dice[0] = '4d8'; break;
+						default: break;
+					}
+				} else {
+					die.count = Math.floor(die.count * 1.5);
+					dice[0] = '' + die.count + 'd' + die.size;
+				}
+
+			}
+
+			return dice.join('+');
+		};
+
+		this.getCrit = function() {
+			if (_.isNumber(data.crit)) {
+				return '/x' + data.crit;
+			} else  if (_.isString(data.crit)) {
+				return '/' + data.crit;
+			} else {
+				return '';
+			}
+		};
+
 		this.getDamage = function() {
 			if (data.noDamage) { return false; }
 			var dice = _.defaultValue('', data.damage);
@@ -200,12 +248,7 @@ function Character(data) {
 
 			total = _.sprintf('%+d', total);
 
-			if (_.contains(dice, '/')) {
-				var index = dice.indexOf('/');
-				return _(dice).insert(index, total);
-			}
-
-			return dice + total;
+			return this.getDice() + total + this.getCrit();
 		};
 	}
 
@@ -350,25 +393,50 @@ function Character(data) {
 	function Caster(data) {
 		this.md = data.markdown;
 
+
 		this.name = data.name;
+		this.id = _(this.name).underscored();
+
 		this.type = _.capitalize(data.type);
-		this.level = _.sprintf('%+d', that.classes[data.name]);
 		this.baseSpells = _.defaultValue([], data.baseSpells);
 
 		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
 
-		this.concentration = new Skill(_.defaultValue({
-			name: _.sprintf('%s Concentration', data.name),
-			ranks: that.classes[data.name],
-			stats: data.stats || ['charisma']
-		}, data.concentration));
+		this.getCasterLevel = function() {
+			var casterLevel = 0;
 
-		this.spellResistance = new Skill(_.defaultValue({
-			name: _.sprintf('%s Overcome Spell Resistance', data.name),
-			ranks: that.classes[data.name],
-			stats: []
-		}));
+			casterLevel += that.classes[data.name];
+			casterLevel += bonusHandler.getBonus('caster_level');
+			casterLevel += bonusHandler.getBonus(data.name.toLowerCase() + '_caster_level');
+
+			return casterLevel;
+		};
+
+		this.getCasterLevelRoll = function() {
+			return _.sprintf('%+d', this.getCasterLevel());
+		};
+
+		this.getConcentrationRoll = function() {
+			var concentration = 0;
+
+			concentration += this.getCasterLevel();
+			concentration += abilityScores.getModifiers(this.stats);
+			concentration += bonusHandler.getBonus('concentration');
+			concentration += bonusHandler.getBonus(this.id + '_concentration');
+
+			return _.sprintf('%+d', concentration);
+		};
+
+		this.getSpellResistanceRoll = function() {
+			var spellResistance = 0;
+
+			spellResistance += this.getCasterLevel();
+			spellResistance += bonusHandler.getBonus('spell_resistance');
+			spellResistance += bonusHandler.getBonus(this.id + '_spell_resistance');
+
+			return _.sprintf('%+d', spellResistance);
+		};
 	}
 
 	function SLA(data) {
@@ -464,13 +532,15 @@ function Character(data) {
 			var types = this.getTypes(targetID, exempt, factor);
 
 			return _.compactMap(types, function(bonus, type) {
-				return _.sprintf('%+d:%s', bonus, type);
+				if (bonus !== 0) {
+					return _.sprintf('%+d:%s', bonus, type.replace('_', ' '));
+				}
 			});
 		},
 
 		getMaxDex: function() {
 			var bonuses = _.map(this.data, function(bonusSet) {
-				return bonusSet.getTargetting('max_dex');
+				return bonusSet.getTargetting('maximum_dexterity');
 			});
 
 			return _.min(bonuses, function(bonus) {
@@ -593,20 +663,20 @@ function Character(data) {
 		})
 	};
 
-	abilityScores.getModifier = function(scoreID, factor) {
+	abilityScores.getModifier = function(scoreID, factor, exemptTemporary) {
 		factor = factor || 1;
-		var modifier = this[scoreID].getModifier(factor);
+		var modifier = this[scoreID].getModifier(factor, exemptTemporary);
 		if (modifier < 0) { return modifier; }
 
 		return modifier;
 	};
 	abilityScores.getRoll = function(scoreID) { return this[scoreID].getRoll(); };
 
-	abilityScores.getModifiers = function(scoreIDs, factor) {
+	abilityScores.getModifiers = function(scoreIDs, factor, exemptTemporary) {
 		var modifiers = [];
 
 		_.each(scoreIDs, function(scoreID, index) {
-			this[index] = abilityScores.getModifier(scoreID, factor);
+			this[index] = abilityScores.getModifier(scoreID, factor, exemptTemporary);
 		}, modifiers);
 
 		return _.reduce(modifiers, function(a, b) {
@@ -777,8 +847,9 @@ function Character(data) {
 			factor = factor || 1;
 			return Math.floor(that.classes[className] * factor);
 		},
-		modifier: function(stat) {
-			return abilityScores.getModifier(stat);
+		modifier: function(stat, factor, exemptTemporary) {
+			factor = factor || 1;
+			return abilityScores.getModifier(stat, factor, exemptTemporary);
 		},
 		spellDC: function(className, level, bonus) {
 			bonus = _.defaultValue(0, bonus);

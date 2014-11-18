@@ -14,7 +14,7 @@ var isValidBonusType = function(type, exempt) {
 		'insight',
 		'luck',
 		'morale',
-		'natural armor',
+		'natural_armor',
 		'profane',
 		'racial',
 		'resistance',

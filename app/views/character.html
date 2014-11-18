@@ -102,9 +102,9 @@
 		<div ng-if='c.spells' ng-repeat='caster in c.spells'>
 			<p>
 				<b>{{caster.name}} {{caster.type}} Spells</b>
-				<span>Caster Level</span> <roll ng-bind='caster.level'></roll>;
-				<span>Concentration</span> <roll ng-bind='caster.concentration.getRoll()'></roll>;
-				<span>Spell Resistance </span> <roll ng-bind='caster.spellResistance.getRoll()'></roll>
+				<span>Caster Level</span> <roll ng-bind='caster.getCasterLevelRoll()'></roll>;
+				<span>Concentration</span> <roll ng-bind='caster.getConcentrationRoll()'></roll>;
+				<span>Spell Resistance </span> <roll ng-bind='caster.getSpellResistanceRoll()'></roll>
 			</p>
 			<div ng-if='caster.md' class='spells'>
 				<md md='caster.md' pf='c.pf'></md>
@@ -113,9 +113,9 @@
 		<div ng-if='c.spellLikeAbilities' ng-repeat='caster in c.spellLikeAbilities'>
 			<p>
 				<b>{{caster.name}} Spell-Like Abilities</b>
-				<span>Caster Level</span> <roll ng-bind='caster.level'></roll>;
-				<span>Concentration</span> <roll ng-bind='caster.concentration.getRoll()'></roll>;
-				<span>Spell Resistance </span> <roll ng-bind='caster.spellResistance.getRoll()'></roll>
+				<span>Caster Level</span> <roll ng-bind='caster.getCasterLevelRoll'></roll>;
+				<span>Concentration</span> <roll ng-bind='caster.getConcentrationRoll.getRoll()'></roll>;
+				<span>Spell Resistance </span> <roll ng-bind='caster.getSpellResistanceRoll()'></roll>
 			</p>
 			<div ng-if='caster.md' class='spells'>
 				<md md='caster.md' pf='c.pf'></md>
