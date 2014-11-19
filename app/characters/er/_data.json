@@ -11,31 +11,63 @@
 			"charisma": 7
 		},
 		"bonuses": [
-			{	"name": "Mage Armor",
-				"bonus": { "value": 4, "type": "armor", "target": "armor_class" }
+			{
+				"name": "Mage Armor",
+				"bonus": {
+					"value": 4,
+					"type": "armor",
+					"target": "armor_class"
+				}
 			},
-			{	"name": "Forewarned",
-				"bonus": { "value": 2, "target": "initiative" }
+			{
+				"name": "Forewarned",
+				"bonus": {
+					"value": 2,
+					"target": "initiative"
+				}
 			},
-			{	"name": "Headband of Vast Intelligence",
-				"bonus": { "value": 2, "type": "enhancement", "target": "intelligence" }
+			{
+				"name": "Headband of Vast Intelligence",
+				"bonus": {
+					"value": 2,
+					"type": "enhancement",
+					"target": "intelligence"
+				}
 			},
-			{	"name": "Improved Initiative",
-				"bonus": { "value": 4, "target": "initiative" }
+			{
+				"name": "Improved Initiative",
+				"bonus": {
+					"value": 4,
+					"target": "initiative"
+				}
 			},
-			{	"name": "Keen Senses",
-				"bonus": { "value": 2, "type": "racial", "target": "perception" }
+			{
+				"name": "Keen Senses",
+				"bonus": {
+					"value": 2,
+					"type": "racial",
+					"target": "perception"
+				}
 			},
-			{	"name": "Skill Focus (Use Magic Device)",
-				"bonus": { "value": 3, "target": "use_magic_device" }
+			{
+				"name": "Skill Focus (Use Magic Device)",
+				"bonus": {
+					"value": 3,
+					"target": "use_magic_device"
+				}
 			},
-			{	"name": "Vagabond Child",
-				"bonus": { "value": 1, "type": "trait", "target": "disable_device" }
+			{
+				"name": "Vagabond Child",
+				"bonus": {
+					"value": 1,
+					"type": "trait",
+					"target": "disable_device"
+				}
 			}
 		],
-		"hp": 35,
-		"hp-breakdown": "3*9+8",
-		"hd": "3d6+9",
+		"hp": 36,
+		"hd": "4d6+9",
+		"hp/level": "1d6+3",
 		"saves": {
 			"fortitude": {
 				"base": 1
@@ -48,160 +80,201 @@
 			},
 			"special": "+2 vs enchantment"
 		},
-		"immune": [
-			"sleep"
-		],
+		"immune": "sleep",
 		"baseAttackBonus": 2,
 		"attacks": {
 			"melee": [
-				{	"name": "touch attack",
-					"noDamage": true,
+				{
+					"name": "touch attack",
 					"type": "natural"
 				}
 			],
 			"ranged": [
-				{	"name": "light crossbow",
-					"damage": "1d8/19-20"
+				{
+					"name": "light crossbow",
+					"damage": {
+						"dice": "1d8",
+						"critical": "19-20"
+					}
 				},
-				{	"name": "touch attack",
-					"noDamage": true,
+				{
+					"name": "touch attack",
 					"type": "natural"
 				}
 			]
 		},
 		"spells": [
-			{	"name": "Wizard",
+			{
+				"name": "Wizard",
 				"type": "prepared",
 				"stat": "intelligence",
 				"markdown": "spells.md+links.md",
-				"baseSpells": [4, 3, 2]
+				"baseSpells": [
+					4,
+					3,
+					2
+				]
 			}
 		],
 		"skills": [
-			{	"name": "Acrobatics",
+			{
+				"name": "Acrobatics",
 				"stat": "intelligence"
 			},
-			{	"name": "Appraise",
+			{
+				"name": "Appraise",
 				"stat": "intelligence",
 				"classSkill": true
 			},
-			{	"name": "Bluff",
+			{
+				"name": "Bluff",
 				"stat": "charisma"
 			},
-			{	"name": "Climb",
+			{
+				"name": "Climb",
 				"stat": "strength"
 			},
-			{	"name": "Craft",
+			{
+				"name": "Craft",
 				"stat": "intelligence",
 				"classSkill": true
 			},
-			{	"name": "Diplomacy",
+			{
+				"name": "Diplomacy",
 				"stat": "charisma"
 			},
-			{	"name": "Disable Device",
+			{
+				"name": "Disable Device",
 				"stat": "dexterity",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Disguise",
+			{
+				"name": "Disguise",
 				"stat": "charisma"
 			},
-			{	"name": "Escape Artist",
+			{
+				"name": "Escape Artist",
 				"stat": "dexterity"
 			},
-			{	"name": "Fly",
+			{
+				"name": "Fly",
 				"stat": "dexterity",
 				"classSkill": true
 			},
-			{	"name": "Heal",
+			{
+				"name": "Heal",
 				"stat": "wisdom"
 			},
-			{	"name": "Intimidate",
+			{
+				"name": "Intimidate",
 				"stat": "charisma"
 			},
-			{	"name": "Knowledge (Arcana)",
+			{
+				"name": "Knowledge (Arcana)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Knowledge (Dungeoneering)",
+			{
+				"name": "Knowledge (Dungeoneering)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{ 	"name": "Knowledge (Local)",
+			{
+				"name": "Knowledge (Local)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Knowledge (Nature)",
+			{
+				"name": "Knowledge (Nature)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Knowledge (Planes)",
+			{
+				"name": "Knowledge (Planes)",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Linguistics",
+			{
+				"name": "Linguistics",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Perception",
+			{
+				"name": "Perception",
 				"stat": "wisdom"
 			},
-			{	"name": "Perform",
+			{
+				"name": "Perform",
 				"stat": "charisma"
 			},
-			{	"name": "Ride",
+			{
+				"name": "Ride",
 				"stat": "dexterity"
 			},
-			{	"name": "Sense Motive",
+			{
+				"name": "Sense Motive",
 				"stat": "wisdom"
 			},
-			{	"name": "Spellcraft",
+			{
+				"name": "Spellcraft",
 				"stat": "intelligence",
 				"classSkill": true,
 				"ranks": 4
 			},
-			{	"name": "Stealth",
+			{
+				"name": "Stealth",
 				"stat": "dexterity"
 			},
-			{	"name": "Survival",
+			{
+				"name": "Survival",
 				"stat": "wisdom"
 			},
-			{	"name": "Swim",
+			{
+				"name": "Swim",
 				"stat": "strength"
 			},
-			{	"name": "Use Magic Device",
+			{
+				"name": "Use Magic Device",
 				"stat": "intelligence",
 				"ranks": 4
 			}
 		],
 		"feats": [
-			{	"text": "Improved Initiative",
+			{
+				"text": "Improved Initiative",
 				"link": "http://paizo.com/prd/feats.html#improved-initiative"
 			},
-			{	"text": "Scribe Scroll",
+			{
+				"text": "Scribe Scroll",
 				"link": "http://paizo.com/prd/feats.html#scribe-scroll"
 			},
-			{	"text": "Skill Focus (Use Magic Device)",
+			{
+				"text": "Skill Focus (Use Magic Device)",
 				"link": "http://paizo.com/prd/feats.html#skill-focus"
 			},
-			{	"text": "Spell Focus (Conjuration)",
+			{
+				"text": "Spell Focus (Conjuration)",
 				"link": "http://paizo.com/prd/feats.html#spell-focus"
 			},
-			{	"text": "Toughness",
+			{
+				"text": "Toughness",
 				"link": "http://paizo.com/prd/feats.html#touhness"
 			}
 		],
 		"traits": [
-			{	"text": "Pragmatic Activator",
+			{
+				"text": "Pragmatic Activator",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			},
-			{	"text": "Vagabond Child",
+			{
+				"text": "Vagabond Child",
 				"link": "http://paizo.com/pathfinderRPG/prd/ultimateCampaign/characterBackground/traits.html"
 			}
 		],
@@ -212,9 +285,7 @@
 		"alignment": "CN",
 		"size": "Medium",
 		"type": "humanoid (elf, human)",
-		"senses": [
-			"low-light vision"
-		],
+		"senses": "low-light vision",
 		"speed": "30 ft.",
 		"space": "5 ft.",
 		"reach": "5 ft.",
