@@ -144,6 +144,8 @@ function Character(data) {
 		data = _.defaultValue(def || {}, data);
 		Score.call(this, data);
 
+		var attack = this;
+
 		this.exemptTypes = [
 			'armor',
 			'deflection',
@@ -155,12 +157,12 @@ function Character(data) {
 
 		this.getToHit = function() {
 			var bab = data.bab;
-			var total = this.getTotal();
+			var total = attack.getTotal();
 
 			total += abilityScores.getModifiers(data.stats);
-			total += bonusHandler.getBonus('to_hit', this.exemptTypes);
-			total += bonusHandler.getBonus(this.id + '_to_hit', this.exemptTypes);
-			total += bonusHandler.getBonus(data.range + '_to_hit', this.exemptTypes);
+			total += bonusHandler.getBonus('to_hit', attack.exemptTypes);
+			total += bonusHandler.getBonus(attack.id + '_to_hit', attack.exemptTypes);
+			total += bonusHandler.getBonus(data.range + '_to_hit', attack.exemptTypes);
 
 			var rolls = _.sprintf('%+d', bab + total);
 
@@ -173,18 +175,20 @@ function Character(data) {
 			return rolls;
 		};
 
-		this.getDice = function() {
+		var damage = data.damage;
+
+		function getDice() {
 			var dieSteps = 0;
 
 			dieSteps += bonusHandler.getBonus('dice_step');
 			dieSteps += bonusHandler.getBonus('melee_dice_step');
-			dieSteps += bonusHandler.getBonus(this.id + '_melee_dice_step');
+			dieSteps += bonusHandler.getBonus(attack.id + '_melee_dice_step');
 			dieSteps += bonusHandler.getBonus('ranged_dice_step');
-			dieSteps += bonusHandler.getBonus(this.id + '_ranged_dice_step');
+			dieSteps += bonusHandler.getBonus(attack.id + '_ranged_dice_step');
 
-			if (dieSteps === 0) { return data.dice; }
+			if (dieSteps === 0) { return damage.dice; }
 
-			var dice = data.dice.split('+');
+			var dice = damage.dice.split('+');
 
 			for (dieSteps; dieSteps > 0; dieSteps--) {
 				var die = {
@@ -216,39 +220,50 @@ function Character(data) {
 			return dice.join('+');
 		};
 
-		this.getCrit = function() {
-			if (_.isNumber(data.crit)) {
-				return '/x' + data.crit;
-			} else  if (_.isString(data.crit)) {
-				return '/' + data.crit;
+		function getCrit() {
+			if (_.isNumber(damage.critical)) {
+				return '/x' + damage.critical;
+			} else  if (_.isString(damage.critical)) {
+				return '/' + damage.critical;
 			} else {
 				return '';
 			}
 		};
 
-		this.getDamage = function() {
-			if (data.noDamage) { return false; }
-			var dice = _.defaultValue('', data.damage);
+		this.hasDamage = function() {
+			if (!_.isUndefined(damage) && !_.isUndefined(damage.dice)) {
+				return true;
+			}
+			return false;
+		}
 
-			var total = 0;
-			var factor = data.factor || 1;
-			var stats = data.damageStats;
+		this.getDamage = function() {
+			var modifier = 0;
+			var factor = damage.factor || 1;
+			var stats = damage.stats;
 			var range = data.range;
 
-			if (data.damageBase) { total += data.damageBase; }
-			if (_.contains(stats, 'strength')) {total += abilityScores.getModifier('strength', factor); }
-			total += abilityScores.getModifiers(_.without(stats, 'strength'));
+			if (damage.base) { modifier += damage.base; }
 
-			total += bonusHandler.getBonus('damage', this.exemptTypes);
-			total += bonusHandler.getBonus(this.id + '_damage', this.exemptTypes);
-			total += bonusHandler.getBonus(range + '_damage', this.exemptTypes);
-			total += bonusHandler.getBonus(range + '_strength_like_damage', this.exemptTypes, factor);
+			if (_.contains(stats, 'strength')) {
+				modifier += abilityScores.getModifier('strength', factor);
+			}
 
-			if (total === 0) { return dice; }
+			modifier += abilityScores.getModifiers(_.without(stats, 'strength'));
 
-			total = _.sprintf('%+d', total);
+			modifier += bonusHandler.getBonus('damage', attack.exemptTypes);
+			modifier += bonusHandler.getBonus(attack.id + '_damage', attack.exemptTypes);
+			modifier += bonusHandler.getBonus(range + '_damage', attack.exemptTypes);
+			modifier += bonusHandler.getBonus(range + '_strength_like_damage', attack.exemptTypes, factor);
 
-			return this.getDice() + total + this.getCrit();
+			var dice = getDice();
+			var crit = getCrit();
+
+			if (modifier === 0) {
+				return dice + crit;
+			} else {
+				return dice + _.sprintf('%+d', modifier) + crit;
+			}
 		};
 	}
 
@@ -726,7 +741,10 @@ function Character(data) {
 			bab: that.bab.getTotal(),
 			base: 0,
 			stats: ['strength'],
-			damageStats: ['strength']
+			damage: {
+				base: 0,
+				stats: ['strength']
+			}
 		});
 	});
 

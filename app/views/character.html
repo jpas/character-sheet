@@ -81,7 +81,7 @@
 			<span class='comma' ng-repeat='attack in c.meleeAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'></roll>
+				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll>
 			</span>
 		</p>
 		<p ng-if='c.rangedAttacks'>
@@ -89,7 +89,7 @@
 			<span class='comma' ng-repeat='attack in c.rangedAttacks'>
 				<span>{{attack.name}}</span>
 				<span><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.getDamage()' ng-bind='attack.getDamage()'>
+				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'>
 			</span>
 		</p>
 		<p>
