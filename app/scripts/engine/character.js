@@ -141,11 +141,8 @@ function Character(data) {
 	}
 
 	function Attack(data, def) {
-		data = _.defaultValue(def || {}, data);
+		data = _.defaultValue(def, data);
 		Score.call(this, data);
-
-		var attack = this;
-		var damage = data.damage;
 
 		this.exemptTypes = [
 			'armor',
@@ -156,19 +153,26 @@ function Character(data) {
 		];
 		this._exemptTypes();
 
+		var attack = this;
+		var damage = data.damage;
+
 		function getBonusIDs(base) {
-			return [
-				base,
-				[attack.id, base].join('_'),
-				[attack.range, base].join('_'),
-				[attack.id, attack.range, base].join('_')
+			var IDs = [
+				[base],
+				[attack.id, base],
+				[data.range, base],
+				[data.type, base],
+				[attack.id, data.range, base],
 			];
+
+			return _.map(IDs, function(id) {
+				return id.join('_');
+			});
 		}
 
 		this.getToHit = function() {
-			var bab = data.bab;
+			var bab = _.defaultValue(0, data.bab);
 			var total = attack.getTotal();
-
 			total += abilityScores.getModifiers(data.stats);
 			total += bonusHandler.getBonus(getBonusIDs('to_hit'), attack.exemptTypes);
 
@@ -192,6 +196,8 @@ function Character(data) {
 
 			var dice = damage.dice.split('+');
 
+			dice[0] = changeDieBySteps(dice[0], dieSteps);
+
 			return dice.join('+');
 		}
 
@@ -205,6 +211,29 @@ function Character(data) {
 			}
 		}
 
+		function getDamageModifier() {
+			var total = 0;
+			var factor = damage.factor || 1;
+
+			if (damage.base) { total += damage.base; }
+
+			total += abilityScores.getModifiers(_.without(damage.stats, 'strength'));
+			total += bonusHandler.getBonus(getBonusIDs('damage'), attack.exemptTypes);
+
+			if (_.contains(damage.stats, 'strength')) {
+				total += abilityScores.getModifier('strength', factor);
+			}
+			total += bonusHandler.getBonus(getBonusIDs('strength_like_damage'), attack.exemptTypes, factor);
+
+			if (total === 0) {
+				return '';
+			} else if (total > 0) {
+				return '+' + total;
+			} else {
+				return '' + total;
+			}
+		}
+
 		this.hasDamage = function() {
 			if (!_.isUndefined(damage) && !_.isUndefined(damage.dice)) {
 				return true;
@@ -213,29 +242,7 @@ function Character(data) {
 		};
 
 		this.getDamage = function() {
-			var modifier = 0;
-			var factor = damage.factor || 1;
-			var stats = damage.stats;
-
-			if (damage.base) { modifier += damage.base; }
-
-			if (_.contains(stats, 'strength')) {
-				modifier += abilityScores.getModifier('strength', factor);
-			}
-
-			modifier += abilityScores.getModifiers(_.without(stats, 'strength'));
-
-			modifier += bonusHandler.getBonus(getBonusIDs('damage'), attack.exemptTypes);
-			modifier += bonusHandler.getBonus(getBonusIDs('strength_like_damage'), attack.exemptTypes, factor);
-
-			var dice = getDice();
-			var crit = getCrit();
-
-			if (modifier === 0) {
-				return dice + crit;
-			} else {
-				return dice + _.sprintf('%+d', modifier) + crit;
-			}
+			return getDice() + getDamageModifier() + getCrit();
 		};
 	}
 
@@ -716,23 +723,30 @@ function Character(data) {
 	}, data.attacks);
 
 	this.meleeAttacks = _.map(attacks.melee, function (attack) {
-		return new Attack(attack, {
-			range: 'melee',
+		attack.damage = _.defaultValue({
+			base: 0,
+			stats: ['strength']
+		}, attack.damage);
+		attack.range = 'melee';
+
+		return new Attack(attack, attack.damage, {
 			type: 'weapon',
+			range: 'melee',
 			bab: that.bab.getTotal(),
 			base: 0,
-			stats: ['strength'],
-			damage: {
-				base: 0,
-				stats: ['strength']
-			}
+			stats: ['strength']
 		});
 	});
 
 	this.rangedAttacks = _.map(attacks.ranged, function (attack) {
+		attack.damage = _.defaultValue({
+			base: 0,
+		}, attack.damage);
+		attack.range = 'ranged';
+
 		return new Attack(attack, {
-			range: 'ranged',
 			type: 'weapon',
+			range: 'ranged',
 			bab: that.bab.getTotal(),
 			base: 0,
 			stats: ['dexterity']

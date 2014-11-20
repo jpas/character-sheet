@@ -113,23 +113,26 @@
 		"baseAttackBonus": 4,
 		"attacks": {
 			"melee": [
-				{	"name": "2 claws",
+				{	"name": "claw",
+					"count": 2,
 					"type": "natural",
-					"dice": "1d4"
+					"damage": {
+						"dice": "1d4"
+					}
 				},
 				{	"name": "earthbreaker",
-					"factor": 1.5,
-					"dice": "1d10",
-					"crit": 3
+					"damage": {
+						"factor": 1.5,
+						"dice": "1d10",
+						"critical": 3
+					}
 				},
 				{	"name": "touch attack",
-					"noDamage": true,
 					"type": "natural"
 				}
 			],
 			"ranged": [
 				{	"name": "touch attack",
-					"noDamage": true,
 					"type": "natural"
 				}
 			]

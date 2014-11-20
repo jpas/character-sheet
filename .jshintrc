@@ -22,11 +22,12 @@
 		"_": false,
 		"angular": false,
 		"app": true,
+		"changeDieBySteps": true,
 		"Character": true,
 		"FastClick": false,
-		"marked": false,
 		"isValidBonusType": true,
 		"markdownArray": true,
+		"marked": false,
 		"stringify": true
 	}
 }
