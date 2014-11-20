@@ -145,6 +145,7 @@ function Character(data) {
 		Score.call(this, data);
 
 		var attack = this;
+		var damage = data.damage;
 
 		this.exemptTypes = [
 			'armor',
@@ -155,14 +156,21 @@ function Character(data) {
 		];
 		this._exemptTypes();
 
+		function getBonusIDs(base) {
+			return [
+				base,
+				[attack.id, base].join('_'),
+				[attack.range, base].join('_'),
+				[attack.id, attack.range, base].join('_')
+			];
+		}
+
 		this.getToHit = function() {
 			var bab = data.bab;
 			var total = attack.getTotal();
 
 			total += abilityScores.getModifiers(data.stats);
-			total += bonusHandler.getBonus('to_hit', attack.exemptTypes);
-			total += bonusHandler.getBonus(attack.id + '_to_hit', attack.exemptTypes);
-			total += bonusHandler.getBonus(data.range + '_to_hit', attack.exemptTypes);
+			total += bonusHandler.getBonus(getBonusIDs('to_hit'), attack.exemptTypes);
 
 			var rolls = _.sprintf('%+d', bab + total);
 
@@ -175,50 +183,17 @@ function Character(data) {
 			return rolls;
 		};
 
-		var damage = data.damage;
-
 		function getDice() {
 			var dieSteps = 0;
 
-			dieSteps += bonusHandler.getBonus('dice_step');
-			dieSteps += bonusHandler.getBonus('melee_dice_step');
-			dieSteps += bonusHandler.getBonus(attack.id + '_melee_dice_step');
-			dieSteps += bonusHandler.getBonus('ranged_dice_step');
-			dieSteps += bonusHandler.getBonus(attack.id + '_ranged_dice_step');
+			dieSteps += bonusHandler.getBonus(getBonusIDs('dice_step'));
 
-			if (dieSteps === 0) { return damage.dice; }
+			if (dieSteps <= 0) { return damage.dice; }
 
 			var dice = damage.dice.split('+');
 
-			for (dieSteps; dieSteps > 0; dieSteps--) {
-				var die = {
-					count: parseInt(dice[0].split('d')[0]),
-					size: parseInt(dice[0].split('d')[1])
-				};
-
-				if (die.count < 3) {
-					switch(dice[0]) {
-						case '1d3':  dice[0] = '1d4'; break;
-						case '1d4':  dice[0] = '1d6'; break;
-						case '1d6':  dice[0] = '1d8'; break;
-						case '1d8':  dice[0] = '2d6'; break;
-						case '1d10': dice[0] = '2d6'; break;
-						case '1d12': dice[0] = '3d6'; break;
-						case '2d4':  dice[0] = '2d6'; break;
-						case '2d6':  dice[0] = '3d6'; break;
-						case '2d8':  dice[0] = '3d8'; break;
-						case '2d10': dice[0] = '4d8'; break;
-						default: break;
-					}
-				} else {
-					die.count = Math.floor(die.count * 1.5);
-					dice[0] = '' + die.count + 'd' + die.size;
-				}
-
-			}
-
 			return dice.join('+');
-		};
+		}
 
 		function getCrit() {
 			if (_.isNumber(damage.critical)) {
@@ -228,20 +203,19 @@ function Character(data) {
 			} else {
 				return '';
 			}
-		};
+		}
 
 		this.hasDamage = function() {
 			if (!_.isUndefined(damage) && !_.isUndefined(damage.dice)) {
 				return true;
 			}
 			return false;
-		}
+		};
 
 		this.getDamage = function() {
 			var modifier = 0;
 			var factor = damage.factor || 1;
 			var stats = damage.stats;
-			var range = data.range;
 
 			if (damage.base) { modifier += damage.base; }
 
@@ -251,10 +225,8 @@ function Character(data) {
 
 			modifier += abilityScores.getModifiers(_.without(stats, 'strength'));
 
-			modifier += bonusHandler.getBonus('damage', attack.exemptTypes);
-			modifier += bonusHandler.getBonus(attack.id + '_damage', attack.exemptTypes);
-			modifier += bonusHandler.getBonus(range + '_damage', attack.exemptTypes);
-			modifier += bonusHandler.getBonus(range + '_strength_like_damage', attack.exemptTypes, factor);
+			modifier += bonusHandler.getBonus(getBonusIDs('damage'), attack.exemptTypes);
+			modifier += bonusHandler.getBonus(getBonusIDs('strength_like_damage'), attack.exemptTypes, factor);
 
 			var dice = getDice();
 			var crit = getCrit();
@@ -536,11 +508,20 @@ function Character(data) {
 			return typeTotal;
 		},
 
-		getBonus: function(targetID, exempt, factor) {
-			var types = this.getTypes(targetID, exempt, factor);
-			return _.reduce(types, function(sum, x) {
-				return sum + x;
-			}, 0);
+		getBonus: function(targetIDs, exempt, factor) {
+			if (!_.isArray(targetIDs)) { targetIDs = [targetIDs]; }
+
+			var total = 0;
+			var types;
+
+			_.each(targetIDs, function(targetID) {
+				types = bonusHandler.getTypes(targetID, exempt, factor);
+				total += _.reduce(types, function(sum, x) {
+					return sum + x;
+				}, 0);
+			});
+
+			return total;
 		},
 
 		getBonusStrings: function(targetID, exempt, factor) {
