@@ -9,11 +9,11 @@ function Character(data) {
 	// *********************************************************************************************
 
 	function Bonus(data) {
-		data = _.defaultValue({
+		data = _.defaults(data, {
 			value: 0,
 			type: 'untyped',
 			target: 'none'
-		}, data);
+		});
 
 		this.value = data.value;
 		this.type = data.type;
@@ -29,10 +29,10 @@ function Character(data) {
 			data.bonuses = [data.bonus];
 		}
 
-		data = _.defaultValue({
+		data = _.defaults(data, {
 			name: 'Unnamed',
 			bonuses: []
-		}, data);
+		});
 
 
 		_.each(data.bonuses, function(bonus, index) {
@@ -140,8 +140,10 @@ function Character(data) {
 		};
 	}
 
-	function Attack(data, def) {
-		data = _.defaultValue(def, data);
+	function Attack(data, defaults, damageDefaults) {
+		data.damage = _.defaults(data.damage || {}, damageDefaults || {});
+		data = _.defaults(data || {}, defaults || {});
+
 		Score.call(this, data);
 
 		this.exemptTypes = [
@@ -171,7 +173,7 @@ function Character(data) {
 		}
 
 		this.getToHit = function() {
-			var bab = _.defaultValue(0, data.bab);
+			var bab = data.bab ? data.bab : 0;
 			var total = attack.getTotal();
 			total += abilityScores.getModifiers(data.stats);
 			total += bonusHandler.getBonus(getBonusIDs('to_hit'), attack.exemptTypes);
@@ -215,7 +217,8 @@ function Character(data) {
 			var total = 0;
 			var factor = damage.factor || 1;
 
-			if (damage.base) { total += damage.base; }
+			total += damage.base ? damage.base : 0;
+
 
 			total += abilityScores.getModifiers(_.without(damage.stats, 'strength'));
 			total += bonusHandler.getBonus(getBonusIDs('damage'), attack.exemptTypes);
@@ -246,8 +249,8 @@ function Character(data) {
 		};
 	}
 
-	function Defense(data, def) {
-		data = _.defaultValue(def || {}, data);
+	function Defense(data, defaults) {
+		data = _.defaults(data, defaults || {});
 		Score.call(this, data);
 
 		this.exemptTypes = [
@@ -260,23 +263,7 @@ function Character(data) {
 		];
 		this._exemptTypes();
 
-		data.base = _.defaultValue(10, data.base) + _.defaultValue(0, data.bab);
-
-		data.touch = _.defaultValue({
-			id: 'touch_',
-			stats: ['dexterity'],
-			exemptTypes: [
-				'armor',
-				'shield',
-				'natural armor'
-			]
-		}, data.touch);
-
-		data.flatfooted = _.defaultValue({
-			id: 'flat_footed_',
-			stats: ['strength'],
-			exemptTypes: ['dodge']
-		}, data.flatfooted);
+		data.base = (data.base || 10) + (data.bab ? data.bab : 0);
 
 		this.getTotal = function() {
 			var total = data.base;
@@ -299,14 +286,31 @@ function Character(data) {
 			return total;
 		};
 
+		var touch = _.defaults(data.touch || {}, {
+			id: 'touch_',
+			stats: ['dexterity'],
+			exemptTypes: [
+				'armor',
+				'shield',
+				'natural armor'
+			]
+		});
+
 		this.getTouch = function() {
-			return this._getSpecialDefense(data.touch);
+			return this._getSpecialDefense(touch);
 		};
 
+		var flatfooted = _.defaults(data.flatfooted || {}, {
+			id: 'flat_footed_',
+			stats: ['strength'],
+			exemptTypes: ['dodge']
+		});
 
 		this.getFlatFooted = function() {
-			return this._getSpecialDefense(data.flatfooted);
+			return this._getSpecialDefense(flatfooted);
 		};
+
+		this.getFlatFooted();
 
 		this.toString = function() {
 			var strings = bonusHandler.getBonusStrings(this.id);
@@ -333,8 +337,8 @@ function Character(data) {
 		};
 	}
 
-	function Save(data, def) {
-		data = _.defaultValue(def || {}, data);
+	function Save(data, defaults) {
+		data = _.defaults(data, defaults || {});
 		Score.call(this, data);
 
 		this.exemptTypes = [
@@ -392,7 +396,7 @@ function Character(data) {
 		this.id = _(this.name).underscored();
 
 		this.type = _.capitalize(data.type);
-		this.baseSpells = _.defaultValue([], data.baseSpells);
+		this.baseSpells = data.baseSpells ? data.baseSpells : [];
 
 		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
@@ -442,13 +446,13 @@ function Character(data) {
 		if(data.stat) { data.stats = [data.stat]; }
 		this.stats = data.stats;
 
-		this.concentration = new Skill(_.defaultValue({
+		this.concentration = new Skill(_.defaults(data.concentration, {
 			name: _.sprintf('%s Concentration', data.name),
 			ranks: that.classes[data.name],
 			stats: data.stats || ['charisma']
-		}, data.concentration));
+		}));
 
-		this.spellResistance = new Skill(_.defaultValue({
+		this.spellResistance = new Skill(_.defaults(data.spellResistance, {
 			name: _.sprintf('%s Overcome Spell Resistance', data.name),
 			ranks: that.classes[data.name],
 			stats: data.stats || ['charisma']
@@ -564,80 +568,17 @@ function Character(data) {
 	this.bonuses = bonusHandler.data;
 
 	// *********************************************************************************************
-	// Character Info
-	// *********************************************************************************************
-
-	this.name = data.name || 'Unnamed';
-	this.id = _(this.name).underscored();
-
-	if (data.cr && data.mr) {
-		this.difficulty = _.sprintf('CR %d / MR %d', data.cr, data.mr);
-	} else if (data.cr) {
-		this.difficulty = _.sprintf('CR %d', data.cr);
-	} else if (data.mr) {
-		this.difficulty = _.sprintf('MR %d', data.mr);
-	}
-
-	if(_.isString(data.xp)) {
-		var temp = data.xp.split('/');
-		_.each(temp, function(val, index) {
-			this[index] = _.numberFormat(parseInt(val));
-		}, temp);
-		this.xp = _.sprintf('XP %s/%s', temp[0], temp[1]);
-	}
-	if (_.isNumber(data.xp)) {
-		this.xp = 'XP ' + _.numberFormat(data.xp);
-	}
-
-	this.classes = data.classes;
-
-	this.initiative = new Skill(_.defaultValue({
-		name: 'Initiative',
-		stats: ['dexterity'],
-		base: 0
-	}, data.initiative));
-
-	this.senses = stringify(data.senses);
-	this.aura = stringify(data.aura);
-
-	this.hp = _.sprintf('%d (%s)', data.hp || Infinity, data.hd || '');
-	this.hpSpecial = stringify(data.hpSpecial);
-
-	this.speed = data.speed;
-	this.space = data.space;
-	this.reach = data.reach;
-
-	this.infoText = [
-		stringify([
-			data.templates,
-			data.race,
-			stringify(data.classes, '/')
-		], ' '),
-		stringify([data.alignment, data.size, data.type], ' ')
-	];
-
-	this.feats = stringify(data.feats);
-	this.traits = stringify(data.traits);
-	this.languages = stringify(data.languages);
-
-	this.specialQualities = markdownArray(data.specialQualities);
-	this.environment = markdownArray(data.environment);
-	this.organization = markdownArray(data.organization);
-	this.specialAbilities = markdownArray(data.specialAbilities);
-	this.treasure = markdownArray(data.treasure);
-
-	// *********************************************************************************************
 	// Ability Scores
 	// *********************************************************************************************
 
-	var abilityScores = _.defaultValue({
+	var abilityScores = _.defaults(data.abilityScores, {
 		strength: 10,
 		dexterity: 10,
 		constitution: 10,
 		intelligence: 10,
 		wisdom: 10,
 		charisma: 10
-	}, data.abilityScores);
+	});
 
 	abilityScores = {
 		strength: new AbilityScore({
@@ -698,6 +639,102 @@ function Character(data) {
 		];
 	};
 
+
+	// *********************************************************************************************
+	// Character Info
+	// *********************************************************************************************
+
+	this.name = data.name || 'Unnamed';
+	this.id = _(this.name).underscored();
+
+	if (data.cr && data.mr) {
+		this.difficulty = _.sprintf('CR %d / MR %d', data.cr, data.mr);
+	} else if (data.cr) {
+		this.difficulty = _.sprintf('CR %d', data.cr);
+	} else if (data.mr) {
+		this.difficulty = _.sprintf('MR %d', data.mr);
+	}
+
+	if(_.isString(data.xp)) {
+		var temp = data.xp.split('/');
+		_.each(temp, function(val, index) {
+			this[index] = _.numberFormat(parseInt(val));
+		}, temp);
+		this.xp = _.sprintf('XP %s/%s', temp[0], temp[1]);
+	}
+	if (_.isNumber(data.xp)) {
+		this.xp = 'XP ' + _.numberFormat(data.xp);
+	}
+
+	this.classes = data.classes;
+
+	this.initiative = new Skill(_.defaults(data.initiative || {}, {
+		name: 'Initiative',
+		stats: ['dexterity'],
+		base: 0
+	}));
+
+	this.senses = stringify(data.senses);
+	this.aura = stringify(data.aura);
+
+	data.hp = _.defaults(data.hp, {
+		rolls: [],
+		stats: ['constitution']
+	});
+	data.hp.level = data.hp.rolls.length;
+	data.hd = data.hd || '0d0+0';
+
+	this.hp = function() {
+		var total = _.reduce(data.hp.rolls, function(a, b) {
+			return a + b;
+		}, 0);
+
+		total += bonusHandler.getBonus('hp');
+		total += abilityScores.getModifiers(data.hp.stats) * data.hp.level;
+
+		return total;
+	};
+
+	this.hd = function() {
+		var split = data.hd.split('+');
+
+		var modifier = parseInt(_.last(split));
+
+		modifier += bonusHandler.getBonus('hp');
+		modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
+
+		if (modifier === 0) {
+			return split[0];
+		} else {
+			return _.sprintf('%s%+d', split[0], modifier);
+		}
+	};
+
+	this.hpSpecial = stringify(data.hpSpecial);
+
+	this.speed = data.speed;
+	this.space = data.space;
+	this.reach = data.reach;
+
+	this.infoText = [
+		stringify([
+			data.templates,
+			data.race,
+			stringify(data.classes, '/')
+		], ' '),
+		stringify([data.alignment, data.size, data.type], ' ')
+	];
+
+	this.feats = stringify(data.feats);
+	this.traits = stringify(data.traits);
+	this.languages = stringify(data.languages);
+
+	this.specialQualities = markdownArray(data.specialQualities);
+	this.environment = markdownArray(data.environment);
+	this.organization = markdownArray(data.organization);
+	this.specialAbilities = markdownArray(data.specialAbilities);
+	this.treasure = markdownArray(data.treasure);
+
 	// *********************************************************************************************
 	// Offense
 	// *********************************************************************************************
@@ -705,45 +742,36 @@ function Character(data) {
 	this.bab = new Attack({
 		name: 'Base Attack Bonus',
 		bab: 0,
-		base: _.defaultValue(0, data.baseAttackBonus),
+		base: _.defaults(data.baseAttackBonus, 0),
 		stats: []
 	});
 
-	this.cmb = new Attack(data.combatManeuverBonus, {
+	this.cmb = new Attack(data.combatManeuverBonus || {}, {
 		name: 'Combat Maneuver Bonus',
 		bab: this.bab.getTotal(),
 		base: 0,
 		stats: ['strength']
 	});
 
-	var attacks = _.defaultValue({
+	var attacks = _.defaults(data.attacks || {}, {
 		melee: [],
 		ranged: [],
 		special: []
-	}, data.attacks);
+	});
 
 	this.meleeAttacks = _.map(attacks.melee, function (attack) {
-		attack.damage = _.defaultValue({
-			base: 0,
-			stats: ['strength']
-		}, attack.damage);
-		attack.range = 'melee';
-
-		return new Attack(attack, attack.damage, {
+		return new Attack(attack, {
 			type: 'weapon',
 			range: 'melee',
 			bab: that.bab.getTotal(),
 			base: 0,
 			stats: ['strength']
+		}, {
+			stats: ['strength']
 		});
 	});
 
 	this.rangedAttacks = _.map(attacks.ranged, function (attack) {
-		attack.damage = _.defaultValue({
-			base: 0,
-		}, attack.damage);
-		attack.range = 'ranged';
-
 		return new Attack(attack, {
 			type: 'weapon',
 			range: 'ranged',
@@ -777,13 +805,13 @@ function Character(data) {
 
 	var defense = data.defense || {};
 
-	this.ac = new Defense(defense.ac, {
+	this.ac = new Defense(defense.ac || {}, {
 		name: 'Armor Class',
 		stats: ['dexterity'],
 		exemptTypes: []
 	});
 
-	this.cmd = new Defense(defense.cmd, {
+	this.cmd = new Defense(defense.cmd || {}, {
 		name: 'Combat Maneuver Defense',
 		stats: ['strength', 'dexterity'],
 		bab: this.bab.getTotal(),
@@ -794,12 +822,12 @@ function Character(data) {
 		]
 	});
 
-	var saves = _.defaultValue({
+	var saves = _.defaults(data.saves, {
 		fortitude: {},
 		reflex: {},
 		will: {},
 		special: undefined
-	}, data.saves);
+	});
 
 	this.saves = {
 		fortitude: new Save(saves.fortitude, {
@@ -858,6 +886,15 @@ function Character(data) {
 		name: this.name,
 		level: function(className, factor) {
 			factor = factor || 1;
+
+			if (className === 'all') {
+				var total =
+				_.each(that.classes, function(level) {
+					total += level;
+				});
+				return Math.floor(total * factor);
+			}
+
 			return Math.floor(that.classes[className] * factor);
 		},
 		modifier: function(stat, factor, exemptTemporary) {
@@ -865,8 +902,7 @@ function Character(data) {
 			return abilityScores.getModifier(stat, factor, exemptTemporary);
 		},
 		spellDC: function(className, level, bonus) {
-			bonus = _.defaultValue(0, bonus);
-
+			bonus = bonus ? bonus : 0;
 			var caster = _.findWhere(that.spells, function(caster) {
 				return caster.name === className;
 			});

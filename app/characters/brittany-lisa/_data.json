@@ -94,9 +94,10 @@
 				"bonus": { "value": 2, "target": "initiative" }
 			}
 		],
-		"hp": 0,
-		"hpSpecial": "rage +8",
-		"hd": "4d10+20",
+		"hp": {
+			"rolls": [10, 10, 10, 10]
+		},
+		"hd": "4d10+4",
 		"saves": {
 			"fortitude": {
 				"base": 4

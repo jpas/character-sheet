@@ -50,7 +50,11 @@
 			<span ng-if="c.cmd.toString()">({{c.cmd.toString()}})</span>
 		</p>
 		<p>
-			<span class="semi-colon"><b>HP</b> <md md= 'c.hp' pf='c.pf'></md></span>
+			<span class="semi-colon">
+				<b>HP</b>
+				<span>{{c.hp()}}</span>
+				<span>({{c.hd()}})</span>
+			</span>
 			<span ng-if='c.hpSpecial'>{{c.hpSpecial}}</span>
 		</p>
 		<p>
