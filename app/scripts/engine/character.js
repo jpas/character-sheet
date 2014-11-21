@@ -690,24 +690,39 @@ function Character(data) {
 		}, 0);
 
 		total += bonusHandler.getBonus('hp');
+		total += bonusHandler.getBonus('hp_level') * data.hp.level;
 		total += abilityScores.getModifiers(data.hp.stats) * data.hp.level;
 
-		return total;
+		var temporary = bonusHandler.getBonus('hp_temporary');
+
+		if (temporary !== 0) {
+			return _.sprintf('%d+%d', total, temporary);
+		} else {
+			return total;
+		}
 	};
 
 	this.hd = function() {
 		var split = data.hd.split('+');
+		var str = split[0];
 
 		var modifier = parseInt(_.last(split));
+		if (_.isNumber(modifier)) {
+			modifier += bonusHandler.getBonus('hp');
+			modifier += bonusHandler.getBonus('hp_level') * data.hp.level;
+			modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
 
-		modifier += bonusHandler.getBonus('hp');
-		modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
-
-		if (modifier === 0) {
-			return split[0];
-		} else {
-			return _.sprintf('%s%+d', split[0], modifier);
+			if (modifier !== 0) {
+				str += '+' + modifier;
+			}
 		}
+
+		var temporary = bonusHandler.getBonus('hp_temporary');
+		if (temporary !== 0) {
+			str += '+' + temporary;
+		}
+
+		return str;
 	};
 
 	this.hpSpecial = stringify(data.hpSpecial);
