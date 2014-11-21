@@ -12,7 +12,7 @@
 		},
 		"bonuses": [
 			{
-				"name": "Mage Armor",
+				"name": "Buff: Mage Armor",
 				"bonus": {
 					"value": 4,
 					"type": "armor",
@@ -20,14 +20,7 @@
 				}
 			},
 			{
-				"name": "Forewarned",
-				"bonus": {
-					"value": 2,
-					"target": "initiative"
-				}
-			},
-			{
-				"name": "Headband of Vast Intelligence",
+				"name": "Item: Headband of Vast Intelligence",
 				"bonus": {
 					"value": 2,
 					"type": "enhancement",
@@ -35,39 +28,54 @@
 				}
 			},
 			{
-				"name": "Improved Initiative",
+				"name": "Class Feature: Forewarned",
 				"bonus": {
-					"value": 4,
+					"value": 2,
 					"target": "initiative"
 				}
 			},
 			{
-				"name": "Keen Senses",
-				"bonus": {
-					"value": 2,
-					"type": "racial",
-					"target": "perception"
-				}
-			},
-			{
-				"name": "Skill Focus (Use Magic Device)",
-				"bonus": {
-					"value": 3,
-					"target": "use_magic_device"
-				}
-			},
-			{
-				"name": "Vagabond Child",
-				"bonus": {
-					"value": 1,
-					"type": "trait",
-					"target": "disable_device"
-				}
+				"name": "Feats + Traits",
+				"bonuses": [
+					{
+						"source": "Feat: Improved Initiative",
+						"value": 4,
+						"target": "initiative"
+					},
+					{
+						"source": "Feat: Skill Focus (Use Magic Device)",
+						"value": 3,
+						"target": "use_magic_device"
+					},
+					{
+						"source": "Feat: Toughness",
+						"value": 1,
+						"target": "hp_level"
+					},
+					{
+						"source": "Trait: Vagabond Child",
+						"value": 1,
+						"type": "trait",
+						"target": "disable_device"
+					},
+					{
+						"source": "Trait: Keen Senses",
+						"value": 2,
+						"type": "racial",
+						"target": "perception"
+					}
+				]
 			}
 		],
-		"hp": 36,
-		"hd": "4d6+9",
-		"hp/level": "1d6+3",
+		"hp": {
+			"rolls": [
+				6,
+				6,
+				6,
+				5
+			]
+		},
+		"hd": "4d6",
 		"saves": {
 			"fortitude": {
 				"base": 1

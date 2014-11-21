@@ -1,7 +1,7 @@
 ## **Gear**
 
 **Headband** [headband of vast intelligence +2];
-**Slotless** [pearl of power] (1st)
+**Slotless** [pearl of power] $1st$, [bag of holding] $type i$
 
 **Scrolls** *[fireball]*, *[fly]*, *[detect secret doors]* $2$
 

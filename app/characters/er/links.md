@@ -53,3 +53,4 @@
 [Gear]: #
   [headband of vast intelligence +2]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/headbands.html#headband-of-vast-intelligence
   [pearl of power]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/slotless.html#pearl-of-power
+  [bag of holding]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/slotless.html#bag-of-holding

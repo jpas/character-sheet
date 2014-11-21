@@ -46,6 +46,12 @@
 					{ "value": 1, "type": "size", "target": "combat_maneuver_defense" }
 				]
 			},
+			{	"name": "Shield",
+				"active": false,
+				"bonuses": [
+					{ "value": 4, "type": "shield", "target": "armor_class" }
+				]
+			},
 
 			{	"name": "Chain Shirt",
 				"bonuses": [
@@ -97,7 +103,7 @@
 		"hp": {
 			"rolls": [10, 10, 10, 10]
 		},
-		"hd": "4d10+4",
+		"hd": "4d10+8",
 		"saves": {
 			"fortitude": {
 				"base": 4
