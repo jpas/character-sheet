@@ -1,26 +1,52 @@
-## **Spellbook**
+### **Spellbook**
+
+**3rd**
+*[arcane sight]* ^s^,
+*[disable construct]*,
+*[excruciating deformation]*,
+*[fireball]*,
+*[fly]*,
+*[haste]*,
+*[spiked pit]*,
+*[summon monster iii]*,
+*[tongues]*,
 
 **2nd**
-*[bull's strength]*,
-*[contingent action]*,
+*[ant haul, communal]*,
 *[create pit]*,
+*[darkvision]*,
+*[endure elements, communal]*,
 *[glitterdust]*,
 *[locate object]* ^s^,
-*[mirror image]*,
-*[scorching ray]*
-*[twilight haze]*,
+*[mirror hideaway]*
+*[obscure object]*,
+*[protection from evil, communal]*,
+*[resist energy]*,
+*[scorching ray]*,
+*[see invisibility]* ^s^,
+*[twilight haze]*
 
 **1st**
+*[alarm]*,
 *[color spray]*,
 *[comprehend languages]* ^s^,
 *[detect secret doors]* ^s^,
+*[endure elements]*,
 *[enlarge person]*,
+*[erase]*,
 *[feather fall]*,
+*[floating disk]*,
+*[forced quiet]*,
+*[glue seal]*,
 *[grease]*,
+*[heightened awareness]* ^s^,
+*[hold portal]*,
+*[identify]*,
+*[invisibility alarm]*,
 *[mage armour]*,
+*[magic aura]*,
 *[magic missile]*,
-*[magic weapon]*,
-*[obscuring mist]*,
+*[protection from evil]*,
 *[true strike]*,
 *[unseen servant]*
 
