@@ -191,6 +191,10 @@ md span:after {
 	content: '';
 }
 
+md li * {
+	margin: 0;
+}
+
 
 /* spells */
 .spells {

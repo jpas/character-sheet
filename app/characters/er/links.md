@@ -1,56 +1,81 @@
 [3rd]: #
-  [fireball]: :prd-spell-crb:fireball
-  [fly]: :prd-spell-crb:fly
+  [arcane sight]: :nethys-spell:Arcane%20Sight
+  [disable construct]: :nethys-spell:Disable%20Construct
+  [excruciating deformation]: :nethys-spell:Excruciating%20Deformation
+  [fireball]: :nethys-spell:Fireball
+  [fly]: :nethys-spell:Fly
+  [haste]: :nethys-spell:Haste
+  [spiked pit]: :nethys-spell:Spiked%20Pit
+  [summon monster iii]: :nethys-spell:Summon%20Monster%203
+  [tongues]: :nethys-spell:Tongues
 
 [2nd]: #
-  [bull's strength]: :prd-spell-crb:bullsStrength
-  [contingent action]: prd-spell-acg:contingentAction
-  [create pit]: :prd-spell-apg:createPit
-  [glitterdust]: :prd-spell-crb:glitterdust
-  [locate object]: :prd-spell-crb:locateObject
-  [mirror image]: :prd-spell-crb:mirrorImage
-  [scorching ray]: :prd-spell-crb:scorchingRay
-  [twilight haze]: :prd-spell-acg:twilightHaze
+  [ant haul, communal]: :nethys-spell:Ant%20Haul
+  [create pit]: :nethys-spell:Create%20Pit
+  [darkvision]: :nethys-spell:Darkvision
+  [endure elements, communal]: :nethys-spell:Endure%20Elements
+  [glitterdust]: :nethys-spell:Glitterdust
+  [locate object]: :nethys-spell:Locate%20Object
+  [mirror hideaway]: :nethys-spell:Mirror%20Hideaway
+  [obscure object]: :nethys-spell:Obscure%20Object
+  [protection from evil, communal]: :nethys-spell:Protection%20from%20Evil
+  [resist energy]: :nethys-spell:Resist%20Energy
+  [scorching ray]: :nethys-spell:Scorching%20Ray
+  [see invisibility]: :nethys-spell:See%20Invisibility
+  [twilight haze]: :nethys-spell:Twilight%20Haze
 
 [1st]: #
-  [color spray]: :prd-spell-crb:colorSpray
-  [comprehend languages]: :prd-spell-crb:comprehendLanguages
-  [detect secret doors]: :prd-spell-crb:detectSecretDoors
-  [enlarge person]: :prd-spell-crb:enlargePerson
-  [feather fall]: :prd-spell-crb:featherFall
-  [grease]: :prd-spell-crb:grease
-  [mage armour]: :prd-spell-crb:mageArmor
-  [magic missile]: :prd-spell-crb:magicMissile
-  [magic weapon]: :prd-spell-crb:magicWeapon
-  [obscuring mist]: :prd-spell-crb:obscuringMist
-  [true strike]: :prd-spell-crb:trueStrike
-  [unseen servant]: :prd-spell-crb:unseenServant
+  [alarm]: :nethys-spell:Alarm
+  [color spray]: :nethys-spell:Color%20Spray
+  [comprehend languages]: :nethys-spell:Comprehend%20Languages
+  [detect secret doors]: :nethys-spell:Detect%20Secret%20Doors
+  [endure elements]: :nethys-spell:Endure%20Elements
+  [enlarge person]: :nethys-spell:Enlarge%20Person
+  [erase]: :nethys-spell:Erase
+  [feather fall]: :nethys-spell:Feather%20Fall
+  [floating disk]: :nethys-spell:Floating%20Disk
+  [forced quiet]: :nethys-spell:Forced%20Quiet
+  [grease]: :nethys-spell:Grease
+  [heightened awareness]: :nethys-spell:Heightened%20Awareness
+  [hold portal]: :nethys-spell:Hold%20Portal
+  [identify]: :nethys-spell:Identify
+  [invisibility alarm]: :nethys-spell:Invisibility%20Alarm
+  [mage armour]: :nethys-spell:Mage%20Armour
+  [magic aura]: :nethys-spell:Magic%20Aura
+  [magic missile]: :nethys-spell:Magic%20Missile
+  [protection from evil]: :nethys-spell:Protection%20from%20Evil
+  [true strike]: :nethys-spell:True%20Strike
+  [unseen servant]: :nethys-spell:Unseen%20Servant
+  [glue seal]: :nethys-spell:Glue%20Seal
 
 [0th]: #
-  [acid splash]: :prd-spell-crb:acidSplash
-  [arcane mark]: :prd-spell-crb:arcaneMark
-  [dancing lights]: :prd-spell-crb:dancingLights
-  [detect magic]: :prd-spell-crb:detectMagic
-  [detect poison]: :prd-spell-crb:detectPoison
-  [flare]: :prd-spell-crb:flare
-  [ghost sound]: :prd-spell-crb:ghostSound
-  [haunted fey aspect]: :prd-spell-uc:hauntedFeyAspect
-  [light]: :prd-spell-crb:light
-  [mage hand]: :prd-spell-crb:mageHand
-  [mending]: :prd-spell-crb:mending
-  [message]: :prd-spell-crb:message
-  [open/close]: :prd-spell-crb:openClose
-  [prestidigitation]: :prd-spell-crb:prestidigitation
-  [ray of frost]: :prd-spell-crb:rayOfFrost
-  [read magic]: :prd-spell-crb:readMagic
-  [resistance]: :prd-spell-crb:resistance
-  [spark]: :prd-spell-apg:spark
+  [acid splash]: :nethys-spell:Acid%20Splash
+  [arcane mark]: :nethys-spell:Arcane%20Mark
+  [dancing lights]: :nethys-spell:Dancing%20Lights
+  [detect magic]: :nethys-spell:Detect%20Magic
+  [detect poison]: :nethys-spell:Detect%20Poison
+  [flare]: :nethys-spell:Flare
+  [ghost sound]: :nethys-spell:Ghost%20Sound
+  [haunted fey aspect]: :nethys-spell:Haunted%20Fey%20Aspect
+  [light]: :nethys-spell:Light
+  [mage hand]: :nethys-spell:Mage%20Hand
+  [mending]: :nethys-spell:Mending
+  [message]: :nethys-spell:Message
+  [open/close]: :nethys-spell:Open%20Close
+  [prestidigitation]: :nethys-spell:Prestidigitation
+  [ray of frost]: :nethys-spell:Ray%20Of%20Frost
+  [read magic]: :nethys-spell:Read%20Magic
+  [resistance]: :nethys-spell:Resistance
+  [spark]: :nethys-spell:Spark
 
 [Other Spells]: #
-  [cure moderate wounds]: :prd-spell-crb:cureModerateWounds
-  [cure light wounds]: :prd-spell-crb:cureLightWounds
+  [cure moderate wounds]: :nethys-spell:Cure%20Moderate%20Wounds
+  [cure light wounds]: :nethys-spell:Cure%20Light%20Wounds
 
-[Gear]: #
-  [headband of vast intelligence +2]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/headbands.html#headband-of-vast-intelligence
-  [pearl of power]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/slotless.html#pearl-of-power
-  [bag of holding]: http://paizo.com/pathfinderRPG/prd/ultimateEquipment/wondrousItems/slotless.html#bag-of-holding
+[Scrollmaster Prerequisites]: #
+  [etherealness]: :nethys-spell:Etherealness
+  [ice storm]: nethys-spell:Ice%20Storm
+  [keen edge]: nethys-spell:Keen%20Edge
+  [lightning bolt]: nethys-spell:Lightning%20Bolt
+  [limited wish]: :nethys-spell:Limited%20Wish
+  [shield]: :nethys-spell:Shield
