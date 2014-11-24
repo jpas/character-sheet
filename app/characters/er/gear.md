@@ -20,7 +20,7 @@
 *[obscure object]*,
 *[protection from evil, communal]*,
 *[resist energy]*,
-*[see invisibility]*
+*[see invisibility]*;
 1st
 *[alarm]*,
 *[comprehend languages]*,
