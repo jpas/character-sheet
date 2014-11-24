@@ -9,7 +9,7 @@
 *[haste]*,
 *[spiked pit]*,
 *[summon monster iii]*,
-*[tongues]*,
+*[tongues]*
 
 **2nd**
 *[ant haul, communal]*,
