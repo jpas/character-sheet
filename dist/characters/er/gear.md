@@ -8,10 +8,10 @@
 **Scrolls**
 4th (CL 7, DC 27)
 *[heightened reach disable construct][disable construct]*;
-3rd (CL 5)
+3rd
 *[fly]*,
 *[tongues]*;
-2nd (CL 3)
+2nd
 *[ant haul, communal]*,
 *[darkvision]*,
 *[endure elements, communal]*,
@@ -21,7 +21,7 @@
 *[protection from evil, communal]*,
 *[resist energy]*,
 *[see invisibility]*
-1st (CL 1)
+1st
 *[alarm]*,
 *[comprehend languages]*,
 *[erase]*,
