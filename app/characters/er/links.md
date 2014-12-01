@@ -22,6 +22,7 @@
   [resist energy]: :nethys-spell:Resist%20Energy
   [scorching ray]: :nethys-spell:Scorching%20Ray
   [see invisibility]: :nethys-spell:See%20Invisibility
+  [stinking cloud]: :nethys-spell:Stinking%20Cloud
   [twilight haze]: :nethys-spell:Twilight%20Haze
 
 [1st]: #

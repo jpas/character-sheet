@@ -156,13 +156,6 @@
 		"attacks": {
 			"melee": [
 				{
-					"name": "scroll blade",
-					"damage": {
-						"dice": "1d6",
-						"critical": "19-20"
-					}
-				},
-				{
 					"name": "touch attack",
 					"type": "natural"
 				}
@@ -372,19 +365,43 @@
 		"alignment": "CN",
 		"size": "Medium",
 		"type": "humanoid (elf, human)",
-		"senses": "low-light vision",
+		"senses": [
+			{
+				"text": "*arcane sight*",
+				"link": ":nethys-spell:Arcane Sight"
+			},
+			"low-light vision",
+			{
+				"text": "*see invisibility*",
+				"link": ":nethys-spell:See Invisibility"
+			}
+		],
 		"speed": "30 ft.",
 		"space": "5 ft.",
 		"reach": "5 ft.",
 		"languages": [
+			"Auran",
 			"Celestial",
 			"Common",
 			"Draconic",
+			"Dwarven",
 			"Elven",
+			"Giant",
+			"Gnoll",
+			"Gnome",
 			"Goblin",
 			"Halfling",
+			"Orc",
 			"Sylvan",
 			"Undercommon"
+		],
+		"unknownLanguages": [
+			"Abyssal",
+			"Aklo",
+			"Aquan",
+			"Ignan",
+			"Infernal",
+			"Terran"
 		],
 		"specialAbilities": [
 			"scrollmaster.md+links.md",
