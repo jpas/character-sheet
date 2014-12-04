@@ -704,7 +704,6 @@ function Character(data) {
 
 	this.hd = function() {
 		var split = data.hd.split('+');
-		var str = split[0];
 
 		var modifier = parseInt(_.last(split));
 		if (_.isNumber(modifier)) {
@@ -713,16 +712,16 @@ function Character(data) {
 			modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
 
 			if (modifier !== 0) {
-				str += '+' + modifier;
+				split[split.length-1] = modifier;
 			}
 		}
 
 		var temporary = bonusHandler.getBonus('hp_temporary');
 		if (temporary !== 0) {
-			str += '+' + temporary;
+			split.push(temporary);
 		}
 
-		return str;
+		return split.join('+');
 	};
 
 	this.hpSpecial = stringify(data.hpSpecial);
