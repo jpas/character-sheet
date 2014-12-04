@@ -19,8 +19,7 @@
 *[mirror hideaway]*,
 *[obscure object]*,
 *[protection from evil, communal]*,
-*[resist energy]*,
-*[see invisibility]*;
+*[resist energy]*;
 1st
 *[alarm]*,
 *[comprehend languages]*,

@@ -8,6 +8,7 @@
 *[fly]*,
 *[haste]*,
 *[spiked pit]*,
+*[stinking cloud]*,
 *[summon monster iii]*,
 *[tongues]*
 
