@@ -12,7 +12,7 @@ app.controller('CharacterCtrl', [
 			.get('characters/' + $routeParams.characterId + '/_data.json')
 			.success(function (data) {
 				_.each(data, function(characterData, index) {
-					this[index] = new Character(characterData);
+					this[index] = new pf.Character(characterData);
 				}, $scope.characters);
 
 				$window.document.title = $scope.characters[0].name + ' - Character Sheet';
