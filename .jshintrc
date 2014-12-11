@@ -22,12 +22,8 @@
 		"_": false,
 		"angular": false,
 		"app": true,
-		"changeDieBySteps": true,
-		"Character": true,
+		"pf": true,
 		"FastClick": false,
-		"isValidBonusType": true,
-		"markdownArray": true,
-		"marked": false,
-		"stringify": true
+		"marked": false
 	}
 }

@@ -14,8 +14,8 @@ app.config([
 
 		$routeProvider
 		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'MainCtrl',
+			templateUrl: 'views/list.html',
+			controller: 'ListCtrl',
 			reloadOnSearch: false
 		})
 		.when('/:characterId', {

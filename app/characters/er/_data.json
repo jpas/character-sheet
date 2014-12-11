@@ -403,16 +403,20 @@
 			"Infernal",
 			"Terran"
 		],
-		"specialAbilities": [
-			"scrollmaster.md+links.md",
-			"school.md",
-			"racial-traits.md"
-		],
-		"treasure": [
-			"gear.md+links.md",
-			"spellbook.md+links.md",
-			"quests.md"
-		],
+		"additionalSections": {
+			"specialQualities": [
+				"scrollmaster.md+links.md",
+				"school.md",
+				"racial-traits.md"
+			],
+			"treasure": [
+				"gear.md+links.md",
+				"spellbook.md+links.md"
+			],
+			"quests": [
+				"quests.md"
+			]
+		},
 		"options": {
 			"showBonuses": true,
 			"portrait": "http://i.imgur.com/chPIyvw.png"

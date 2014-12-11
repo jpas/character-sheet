@@ -168,25 +168,8 @@
 		</p>
 		<hr>
 	</section>
-	<section id='{{c.id}}-special-qualities' ng-if='c.specialQualities'>
-		<md ng-repeat='item in c.specialQualities' md='item' pf='c.pf'></md>
-		<hr>
-	</section>
-		<section id='{{c.id}}-environment' ng-if='c.environment'>
-		<md ng-repeat='item in c.environment' md='item' pf='c.pf'></md>
-		<hr>
-	</section>
-	</section>
-		<section id='{{c.id}}-organization' ng-if='c.organization'>
-		<md ng-repeat='item in c.organization' md='item' pf='c.pf'></md>
-		<hr>
-	</section>
-	<section id='{{c.id}}-specialAbilities' ng-if='c.specialAbilities'>
-		<md ng-repeat='special in c.specialAbilities' md='special' pf='c.pf'></md>
-		<hr>
-	</section>
-	<section id='{{c.id}}-treasure' ng-if='c.treasure'>
-		<md ng-repeat='item in c.treasure' md='item' pf='c.pf'></md>
+	<section id='{{c.id}}-additional-sections' ng-repeat='section in c.additionalSections'>
+		<md ng-repeat='item in section' md='item' pf='c.pf'></md>
 		<hr>
 	</section>
 </div>

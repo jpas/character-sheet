@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', [
+app.controller('ListCtrl', [
 	'$http',
 	'$scope',
 	'$window',
