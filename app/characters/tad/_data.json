@@ -1,0 +1,173 @@
+[{
+	"name": "Tad",
+	"abilityScores": {
+		"strength":      7,
+		"dexterity":    14,
+		"constitution": 14,
+		"intelligence": 20,
+		"wisdom":       14,
+		"charisma":      7
+	},
+	"bonuses": [
+		{	"name": "Trait: Reactionary",
+			"bonus": { "value": 2, "type": "trait", "target": "initiative" }
+		},
+		{	"name": "Feat: Improved Initiative",
+			"bonus": { "value": 4, "target": "initiative" }
+		},
+		{	"name": "Diviner: Forewarned",
+			"bonus": { "value": 3, "target": "initiative" }
+		}
+	],
+	"hp": {
+		"rolls": [ 6, 4, 4, 4, 4, 4, 4 ]
+	},
+	"hd": "7d6",
+	"saves": {
+		"fortitude": { "base": 2 },
+		"reflex":    { "base": 2 },
+		"will":      { "base": 5 }
+	},
+	"baseAttackBonus": 3,
+	"attacks": {
+		"melee": [
+			{	"name": "touch attack",
+				"type": "natural"
+			}
+		],
+		"ranged": [
+			{	"name": "touch attack",
+				"damate": {
+					"dice": "1d8",
+					"critical": "19-20"
+				}
+			},
+			{	"name": "touch attack",
+				"type": "natural"
+			}
+		]
+	},
+	"spells": [{
+		"name": "Diviner",
+		"type": "prepared",
+		"stat": "intelligence",
+		"markdown": "spells.md+links.md",
+		"baseSpells": [ 4, 3, 3, 2, 1 ]
+	}],
+	"skills": [
+		{	"name": "Fly",
+			"stat": "dexterity",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Knowledge (arcana)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Knowledge (dungeoneering)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Knowledge (religeon)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Knowledge (nature)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Knowledge (plane)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Linguistics",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Spellcraft",
+			"stat": "intelligence",
+			"classSkill": true,
+			"ranks": 6
+		},
+		{	"name": "Use Magic Device",
+			"stat": "intelligence",
+			"ranks": 6
+		}
+	],
+	"feats": [
+		"[Flexible Wizardry](:nethys-feat:Flexible Wizardry)",
+		"[Heighten Spell](:nethys-feat:Heighten Spell)",
+		"[Quicken Spell](:nethys-feat:Quicken Spell)",
+		"[Reach Spell](:nethys-feat:Reach Spell)",
+		"[Scribe Scroll](:nethys-feat:Scribe Scroll)",
+		"[Spell Mastery](:nethys-feat:Spell Mastery)",
+		"[Spell Penetration](:nethys-feat:Spell Penetration)"
+	],
+	"nextFeats": [
+		"{9}[Improved Wizardry](:nethys-feat:Improved Wizardry)",
+		"{W10}[Persistent Spell](:nethys-feat:Persistent Spell)",
+		"{11}[Dazing Spell](:nethys-feat:Dazing Spell)"
+	],
+	"traits": [
+		"[Pragmatic Activator](:nethys-trait:Pragmatic Activator)",
+		"[Reactionary](:nethys-trait:Reactionary)"
+	],
+	"classes": {
+		"Diviner": 7
+	},
+	"race": "Human",
+	"alignment": "CN",
+	"size": "Medium",
+	"type": "humanoid (human)",
+	"senses": [
+		"[*arcane sight*](:nethys-spell:Arcane Sight)",
+		"low-light vision",
+		"[*see invisibility*](:nethys-spell:See Invisibility)"
+	],
+	"speed": "30 ft.",
+	"space": "5 ft.",
+	"reach": "5 ft.",
+	"languages": [
+		"Abyssal",
+		"Aklo",
+		"Aquan",
+		"Auran",
+		"Celestial",
+		"Common",
+		"Draconic",
+		"Dwarven",
+		"Elven",
+		"Halfling",
+		"Ignan",
+		"Infernal",
+		"Terran",
+		"Undercommon"
+	],
+	"languages-unknown": [
+		"Giant",
+		"Gnoll",
+		"Gnome",
+		"Goblin",
+		"Orc",
+		"Sylvan"
+	],
+	"additionalSections": {
+		"specialQualities": [
+			"school.md"
+		],
+		"treasure": [
+			"gear.md+links.md",
+			"spellbook.md+links.md"
+		]
+	},
+	"options": {
+		"showBonuses": true,
+		"portrait": "http://i.imgur.com/chPIyvw.png"
+	}
+}]
