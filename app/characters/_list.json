@@ -1,7 +1,12 @@
 [
-	{	"name": "Er",
-		"id": "er",
+	{	"name": "Min",
+		"id": "min",
 		"snippet": "The first of many.",
+		"portrait": "http://i.imgur.com/chPIyvw.png"
+	},
+	{	"name": "Tad",
+		"id": "tad",
+		"snippet": "The second of many.",
 		"portrait": "http://i.imgur.com/chPIyvw.png"
 	},
 	{	"name": "Meldrosia",

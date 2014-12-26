@@ -378,7 +378,12 @@ var pf = (function() {
 			};
 
 			this.getDamage = function() {
-				return getDice() + getDamageModifier() + getCrit();
+				var str = getDice() + getDamageModifier() + getCrit();
+				if (damage.special) {
+					return str + ' ' + damage.special;
+				} else {
+					return str;
+				}
 			};
 		}
 
@@ -524,7 +529,6 @@ var pf = (function() {
 		function Caster(data) {
 			this.md = data.markdown;
 
-
 			this.name = data.name;
 			this.id = _(this.name).underscored();
 
@@ -535,9 +539,9 @@ var pf = (function() {
 			this.stats = data.stats;
 
 			this.getCasterLevel = function() {
-				var casterLevel = 0;
+				var casterLevel = data.level ? data.level : 0;
 
-				casterLevel += that.classes[data.name];
+				casterLevel += that.classes[data.name] ? that.classes[data.name] : 0;
 				casterLevel += bonusHandler.getBonus('caster_level');
 				casterLevel += bonusHandler.getBonus(data.name.toLowerCase() + '_caster_level');
 
@@ -568,28 +572,6 @@ var pf = (function() {
 
 				return _.sprintf('%+d', spellResistance);
 			};
-		}
-
-		function SLA(data) {
-			this.md = data.markdown;
-
-			this.name = data.name;
-			this.level = data.level || 1;
-
-			if(data.stat) { data.stats = [data.stat]; }
-			this.stats = data.stats;
-
-			this.concentration = new Skill(_.defaults(data.concentration, {
-				name: _.sprintf('%s Concentration', data.name),
-				ranks: that.classes[data.name],
-				stats: data.stats || ['charisma']
-			}));
-
-			this.spellResistance = new Skill(_.defaults(data.spellResistance, {
-				name: _.sprintf('%s Overcome Spell Resistance', data.name),
-				ranks: that.classes[data.name],
-				stats: data.stats || ['charisma']
-			}));
 		}
 
 		var bonusHandler = {
@@ -815,13 +797,13 @@ var pf = (function() {
 			stats: ['constitution']
 		});
 		data.hp.level = data.hp.rolls.length;
-		data.hd = data.hd || '0d0+0';
 
 		this.hp = function() {
 			var total = _.reduce(data.hp.rolls, function(a, b) {
 				return a + b;
 			}, 0);
 
+			total = Math.floor(total);
 			total += bonusHandler.getBonus('hp');
 			total += bonusHandler.getBonus('hp_level') * data.hp.level;
 			total += abilityScores.getModifiers(data.hp.stats) * data.hp.level;
@@ -835,26 +817,29 @@ var pf = (function() {
 			}
 		};
 
+		data.hd = data.hd || '0d0+0';
 		this.hd = function() {
 			var split = data.hd.split('+');
-
-			var modifier = parseInt(_.last(split));
+			var modifier = 0;
+			if (!_.last(split).match(/\d+d\d+/g)) {
+				modifier = parseInt(_.last(split));
+			}
 			if (_.isNumber(modifier)) {
 				modifier += bonusHandler.getBonus('hp');
 				modifier += bonusHandler.getBonus('hp_level') * data.hp.level;
 				modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
 
 				if (modifier !== 0) {
-					split[split.length-1] = modifier;
+					split[split.length] = modifier;
 				}
 			}
 
 			var temporary = bonusHandler.getBonus('hp_temporary');
 			if (temporary !== 0) {
-				split.push(temporary);
+				split[split.length] = temporary;
 			}
 
-			return split.join('+');
+			return split.join('+').replace('+-', '-');
 		};
 
 		this.hpSpecial = stringify(data.hpSpecial);
@@ -941,7 +926,7 @@ var pf = (function() {
 		});
 
 		this.spellLikeAbilities = _.map(data.spellLikeAbilities, function(caster) {
-			return new SLA(caster);
+			return new Caster(caster);
 		});
 
 		// *********************************************************************************************
@@ -1058,14 +1043,12 @@ var pf = (function() {
 			},
 			spellsPerDay: function(className, spellLevel) {
 				var spells = null;
-				var caster = _.findWhere(that.spells, function(caster) {
-					return caster.name === className;
-				});
+				var caster = _.findWhere(that.spells, { name: className });
 
 				if(!_.isUndefined(caster)) {
 					spells = caster.baseSpells[spellLevel];
 					if (spellLevel !== 0) {
-						var modifier = abilityScores.getModifier(caster.stats);
+						var modifier = abilityScores.getModifiers(caster.stats);
 						spells += Math.ceil((1+modifier-spellLevel)/4);
 					}
 				}
@@ -1080,6 +1063,8 @@ var pf = (function() {
 			}
 		};
 
+
+		this.pf.spellsPerDay('Arcane', 3);
 		// *********************************************************************************************
 		// Options
 		// *********************************************************************************************
