@@ -17,6 +17,15 @@
 		},
 		{	"name": "Diviner: Forewarned",
 			"bonus": { "value": 3, "target": "initiative" }
+		},
+		{	"name": "Item: Gloves of Use Magic Device",
+			"bonus": { "value": 5, "type": "circumstance", "target": "use_magic_device" }
+		},
+		{	"name": "Item: Headband of Vast intelligence",
+			"bonus": { "value": 2, "type": "enhancement", "target": "intelligence" }
+		},
+		{	"name": "Item: Masterwork Light Crossbow",
+			"bonus": { "value": 1, "target": "light_crossbow_to_hit" }
 		}
 	],
 	"hp": {
@@ -36,8 +45,8 @@
 			}
 		],
 		"ranged": [
-			{	"name": "touch attack",
-				"damate": {
+			{	"name": "light crossbow",
+				"damage": {
 					"dice": "1d8",
 					"critical": "19-20"
 				}
@@ -58,46 +67,46 @@
 		{	"name": "Fly",
 			"stat": "dexterity",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Knowledge (arcana)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Knowledge (dungeoneering)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Knowledge (religeon)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Knowledge (nature)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Knowledge (plane)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Linguistics",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Spellcraft",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 6
+			"ranks": 7
 		},
 		{	"name": "Use Magic Device",
 			"stat": "intelligence",
-			"ranks": 6
+			"ranks": 7
 		}
 	],
 	"feats": [
@@ -126,9 +135,7 @@
 	"size": "Medium",
 	"type": "humanoid (human)",
 	"senses": [
-		"[*arcane sight*](:nethys-spell:Arcane Sight)",
-		"low-light vision",
-		"[*see invisibility*](:nethys-spell:See Invisibility)"
+		"low-light vision"
 	],
 	"speed": "30 ft.",
 	"space": "5 ft.",
@@ -167,7 +174,6 @@
 		]
 	},
 	"options": {
-		"showBonuses": true,
 		"portrait": "http://i.imgur.com/chPIyvw.png"
 	}
 }]
