@@ -1,0 +1,71 @@
+### **Spellbook**
+
+**3rd**
+*arcane sight*,
+*blink*,
+*clairaudience/clairvoyance*,
+*darkvision, communal*,
+*disable construct*,
+*dispel magic*,
+*explosive runes*,
+*fireball*,
+*fly*,
+*invisibility sphere*,
+*magic circle against alignment*,
+*magic weapon, greater*,
+*resist energy, communal*,
+*spiked pit*,
+*stinking cloud*,
+*summon monster III*,
+*tongues*
+
+**2nd**
+*create pit*,
+*create treasure map*,
+*darkvision*,
+*fog cloud*,
+*glitterdust*,
+*invisibility*,
+*knock*,
+*levitate*,
+*locate object*,
+*mirror image*,
+*protection from alignment, communal*,
+*scorching ray*,
+*see invisibility*
+
+**1st**
+*alarm*,
+*color spray*,
+*detect secret doors*,
+*erase*,
+*feather fall*,
+*grease*,
+*heightened awareness*,
+*mage armor*,
+*magic aura*,
+*magic missile*,
+*obscuring mist*,
+*protection from alignment*,
+*shield*,
+*unseen servant*
+
+**0th**
+*acid splash*,
+*arcane mark*,
+*dancing lights*,
+*detect magic*,
+*detect poison*,
+*flare*,
+*ghost sound*,
+*haunted fey aspect*,
+*light*,
+*mage hand*,
+*mending*,
+*message*,
+*open/close*,
+*prestidigitation*,
+*ray of frost*,
+*read magic*,
+*resistance*,
+*spark*
