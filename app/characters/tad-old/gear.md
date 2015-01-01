@@ -8,7 +8,8 @@
 **Other**
 feather token tree,
 handy haversack,
-rod of extend
+pearl of power (1st),
+rod of extend (lesser)
 
 **Gold** 965 gp
 

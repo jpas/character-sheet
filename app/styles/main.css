@@ -226,7 +226,10 @@ md li * {
 	color: #a5a5a5;
 }
 
-.spells del,
+.spells del {
+	color: #a5a5a5;
+}
+
 .spells del a {
 	color: #3c757b;
 }

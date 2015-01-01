@@ -4,39 +4,109 @@
 		"strength":      7,
 		"dexterity":    14,
 		"constitution": 14,
-		"intelligence": 20,
-		"wisdom":       14,
+		"intelligence": 18,
+		"wisdom":       16,
 		"charisma":      7
 	},
 	"bonuses": [
-		{	"name": "Trait: Reactionary",
+		{	"name": "Mystic Theurge: Caster Level Increase",
+			"bonuses": [
+				{ "value": 4, "target": "diviner_caster_level" },
+				{ "value": 4, "target": "cleric_caster_level" }
+			]
+		},
+		{	"name": "Trait: Elven Reflexes",
 			"bonus": { "value": 2, "type": "trait", "target": "initiative" }
+		},
+		{	"name": "Trait: Seeker",
+			"bonus": { "value": 1, "type": "trait", "target": "perception" }
+		},
+		{	"name": "Race Trait: Keen Senses",
+			"bonus": { "value": 2, "type": "racial", "target": "perception" }
 		},
 		{	"name": "Feat: Improved Initiative",
 			"bonus": { "value": 4, "target": "initiative" }
 		},
+		{	"name": "Feat: Lightning Reflexes",
+			"bonus": { "value": 2, "target": "reflex" }
+		},
+		{	"name": "Feat: Skill Focus (Perception)",
+			"bonus": { "value": 3, "target": "perception" }
+		},
+		{	"name": "Feat: Improved Caster Level",
+			"bonuses": [
+				{ "value": 1, "target": "diviner_caster_level" },
+				{ "value": 2, "target": "cleric_caster_level" }
+			]
+		},
 		{	"name": "Diviner: Forewarned",
-			"bonus": { "value": 3, "target": "initiative" }
+			"bonus": { "value": 1, "target": "initiative" }
 		},
-		{	"name": "Item: Gloves of Use Magic Device",
-			"bonus": { "value": 5, "type": "circumstance", "target": "use_magic_device" }
+		{	"name": "Item: Headband of Mental Prowess +2 (INT/WIS)",
+			"bonuses":[
+				{ "value": 2, "type": "enhancement", "target": "intelligence" },
+				{ "value": 2, "type": "enhancement", "target": "wisdom" }
+			]
 		},
-		{	"name": "Item: Headband of Vast intelligence",
-			"bonus": { "value": 2, "type": "enhancement", "target": "intelligence" }
+		{	"name": "Item: Cloak of Resistance +1",
+			"bonus": { "value": 1, "type": "resistance", "target": "saves"}
 		},
-		{	"name": "Item: Masterwork Light Crossbow",
-			"bonus": { "value": 1, "target": "light_crossbow_to_hit" }
+		{	"name": "Item: Light Crossbow +1",
+			"bonuses": [
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" },
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_damage" }
+			]
+		},
+		{	"name": "Spell: Greater Magic Weapon",
+			"active": false,
+			"bonuses": [
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" },
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_damage" }
+			]
+		},
+		{	"name": "Spell: Heighten Awareness",
+			"active": true,
+			"bonuses": [
+				{ "value": 2, "type": "competence", "target": "perception" },
+				{ "value": 2, "type": "competence", "target": "knowledge_(arcana)" },
+				{ "value": 2, "type": "competence", "target": "knowledge_(dungeoneering)" },
+				{ "value": 2, "type": "competence", "target": "knowledge_(nature)" },
+				{ "value": 2, "type": "competence", "target": "knowledge_(planes)" },
+				{ "value": 2, "type": "competence", "target": "knowledge_(religeon)" },
+				{ "value": 4, "target": "initiative" }
+			]
+		},
+		{	"name": "Spell: Mage Armor",
+			"active": true,
+			"bonus": { "value": 4, "type": "armor", "target": "armor_class" }
+		},
+		{	"name": "Spell: Protection from Alignment",
+			"active": false,
+			"bonuses": [
+				{ "value": 2, "type": "deflection", "target": "armor_class" },
+				{ "value": 2, "type": "resistance", "target": "saves" }
+			]
+		},
+		{	"name": "Spell: Shield",
+			"active": true,
+			"bonus": { "value": 4, "type": "shield", "target": "armor_class" }
+		},
+		{	"name": "Spell: Shield of Faith",
+			"active": false,
+			"bonus": { "value": 2, "type": "deflection", "target": "armor_class" }
 		}
 	],
 	"hp": {
-		"rolls": [ 6, 4, 4, 4, 4, 4, 4 ]
+		"rolls": [ 8, 4, 4, 4, 4, 4, 4 ]
 	},
-	"hd": "7d6",
+	"hd": "7 HD) (6d6+1d8",
 	"saves": {
-		"fortitude": { "base": 2 },
-		"reflex":    { "base": 2 },
-		"will":      { "base": 5 }
+		"fortitude": { "base": 3 },
+		"reflex":    { "base": 1 },
+		"will":      { "base": 7 },
+		"special":   "+2 vs enchantment"
 	},
+	"immune": "sleep",
 	"baseAttackBonus": 3,
 	"attacks": {
 		"melee": [
@@ -56,19 +126,21 @@
 			}
 		]
 	},
-	"spells": [{
-		"name": "Diviner",
-		"type": "prepared",
-		"stat": "intelligence",
-		"markdown": "spells.md+links.md",
-		"baseSpells": [ 4, 3, 3, 2, 1 ]
-	}],
-	"skills": [
-		{	"name": "Fly",
-			"stat": "dexterity",
-			"classSkill": true,
-			"ranks": 7
+	"spells": [
+		{	"name": "Diviner",
+			"type": "prepared",
+			"stat": "intelligence",
+			"markdown": "diviner_spells.md+links.md",
+			"baseSpells": [ 4, 3, 3, 2 ]
 		},
+		{	"name": "Cleric",
+			"type": "prepared",
+			"stat": "wisdom",
+			"markdown": "cleric_spells.md+links.md",
+			"baseSpells": [ 4, 3, 2, 1 ]
+		}
+	],
+	"skills": [
 		{	"name": "Knowledge (arcana)",
 			"stat": "intelligence",
 			"classSkill": true,
@@ -89,7 +161,7 @@
 			"classSkill": true,
 			"ranks": 7
 		},
-		{	"name": "Knowledge (plane)",
+		{	"name": "Knowledge (planes)",
 			"stat": "intelligence",
 			"classSkill": true,
 			"ranks": 7
@@ -99,41 +171,37 @@
 			"classSkill": true,
 			"ranks": 7
 		},
+		{	"name": "Perception",
+			"stat": "wisdom",
+			"classSkill": true,
+			"ranks": 7
+		},
 		{	"name": "Spellcraft",
 			"stat": "intelligence",
 			"classSkill": true,
 			"ranks": 7
-		},
-		{	"name": "Use Magic Device",
-			"stat": "intelligence",
-			"ranks": 7
 		}
 	],
 	"feats": [
-		"[Flexible Wizardry](:nethys-feat:Flexible Wizardry)",
-		"[Heighten Spell](:nethys-feat:Heighten Spell)",
-		"[Quicken Spell](:nethys-feat:Quicken Spell)",
-		"[Reach Spell](:nethys-feat:Reach Spell)",
-		"[Scribe Scroll](:nethys-feat:Scribe Scroll)",
-		"[Spell Mastery](:nethys-feat:Spell Mastery)",
-		"[Spell Penetration](:nethys-feat:Spell Penetration)"
-	],
-	"nextFeats": [
-		"{9}[Improved Wizardry](:nethys-feat:Improved Wizardry)",
-		"{W10}[Persistent Spell](:nethys-feat:Persistent Spell)",
-		"{11}[Dazing Spell](:nethys-feat:Dazing Spell)"
+		"Improved Caster Level",
+		"Improved Initiative",
+		"Lightning Reflexes",
+		"Multitalented Mastery",
+		"Skill Focus (Perception)"
 	],
 	"traits": [
-		"[Pragmatic Activator](:nethys-trait:Pragmatic Activator)",
-		"[Reactionary](:nethys-trait:Reactionary)"
+		"Seeker",
+		"Elven Reflexes"
 	],
 	"classes": {
-		"Diviner": 7
+		"Diviner": 2,
+		"Cleric": 1,
+		"Mystic Theurge": 4
 	},
-	"race": "Human",
-	"alignment": "CN",
+	"race": "Half-Elf",
+	"alignment": "TN",
 	"size": "Medium",
-	"type": "humanoid (human)",
+	"type": "humanoid (human, elf)",
 	"senses": [
 		"low-light vision"
 	],
@@ -166,11 +234,12 @@
 	],
 	"additionalSections": {
 		"specialQualities": [
-			"school.md"
+			"cleric_domains.md+links.md",
+			"diviner_school.md+links.md"
 		],
 		"treasure": [
 			"gear.md+links.md",
-			"spellbook.md+links.md"
+			"diviner_spellbook.md+links.md"
 		]
 	},
 	"options": {
