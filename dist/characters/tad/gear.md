@@ -1,18 +1,27 @@
 ### **Gear**
 
-**Headband** vast intelligence +2;
-**Shoulders** cloak of resistance +1;
-**Hands** gloves of improved use magic devic +5;
-**Ring** sustenance and protection +1;
+**Headband** Intelligence/Wisdom +2;
+**Cloak** Resistance +1;
+**Bonded Ring** Sustenance
 
 **Other**
-feather token tree,
 handy haversack,
 rod of extend
 
-**Gold** 965 gp
+**Scrolls**
+3rd
+*clairaudience/clairvoyance*,
+*disable construct*,
+*remove curse*,
+*tongues*;
+2nd
+*create treasure map*,
+*darkvision*,
+*locate object*,
+*remove paralysis*;
+1st
+*comprehend languages*,
+*remove fear*
 
-### **Scrolls**
-**4th** *[invisibility, greater]*, *[phantom steed, communal]*, *[protection from energy, communal]*, *[remove curse]*, *[shadow conjuration]*;
-**3rd** *[explosive runes]*, *[magic circle against chaos]*, *[magic circle against evil]*, *[magic circle against law]*, *[resist energy, communal]*, *[tongues]*;
-**2nd** *[knock]*
+**Wands**
+*cure light wounds (TBD)*

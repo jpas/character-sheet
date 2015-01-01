@@ -20,7 +20,7 @@
   [darkvision, communal]: :nethys-spell:Darkvision
   [explosive runes]: :nethys-spell:Explosive%20Runes
   [fireball]: :nethys-spell:Fireball
-  [fly]: :nethys-spell:Fly
+  [haste]: :nethys-spell:Haste
   [magic circle against chaos]: :nethys-spell:Magic%20Circle%20Against%20Chaos
   [magic circle against evil]: :nethys-spell:Magic%20Circle%20Against%20Evil
   [magic circle against law]: :nethys-spell:Magic%20Circle%20Against%20Law
