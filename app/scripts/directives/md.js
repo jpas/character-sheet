@@ -49,7 +49,7 @@ app.directive('md', [
 						{ re: /<code>&lt;ng-bind&gt;/g, text: '{{'},
 						{ re: /&lt;\/ng-bind&gt;<\/code>/g, text: '}}'},
 						{ re: /unprepared/g, text: '<span class="unprepared">unprepared</span>'},
-						{ re: /\^([^\^]*)\^/g, text: '<sup>$1</sup>' },
+						{ re: /\^([\w]*)/g, text: '<sup>$1</sup>' },
 						{ re: /\$([^\$]*)\$/g, text: '<small>$1</small>' },
 						{ re: /\@([^\@]*)\@/g, text: '<roll>$1</roll>' },
 						{ re: /<a/g, text: '<a target="_blank"'},

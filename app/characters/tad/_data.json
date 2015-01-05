@@ -11,8 +11,8 @@
 	"bonuses": [
 		{	"name": "Mystic Theurge: Caster Level Increase",
 			"bonuses": [
-				{ "value": 4, "target": "diviner_caster_level" },
-				{ "value": 4, "target": "cleric_caster_level" }
+				{ "value": 5, "target": "diviner_caster_level" },
+				{ "value": 5, "target": "cleric_caster_level" }
 			]
 		},
 		{	"name": "Trait: Elven Reflexes",
@@ -51,20 +51,17 @@
 		{	"name": "Item: Cloak of Resistance +1",
 			"bonus": { "value": 1, "type": "resistance", "target": "saves"}
 		},
-		{	"name": "Item: Light Crossbow +1",
-			"bonuses": [
-				{ "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" },
-				{ "value": 1, "type": "enhancement", "target": "light_crossbow_damage" }
-			]
+		{	"name": "Item: Masterwork Light Crossbow",
+			"bonus": { "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" }
 		},
 		{	"name": "Spell: Greater Magic Weapon",
-			"active": false,
+			"active": true,
 			"bonuses": [
-				{ "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" },
-				{ "value": 1, "type": "enhancement", "target": "light_crossbow_damage" }
+				{ "value": 2, "type": "enhancement", "target": "light_crossbow_to_hit" },
+				{ "value": 2, "type": "enhancement", "target": "light_crossbow_damage" }
 			]
 		},
-		{	"name": "Spell: Heighten Awareness",
+		{	"name": "Spell: Heightened Awareness",
 			"active": true,
 			"bonuses": [
 				{ "value": 2, "type": "competence", "target": "perception" },
@@ -72,8 +69,7 @@
 				{ "value": 2, "type": "competence", "target": "knowledge_(dungeoneering)" },
 				{ "value": 2, "type": "competence", "target": "knowledge_(nature)" },
 				{ "value": 2, "type": "competence", "target": "knowledge_(planes)" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(religeon)" },
-				{ "value": 4, "target": "initiative" }
+				{ "value": 2, "type": "competence", "target": "knowledge_(religeon)" }
 			]
 		},
 		{	"name": "Spell: Mage Armor",
@@ -88,11 +84,11 @@
 			]
 		},
 		{	"name": "Spell: Shield",
-			"active": true,
+			"active": false,
 			"bonus": { "value": 4, "type": "shield", "target": "armor_class" }
 		},
 		{	"name": "Spell: Shield of Faith",
-			"active": false,
+			"active": true,
 			"bonus": { "value": 2, "type": "deflection", "target": "armor_class" }
 		}
 	],
@@ -101,9 +97,9 @@
 	},
 	"hd": "7 HD) (6d6+1d8",
 	"saves": {
-		"fortitude": { "base": 3 },
-		"reflex":    { "base": 1 },
-		"will":      { "base": 7 },
+		"fortitude": { "base": 4 },
+		"reflex":    { "base": 2 },
+		"will":      { "base": 8 },
 		"special":   "+2 vs enchantment"
 	},
 	"immune": "sleep",
@@ -131,13 +127,13 @@
 			"type": "prepared",
 			"stat": "intelligence",
 			"markdown": "diviner_spells.md+links.md",
-			"baseSpells": [ 4, 3, 3, 2 ]
+			"baseSpells": [ 4, 4, 3, 2, 1 ]
 		},
 		{	"name": "Cleric",
 			"type": "prepared",
 			"stat": "wisdom",
 			"markdown": "cleric_spells.md+links.md",
-			"baseSpells": [ 4, 3, 2, 1 ]
+			"baseSpells": [ 4, 3, 3, 2 ]
 		}
 	],
 	"skills": [
@@ -196,14 +192,18 @@
 	"classes": {
 		"Diviner": 2,
 		"Cleric": 1,
-		"Mystic Theurge": 4
+		"Mystic Theurge": 5
 	},
 	"race": "Half-Elf",
 	"alignment": "TN",
 	"size": "Medium",
 	"type": "humanoid (human, elf)",
 	"senses": [
-		"low-light vision"
+		"[arcane sight](:d20-spell:arcane-sight)",
+		"[aura sight](:d20-spell:aura-sight)",
+		"darkvision 60 ft.",
+		"low-light vision",
+		"[see invisibility](:d20-spell:see-invisibility)"
 	],
 	"speed": "30 ft.",
 	"space": "5 ft.",
