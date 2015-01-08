@@ -1,7 +1,8 @@
 ### **Gear**
 
-**Headband** Intelligence/Wisdom +2;
-**Cloak** Resistance +1
+**Headband** intelligence/wisdom +2;
+**Cloak** resistance +1
+**Ring** sustenance / counterspells (*[feeblemind]*)
 
 **Other**
 handy haversack,

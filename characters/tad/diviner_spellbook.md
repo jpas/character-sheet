@@ -27,6 +27,7 @@
 *[magic weapon, greater]*,
 *[resist energy, communal]*,
 *[spiked pit]*,
+*[stinking cloud]*,
 *[summon monster III]*,
 *[tongues]*
 
