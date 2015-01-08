@@ -1,3 +1,6 @@
+[5th]: diviner-spells
+  [feeblemind]: :d20-spell:feeblemind
+
 [4th]: diviner-spells
   [acid pit]: :d20-spell:acid-pit
   [arcane eye]: :d20-spell:arcane-eye
@@ -25,6 +28,7 @@
   [magic weapon, greater]: :d20-spell:magic-weapon
   [resist energy, communal]: :d20-spell:resist-energy
   [spiked pit]: :d20-spell:spiked-pit
+  [stinking cloud]: :d20-spell:stinking-cloud
   [summon monster III]: :d20-spell:summon-monster
   [tongues]: :d20-spell:tongues
 
@@ -101,10 +105,12 @@
 
 [2nd]: cleric-spells
   [grace]: :d20-spell:grace
+  [remove paralysis]: :d20-spell:remove-paralysis
   [shield other]: :d20-spell:shield-other
 
 [1st]: cleric-spells
   [bless]: :d20-spell:bless
+  [remove fear]: :d20-spell:remove-feat
   [sanctuary]: :d20-spell:sanctuary
   [shield of faith]: :d20-spell:shield-of-faith
 
