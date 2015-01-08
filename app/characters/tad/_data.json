@@ -52,7 +52,10 @@
 			"bonus": { "value": 1, "type": "resistance", "target": "saves"}
 		},
 		{	"name": "Item: Masterwork Light Crossbow",
-			"bonus": { "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" }
+			"bonuses": [
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_to_hit" },
+				{ "value": 1, "type": "enhancement", "target": "light_crossbow_damage" }
+			]
 		},
 		{	"name": "Spell: Greater Magic Weapon",
 			"active": true,
@@ -140,42 +143,42 @@
 		{	"name": "Knowledge (arcana)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Knowledge (dungeoneering)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Knowledge (religeon)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Knowledge (nature)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Knowledge (planes)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Linguistics",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Perception",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		},
 		{	"name": "Spellcraft",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 8
 		}
 	],
 	"feats": [
