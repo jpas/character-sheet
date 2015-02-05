@@ -99,9 +99,10 @@
   [augury]: :d20-spell:augury
 
 [3rd]: cleric-spells
-  [stone shape]: :d20-spell:stone-shape
   [aura sight]: :d20-spell:aura-sight
+  [delay poison, communal]: :d20-spell:delay-poison
   [prayer]: :d20-spell:prayer
+  [stone shape]: :d20-spell:stone-shape
 
 [2nd]: cleric-spells
   [grace]: :d20-spell:grace
