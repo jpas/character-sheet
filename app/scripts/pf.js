@@ -1037,9 +1037,7 @@ var pf = (function() {
 					return caster.name === className;
 				});
 
-				var dc = 10 + level + abilityScores.getModifiers(caster.stats) + bonus;
-
-				return _.sprintf('DC %d', dc);
+				return 10 + level + abilityScores.getModifiers(caster.stats) + bonus;
 			},
 			spellsPerDay: function(className, spellLevel) {
 				var spells = null;
@@ -1059,7 +1057,7 @@ var pf = (function() {
 				factor = factor || 0.5;
 				min = min || 1;
 				var classLevel = Math.floor(that.classes[className] * factor) || min;
-				return _.sprintf('DC %d', 10 + classLevel + abilityScores.getModifier(stat));
+				return 10 + classLevel + abilityScores.getModifier(stat);
 			}
 		};
 

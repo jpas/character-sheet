@@ -1,5 +1,4 @@
 'use strict';
-/* exported markdownArray, stringify */
 
 _.mixin({
 	compactMap: function(list, iteratee, context) {

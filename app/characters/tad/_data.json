@@ -5,7 +5,7 @@
 		"dexterity":    14,
 		"constitution": 14,
 		"intelligence": 18,
-		"wisdom":       16,
+		"wisdom":       17,
 		"charisma":      7
 	},
 	"bonuses": [
@@ -96,9 +96,9 @@
 		}
 	],
 	"hp": {
-		"rolls": [ 8, 4, 4, 4, 4, 4, 4 ]
+		"rolls": [ 8, 4, 4, 4, 4, 4, 4, 4 ]
 	},
-	"hd": "7 HD) (6d6+1d8",
+	"hd": "8 HD) (7d6+1d8",
 	"saves": {
 		"fortitude": { "base": 4 },
 		"reflex":    { "base": 2 },
@@ -106,7 +106,7 @@
 		"special":   "+2 vs enchantment"
 	},
 	"immune": "sleep",
-	"baseAttackBonus": 3,
+	"baseAttackBonus": 4,
 	"attacks": {
 		"melee": [
 			{	"name": "touch attack",
@@ -130,13 +130,13 @@
 			"type": "prepared",
 			"stat": "intelligence",
 			"markdown": "diviner_spells.md+links.md",
-			"baseSpells": [ 4, 4, 3, 2, 1 ]
+			"baseSpells": [ 4, 4, 3, 3, 2 ]
 		},
 		{	"name": "Cleric",
 			"type": "prepared",
 			"stat": "wisdom",
 			"markdown": "cleric_spells.md+links.md",
-			"baseSpells": [ 4, 3, 3, 2 ]
+			"baseSpells": [ 4, 4, 3, 2, 1 ]
 		}
 	],
 	"skills": [
@@ -195,7 +195,7 @@
 	"classes": {
 		"Diviner": 2,
 		"Cleric": 1,
-		"Mystic Theurge": 5
+		"Mystic Theurge": 6
 	},
 	"race": "Half-Elf",
 	"alignment": "TN",
@@ -208,7 +208,7 @@
 		"low-light vision",
 		"[see invisibility](:d20-spell:see-invisibility)"
 	],
-	"speed": "30 ft.",
+	"speed": "30 ft., fly 60 ft. (good)",
 	"space": "5 ft.",
 	"reach": "5 ft.",
 	"languages": [
@@ -225,6 +225,7 @@
 		"Ignan",
 		"Infernal",
 		"Terran",
+		"Sylvan",
 		"Undercommon"
 	],
 	"languages-unknown": [
@@ -232,8 +233,7 @@
 		"Gnoll",
 		"Gnome",
 		"Goblin",
-		"Orc",
-		"Sylvan"
+		"Orc"
 	],
 	"additionalSections": {
 		"specialQualities": [
