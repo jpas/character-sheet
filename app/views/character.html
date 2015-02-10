@@ -69,9 +69,9 @@
 			<span class='semi-colon' ng-if='c.resist'><b>Resist</b> <md md='c.resist'></md></span>
 			<span class='semi-colon' ng-if='c.sr'><b>SR</b> <md md='c.sr'></md></span>
 		</p>
-		<p ng-if='c.defensiveAbilities'>
+		<p ng-if='c.defensive'>
 			<b>Defensive Abilities</b>
-			<md md='c.defensiveAbilities' pf='c.pf'></md>
+			<md md='c.defensive' pf='c.pf'></md>
 		</p>
 		<p ng-if='c.weaknesses'>
 			<b>Defensive Abilities</b>
@@ -98,7 +98,7 @@
 		</p>
 		<p>
 			<b>Base Attack Bonus</b>
-			<roll ng-bind='c.bab.getToHit()'></roll>;
+			<roll ng-bind='c.bab.getBaseToHit()'></roll>;
 			<b>Combat Maneuver Bonus</b>
 			<roll ng-bind='c.cmb.getToHit()'></roll>
 			<span ng-if='c.cmb.special'>({{c.cmb.special}})</span>

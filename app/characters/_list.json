@@ -1,17 +1,20 @@
 [
-	{	"name": "Min",
-		"id": "min",
-		"snippet": "The first of many.",
-		"portrait": "http://i.imgur.com/chPIyvw.png"
-	},
-	{	"name": "Tad",
-		"id": "tad",
-		"snippet": "The second of many.",
-		"portrait": "http://i.imgur.com/chPIyvw.png"
+	{	"name": "Aethed",
+		"id": "aethed"
 	},
 	{	"name": "Meldrosia",
 		"id": "meldrosia",
 		"snippet": "Human Paladin",
 		"portrait": "http://i.imgur.com/omi4X1N.jpg"
+	},
+	{	"name": "Meta",
+		"id": "meta",
+		"snippet": "The character that can effectively meta-game.",
+		"portrait": "http://i.imgur.com/chPIyvw.png"
+	},
+	{	"name": "Monder",
+		"id": "monder",
+		"snipept": "Reach Cleric",
+		"portrait": "http://i.imgur.com/6GjTH6S.jpg"
 	}
 ]

@@ -305,6 +305,14 @@ var pf = (function() {
 				});
 			}
 
+			this.getBase = function() {
+				return data.base;
+			}
+
+			this.getBaseToHit = function() {
+				return _.sprintf('%+d', data.base);
+			}
+
 			this.getToHit = function() {
 				var bab = data.bab ? data.bab : 0;
 				var total = attack.getTotal();
@@ -878,9 +886,10 @@ var pf = (function() {
 
 		this.cmb = new Attack(data.combatManeuverBonus || {}, {
 			name: 'Combat Maneuver Bonus',
-			bab: this.bab.getTotal(),
+			bab: this.bab.getBase(),
 			base: 0,
-			stats: ['strength']
+			stats: ['strength'],
+			type: 'natural'
 		});
 
 		var attacks = _.defaults(data.attacks || {}, {
