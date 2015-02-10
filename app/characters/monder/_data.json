@@ -10,10 +10,13 @@
 	},
 	"bonuses": [
 		{	"name": "Favoured Class Bonus: Health",
-			"bonus": { "value": 1, "target": "hp_level"	}
+			"bonus": { "value": 1, "target": "hp_level" }
 		},
 		{	"name": "Feat: Improved Initiative",
-			"bonus": { "value": 4, "target": "initiative"	}
+			"bonus": { "value": 4, "target": "initiative" }
+		},
+		{	"name": "Feat: Deft Dodger",
+			"bonus": { "value": 1, "target": "reflex" }
 		},
 		{	"name": "Item: Belt of +3 Str/+2 Con",
 			"bonuses": [
@@ -165,8 +168,8 @@
 		"[Spell Focus (Conjuration)](:nethys-feat:Spell Focus)"
 	],
 	"traits": [
-		"",
-		""
+		"[Deft Dodger](:nethys-trait:Deft Dodger)",
+		"[Seeker](:nethys-trait:Seeker)"
 	],
 	"classes": {
 		"Cleric": 10
