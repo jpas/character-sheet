@@ -2,6 +2,11 @@
 	{	"name": "Aethed",
 		"id": "aethed"
 	},
+	{	"name": "Brittany Lisa",
+		"id": "brittany-lisa",
+		"snippet": "The bitchiest bloodrager",
+		"portrait": "http://i.imgur.com/bfqHi7w.png"
+	},
 	{	"name": "Meldrosia",
 		"id": "meldrosia",
 		"snippet": "Human Paladin",
