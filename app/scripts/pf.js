@@ -307,11 +307,11 @@ var pf = (function() {
 
 			this.getBase = function() {
 				return data.base;
-			}
+			};
 
 			this.getBaseToHit = function() {
 				return _.sprintf('%+d', data.base);
-			}
+			};
 
 			this.getToHit = function() {
 				var bab = data.bab ? data.bab : 0;
@@ -323,8 +323,16 @@ var pf = (function() {
 
 				if(data.type === 'natural') { return rolls; }
 
-				for (var itterative = bab - 5; itterative > 0; itterative -= 5) {
-					rolls += _.sprintf('/%+d', itterative + total);
+				if(data.itterative) {
+					rolls = "";
+					_.each(data.itterative, function(i) {
+						rolls += _.sprintf('%+d/', i + bab + total);
+					});
+					rolls = rolls.slice(0, -1);
+				} else {
+					for (var itterative = bab - 5; itterative > 0; itterative -= 5) {
+						rolls += _.sprintf('/%+d', itterative + total);
+					}
 				}
 
 				return rolls;

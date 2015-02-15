@@ -2,6 +2,11 @@
 	{	"name": "Aethed",
 		"id": "aethed"
 	},
+	{	"name": "Athedril",
+		"id": "athedril",
+		"snippet": "Lagolas with a vagina.",
+		"portrait": "http://i.imgur.com/x4bDuEi.jpg"
+	},
 	{	"name": "Brittany Lisa",
 		"id": "brittany-lisa",
 		"snippet": "The bitchiest bloodrager",
