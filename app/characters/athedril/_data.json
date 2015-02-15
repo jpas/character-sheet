@@ -77,18 +77,23 @@
 			]
 		},
 
+		{	"name": "Aspect of the Falcon",
+			"active": true,
+			"bonuses": [
+				{ "value": 1, "type": "competence", "target": "longbow_to_hit" },
+				{ "value": 1, "type": "competence", "target": "rapid_shot_longbow_to_hit" },
+				{ "value": 3, "type": "competence", "target": "perception" }
+			]
+		},
+		{	"name": "Barkskin",
+			"active": true,
+			"bonus": { "value": 3, "type": "natural_armor", "target": "armor_class"}
+		},
 		{	"name": "Deadly Aim",
 			"active": true,
 			"bonuses": [
 				{ "value": -3, "type": "enhancement", "target": "ranged_to_hit" },
 				{ "value": 6, "type": "enhancement", "target": "ranged_strength_like_damage" }
-			]
-		},
-		{	"name": "Ranger's Focus",
-			"active": false,
-			"bonuses": [
-				{ "value": 6, "target": "to_hit" },
-				{ "value": 6, "target": "damage" }
 			]
 		},
 		{	"name": "Favoured Terrain (Underground)",
@@ -109,11 +114,11 @@
 				{"value": 2, "target": "survival" }
 			]
 		},
-		{	"name": "Aspect of the Falcon",
-			"active": true,
+		{	"name": "Ranger's Focus",
+			"active": false,
 			"bonuses": [
-				{ "value": 1, "type": "competence", "target": "ranged_to_hit" },
-				{ "value": 3, "type": "competence", "target": "perception" }
+				{ "value": 6, "target": "to_hit" },
+				{ "value": 6, "target": "damage" }
 			]
 		}
 	],
@@ -158,7 +163,7 @@
 				"itterative": [-2, -2, -7],
 				"damage": {
 					"dice": "1d8",
-					"critical": "19-20x3",
+					"critical": "19-20/x3",
 					"stats": ["strength"]
 				}
 			},
@@ -241,7 +246,7 @@
 		{	"name": "Perception",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 5
+			"ranks": 7
 		},
 		{	"name": "Ride",
 			"stat": "dexterity",
@@ -275,10 +280,6 @@
 			"stat": "strength",
 			"classSkill": true,
 			"acp": true
-		},
-		{	"name": "Use Magic Device",
-			"stat": "charisma",
-			"ranks": 2
 		}
 	],
 	"feats": [
