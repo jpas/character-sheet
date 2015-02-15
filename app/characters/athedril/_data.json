@@ -289,7 +289,8 @@
 		"[Point Blank Shot](:nethys-feat:Point Blank Shot)",
 		"[Precise Shot](:nethys-feat:Precise Shot)",
 		"[Rapid Shot](:nethys-feat:Rapid Shot)",
-		"[Snap Shot](:nethys-feat:Snap Shot)"
+		"[Snap Shot](:nethys-feat:Snap Shot)",
+		"[Weapon Focus](:nethys-feat:Weapon Focus)"
 	],
 	"traits": [
 		"[Reactionary](:nethys-trait:Reactionary)",
