@@ -22,7 +22,7 @@
 			"active": false,
 			"bonuses": [
 				{ "value": -1, "target": "melee_to_hit" },
-				{ "value": 2, "target": "melee_damage" }
+				{ "value": 2, "target": "melee_strength_like_damage" }
 			]
 		},
 		{	"name": "Rage",
