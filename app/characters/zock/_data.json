@@ -34,6 +34,13 @@
 				{ "value": -2, "target": "armor_class" }
 			]
 		},
+		{	"name": "Fatigued",
+			"active": false,
+			"bonuses": [
+				{ "value": -2, "target": "strength" },
+				{ "value": -2, "target": "dexterity" }
+			]
+		},
 		{	"name": "Breasplate",
 			"bonuses": [
 				{ "value": 6, "type": "armor", "target": "armor_class" },
