@@ -13,39 +13,43 @@
 	},
 	"bonuses": [
 		{	"name": "Favoured Class Bonus: Health",
-			"bonus": { "value": 1, "target": "hp_level" }
+			"list": [
+				"1::hp_level"
+			]
 		},
 		{	"name": "Sacred Tattoo",
-			"bonus": { "value": 1, "type": "luck", "target": "saves" }
+			"list": [
+				"1:luck:saves"
+			]
 		},
 		{	"name": "Power Attack",
 			"active": false,
-			"bonuses": [
-				{ "value": -1, "target": "melee_to_hit" },
-				{ "value": 2, "target": "melee_strength_like_damage" }
+			"list": [
+				"-1::melee_to_hit",
+				"2::melee_strength_like_damage"
 			]
 		},
 		{	"name": "Rage",
 			"active": false,
-			"bonuses": [
-				{ "value": 4, "target": "strength" },
-				{ "value": 4, "target": "constitution" },
-				{ "value": 2, "target": "will" },
-				{ "value": -2, "target": "armor_class" }
+			"list": [
+				"4::strength",
+				"4::constitution",
+				"2::will",
+				"-2::armor_class"
 			]
 		},
 		{	"name": "Fatigued",
 			"active": false,
-			"bonuses": [
-				{ "value": -2, "target": "strength" },
-				{ "value": -2, "target": "dexterity" }
+			"list": [
+				"-2::strength",
+				"-2::dexterity"
 			]
 		},
 		{	"name": "Breasplate",
-			"bonuses": [
-				{ "value": 6, "type": "armor", "target": "armor_class" },
-				{ "value": 3, "target": "maximium_dexterity" },
-				{ "value": -4, "target": "armor_check_penalty" }
+			"list": [
+				"6:armor:armor_class",
+				"3::maximium_dexterity",
+				"-4::armor_check_penalty"
 			]
 		}
 	],

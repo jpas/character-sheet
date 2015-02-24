@@ -10,83 +10,109 @@
 	},
 	"bonuses": [
 		{	"name": "Magical Knack",
-			"bonus": { "value": -1, "target": "bloodrager_caster_level" }
+			"bonus": [
+				"-1::bloodrager_caster_level"
+			]
 		},
 		{	"name": "Trait: Reactionary",
-			"bonus": { "value": 2, "target": "initiative" }
+			"bonus": [
+				"2::initiative"
+			]
 		},
 		{	"name": "Trait: Keen Senses",
-			"bonus": { "value": 2, "type": "racial", "target": "perception" }
+			"bonus": [
+				"2:racial:perception"
+			]
 		},
 		{	"name": "Trait: Improved Initiative",
-			"bonus": { "value": 4, "target": "initiative" }
+			"bonus": [
+				"4::initiative"
+			]
 		},
 		{	"name": "Power Attack (Earthbreaker)",
 			"active": true,
-			"bonuses": [
-				{ "value": -3, "type": "enhancement", "target": "adamantine_battleaxe_to_hit" },
-				{ "value": 6, "type": "enhancement", "target": "adamantine_battleaxe_strength_like_damage" }
+			"list": [
+				"-3:enhancement:adamantine_battleaxe_to_hit",
+				"6:enhancement:adamantine_battleaxe_strength_like_damage"
 			]
 		},
 		{	"name": "Combat Casting",
-			"bonus": { "value": 4, "target": "bloodrager_concentration" }
+			"bonus": [
+				"4::bloodrager_concentration"
+			]
 		},
 		{	"name": "Feat: Toughness",
-			"bonus": { "value": 3, "target": "hp" }
+			"bonus": [
+				"3::hp"
+			]
 		},
 		{	"name": "Item: Belt of +4 Str/+2 Con",
-			"bonuses": [
-				{ "value": 4, "type": "enhancement", "target": "strength" },
-				{ "value": 2, "type": "enhancement", "target": "constitution" }
+			"list": [
+				"4:enhancement:strength",
+				"2:enhancement:constitution"
 			]
 		},
 		{	"name": "Item: Cloak of Resistance +2",
-			"bonus": { "value": 2, "type": "resistance", "target": "saves" }
+			"bonus": [
+				"2:resistance:saves"
+			]
 		},
 		{	"name": "Battleaxe",
-			"bonuses": [
-				{ "value": 2, "type": "enhancement", "target": "adamantine_battleaxe_to_hit" },
-				{ "value": 2, "type": "enhancement", "target": "adamantine_battleaxe_damage" }
+			"list": [
+				"2:enhancement:adamantine_battleaxe_to_hit",
+				"2:enhancement:adamantine_battleaxe_damage"
 			]
 		},
 		{	"name": "Shield",
-			"bonus": { "value": 4, "type": "shield", "target": "armor_class" }
+			"bonus": [
+				"4:shield:armor_class"
+			]
 		},
 		{	"name": "Natural Armour",
-			"bonus": { "value": 2, "type": "natural_armor", "target": "armor_class" }
+			"bonus": [
+				"2:natural_armor:armor_class"
+			]
 		},
 		{	"name": "Halfling Luck",
-			"bonus": { "value": 1, "type": "luck", "target": "saves" }
+			"bonus": [
+				"1:luck:saves"
+			]
 		},
 		{	"name": "Item: Chain Mail",
-			"bonuses": [
-				{ "value": 8, "type": "armor", "target": "armor_class" },
-				{ "value": 4, "target": "maximum_dexterity" },
-				{ "value": -3, "target": "armor_check_penalty" }
+			"list": [
+				"8:armor:armor_class",
+				"4::maximum_dexterity",
+				"-3::armor_check_penalty"
 			]
 		},
 		{	"name": "Favoured Class Bonus: Health",
-			"bonus": { "value": 1, "target": "hp_level" }
+			"bonus": [
+				"1::hp_level"
+			]
 		},
 		{	"name": "Item: Eyes of the Eagle",
-			"bonus": { "value": 5, "type": "competence", "target": "perception" }
+			"bonus": [
+				"5:competence:perception"
+			]
 		},
 		{	"name": "Item: Amulet of Natural Amor +2",
-			"bonus": { "value": 2, "type": "deflection", "target": "armor_class" }
+			"bonus": [
+				"2:deflection:armor_class"
+			]
 		},
 		{	"name": "Rage",
 			"active": true,
-			"bonuses": [
-				{ "value": 4, "target": "strength" },
-				{ "value": 4, "target": "constitution" },
-				{ "value": 2, "target": "will" },
-				{ "value": -2, "target": "armor_class" }
+			"list": [
+				"4::strength",
+				"4::constitution",
+				"2::will",
+				"-2::armor_class"
 			]
 		},
 		{	"name": "Enlarge Person",
-			"bonuses": [
-				{ "value": 2, "target": "strength" },
-				{ "value": -2, "target": "dexterity" }
+			"list": [
+				"2::strength",
+				"-2::dexterity"
 			]
 		}
 	],

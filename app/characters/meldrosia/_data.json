@@ -20,27 +20,27 @@
 		"bonuses": [
 			{	"name": "Light Steel Shield",
 				"active": true,
-				"bonuses": [
-					{ "value": 1, "type": "shield", "target": "armor_class" },
-					{ "value": -1, "target": "armor_check_penalty" },
-					{ "value": 4, "target": "maximum_dexterity" }
+				"list": [
+					"1:shield:armor_class",
+					"-1::armor_check_penalty",
+					"4::maximum_dexterity"
 				]
 			},
 			{	"name": "Chain Shirt",
-				"bonuses": [
-					{ "value": 4, "type": "armor", "target": "armor_class" },
-					{ "value": -2, "target": "armor_check_penalty" }
+				"list": [
+					"4:armor:armor_class",
+					"-2::armor_check_penalty"
 				]
 			},
 			{	"name": "Chain Shirt",
-				"bonuses": [
-					{ "value": 4, "type": "armor", "target": "armor_class" },
-					{ "value": -2, "target": "armor_check_penalty" }
+				"list": [
+					"4:armor:armor_class",
+					"-2::armor_check_penalty"
 				]
 			},
 			{	"name": "Masterwork Warhammer",
-				"bonuses": [
-					{ "value": 1, "target": "warhammer_to_hit" }
+				"list": [
+					"1::warhammer_to_hit"
 				]
 			}
 		],
@@ -68,8 +68,9 @@
 		"alignment": "LG",
 		"size": "Medium",
 		"type": "humanoid (human)",
-		"initiative": 1,
-		"hp": 24,
+		"hp": {
+			"rolls": [10, 8]
+		},
 		"hd": "2d10+4",
 		"languages": [
 			"Common",

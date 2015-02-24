@@ -10,16 +10,16 @@
 	},
 	"bonuses": [
 		{	"name": "Feat: Improved Initiative",
-			"bonus": { "value": 4, "target": "initiative" }
+			"list": ["4::initiative"]
 		},
 		{	"name": "Feat: Toughness",
-			"bonus": { "value": 3, "target": "hp" }
+			"bonus": ["3::hp"]
 		},
 		{	"name": "Item: Scale Mail",
-			"bonuses": [
-				{ "value": 5, "type": "armor", "target": "armor_class" },
-				{ "value": 4, "target": "maximum_dexterity" },
-				{ "value": -4, "target": "armor_check_penalty" }
+			"list": [
+				"5:armor:armor_class",
+				"4::maximum_dexterity",
+				"-4::armor_check_penalty"
 			]
 		}
 	],

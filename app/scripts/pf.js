@@ -141,57 +141,66 @@ var pf = (function() {
 		// Objects
 		// *********************************************************************************************
 
-		function Bonus(data) {
-			data = _.defaults(data, {
-				value: 0,
-				type: 'untyped',
-				target: 'none'
-			});
+		function Bonus(bonus) {
+			function BonusString(bonusString) {
+				bonusString = bonusString.split(':');
 
-			this.value = data.value;
-			this.type = data.type;
-			this.target = data.target;
+				if (bonusString[1] === '') { bonusString[1] = 'untyped' };
 
-			this.toString = function() {
-				return _.sprintf('%+d%s%s', this.value);
-			};
-		}
 
-		function BonusSet(data) {
-			if (!_.isUndefined(data.bonus)) {
-				data.bonuses = [data.bonus];
+				this.value = parseInt(bonusString[0]);
+				this.type = bonusString[1];
+				this.target = bonusString[2];
+
+				this.toRaw = function() {
+					return _.sprintf('%d:%s:%s', this.value, this.type, this.target);
+				}
 			}
 
-			data = _.defaults(data, {
-				name: 'Unnamed',
-				bonuses: []
+			this.name = bonus.name;
+			this.active = bonus.active;
+			this.locked = bonus.locked;
+
+			this.canToggle = !_.isUndefined(this.active);
+
+			this.list = _.map(bonus.list, function(b) {
+				return new BonusString(b);
 			});
 
-
-			_.each(data.bonuses, function(bonus, index) {
-				this[index] = new Bonus(bonus);
-			}, data.bonuses);
-
-			this.name = data.name;
-			this.active = data.active;
-			this.canToggle = !_.isUndefined(data.active);
-			this.locked = data.locked;
+			this.list = _.compact(this.list);
 
 			this.getTargetting = function(targetID) {
-				if (this.active === false) { return {}; }
+				if (this.active === false) { return {}; };
 
-				var found = _.filter(data.bonuses, function(bonus) {
-					return bonus.target === targetID;
+				var bonuses = _.filter(this.list, function(b) {
+					return b.target === targetID;
 				});
 
-				if (!_.isEmpty(found)) {
-					return _.max(found, function(bonus) {
-						return bonus.value;
-					});
+				if (_.isEmpty(bonuses)) { return {}; };
+
+				return _.max(bonuses, function(b) {
+					return b.value;
+				});
+			};
+
+			this.toString = function() {
+				return _.map(this.list, function(b) {
+					return b.toString();
+				});
+			};
+
+			this.toRaw = function() {
+				var raw = {
+					name: this.name
 				}
 
-				return {};
-			};
+				if (_.isBoolean(this.active)) { raw.active = this.active };
+				if (_.isBoolean(this.locked)) { raw.locked = this.locked };
+
+				raw.list = _.map(this.list, function(b) { return b.toRaw(); })
+
+				return raw;
+			}
 		}
 
 		function Score(data) {
@@ -246,10 +255,14 @@ var pf = (function() {
 			this.getTotal = function(exemptTemporary) {
 				var total = data.base;
 
-				total += bonusHandler.getBonus(this.id, this.exemptTypes);
 
-				if(exemptTemporary !== true) {
-					total += bonusHandler.getBonus(this.id + '_temporary', this.exemptTypes);
+				if(exemptTemporary) {
+					total += bonusHandler.getBonus(this.id, this.exemptTypes);
+				} else {
+					total += bonusHandler.getBonus([
+						this.id,
+						this.id + '_temporary'
+					], this.exemptTypes);
 				}
 
 				if (this.id === 'dexterity') {
@@ -434,8 +447,10 @@ var pf = (function() {
 				var exemptTypes = _.flatten([this.exemptTypes, specialData.exemptTypes]);
 
 				total += abilityScores.getModifiers(stats);
-				total += bonusHandler.getBonus(this.id, exemptTypes);
-				total += bonusHandler.getBonus(specialData.id + this.id, exemptTypes);
+				total += bonusHandler.getBonus([
+					this.id,
+					specialData.id + this.id
+				], exemptTypes);
 
 				return total;
 			};
@@ -510,8 +525,10 @@ var pf = (function() {
 			this.getTotal = function() {
 				var total = data.base;
 				total += abilityScores.getModifiers(data.stats);
-				total += bonusHandler.getBonus(this.id, this.exemptTypes);
-				total += bonusHandler.getBonus('saves', this.exemptTypes);
+				total += bonusHandler.getBonus([
+					this.id,
+					'saves'
+				], this.exemptTypes);
 				return total;
 			};
 		}
@@ -525,8 +542,10 @@ var pf = (function() {
 			this.getTotal = function() {
 				var total = abilityScores.getModifiers(this.stats);
 
-				total += bonusHandler.getBonus(this.id, this.exemptTypes);
-				if(data.baseID) { total += bonusHandler.getBonus(data.baseID, this.exemptTypes); }
+				total += bonusHandler.getBonus([
+					this.id,
+					data.baseID
+				], this.exemptTypes);
 				if(data.ranks) { total += data.ranks; }
 				if(data.classSkill && data.ranks > 0) { total += 3; }
 
@@ -558,8 +577,10 @@ var pf = (function() {
 				var casterLevel = data.level ? data.level : 0;
 
 				casterLevel += that.classes[data.name] ? that.classes[data.name] : 0;
-				casterLevel += bonusHandler.getBonus('caster_level');
-				casterLevel += bonusHandler.getBonus(data.name.toLowerCase() + '_caster_level');
+				casterLevel += bonusHandler.getBonus([
+					'caster_level',
+					this.id + '_caster_level'
+				]);
 
 				return casterLevel;
 			};
@@ -573,8 +594,10 @@ var pf = (function() {
 
 				concentration += this.getCasterLevel();
 				concentration += abilityScores.getModifiers(this.stats);
-				concentration += bonusHandler.getBonus('concentration');
-				concentration += bonusHandler.getBonus(this.id + '_concentration');
+				concentration += bonusHandler.getBonus([
+					'concentration',
+					this.id + '_concentration'
+				]);
 
 				return _.sprintf('%+d', concentration);
 			};
@@ -583,8 +606,10 @@ var pf = (function() {
 				var spellResistance = 0;
 
 				spellResistance += this.getCasterLevel();
-				spellResistance += bonusHandler.getBonus('spell_resistance');
-				spellResistance += bonusHandler.getBonus(this.id + '_spell_resistance');
+				spellResistance += bonusHandler.getBonus([
+					'spell_resistance',
+					this.id + '_spell_resistance'
+				]);
 
 				return _.sprintf('%+d', spellResistance);
 			};
@@ -592,16 +617,20 @@ var pf = (function() {
 
 		var bonusHandler = {
 			data: _.map(data.bonuses, function(bonus) {
-				return new BonusSet(bonus);
+				return new Bonus(bonus);
 			}),
 
-			getTypes: function(targetID, exempt, factor) {
+			getTypes: function(targetIDs, exempt, factor) {
+				if (!_.isArray(targetIDs)) { targetIDs = [targetIDs]; }
 				if (!_.isArray(exempt)) { exempt = []; }
 				factor = factor || 1;
 
-				var bonuses = _.map(this.data, function(bonusSet) {
-					return bonusSet.getTargetting(targetID);
-				});
+				var bonuses = _.flatten(_.map(targetIDs, function(targetID) {
+					return _.map(bonusHandler.data, function(bonusSet) {
+						return bonusSet.getTargetting(targetID);
+					});
+				}));
+
 
 				var types = _.groupBy(bonuses, function(bonus) {
 					return bonus.type;
@@ -654,20 +683,15 @@ var pf = (function() {
 				if (!_.isArray(targetIDs)) { targetIDs = [targetIDs]; }
 
 				var total = 0;
-				var types;
+				var types = bonusHandler.getTypes(targetIDs, exempt, factor);
 
-				_.each(targetIDs, function(targetID) {
-					types = bonusHandler.getTypes(targetID, exempt, factor);
-					total += _.reduce(types, function(sum, x) {
-						return sum + x;
-					}, 0);
-				});
-
-				return total;
+				return _.reduce(types, function(sum, x) {
+					return sum + x;
+				}, 0);
 			},
 
-			getBonusStrings: function(targetID, exempt, factor) {
-				var types = this.getTypes(targetID, exempt, factor);
+			getBonusStrings: function(targetIDs, exempt, factor) {
+				var types = this.getTypes(targetIDs, exempt, factor);
 
 				return _.compactMap(types, function(bonus, type) {
 					if (bonus !== 0) {

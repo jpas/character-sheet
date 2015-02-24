@@ -3,6 +3,14 @@
 	"cr": 1,
 	"mr": 1,
 	"xp": "1000/2000",
+	"bonuses": [
+		{	"name": "Test",
+			"active": true,
+			"list": [
+				"4::intelligence"
+			]
+		}
+	],
 	"classes": {
 		"Fighter": 1,
 		"Guardian": 1

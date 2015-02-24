@@ -11,56 +11,74 @@
 	"bonuses": [
 		{	"name": "Heighten Awareness",
 			"active": true,
-			"bonuses": [
-				{ "value": 2, "type": "competence", "target": "perception" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(arcana)" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(dungeoneering)" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(nature)" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(planes)" },
-				{ "value": 2, "type": "competence", "target": "knowledge_(religion)" }
+			"list": [
+				"2:competence:perception",
+				"2:competence:knowledge_(arcana)",
+				"2:competence:knowledge_(dungeoneering)",
+				"2:competence:knowledge_(nature)",
+				"2:competence:knowledge_(planes)",
+				"2:competence:knowledge_(religion)"
 			]
 		},
 		{	"name": "Terrain Bond (Underground)",
 			"active": true,
-			"bonuses": [
-				{ "value": 4, "target": "initiative" },
-				{ "value": 4, "target": "perception" },
-				{ "value": 4, "target": "stealth" },
-				{ "value": 4, "target": "survial" }
+			"list": [
+				"4::initiative",
+				"4::perception",
+				"4::stealth",
+				"4::survial"
 			]
 		},
 		{	"name": "Buff: Mage Armor",
-			"bonus": { "value": 4, "type": "armor", "target": "armor_class" }
+			"list": [
+				"4:armor:armor_class"
+			]
 		},
 		{	"name": "Item: Headband of Vast Intelligence",
-			"bonus": { "value": 4, "type": "enhancement", "target": "intelligence" }
+			"list": [
+				"4:enhancement:intelligence"
+			]
 		},
 		{	"name": "Item: Headband of Physical Might +2 (DEX/CON)",
-			"bonuses": [
-				{ "value": 2, "type": "enhancement", "target": "dexterity" },
-				{ "value": 2, "type": "enhancement", "target": "constitution" }
+			"list": [
+				"2:enhancement:dexterity",
+				"2:enhancement:constitution"
 			]
 		},
 		{	"name": "Item: Cloak of Resist Energy",
-			"bonus": { "value": 3, "type": "resistance", "target": "saves" }
+			"list": [
+				"3:resistance:saves"
+			]
 		},
 		{	"name": "Feat: Spell Penetration",
-			"bonus": { "value": 2, "target": "wizard_spell_resistance" }
+			"list": [
+				"2::wizard_spell_resistance"
+			]
 		},
 		{	"name": "Class Feature: Forewarned",
-			"bonus": { "value": 5, "target": "initiative" }
+			"list": [
+				"5::initiative"
+			]
 		},
 		{	"name": "Feat: Improved Initiative",
-			"bonus": { "value": 4, "target": "initiative" }
+			"list": [
+				"4::initiative"
+			]
 		},
 		{	"name": "Favoured Class Bonus: Health",
-			"bonus": { "value": 1, "target": "hp_level"	}
+			"list": [
+				"1::hp_level"
+			]
 		},
 		{	"name": "Trait: Seeker",
-			"bonus": { "value": 1, "type": "trait", "target": "perception"	}
+			"list": [
+				"1:trait:perception"
+			]
 		},
 		{	"name": "Trait: Keen Senses",
-			"bonus": { "value": 2, "type": "racial", "target": "perception"	}
+			"list": [
+				"2:racial:perception"
+			]
 		}
 	],
 	"hp": {
