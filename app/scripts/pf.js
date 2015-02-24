@@ -145,7 +145,7 @@ var pf = (function() {
 			function BonusString(bonusString) {
 				bonusString = bonusString.split(':');
 
-				if (bonusString[1] === '') { bonusString[1] = 'untyped' };
+				if (bonusString[1] === '') { bonusString[1] = 'untyped'; }
 
 
 				this.value = parseInt(bonusString[0]);
@@ -154,7 +154,7 @@ var pf = (function() {
 
 				this.toRaw = function() {
 					return _.sprintf('%d:%s:%s', this.value, this.type, this.target);
-				}
+				};
 			}
 
 			this.name = bonus.name;
@@ -170,13 +170,13 @@ var pf = (function() {
 			this.list = _.compact(this.list);
 
 			this.getTargetting = function(targetID) {
-				if (this.active === false) { return {}; };
+				if (this.active === false) { return {}; }
 
 				var bonuses = _.filter(this.list, function(b) {
 					return b.target === targetID;
 				});
 
-				if (_.isEmpty(bonuses)) { return {}; };
+				if (_.isEmpty(bonuses)) { return {}; }
 
 				return _.max(bonuses, function(b) {
 					return b.value;
@@ -192,15 +192,15 @@ var pf = (function() {
 			this.toRaw = function() {
 				var raw = {
 					name: this.name
-				}
+				};
 
-				if (_.isBoolean(this.active)) { raw.active = this.active };
-				if (_.isBoolean(this.locked)) { raw.locked = this.locked };
+				if (_.isBoolean(this.active)) { raw.active = this.active; }
+				if (_.isBoolean(this.locked)) { raw.locked = this.locked; }
 
-				raw.list = _.map(this.list, function(b) { return b.toRaw(); })
+				raw.list = _.map(this.list, function(b) { return b.toRaw(); });
 
 				return raw;
-			}
+			};
 		}
 
 		function Score(data) {
@@ -337,7 +337,7 @@ var pf = (function() {
 				if(data.type === 'natural') { return rolls; }
 
 				if(data.itterative) {
-					rolls = "";
+					rolls = '';
 					_.each(data.itterative, function(i) {
 						rolls += _.sprintf('%+d/', i + bab + total);
 					});
@@ -682,7 +682,6 @@ var pf = (function() {
 			getBonus: function(targetIDs, exempt, factor) {
 				if (!_.isArray(targetIDs)) { targetIDs = [targetIDs]; }
 
-				var total = 0;
 				var types = bonusHandler.getTypes(targetIDs, exempt, factor);
 
 				return _.reduce(types, function(sum, x) {
