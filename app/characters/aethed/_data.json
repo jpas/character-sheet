@@ -10,10 +10,14 @@
 	},
 	"bonuses": [
 		{	"name": "Feat: Improved Initiative",
-			"list": ["4::initiative"]
+			"list": [
+				"4::initiative"
+			]
 		},
 		{	"name": "Feat: Toughness",
-			"bonus": ["3::hp"]
+			"bonus": [
+				"3::hp"
+			]
 		},
 		{	"name": "Item: Scale Mail",
 			"list": [
