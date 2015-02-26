@@ -10,22 +10,22 @@
 	},
 	"bonuses": [
 		{	"name": "Magical Knack",
-			"bonus": [
+			"list": [
 				"-1::bloodrager_caster_level"
 			]
 		},
 		{	"name": "Trait: Reactionary",
-			"bonus": [
+			"list": [
 				"2::initiative"
 			]
 		},
 		{	"name": "Trait: Keen Senses",
-			"bonus": [
+			"list": [
 				"2:racial:perception"
 			]
 		},
 		{	"name": "Trait: Improved Initiative",
-			"bonus": [
+			"list": [
 				"4::initiative"
 			]
 		},
@@ -37,12 +37,12 @@
 			]
 		},
 		{	"name": "Combat Casting",
-			"bonus": [
+			"list": [
 				"4::bloodrager_concentration"
 			]
 		},
 		{	"name": "Feat: Toughness",
-			"bonus": [
+			"list": [
 				"3::hp"
 			]
 		},
@@ -53,7 +53,7 @@
 			]
 		},
 		{	"name": "Item: Cloak of Resistance +2",
-			"bonus": [
+			"list": [
 				"2:resistance:saves"
 			]
 		},
@@ -64,17 +64,17 @@
 			]
 		},
 		{	"name": "Shield",
-			"bonus": [
+			"list": [
 				"4:shield:armor_class"
 			]
 		},
 		{	"name": "Natural Armour",
-			"bonus": [
+			"list": [
 				"2:natural_armor:armor_class"
 			]
 		},
 		{	"name": "Halfling Luck",
-			"bonus": [
+			"list": [
 				"1:luck:saves"
 			]
 		},
@@ -86,17 +86,17 @@
 			]
 		},
 		{	"name": "Favoured Class Bonus: Health",
-			"bonus": [
+			"list": [
 				"1::hp_level"
 			]
 		},
 		{	"name": "Item: Eyes of the Eagle",
-			"bonus": [
+			"list": [
 				"5:competence:perception"
 			]
 		},
 		{	"name": "Item: Amulet of Natural Amor +2",
-			"bonus": [
+			"list": [
 				"2:deflection:armor_class"
 			]
 		},

@@ -9,13 +9,18 @@
 		"charisma": 16
 	},
 	"bonuses": [
+		{	"name": "FCB Oracle: Health",
+			"list": [
+				"1::hp_level"
+			]
+		},
 		{	"name": "Feat: Improved Initiative",
 			"list": [
 				"4::initiative"
 			]
 		},
 		{	"name": "Feat: Toughness",
-			"bonus": [
+			"list": [
 				"3::hp"
 			]
 		},
@@ -24,6 +29,11 @@
 				"5:armor:armor_class",
 				"4::maximum_dexterity",
 				"-4::armor_check_penalty"
+			]
+		},
+		{	"name": "Item: Scarab Shield",
+			"list": [
+				"2:shield:armor_class"
 			]
 		}
 	],
@@ -174,6 +184,5 @@
 		"gear.md"
 	],
 	"options": {
-		"hideBonuses": true
 	}
 }]
