@@ -147,7 +147,6 @@ var pf = (function() {
 
 				if (bonusString[1] === '') { bonusString[1] = 'untyped'; }
 
-
 				this.value = parseInt(bonusString[0]);
 				this.type = bonusString[1];
 				this.target = bonusString[2];
@@ -254,7 +253,6 @@ var pf = (function() {
 
 			this.getTotal = function(exemptTemporary) {
 				var total = data.base;
-
 
 				if(exemptTemporary) {
 					total += bonusHandler.getBonus(this.id, this.exemptTypes);
@@ -380,8 +378,6 @@ var pf = (function() {
 				var factor = damage.factor || 1;
 
 				total += damage.base ? damage.base : 0;
-
-
 				total += abilityScores.getModifiers(_.without(damage.stats, 'strength'));
 				total += bonusHandler.getBonus(getBonusIDs('damage'), attack.exemptTypes);
 
@@ -631,7 +627,6 @@ var pf = (function() {
 					});
 				}));
 
-
 				var types = _.groupBy(bonuses, function(bonus) {
 					return bonus.type;
 				});
@@ -792,7 +787,6 @@ var pf = (function() {
 				abilityScores.charisma
 			];
 		};
-
 
 		// *********************************************************************************************
 		// Character Info
