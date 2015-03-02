@@ -65,12 +65,12 @@
 				"2:enhancement:charisma"
 			]
 		},
-		{	"name": "Item: Cloak of Resistance +3",
+		{	"name": "Item: Cloak of Resistance +2",
 			"list": [
-				"3:resistance:saves"
+				"2:resistance:saves"
 			]
 		},
-		{	"name": "Item: Battleaxe",
+		{	"name": "Item: Earthbreaker",
 			"list": [
 				"3:enhancement:earthbreaker_to_hit",
 				"3:enhancement:earthbreaker_damage"
@@ -114,11 +114,11 @@
 				"-2::dexterity"
 			]
 		},
-		{	"name": "Power Attack (Battleaxe)",
+		{	"name": "Power Attack",
 			"active": true,
 			"list": [
-				"-3:enhancement:melee_to_hit",
-				"6:enhancement:melee_strength_like_damage"
+				"-3::melee_to_hit",
+				"6::melee_strength_like_damage"
 			]
 		},
 		{	"name": "Rage",
