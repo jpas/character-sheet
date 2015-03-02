@@ -181,11 +181,11 @@ var pf = (function() {
 						return bonusHandler.bonusIsActiveByID(r);
 					}
 				}, this);
-			}
+			};
 
 			this.isActive = function() {
 				return this.active && this.canToggle();
-			}
+			};
 
 			this.getTargetting = function(targetID) {
 				if (this.isActive() === false) { return {}; }
@@ -337,7 +337,7 @@ var pf = (function() {
 
 			this.isRolled = function() {
 				return !data.noRoll;
-			}
+			};
 
 			this.getBase = function() {
 				return data.base;
