@@ -56,6 +56,7 @@ var pf = (function() {
 		}
 
 		function moveSteps(max, steps) {
+			console.log(steps);
 			if (steps === 0) {
 				return makeDie(max);
 			} else if (steps < 0) {
@@ -374,9 +375,9 @@ var pf = (function() {
 			function getDice() {
 				var dieSteps = 0;
 
-				dieSteps += bonusHandler.getBonus(getBonusIDs('dice_step'));
+				dieSteps += bonusHandler.getBonus(getBonusIDs(['dice_step']));
 
-				if (dieSteps <= 0) { return damage.dice; }
+				if (dieSteps === 0) { return damage.dice; }
 
 				var dice = damage.dice.split('+');
 
