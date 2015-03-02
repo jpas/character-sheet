@@ -8,7 +8,7 @@ Due to the power of her blood, a bloodrager can stand confidently amid the effec
 
 ### **Bloodrage** (Su)
 
-A bloodrager can bloodrage for a {{2+pf.modifier('constitution')+ 2*pf.level('Bloodrager')}} rounds per day. Temporary increases to Constitution (such as those gained from bloodraging or spells like bear's endurance) don't increase the total number of rounds that a bloodrager can bloodrage per day. The total number of rounds of bloodrage per day is renewed after resting for 8 hours, although these hours need not be consecutive.
+A bloodrager can bloodrage for a {{2+pf.modifier('constitution')+ 2*pf.level('Bloodrager') + (pf.bonusIsActive('rage') ? -3 : 0)}} rounds per day. Temporary increases to Constitution (such as those gained from bloodraging or spells like bear's endurance) don't increase the total number of rounds that a bloodrager can bloodrage per day. The total number of rounds of bloodrage per day is renewed after resting for 8 hours, although these hours need not be consecutive.
 
 A bloodrager can enter a bloodrage as a free action. While in a bloodrage, a bloodrager gains a +4 morale bonus to her Strength and Constitution, as well as a +3 morale bonus on Will saves. In addition, she takes a –2 penalty to Armor Class. The increase to Constitution grants the bloodrager 2 hit points per Hit Die, but these disappear when the bloodrage ends and are not lost first like temporary hit points. While bloodraging, a bloodrager cannot use any Charisma-, Dexterity-, or Intelligence-based skills (except Acrobatics, Fly, Intimidate, and Ride) or any ability that requires patience or concentration.
 
