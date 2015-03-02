@@ -175,11 +175,13 @@ var pf = (function() {
 
 
 				return _.every(this.requires, function(r) {
-					if (r === this.id) {
-						return true;
-					} else {
-						return bonusHandler.bonusIsActiveByID(r);
+					if (r === this.id) { return true; }
+
+					if (r[0] === '!') {
+						return !bonusHandler.bonusIsActiveByID(_.strRight(r, '!'));
 					}
+
+					return bonusHandler.bonusIsActiveByID(r);
 				}, this);
 			};
 
