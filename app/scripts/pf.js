@@ -155,12 +155,12 @@ var pf = (function() {
 					return _.sprintf('%d:%s:%s', this.value, this.type, this.target);
 				};
 			}
-
 			this.name = bonus.name;
+			this.id = _.underscored(this.name);
 			this.active = bonus.active;
 			this.locked = bonus.locked;
 
-			this.canToggle = !_.isUndefined(this.active);
+			this.requires = bonus.requires;
 
 			this.list = _.map(bonus.list, function(b) {
 				return new BonusString(b);
@@ -168,8 +168,26 @@ var pf = (function() {
 
 			this.list = _.compact(this.list);
 
+			this.canToggle = function() {
+				if(_.isUndefined(this.active)) { return false; }
+				if(!_.isArray(this.requires)) { return true; }
+
+
+				return _.every(this.requires, function(r) {
+					if (r === this.id) {
+						return true;
+					} else {
+						return bonusHandler.bonusIsActiveByID(r);
+					}
+				}, this);
+			}
+
+			this.isActive = function() {
+				return this.active && this.canToggle();
+			}
+
 			this.getTargetting = function(targetID) {
-				if (this.active === false) { return {}; }
+				if (this.isActive() === false) { return {}; }
 
 				var bonuses = _.filter(this.list, function(b) {
 					return b.target === targetID;
@@ -314,6 +332,10 @@ var pf = (function() {
 				return _.map(IDs, function(id) {
 					return id.join('_');
 				});
+			}
+
+			this.isRolled = function() {
+				return !data.noRoll;
 			}
 
 			this.getBase = function() {
@@ -704,6 +726,12 @@ var pf = (function() {
 				}).value;
 			},
 
+			bonusIsActiveByID: function(id) {
+				return _.some(this.data, function(b) {
+					return b.id === id && b.isActive();
+				});
+			},
+
 			canStack: function(type) {
 				var stackable = [
 					'circumstance',
@@ -1061,6 +1089,9 @@ var pf = (function() {
 
 				return Math.floor(that.classes[className] * factor);
 			},
+			bonusIsActive: function(id) {
+				return bonusHandler.bonusIsActiveByID(id);
+			},
 			modifier: function(stat, factor, exemptTemporary) {
 				factor = factor || 1;
 				return abilityScores.getModifier(stat, factor, exemptTemporary);
@@ -1094,6 +1125,7 @@ var pf = (function() {
 				return 10 + classLevel + abilityScores.getModifier(stat);
 			}
 		};
+
 
 		// *********************************************************************************************
 		// Options

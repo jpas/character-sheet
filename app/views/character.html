@@ -3,7 +3,7 @@
 		<hr>
 		<p><b>Temporary Bonuses</b></p>
 		<ul class='bonuses'>
-			<li ng-repeat='bonus in c.bonuses' ng-if='bonus.canToggle'>
+			<li ng-repeat='bonus in c.bonuses' ng-if='bonus.canToggle()'>
 				<input ng-model='bonus.active' id='{{c.id}}-bonus-{{$index}}' ng-disabled='{{bonus.locked}}' type='checkbox'/>
 				<label for='{{c.id}}-bonus-{{$index}}'><span ng-bind='bonus.name'></span></label>
 			</li>
@@ -64,9 +64,9 @@
 			<md md='c.saves.special' pf='c.pf'></md>
 		</p>
 		<p>
-			<span class='semi-colon' ng-if='c.dr'><b>DR</b> <md md='c.dr'></md></span>
-			<span class='semi-colon' ng-if='c.immune'><b>Immune</b> <md md='c.immune'></md></span>
-			<span class='semi-colon' ng-if='c.resist'><b>Resist</b> <md md='c.resist'></md></span>
+			<span class='semi-colon' ng-if='c.dr'><b>DR</b> <md md='c.dr' pf="c.pf"></md></span>
+			<span class='semi-colon' ng-if='c.immune'><b>Immune</b> <md md='c.immune' pf="c.pf"></md></span>
+			<span class='semi-colon' ng-if='c.resist'><b>Resist</b> <md md='c.resist' pf="c.pf"></md></span>
 			<span class='semi-colon' ng-if='c.sr'><b>SR</b> <md md='c.sr'></md></span>
 		</p>
 		<p ng-if='c.defensive'>
@@ -84,7 +84,7 @@
 			<b>Melee</b>
 			<span class='comma' ng-repeat='attack in c.meleeAttacks'>
 				<span>{{attack.name}}</span>
-				<span><roll ng-bind='attack.getToHit()'></roll></span>
+				<span ng-if="attack.isRolled()"><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll>
 			</span>
 		</p>
@@ -92,7 +92,7 @@
 			<b>Ranged</b>
 			<span class='comma' ng-repeat='attack in c.rangedAttacks'>
 				<span>{{attack.name}}</span>
-				<span><roll ng-bind='attack.getToHit()'></roll></span>
+				<span ng-if="attack.isRolled()"><roll ng-bind='attack.getToHit()'></roll></span>
 				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'>
 			</span>
 		</p>
