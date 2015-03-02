@@ -72,8 +72,8 @@
 		},
 		{	"name": "Item: Battleaxe",
 			"list": [
-				"3:enhancement:battleaxe_to_hit",
-				"3:enhancement:battleaxe_damage"
+				"3:enhancement:earthbreaker_to_hit",
+				"3:enhancement:earthbreaker_damage"
 			]
 		},
 		{	"name": "Item: Breastplate +3",
@@ -123,6 +123,7 @@
 		},
 		{	"name": "Rage",
 			"active": true,
+			"requires": ["!fatigued"],
 			"list": [
 				"6:morale:strength",
 				"6:morale:constitution",
@@ -169,10 +170,11 @@
 	"baseAttackBonus": 11,
 	"attacks": {
 		"melee": [
-			{	"name": "battleaxe",
+			{	"name": "earthbreaker",
 				"damage": {
-					"dice": "1d12",
-					"factor": 1.5
+					"dice": "2d6",
+					"factor": 1.5,
+					"critical": "x3"
 				}
 			},
 			{	"name": "touch attack",
