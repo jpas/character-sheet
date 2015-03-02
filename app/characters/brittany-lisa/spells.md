@@ -1,8 +1,8 @@
 -|-|-
 -|-|-
-3rd | {{pf.spellsPerDay('Bloodrager', 3)}}/day | *[fly]*, *unprepared*, *unprepared*
-2nd | {{pf.spellsPerDay('Bloodrager', 2)}}/day | *[resist energy]*, *[mirror image]*, *unprepared*, *unprepared*, *unprepared*
-1st | {{pf.spellsPerDay('Bloodrager', 1)}}/day | *[enlarge person]*, *[shield]*, *[magic missile]*, *unprepared*, *unprepared*, *unprepared*
+3rd | {{pf.spellsPerDay('Bloodrager', 3)}}/day | *[fly]*, *unknown*, *unknown*, *unknown*
+2nd | {{pf.spellsPerDay('Bloodrager', 2)}}/day | *[resist energy]*, *[mirror image]*, *unknown*, *unknown*, *unknown*
+1st | {{pf.spellsPerDay('Bloodrager', 1)}}/day | *[shield]*, *[reduce person]*, *[magic missile]*, *unknown*, *unknown*, *unknown*
 
 [3rd]: #
 [fly]: :d20-spell:fly
@@ -12,6 +12,6 @@
 [resist energy]: :d20-spell:resist-energy
 
 [1st]: #
-[enlarge person]: :d20-spell:enlarge-person
 [magic missile]: :d20-spell:magic-missile
+[reduce person]: :d20-spell:reduce-person
 [shield]: :d20-spell:shield
