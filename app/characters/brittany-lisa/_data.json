@@ -100,12 +100,6 @@
 			]
 		},
 
-		{	"name": "Arcane Strike",
-			"active": false,
-			"list": [
-				"3::damage"
-			]
-		},
 		{	"name": "Combat Expertise",
 			"active": true,
 			"list": [
