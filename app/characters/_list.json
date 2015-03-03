@@ -12,6 +12,11 @@
 		"snippet": "The bitchiest bloodrager",
 		"portrait": "http://i.imgur.com/bfqHi7w.png"
 	},
+	{	"name": "Knight of the Thousand Swords",
+		"id": "thousand-swords",
+		"snippet": "Name is self explanitory",
+		"portrait": "http://i.imgur.com/Qd5kG2k.jpg"
+	},
 	{	"name": "Meldrosia",
 		"id": "meldrosia",
 		"snippet": "Human Paladin",
