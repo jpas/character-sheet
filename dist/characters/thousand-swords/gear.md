@@ -1,4 +1,4 @@
-**Weapons** 11 colossal sawtooth sabres
+**Weapons** 11 colossal masterwork sawtooth sabres
 
 **Bonded Ring** ring of telekinesis (cl 11);
 **Headband** headband of vast intelligence +4;
