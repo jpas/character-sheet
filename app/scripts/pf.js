@@ -56,7 +56,6 @@ var pf = (function() {
 		}
 
 		function moveSteps(max, steps) {
-			console.log(steps);
 			if (steps === 0) {
 				return makeDie(max);
 			} else if (steps < 0) {
@@ -565,7 +564,8 @@ var pf = (function() {
 
 				total += bonusHandler.getBonus([
 					this.id,
-					data.baseID
+					data.baseID,
+					"skills"
 				], this.exemptTypes);
 				if(data.ranks) { total += data.ranks; }
 				if(data.classSkill && data.ranks > 0) { total += 3; }
