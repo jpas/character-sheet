@@ -184,5 +184,7 @@
 		"gear.md"
 	],
 	"options": {
+		"hideBonuses": true,
+		"portrait": "http://i.imgur.com/lqxsNZ8.jpg"
 	}
 }]
