@@ -177,7 +177,7 @@ var pf = (function() {
 					if (r === this.id) { return true; }
 
 					if (r[0] === '!') {
-						return !bonusHandler.bonusIsActiveByID(_.strRight(r, '!'));
+						return !bonusHandler.bonusIsActiveByID(r.slice(1));
 					}
 
 					return bonusHandler.bonusIsActiveByID(r);
