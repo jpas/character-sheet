@@ -4,10 +4,19 @@
 	"mr": 1,
 	"xp": "1000/2000",
 	"bonuses": [
-		{	"name": "Test",
-			"active": true,
+		{	"name": "Toughness",
 			"list": [
-				"4::intelligence"
+				"3::hp"
+			]
+		},
+		{	"name": "Weapon Focus (Greatsword)",
+			"list": [
+				"1::greatsword_to_hit"
+			]
+		},
+		{	"name": "Guardian HitPoints",
+			"list": [
+				"5::hp_level_guardian"
 			]
 		}
 	],
@@ -26,7 +35,7 @@
 	"hp": {
 		"rolls": [10]
 	},
-	"hd": "1d10+5",
+	"hd": "1d10",
 	"saves": {
 		"fortitude": {
 			"base": 0
@@ -41,14 +50,20 @@
 	"baseAttackBonus": 1,
 	"attacks": {
 		"melee": [
-			{	"name": "Greatsword",
-				"damage": "2d6/19-20",
-				"factor": 1.5
+			{	"name": "greatsword",
+				"damage": {
+					"dice": "2d6",
+					"critical": "19-20",
+					"factor": 1.5
+				}
 			}
 		],
 		"ranged": [
-			{	"name": "Longbow",
-				"damage": "1d8/x3"
+			{	"name": "longbow",
+				"damage": {
+					"dice": "1d8",
+					"critical": "x3"
+				}
 			}
 		]
 	},
@@ -60,7 +75,7 @@
 	"aura": "aura of example",
 	"feats": [
 		"Toughness",
-		"Weapon Focus (Shield)"
+		"Weapon Focus (greatsword)"
 	],
 	"traits": [
 		"Dirty Fighter",
