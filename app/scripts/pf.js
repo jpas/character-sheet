@@ -870,6 +870,11 @@ var pf = (function() {
 			total = Math.floor(total);
 			total += bonusHandler.getBonus('hp');
 			total += bonusHandler.getBonus('hp_level') * data.hp.level;
+
+			_.each(this.classes, function(l, c) {
+				total += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l
+			});
+
 			total += abilityScores.getModifiers(data.hp.stats) * data.hp.level;
 
 			var temporary = bonusHandler.getBonus('hp_temporary');
@@ -891,6 +896,11 @@ var pf = (function() {
 			if (_.isNumber(modifier)) {
 				modifier += bonusHandler.getBonus('hp');
 				modifier += bonusHandler.getBonus('hp_level') * data.hp.level;
+
+				_.each(this.classes, function(l, c) {
+					modifier += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l
+				});
+
 				modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
 
 				if (modifier !== 0) {
