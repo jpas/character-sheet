@@ -106,7 +106,13 @@
 		},
 		{	"name": "Mutagen: Strength",
 			"active": false,
-			"requires": ["!mutagen:_dexterity", "!mutagen:_constitution"],
+			"requires": [
+				"!mutagen:_dexterity",
+				"!mutagen:_constitution",
+				"!mutagen:_intelligence",
+				"!mutagen:_wisdom",
+				"!mutagen:_charisma"
+			],
 			"list": [
 				"4:alchemical:strength",
 				"-2:alchemical:intelligence"
@@ -114,7 +120,13 @@
 		},
 		{	"name": "Mutagen: Dexterity",
 			"active": false,
-			"requires": ["!mutagen:_strength", "!mutagen:_constitution"],
+			"requires": [
+				"!mutagen:_strength",
+				"!mutagen:_constitution",
+				"!mutagen:_intelligence",
+				"!mutagen:_wisdom",
+				"!mutagen:_charisma"
+			],
 			"list": [
 				"4:alchemical:dexterity",
 				"-2:alchemical:wisdom"
@@ -122,10 +134,58 @@
 		},
 		{	"name": "Mutagen: Constitution",
 			"active": true,
-			"requires": ["!mutagen:_strength", "!mutagen:_dexterity"],
+			"requires": [
+				"!mutagen:_strength",
+				"!mutagen:_dexterity",
+				"!mutagen:_intelligence",
+				"!mutagen:_wisdom",
+				"!mutagen:_charisma"
+			],
 			"list": [
 				"4:alchemical:constitution",
 				"-2:alchemical:charisma"
+			]
+		},
+		{	"name": "Mutagen: Intelligence",
+			"active": false,
+			"requires": [
+				"!mutagen:_strength",
+				"!mutagen:_dexterity",
+				"!mutagen:_constitution",
+				"!mutagen:_wisdom",
+				"!mutagen:_charisma"
+			],
+			"list": [
+				"4:alchemical:intelligence",
+				"-2:alchemical:strength"
+			]
+		},
+		{	"name": "Mutagen: Wisdom",
+			"active": false,
+			"requires": [
+				"!mutagen:_strength",
+				"!mutagen:_dexterity",
+				"!mutagen:_constitution",
+				"!mutagen:_intelligence",
+				"!mutagen:_charisma"
+			],
+			"list": [
+				"4:alchemical:wisdom",
+				"-2:alchemical:dexterity"
+			]
+		},
+		{	"name": "Mutagen: Charisma",
+			"active": false,
+			"requires": [
+				"!mutagen:_strength",
+				"!mutagen:_dexterity",
+				"!mutagen:_constitution",
+				"!mutagen:_intelligence",
+				"!mutagen:_wisdom"
+			],
+			"list": [
+				"4:alchemical:charisma",
+				"-2:alchemical:constitution"
 			]
 		}
 	],
