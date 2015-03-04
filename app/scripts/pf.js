@@ -310,6 +310,8 @@ var pf = (function() {
 
 			Score.call(this, data);
 
+			console.log(this.id);
+
 			this.exemptTypes = [
 				'armor',
 				'deflection',
@@ -321,6 +323,8 @@ var pf = (function() {
 
 			var attack = this;
 			var damage = data.damage;
+
+			this.info = data.info;
 
 			function getBonusIDs(base) {
 				var IDs = [
@@ -337,7 +341,7 @@ var pf = (function() {
 			}
 
 			this.isRolled = function() {
-				return !data.noRoll;
+				return !data.noToHit;
 			};
 
 			this.getBase = function() {
@@ -922,11 +926,15 @@ var pf = (function() {
 		this.space = data.space;
 		this.reach = data.reach;
 
+		var visibleClasses = _.filter(data.classes, function(l, c) {
+			return c[0] !== '!';
+		});
+
 		this.infoText = [
 			stringify([
 				data.templates,
 				data.race,
-				stringify(data.classes, '/')
+				stringify(visibleClasses, '/')
 			], ' '),
 			stringify([data.alignment, data.size, data.type], ' ')
 		];
@@ -952,10 +960,10 @@ var pf = (function() {
 
 		this.cmb = new Attack(data.combatManeuverBonus || {}, {
 			name: 'Combat Maneuver Bonus',
+			type: 'natural',
 			bab: this.bab.getBase(),
 			base: 0,
-			stats: ['strength'],
-			type: 'natural'
+			stats: ['strength']
 		});
 
 		var attacks = _.defaults(data.attacks || {}, {
@@ -1092,12 +1100,8 @@ var pf = (function() {
 			level: function(className, factor) {
 				factor = factor || 1;
 
-				if (className === 'all') {
-					var total =
-					_.each(that.classes, function(level) {
-						total += level;
-					});
-					return Math.floor(total * factor);
+				if (className === 'Hit Dice') {
+					return Math.floor(data.hp.level * factor);
 				}
 
 				return Math.floor(that.classes[className] * factor);
