@@ -15,19 +15,15 @@
 				"1:enhancement:elven_curved_blade_damage"
 			]
 		},
-		{	"name": "Item: +2 Adaptive Longbow",
+		{	"name": "Item: +3 Adaptive Longbow",
 			"list": [
-				"2:enhancement:longbow_to_hit",
-				"2:enhancement:longbow_damage"
+				"3:enhancement:longbow_to_hit",
+				"3:enhancement:longbow_damage",
+				"3:enhancement:rapid_shot_longbow_to_hit",
+				"3:enhancement:rapid_shot_longbow_damage"
 			]
 		},
-		{	"name": "Item: +2 Adaptive Longbow (Rapid Shot)",
-			"list": [
-				"2:enhancement:rapid_shot_longbow_to_hit",
-				"2:enhancement:rapid_shot_longbow_damage"
-			]
-		},
-		{	"name": "Item: +2 Mithral Chain Shirt",
+		{	"name": "Item: +3 Studded Darkleaf Cloth",
 			"list": [
 				"6:armor:armor_class",
 				"7::maximum_dexterity"
@@ -35,7 +31,7 @@
 		},
 		{	"name": "Item: Cloak of Resistance +2",
 			"list": [
-				"2:resistance:saves"
+				"3:resistance:saves"
 			]
 		},
 		{	"name": "Item: +4 Dex Belt",
@@ -114,6 +110,7 @@
 		},
 		{	"name": "Favoured Terrain (Underground)",
 			"active": true,
+			"requires": ["!favoured_terrain_(forest)"],
 			"list": [
 				"4::initiative",
 				"4::knowledge_(geography)",
@@ -123,11 +120,21 @@
 		},
 		{	"name": "Favoured Terrain (Forest)",
 			"active": false,
+			"requires": ["!favoured_terrain_(underground)"],
 			"list": [
 				"2::initiative",
 				"2::knowledge_(geography)",
 				"2::perception",
 				"2::survival"
+			]
+		},
+		{	"name": "Inspired Moment",
+			"active": false,
+			"list": [
+				"4::armor_class",
+				"4::combat_maneuver_defense",
+				"4::to_hit",
+				"4::skills"
 			]
 		},
 		{	"name": "Ranger's Focus",
@@ -139,9 +146,9 @@
 		}
 	],
 	"hp": {
-		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 	},
-	"hd": "10d10",
+	"hd": "11d10",
 	"saves": {
 		"fortitude": {
 			"base": 7
@@ -153,7 +160,7 @@
 			"base": 3
 		}
 	},
-	"baseAttackBonus": 10,
+	"baseAttackBonus": 11,
 	"attacks": {
 		"melee": [
 			{	"name": "elven curved blade",
@@ -176,7 +183,7 @@
 				}
 			},
 			{	"name": "rapid shot longbow",
-				"itterative": [-2, -2, -7],
+				"itterative": [-2, -2, -7, -12],
 				"damage": {
 					"dice": "1d8",
 					"critical": "19-20/x3",
@@ -193,7 +200,7 @@
 			"type": "prepared",
 			"stat": "wisdom",
 			"markdown": "spells.md",
-			"baseSpells": [null, 2, 1, 0]
+			"baseSpells": [null, 2, 1, 1]
 		}
 	],
 	"skills": [
@@ -220,7 +227,7 @@
 		{	"name": "Disable Device",
 			"stat": "dexterity",
 			"classSkill": true,
-			"ranks": 10
+			"ranks": 11
 		},
 		{	"name": "Disguise",
 			"stat": "charisma"
@@ -262,7 +269,7 @@
 		{	"name": "Perception",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 7
+			"ranks": 11
 		},
 		{	"name": "Ride",
 			"stat": "dexterity",
@@ -279,7 +286,7 @@
 		{	"name": "Stealth",
 			"stat": "dexterity",
 			"classSkill": true,
-			"ranks": 5,
+			"ranks": 6,
 			"acp": true
 		},
 		{	"name": "Survival",
@@ -302,6 +309,7 @@
 		"[Combat Reflexes](:nethys-feat:Combat Reflexes)",
 		"[Deadly Aim](:nethys-feat:Deadly Aim)",
 		"[Improved Precise Shot](:nethys-feat:Improved Precise Shot)",
+		"[Improved Snap Shot](:nethys-feat:Improved Snap Shot)",
 		"[Point Blank Master (Longbow)](:nethys-feat:Point Blank Master)",
 		"[Point Blank Shot](:nethys-feat:Point Blank Shot)",
 		"[Precise Shot](:nethys-feat:Precise Shot)",
@@ -314,13 +322,13 @@
 		"[Vagabond Child](:nethys-trait:Vagabond Child)"
 	],
 	"classes": {
-		"Ranger": 10
+		"Ranger": 11
 	},
 	"race": "Elf",
 	"alignment": "NG",
 	"size": "Medium",
 	"type": "humanoid (elf)",
-	"speed": "30 ft.",
+	"speed": "{{pf.bonusIsActive('inspired_moment') ? 40 : 30}} ft.",
 	"space": "5 ft.",
 	"reach": "5 ft.",
 	"languages": [
