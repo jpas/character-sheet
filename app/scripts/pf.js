@@ -310,8 +310,6 @@ var pf = (function() {
 
 			Score.call(this, data);
 
-			console.log(this.id);
-
 			this.exemptTypes = [
 				'armor',
 				'deflection',
@@ -926,9 +924,13 @@ var pf = (function() {
 		this.space = data.space;
 		this.reach = data.reach;
 
-		var visibleClasses = _.filter(data.classes, function(l, c) {
-			return c[0] !== '!';
-		});
+		var visibleClasses = _.compact(_.map(data.classes, function(l, c) {
+			if (c[0] !== '!') {
+				return c + ' ' + l;
+			}
+
+			return '';
+		}));
 
 		this.infoText = [
 			stringify([
