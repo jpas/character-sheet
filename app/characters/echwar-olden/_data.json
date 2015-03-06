@@ -50,6 +50,13 @@
 				"2:circumstance:disable_device"
 			]
 		},
+		{	"name": "Item: Mask of Stoney Demenor",
+			"list": [
+				"10:circumstance:bluff_(lie)",
+				"5:circumstance:bluff_(feint)",
+				"-5::bluff_(hidden message)"
+			]
+		},
 
 		{	"name": "Mutagen: Strength",
 			"requires": ["!mutagen:_dexterity", "!mutagen:_constitution"],
@@ -176,6 +183,18 @@
 			"stat": "charisma",
 			"ranks": 2
 		},
+		{	"name": "Bluff (Feint)",
+			"stat": "charisma",
+			"ranks": 2
+		},
+		{	"name": "Bluff (Hidden Messages)",
+			"stat": "charisma",
+			"ranks": 2
+		},
+		{	"name": "Bluff (Lie)",
+			"stat": "charisma",
+			"ranks": 2
+		},
 		{	"name": "Climb",
 			"stat": "strength",
 			"acp": true
@@ -272,9 +291,10 @@
 		}
 	],
 	"feats": [
+		"[Brew Potion](:nethys-feat:Brew Potion)",
 		"[Precise Shot](:nethys-feat:Precise Shot)",
-		"[Weapon Focus (Bombs)](:nethys-feat:Weapon Focus)",
-		"[Throw Anything](:nethys-feat:Throw Anything)"
+		"[Throw Anything](:nethys-feat:Throw Anything)",
+		"[Weapon Focus (Bombs)](:nethys-feat:Weapon Focus)"
 	],
 	"classes": {
 		"Alchemist": 2
