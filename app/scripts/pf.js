@@ -591,6 +591,7 @@ var pf = (function() {
 			this.id = _(this.name).underscored();
 
 			this.type = _.capitalize(data.type);
+			this.spellType = _.capitalize(data.spellType || 'Spells')
 			this.baseSpells = data.baseSpells ? data.baseSpells : [];
 
 			if(data.stat) { data.stats = [data.stat]; }

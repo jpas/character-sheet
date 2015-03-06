@@ -85,7 +85,8 @@
 			<span class='comma' ng-repeat='attack in c.meleeAttacks'>
 				<span>{{attack.name}}</span>
 				<span ng-if="attack.isRolled()"><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll>
+				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll></span>
+				<span ng-if='attack.info'>(<md md='attack.info' pf='c.pf'></md>)</span>
 			</span>
 		</p>
 		<p ng-if='c.rangedAttacks'>
@@ -93,7 +94,8 @@
 			<span class='comma' ng-repeat='attack in c.rangedAttacks'>
 				<span>{{attack.name}}</span>
 				<span ng-if="attack.isRolled()"><roll ng-bind='attack.getToHit()'></roll></span>
-				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'>
+				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll>
+				<span ng-if='attack.info'>(<md md='attack.info' pf='c.pf'></md>)</span>
 			</span>
 		</p>
 		<p ng-if='c.specialAttacks'>
@@ -101,8 +103,8 @@
 			<span class='comma' ng-repeat='attack in c.specialAttacks'>
 				<span>{{attack.name}}</span>
 				<span ng-if="attack.isRolled()"><roll ng-bind='attack.getToHit()'></roll></span>
+				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'></roll>
 				<span ng-if='attack.info'>(<md md='attack.info' pf='c.pf'></md>)</span>
-				<roll ng-if='attack.hasDamage()' ng-bind='attack.getDamage()'>
 			</span>
 		</p>
 		<p>
@@ -114,7 +116,7 @@
 		</p>
 		<div ng-if='c.spells' ng-repeat='caster in c.spells'>
 			<p>
-				<b><span ng-if='caster.name[0] != "!"'>{{caster.name}}</span> Spells {{caster.type}}</b>
+				<b><span ng-if='caster.name[0] != "!"'>{{caster.name}}</span> {{caster.spellType}} {{caster.type}}</b>
 				<span>Caster Level</span> <roll ng-bind='caster.getCasterLevelRoll()'></roll>;
 				<span>Concentration</span> <roll ng-bind='caster.getConcentrationRoll()'></roll>;
 				<span>Spell Resistance </span> <roll ng-bind='caster.getSpellResistanceRoll()'></roll>
