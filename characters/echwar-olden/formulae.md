@@ -1,4 +1,4 @@
-**Formulae**
+### **Formulae**
 1st
 *[comprehend languages]*,
 *[cure light wounds]*,
