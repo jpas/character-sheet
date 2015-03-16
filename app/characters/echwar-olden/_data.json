@@ -3,10 +3,10 @@
 	"abilityScores": {
 		"strength": 10,
 		"dexterity": 14,
-		"constitution": 10,
-		"intelligence": 20,
-		"wisdom": 12,
-		"charisma": 7
+		"constitution": 12,
+		"intelligence": 18,
+		"wisdom": 10,
+		"charisma": 13
 	},
 	"bonuses": [
 		{	"name": "Favoured Class Bonus: Alchemist",
@@ -315,10 +315,12 @@
 			"special.md"
 		],
 		"treasure": [
-			"formulae.md+links.md"
+			"formulae.md+links.md",
+			"drug.md"
 		]
 	},
 	"options": {
-		"showBonuses": true
+		"showBonuses": true,
+		"portrait": "https://41.media.tumblr.com/b3d4d8a672c08f05d30cd27e1f413185/tumblr_nlaw7wCz5T1rx52zso1_540.png"
 	}
 }]

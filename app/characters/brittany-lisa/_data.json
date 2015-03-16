@@ -1,7 +1,7 @@
 [{
 	"name": "Brittany Lisa",
 	"abilityScores": {
-		"strength": 20,
+		"strength": 21,
 		"dexterity": 12,
 		"constitution": 14,
 		"intelligence": 11,
@@ -52,10 +52,15 @@
 				"2::will"
 			]
 		},
-
-		{	"name": "Item: Belt of +4 Str/+2 Con",
+		{	"name": "Feat: Skill Focus (Fly)",
 			"list": [
-				"4:enhancement:strength",
+				"6::fly"
+			]
+		},
+
+		{	"name": "Item: Belt of +5 Str/+2 Con",
+			"list": [
+				"5:enhancement:strength",
 				"2:enhancement:constitution"
 			]
 		},
@@ -117,8 +122,8 @@
 		{	"name": "Power Attack",
 			"active": true,
 			"list": [
-				"-3::melee_to_hit",
-				"6::melee_strength_like_damage"
+				"-4::melee_to_hit",
+				"8::melee_strength_like_damage"
 			]
 		},
 		{	"name": "Rage",
@@ -151,23 +156,23 @@
 		}
 	],
 	"hp": {
-		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 	},
-	"hd": "11d10",
+	"hd": "12d10",
 	"saves": {
 		"fortitude": {
-			"base": 7
+			"base": 8
 		},
 		"reflex": {
-			"base": 3
+			"base": 4
 		},
 		"will": {
-			"base": 3
+			"base": 4
 		}
 	},
 	"dr": "{{pf.bonusIsActive('stalwart') ? '8/-' : '2/-'}}",
 	"resist": "cold 10",
-	"baseAttackBonus": 11,
+	"baseAttackBonus": 12,
 	"attacks": {
 		"melee": [
 			{	"name": "earthbreaker",
@@ -196,7 +201,7 @@
 			{	"name": "breath weapon",
 				"noRoll": true,
 				"damage": {
-					"dice": "11d6",
+					"dice": "12d6",
 					"special": "cold"
 				}
 			}
@@ -207,7 +212,7 @@
 			"type": "known",
 			"stat": "charisma",
 			"markdown": "spells.md",
-			"baseSpells": [null, 2, 1, 1]
+			"baseSpells": [null, 2, 2, 1]
 		}
 	],
 	"skills": [
@@ -215,7 +220,7 @@
 			"stat": "dexterity",
 			"classSkill": true,
 			"acp": true,
-			"ranks": 11
+			"ranks": 12
 		},
 		{	"name": "Appraise",
 			"stat": "intelligence"
@@ -226,7 +231,7 @@
 		{	"name": "Climb",
 			"stat": "strength",
 			"acp": true,
-			"ranks": 11
+			"ranks": 12
 		},
 		{	"name": "Diplomacy",
 			"stat": "charisma",
@@ -242,7 +247,7 @@
 		{	"name": "Fly",
 			"stat": "dexterity",
 			"acp": true,
-			"ranks": 11
+			"ranks": 12
 		},
 		{	"name": "Handle Animal",
 			"stat": "charisma"
@@ -253,12 +258,12 @@
 		{	"name": "Intimidate",
 			"stat": "charisma",
 			"classSkill": true,
-			"ranks": 11
+			"ranks": 12
 		},
 		{	"name": "Perception",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 11
+			"ranks": 12
 		},
 		{	"name": "Ride",
 			"stat": "dexterity",
@@ -282,7 +287,7 @@
 			"stat": "strength",
 			"classSkill": true,
 			"acp": true,
-			"ranks": 11
+			"ranks": 12
 		}
 	],
 	"feats": [
@@ -294,17 +299,18 @@
 		"[Improved Stalwart](:nethys-feat:Improved Stalwart)",
 		"[Iron Will](:nethys-feat:Iron Will)",
 		"[Power Attack](:nethys-feat:Power Attack)",
+		"[Skill Focus (Fly)](:nethys-feat:Skill Focus)",
 		"[Stalwart](:nethys-feat:Stalwart)",
 		"[Toughness](:nethys-feat:Toughness)"
 	],
 	"classes": {
-		"Bloodrager": 11
+		"Bloodrager": 12
 	},
 	"race": "Human",
 	"alignment": "CN",
 	"size": "{{pf.bonusIsActive('reduce_person') ? 'Small' : 'Medium'}}",
 	"type": "humanoid (human)",
-	"speed": "30 ft.",
+	"speed": "30 ft.{{pf.bonusIsActive('rage') ? 'fly 60 ft. (average)' : ''}}",
 	"space": "5 ft.",
 	"reach": "5 ft.",
 	"languages": [

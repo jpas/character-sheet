@@ -2,7 +2,7 @@
 	"name": "Athedril",
 	"abilityScores": {
 		"strength": 14,
-		"dexterity": 20,
+		"dexterity": 21,
 		"constitution": 10,
 		"intelligence": 10,
 		"wisdom": 14,
@@ -104,8 +104,8 @@
 		{	"name": "Deadly Aim",
 			"active": true,
 			"list": [
-				"-3:enhancement:ranged_to_hit",
-				"6:enhancement:ranged_strength_like_damage"
+				"-4:enhancement:ranged_to_hit",
+				"8:enhancement:ranged_strength_like_damage"
 			]
 		},
 		{	"name": "Favoured Terrain (Underground)",
@@ -146,21 +146,21 @@
 		}
 	],
 	"hp": {
-		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
+		"rolls": [ 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 ]
 	},
-	"hd": "11d10",
+	"hd": "12d10",
 	"saves": {
 		"fortitude": {
-			"base": 7
+			"base": 8
 		},
 		"reflex": {
-			"base": 7
+			"base": 8
 		},
 		"will": {
-			"base": 3
+			"base": 4
 		}
 	},
-	"baseAttackBonus": 11,
+	"baseAttackBonus": 12,
 	"attacks": {
 		"melee": [
 			{	"name": "elven curved blade",
@@ -200,7 +200,7 @@
 			"type": "prepared",
 			"stat": "wisdom",
 			"markdown": "spells.md",
-			"baseSpells": [null, 2, 1, 1]
+			"baseSpells": [null, 2, 2, 1]
 		}
 	],
 	"skills": [
