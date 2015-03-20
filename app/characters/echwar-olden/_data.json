@@ -101,7 +101,7 @@
 		{	"name": "Targeted Bomb Admixture",
 			"active": false,
 			"list": [
-				"5::bomb_damage"
+				"4::bomb_damage"
 			]
 		}
 	],
@@ -141,6 +141,7 @@
 		"special": [
 			{	"name": "bomb",
 				"info": "DC {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}, {{pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}/day",
+				"stats": ["dexterity"],
 				"damage": {
 					"dice": "2d6",
 					"stats": ["intelligence"]
@@ -148,6 +149,7 @@
 			},
 			{	"name": "throw anything",
 				"type": "natural",
+				"stats": ["dexterity"],
 				"damage": {
 					"dice": "xdy",
 					"stats": ["intelligence"]
