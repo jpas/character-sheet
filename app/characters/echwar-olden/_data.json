@@ -149,7 +149,7 @@
 				}
 			},
 			{	"name": "bomb",
-				"info": "DC {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}",
+				"info": "DC {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}, {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}/day",
 				"damage": {
 					"dice": "1d6",
 					"stats": ["intelligence"]
@@ -166,7 +166,7 @@
 			"spellType": "Extracts",
 			"stat": "intelligence",
 			"markdown": "extracts.md+links.md",
-			"baseSpells": [ null, 2 ]
+			"baseSpells": [ null, 3 ]
 		}
 	],
 	"skills": [
@@ -177,23 +177,23 @@
 		{	"name": "Appraise",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Bluff",
 			"stat": "charisma",
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Bluff (Feint)",
 			"stat": "charisma",
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Bluff (Hidden Messages)",
 			"stat": "charisma",
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Bluff (Lie)",
 			"stat": "charisma",
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Climb",
 			"stat": "strength",
@@ -206,7 +206,7 @@
 		{	"name": "Craft (Alchemy)",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Diplomacy",
 			"stat": "charisma"
@@ -215,7 +215,7 @@
 			"stat": "dexterity",
 			"acp": true,
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Disguise",
 			"stat": "charisma"
@@ -223,7 +223,7 @@
 		{	"name": "Escape Artist",
 			"stat": "dexterity",
 			"acp": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Fly",
 			"stat": "dexterity",
@@ -243,12 +243,12 @@
 		{	"name": "Perception",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Perception (Traps)",
 			"stat": "wisdom",
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Perform",
 			"stat": "charisma"
@@ -263,23 +263,23 @@
 		},
 		{	"name": "Sense Motive",
 			"stat": "wisdom",
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Sleight of Hand",
 			"stat": "dexterity",
 			"acp": true,
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Spellcraft",
 			"stat": "intelligence",
 			"classSkill": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Stealth",
 			"stat": "dexterity",
 			"acp": true,
-			"ranks": 2
+			"ranks": 3
 		},
 		{	"name": "Survival",
 			"stat": "wisdom",
@@ -297,7 +297,7 @@
 		"[Weapon Focus (Bombs)](:nethys-feat:Weapon Focus)"
 	],
 	"classes": {
-		"Alchemist": 2
+		"Alchemist": 3
 	},
 	"race": "Human",
 	"alignment": "CN",
@@ -308,7 +308,7 @@
 	"reach": "5 ft.",
 	"languages": [
 		"Common",
-		"Unchosen x5"
+		"Unchosen x4"
 	],
 	"additionalSections": {
 		"specialQualities": [
