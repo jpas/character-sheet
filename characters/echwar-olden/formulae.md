@@ -1,10 +1,10 @@
 ### **Formulae**
 1st
 *[comprehend languages]*,
+*[crafter's fortune]*,
 *[cure light wounds]*,
 *[disguise self]*,
 *[endure elements]*,
-*[heightened awareness]*,
 *[reduce person]*,
 *[targeted bomb admixture]*,
 *[true strike]*
