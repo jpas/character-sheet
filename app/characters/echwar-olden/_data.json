@@ -54,7 +54,7 @@
 			"list": [
 				"10:circumstance:bluff_(lie)",
 				"5:circumstance:bluff_(feint)",
-				"-5::bluff_(hidden message)"
+				"-5::bluff_(hidden_messages)"
 			]
 		},
 
@@ -259,8 +259,7 @@
 			"acp": true
 		},
 		{	"name": "Sense Motive",
-			"stat": "wisdom",
-			"ranks": 3
+			"stat": "wisdom"
 		},
 		{	"name": "Sleight of Hand",
 			"stat": "dexterity",
