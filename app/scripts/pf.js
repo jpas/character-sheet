@@ -1,6 +1,8 @@
 'use strict';
 /* exported pf */
 
+var ROLL20 = false;
+
 var pf = (function() {
 	var pf = {};
 
@@ -582,6 +584,25 @@ var pf = (function() {
 			this.isTrained = function() {
 				return data.ranks > 0;
 			};
+
+			this.getRoll20Macro = function() {
+				var str = this.name + '=[[1d20';
+
+				_.each(this.stats, function(s) {
+					str += '+@{' + _(s).capitalize() + '}';
+				});
+
+				str += '+' + bonusHandler.getBonus([
+					this.id,
+					data.baseID,
+					"skills"
+				], this.exemptTypes);
+				if(data.ranks) { str += '+' + data.ranks; }
+				if(data.classSkill && data.ranks > 0) { str += '+' + 3; }
+				if(data.acp) { str += '+(@{Wearing Armour}*@{ACP})' };
+
+				console.log(str + ']]');
+			}
 		}
 
 		function Caster(data) {
@@ -1093,6 +1114,16 @@ var pf = (function() {
 			var untrained = _.findWhere(this.untrained, {id: skillID});
 			return trained || untrained || new Skill({name: 'Dummy Skill'});
 		};
+
+		if(ROLL20 === true) {
+			for (var i = this.skills.trained.length - 1; i >= 0; i--) {
+				this.skills.trained[i].getRoll20Macro();
+			};
+
+			for (var i = this.skills.untrained.length - 1; i >= 0; i--) {
+				this.skills.untrained[i].getRoll20Macro();
+			};
+		}
 
 		// *********************************************************************************************
 		// Markdown Functions
