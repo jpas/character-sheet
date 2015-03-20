@@ -16,7 +16,7 @@
 		},
 		{	"name": "Alchemy",
 			"list": [
-				"2::craft_(alchemy)"
+				"3::craft_(alchemy)"
 			]
 		},
 		{	"name": "Trapfinding",
@@ -85,13 +85,6 @@
 				"2:natural_armor:armor_class"
 			]
 		},
-		{	"name": "Heighten Awareness",
-			"active": true,
-			"list": [
-				"2:competence:perception",
-				"2:competence:perception_(traps)"
-			]
-		},
 		{	"name": "Reduce Person",
 			"active": true,
 			"list": [
@@ -113,9 +106,9 @@
 		}
 	],
 	"hp": {
-		"rolls": [ 8, 6 ]
+		"rolls": [ 8, 6, 6 ]
 	},
-	"hd": "2d8",
+	"hd": "3d8",
 	"saves": {
 		"fortitude": {
 			"base": 3
@@ -124,10 +117,10 @@
 			"base": 3
 		},
 		"will": {
-			"base": 0
+			"base": 1
 		}
 	},
-	"baseAttackBonus": 1,
+	"baseAttackBonus": 2,
 	"attacks": {
 		"melee": [
 			{	"name": "touch attack",
@@ -141,22 +134,24 @@
 					"critical": "19-20"
 				}
 			},
+			{	"name": "touch attack",
+				"type": "natural"
+			}
+		],
+		"special": [
+			{	"name": "bomb",
+				"info": "DC {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}, {{pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}/day",
+				"damage": {
+					"dice": "2d6",
+					"stats": ["intelligence"]
+				}
+			},
 			{	"name": "throw anything",
 				"type": "natural",
 				"damage": {
 					"dice": "xdy",
 					"stats": ["intelligence"]
 				}
-			},
-			{	"name": "bomb",
-				"info": "DC {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}, {{10 + pf.level('Alchemist', 0.5) + pf.modifier('intelligence')}}/day",
-				"damage": {
-					"dice": "1d6",
-					"stats": ["intelligence"]
-				}
-			},
-			{	"name": "touch attack",
-				"type": "natural"
 			}
 		]
 	},
@@ -292,6 +287,7 @@
 	],
 	"feats": [
 		"[Brew Potion](:nethys-feat:Brew Potion)",
+		"[Point Blank Shot](:nethys-feat:Point Blank Shot)",
 		"[Precise Shot](:nethys-feat:Precise Shot)",
 		"[Throw Anything](:nethys-feat:Throw Anything)",
 		"[Weapon Focus (Bombs)](:nethys-feat:Weapon Focus)"
