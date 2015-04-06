@@ -76,8 +76,7 @@
 					"dice": "1d10",
 					"factor": 1.5,
 					"critical": "19-20"
-				},
-				"factor": 1.5
+				}
 			}
 		]
 	},
