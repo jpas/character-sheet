@@ -67,6 +67,139 @@
 			}
 		]
 	},
+	"skills": [
+		{	"name": "Acrobatics",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Appraise",
+			"stat": "intelligence"
+		},
+		{	"name": "Bluff",
+			"stat": "charisma"
+		},
+		{	"name": "Climb",
+			"stat": "strength",
+			"acp": true
+		},
+		{	"name": "Craft",
+			"stat": "intelligence"
+		},
+		{	"name": "Diplomacy",
+			"stat": "charisma"
+		},
+		{	"name": "Disable Device",
+			"stat": "dexterity",
+			"acp": true,
+			"trained": true
+		},
+		{	"name": "Disguise",
+			"stat": "charisma"
+		},
+		{	"name": "Escape Artist",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Fly",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Handle Animal",
+			"stat": "charisma",
+			"trained": true
+		},
+		{	"name": "Heal",
+			"stat": "wisdom"
+		},
+		{	"name": "Intimidate",
+			"stat": "charisma"
+		},
+		{	"name": "Knowledge (Arcana)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Dungeoneering)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Engineering)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Geography)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (History)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Local)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Nature)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Nobility)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Planes)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Knowledge (Religion)",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Linguistics",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Perception",
+			"stat": "wisdom"
+		},
+		{	"name": "Perform",
+			"stat": "charisma"
+		},
+		{	"name": "Profession",
+			"stat": "wisdom",
+			"trained": true
+		},
+		{	"name": "Ride",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Sense Motive",
+			"stat": "wisdom"
+		},
+		{	"name": "Sleight of Hand",
+			"stat": "dexterity",
+			"acp": true,
+			"trained": true
+		},
+		{	"name": "Spellcraft",
+			"stat": "intelligence",
+			"trained": true
+		},
+		{	"name": "Stealth",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Survival",
+			"stat": "wisdom"
+		},
+		{	"name": "Swim",
+			"stat": "strength",
+			"acp": true
+		},
+		{	"name": "Use Magic Device",
+			"stat": "charisma",
+			"trained": true
+		}
+	],
 	"race": "Human",
 	"alignment": "CN",
 	"size": "Medium",

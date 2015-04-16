@@ -1,0 +1,243 @@
+[{
+	"name": "Kalton Tantmoor",
+	"abilityScores": {
+		"strength": 12,
+		"dexterity": 16,
+		"constitution": 10,
+		"intelligence": 13,
+		"wisdom": 16,
+		"charisma": 14
+	},
+	"bonuses": [
+		{	"name": "Favoured Class Bonus: Cleric",
+			"list": [
+				"1::hp_level_cleric"
+			]
+		},
+		{	"name": "Aasimar Racial Traits",
+			"list": [
+				"2:racial:acrobatics",
+				"2:racial:fly"
+			]
+		},
+
+		{	"name": "Wearing Armour",
+			"info": "Hide",
+			"active": true,
+			"list": [
+				"4:armor:armor_class",
+				"4::maximum_dexterity",
+				"-3::armor_check_penalty"
+			]
+		},
+
+		{	"name": "Magic Weapon (Light Crossbow)",
+			"active": false,
+			"list": [
+				"1:enhancement:light_crossbow_to_hit",
+				"1:enhancement:light_crossbow_damage"
+			]
+		},
+		{	"name": "Magic Weapon (Longspear)",
+			"active": false,
+			"list": [
+				"1:enhancement:longspear_to_hit",
+				"1:enhancement:longspear_damage"
+			]
+		},
+
+		{	"name": "Guidance",
+			"active": true,
+			"list": [
+				"1:competence:to_hit",
+				"1:competence:saves",
+				"1:competence:skills"
+			]
+		},
+		{	"name": "Longstrider",
+			"active": false,
+			"list": [
+				"10:enhancement:speed"
+			]
+		}
+	],
+	"hp": {
+		"rolls": [ 8 ]
+	},
+	"hd": "1d8",
+	"saves": {
+		"fortitude": {
+			"base": 2
+		},
+		"reflex": {
+			"base": 0
+		},
+		"will": {
+			"base": 2
+		}
+	},
+	"resist": [
+		"acid 5",
+		"cold 5",
+		"electricity 5"
+	],
+	"baseAttackBonus": 0,
+	"attacks": {
+		"melee": [
+			{	"name": "longspear",
+				"damage": {
+					"dice": "1d8",
+					"critical": "x3",
+					"factor": 1.5
+				}
+			},
+			{	"name": "touch attack",
+				"type": "natural"
+			}
+		],
+		"ranged": [
+			{	"name": "light crossbow",
+				"damage": {
+					"dice": "1d6",
+					"critical": "19-20"
+				}
+			},
+			{	"name": "touch attack",
+				"type": "natural"
+			}
+		],
+		"special": []
+	},
+	"spells": [
+		{	"name": "Cleric",
+			"type": "prepared",
+			"spellType": "Spells",
+			"stat": "wisdom",
+			"markdown": "spells.md+links.md",
+			"baseSpells": [ 3, 1 ]
+		}
+	],
+	"spellLikeAbilities": [
+		{	"name": "Aasimar",
+			"stat": "charisma",
+			"markdown": "slas.md"
+		}
+	],
+	"skills": [
+		{	"name": "Acrobatics",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Appraise",
+			"stat": "intelligence",
+			"classSkill": true
+		},
+		{	"name": "Bluff",
+			"stat": "charisma"
+		},
+		{	"name": "Climb",
+			"stat": "strength",
+			"acp": true
+		},
+		{	"name": "Craft",
+			"stat": "intelligence",
+			"classSkill": true
+		},
+		{	"name": "Diplomacy",
+			"stat": "charisma",
+			"classSkill": true
+		},
+		{	"name": "Disguise",
+			"stat": "charisma"
+		},
+		{	"name": "Escape Artist",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Fly",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Heal",
+			"stat": "wisdom",
+			"classSkill": true,
+			"ranks": 1
+		},
+		{	"name": "Intimidate",
+			"stat": "charisma"
+		},
+		{	"name": "Knowledge (Arcana)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"trained": true,
+			"ranks": 1
+		},
+		{	"name": "Knowledge (Religion)",
+			"stat": "intelligence",
+			"classSkill": true,
+			"trained": true,
+			"ranks": 1
+		},
+		{	"name": "Perception",
+			"stat": "wisdom"
+		},
+		{	"name": "Perform",
+			"stat": "charisma"
+		},
+		{	"name": "Ride",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Sense Motive",
+			"stat": "wisdom",
+			"classSkill": true
+		},
+		{	"name": "Stealth",
+			"stat": "dexterity",
+			"acp": true
+		},
+		{	"name": "Survival",
+			"stat": "wisdom"
+		},
+		{	"name": "Swim",
+			"stat": "strength",
+			"acp": true
+		}
+	],
+	"feats": [
+		"[Selective Channeling](:nethys-feat:Selective Channeling)"
+	],
+	"traits": [
+		"[Magical Knack (Cleric)](:nethys-trait:Magical Knack)",
+		"[Seeker](:nethys-trait:Seeker)"
+	],
+	"classes": {
+		"!Aasimar": 1,
+		"!Cleric": 1,
+		"Cleric of Abadar": 1
+	},
+	"race": "Aasimar",
+	"alignment": "LE",
+	"size": "Medium",
+	"type": "Outsider (native)",
+	"speed": "{{40 + (pf.bonusIsActive('wearing_armour') ? -10 : 0) + (pf.bonusIsActive('longstrider') ? +10 : 0)}} ft.",
+	"space": "5 ft.",
+	"reach": "5 ft.",
+	"languages": [
+		"Celestial",
+		"Common",
+		"Necril"
+	],
+	"additionalSections": {
+		"specialQualities": [
+			"cleric.md+links.md"
+		],
+		"treasure": [
+			"equipment.md"
+		]
+	},
+	"options": {
+		"showBonuses": true,
+		"portrait": ""
+	}
+}]
