@@ -569,7 +569,7 @@ var pf = (function() {
 				total += bonusHandler.getBonus([
 					this.id,
 					data.baseID,
-					"skills"
+					'skills'
 				], this.exemptTypes);
 				if(data.ranks) { total += data.ranks; }
 				if(data.classSkill && data.ranks > 0) { total += 3; }
@@ -595,14 +595,14 @@ var pf = (function() {
 				str += '+' + bonusHandler.getBonus([
 					this.id,
 					data.baseID,
-					"skills"
+					'skills'
 				], this.exemptTypes);
 				if(data.ranks) { str += '+' + data.ranks; }
 				if(data.classSkill && data.ranks > 0) { str += '+' + 3; }
-				if(data.acp) { str += '+(@{Wearing Armour}*@{ACP})' };
+				if(data.acp) { str += '+(@{Wearing Armour}*@{ACP})'; }
 
 				console.log(str + ']]');
-			}
+			};
 		}
 
 		function Caster(data) {
@@ -612,7 +612,7 @@ var pf = (function() {
 			this.id = _(this.name).underscored();
 
 			this.type = _.capitalize(data.type);
-			this.spellType = _.capitalize(data.spellType || 'Spells')
+			this.spellType = _.capitalize(data.spellType || 'Spells');
 			this.baseSpells = data.baseSpells ? data.baseSpells : [];
 
 			if(data.stat) { data.stats = [data.stat]; }
@@ -622,6 +622,7 @@ var pf = (function() {
 				var casterLevel = data.level ? data.level : 0;
 
 				casterLevel += that.classes[data.name] ? that.classes[data.name] : 0;
+				casterLevel += that.classes['!' + data.name] ? that.classes['!' + data.name] : 0;
 				casterLevel += bonusHandler.getBonus([
 					'caster_level',
 					this.id + '_caster_level'
@@ -896,7 +897,8 @@ var pf = (function() {
 			total += bonusHandler.getBonus('hp_level') * data.hp.level;
 
 			_.each(this.classes, function(l, c) {
-				total += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l
+				if (c[0] == '!') { c = c.slice(1); }
+				total += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l;
 			});
 
 			total += abilityScores.getModifiers(data.hp.stats) * data.hp.level;
@@ -922,7 +924,8 @@ var pf = (function() {
 				modifier += bonusHandler.getBonus('hp_level') * data.hp.level;
 
 				_.each(this.classes, function(l, c) {
-					modifier += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l
+					if (c[0] == '!') { c = c.slice(1); }
+					modifier += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l;
 				});
 
 				modifier += abilityScores.getModifier(data.hp.stats) * data.hp.level;
@@ -1116,13 +1119,14 @@ var pf = (function() {
 		};
 
 		if(ROLL20 === true) {
-			for (var i = this.skills.trained.length - 1; i >= 0; i--) {
+			var i;
+			for (i = this.skills.trained.length - 1; i >= 0; i--) {
 				this.skills.trained[i].getRoll20Macro();
-			};
+			}
 
-			for (var i = this.skills.untrained.length - 1; i >= 0; i--) {
+			for (i = this.skills.untrained.length - 1; i >= 0; i--) {
 				this.skills.untrained[i].getRoll20Macro();
-			};
+			}
 		}
 
 		// *********************************************************************************************
@@ -1137,7 +1141,9 @@ var pf = (function() {
 				if (className === 'Hit Dice') {
 					return Math.floor(data.hp.level * factor);
 				}
-
+				if (_.isUndefined(that.classes[className])) {
+					return Math.floor(that.classes['!' + className] * factor);
+				}
 				return Math.floor(that.classes[className] * factor);
 			},
 			bonusIsActive: function(id) {
