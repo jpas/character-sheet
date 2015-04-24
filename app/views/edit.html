@@ -1,0 +1,58 @@
+<div class='grid grid-pad'>
+	<section>
+		<button ng-click='view()'>View</button>
+		<button class='pull-right' ng-click='new()'>Clear</button>
+		<div class='clearfix' style='margin-bottom: 15px'></div>
+		<input ng-model='gm' id='gmOptions' type='checkbox'/>
+		<label for='gmOptions'><span>GM Options</span></label>
+	</section>
+</div>
+<div class='grid grid-pad character' ng-repeat='c in characters'>
+	<hr>
+	<p>
+		<b>Name:</b> <input ng-model='c.name'/>
+	</p>
+	<p>
+		<span ng-if='gm'>
+			<b><b>Templates:</b> <input ng-model='c.templates'/>
+		</span>
+		<b>Race:</b> <input ng-model='c.race'/>
+	</p>
+	<p>
+		<b>Alignment:</b> <select ng-model='c.alignment' ng-options='a for a in alignments'/>
+		<b>Size:</b> <select ng-model='c.size' ng-options='s for s in sizes'/>
+		<b>Type (subtype):</b> <input ng-model='c.type'/>
+	</p>
+	<p>
+		<b>Experience:</b> <input ng-model='c.xp'/>
+		<b>Mythic Rank:</b> <input ng-model='c.mr'/>
+	</p>
+	<p ng-if='gm'>
+		<b>Challenge Rating:</b> <input ng-model='c.cr'/>
+	</p>
+	<hr>
+	<div class='grid'>
+		<div class='col-1-3'>
+			<p><b>Feats</b> <button ng-click='c.feats.push("")'>Add</button></p>
+			<p ng-repeat='feat in c.feats track by $index'>
+				<input ng-model='c.feats[$index]'/>
+				<button ng-click='c.feats.remove($index)'>x</button>
+			</p>
+		</div>
+		<div class='col-1-3'>
+			<p><b>Traits</b> <button ng-click='c.traits.push("")'>Add</button></p>
+			<p ng-repeat='trait in c.traits track by $index'>
+				<input ng-model='c.traits[$index]'/>
+				<button ng-click='c.traits.remove($index)'>x</button>
+			</p>
+		</div>
+		<div class='col-1-3'>
+			<p><b>Languages</b> <button ng-click='c.languages.push("")'>Add</button></p>
+			<p ng-repeat='language in c.languages track by $index'>
+				<input ng-model='c.languages[$index]'/>
+				<button ng-click='c.languages.remove($index)'>x</button>
+			</p>
+		</div>
+	</div>
+	<hr>
+</div>

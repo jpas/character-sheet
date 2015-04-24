@@ -6,30 +6,31 @@ var ROLL20 = false;
 var pf = (function() {
 	var pf = {};
 
+	pf.validTypes = [
+		'alchemical',
+		'armor',
+		'circumstance',
+		'competence',
+		'deflection',
+		'dodge',
+		'enhancement',
+		'inherent',
+		'insight',
+		'luck',
+		'morale',
+		'natural_armor',
+		'profane',
+		'racial',
+		'resistance',
+		'sacred',
+		'shield',
+		'size',
+		'trait',
+		'untyped'
+	];
+
 	var isValidBonusType = function(type, exempt) {
-		var types = [
-			'alchemical',
-			'armor',
-			'circumstance',
-			'competence',
-			'deflection',
-			'dodge',
-			'enhancement',
-			'inherent',
-			'insight',
-			'luck',
-			'morale',
-			'natural_armor',
-			'profane',
-			'racial',
-			'resistance',
-			'sacred',
-			'shield',
-			'size',
-			'trait',
-			'untyped'
-		];
-		return types.indexOf(type) !== -1 && exempt.indexOf(type) === -1;
+		return pf.validTypes.indexOf(type) !== -1 && exempt.indexOf(type) === -1;
 	};
 
 	var changeDieBySteps = function(die, steps) {
@@ -864,10 +865,14 @@ var pf = (function() {
 			_.each(temp, function(val, index) {
 				this[index] = _.numberFormat(parseInt(val));
 			}, temp);
-			this.xp = _.sprintf('XP %s/%s', temp[0], temp[1]);
+			if (temp.length === 1) {
+				this.xp = temp[0]
+			} else {
+				this.xp = _.sprintf('%s/%s', temp[0], temp[1]);
+			}
 		}
 		if (_.isNumber(data.xp)) {
-			this.xp = 'XP ' + _.numberFormat(data.xp);
+			this.xp = _.numberFormat(data.xp);
 		}
 
 		this.classes = data.classes;
@@ -897,7 +902,7 @@ var pf = (function() {
 			total += bonusHandler.getBonus('hp_level') * data.hp.level;
 
 			_.each(this.classes, function(l, c) {
-				if (c[0] == '!') { c = c.slice(1); }
+				if (c[0] === '!') { c = c.slice(1); }
 				total += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l;
 			});
 
@@ -924,7 +929,7 @@ var pf = (function() {
 				modifier += bonusHandler.getBonus('hp_level') * data.hp.level;
 
 				_.each(this.classes, function(l, c) {
-					if (c[0] == '!') { c = c.slice(1); }
+					if (c[0] === '!') { c = c.slice(1); }
 					modifier += bonusHandler.getBonus('hp_level_' + _.underscored(c)) * l;
 				});
 

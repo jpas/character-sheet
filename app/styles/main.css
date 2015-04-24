@@ -238,6 +238,15 @@ h1 small.pull-right {
 	margin-top: 8px;
 }
 
+/* edit */
+
+input,
+button {
+	color: #4b4b4b;
+}
+
+/* utility */
+
 @media screen {
 	.hide-on-screen {
 		display: none;

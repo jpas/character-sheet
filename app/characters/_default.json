@@ -1,0 +1,52 @@
+[{
+	"name": "Unnamed",
+	"cr": null,
+	"mr": null,
+	"xp": null,
+	"classes": {},
+	"initiative": {
+		"name": "Initiative",
+		"stats": ["dexterity"],
+		"base": 0
+	},
+	"abilityScores": {
+		"strength": 10,
+		"dexterity": 10,
+		"constitution": 10,
+		"intelligence": 10,
+		"wisdom": 10,
+		"charisma": 10
+	},
+	"senses": "",
+	"aura": "",
+	"hp": {
+		"rolls": [],
+		"stats": ["constitution"]
+	},
+	"hd": "",
+	"hpSpecial": "",
+	"speed": "30 ft.",
+	"space": "5 ft.",
+	"reach": "5 ft.",
+	"templates": "",
+	"race": "",
+	"alignment": "TN",
+	"size": "Medium",
+	"type": "",
+	"feats": [],
+	"traits": [],
+	"languages": [],
+	"additionalSections": [],
+
+	"saves": {
+		"fortitude": {
+			"base": 0
+		},
+		"reflex": {
+			"base": 0
+		},
+		"will": {
+			"base": 0
+		}
+	}
+}]

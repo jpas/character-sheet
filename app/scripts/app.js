@@ -18,6 +18,20 @@ app.config([
 			controller: 'ListCtrl',
 			reloadOnSearch: false
 		})
+		.when('/new', {
+			templateUrl: 'views/edit.html',
+			controller: 'NewCtrl'
+		})
+		.when('/edit', {
+			templateUrl: 'views/edit.html',
+			controller: 'EditCtrl',
+			reloadOnSearch: false
+		})
+		.when('/view', {
+			templateUrl: 'views/character.html',
+			controller: 'CharacterCtrl',
+			reloadOnSearch: false
+		})
 		.when('/:characterId', {
 			templateUrl: 'views/character.html',
 			controller: 'CharacterCtrl',

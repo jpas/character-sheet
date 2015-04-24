@@ -21,6 +21,7 @@
 	"globals": {
 		"_": false,
 		"angular": false,
+		"LZString": false,
 		"app": true,
 		"pf": true,
 		"FastClick": false,

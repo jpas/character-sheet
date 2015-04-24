@@ -1,3 +1,6 @@
+<div ng-if='canEdit' class='grid grid-pad'>
+	<button ng-click='edit()'>Edit</button>
+</div>
 <div id='{{c.id}}' class='grid grid-pad character' ng-repeat='c in characters'>
 	<section ng-if="c.bonuses && !c.options.hideBonuses" class='hide-on-print' id='{{c.id}}-bonuses'>
 		<hr>
@@ -22,7 +25,7 @@
 		<hr>
 	</section>
 	<section id='{{c.id}}-info'>
-		<p><md md='c.xp' style='margin-top: 20px' pf='c.pf'></md></p>
+		<p>XP <md md='c.xp' style='margin-top: 20px' pf='c.pf'></md></p>
 		<p><md ng-if="!c.options.hideInfo1" md='c.infoText[0]' pf='c.pf'></md></p>
 		<p><md md='c.infoText[1]' pf='c.pf'></md></p>
 		<p>
