@@ -220,6 +220,7 @@
 	"alignment": "LE",
 	"size": "Medium",
 	"type": "Outsider (native)",
+	"senses": "Darkvision 60 ft.",
 	"speed": "{{40 + (pf.bonusIsActive('wearing_armour') ? -10 : 0) + (pf.bonusIsActive('longstrider') ? +10 : 0)}} ft.",
 	"space": "5 ft.",
 	"reach": "5 ft.",
